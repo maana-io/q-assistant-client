@@ -12,7 +12,7 @@ The client is exported as a singleton to avoid duplicate registration on event l
 You can import the instance like this:
 
 ```js
-import AssistantAPIClient from 'q-assistant-client';
+import AssistantAPIClient from '@io-maana/q-assistant-client';
 ```
 
 ## Interacting with the API
