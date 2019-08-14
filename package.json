@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/maana-io/q-assistant-client/issues"
   },
-  "homepage": "https://github.com/maana-io/q-assistant-client#readme"
+  "homepage": "https://github.com/maana-io/q-assistant-client#readme",
+  "dependencies": {
+    "post-robot": "^10.0.18"
+  }
 }
