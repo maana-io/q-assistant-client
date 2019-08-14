@@ -18,7 +18,7 @@ const createAPIListener = async (callName, cb)=>{
 }
 
 /**
- * Class that performs asynchronous API calls to the parent API (assumes this is loaded as iframe)
+ * Class that exposes concrete API calls to the parent API.
  * These calls are made over post-message via post-robot to the parent window.
  */
 class AssistantAPIClient{
@@ -48,15 +48,19 @@ class AssistantAPIClient{
   // Services
   //
   getServiceById = async (id) =>{
-    return await APICall('getServiceById', id)
+    var res = await APICall('getServiceById', id)
+    // Call function on returned object--call by reference to parent
+    console.log('res',res)
+    if(res.someFunction) res.someFunction('hello')
+    return res
   }
 
   //
   // Workspace
   //
   // Returns the backing, aggregate service for the workspace.
-  getWorkspaceService = async () =>{
-    return await APICall('getWorkspaceService')
+  getWorkspace = async () =>{
+    return await APICall('getWorkspace')
   }
 
   //

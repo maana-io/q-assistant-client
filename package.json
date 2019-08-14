@@ -1,9 +1,11 @@
 {
   "name": "@io-maana/q-assistant-client",
-  "version": "3.2.1-beta.1",
+  "version": "3.2.1-beta.3",
   "description": "JavaScript package to streamline communication between an assistant and the Maana Q Assistant API.",
-  "main": "AssistantAPIClient.js",
+  "main": "build/AssistantAPIClient.js",
   "scripts": {
+    "build": "babel src --out-dir build",
+    "prepack": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,5 +24,11 @@
   "homepage": "https://github.com/maana-io/q-assistant-client#readme",
   "dependencies": {
     "post-robot": "^10.0.18"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.5.5"
   }
 }
