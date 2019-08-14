@@ -1,0 +1,26 @@
+{
+  "name": "@io-maana/q-assistant-client",
+  "version": "3.2.1-beta.1",
+  "description": "JavaScript package to streamline communication between an assistant and the Maana Q Assistant API.",
+  "main": "AssistantAPIClient.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maana-io/q-assistant-client"
+  },
+  "keywords": [
+    "Maana",
+    "Q"
+  ],
+  "author": "Logan Gore @ Maana.io",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maana-io/q-assistant-client/issues"
+  },
+  "homepage": "https://github.com/maana-io/q-assistant-client#readme",
+  "dependencies": {
+    "post-robot": "^10.0.18"
+  }
+}
