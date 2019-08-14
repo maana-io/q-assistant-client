@@ -1,5 +1,5 @@
 {
-  "name": "@maana-io/q-assistant-client",
+  "name": "@io-maana/q-assistant-client",
   "version": "3.2.1",
   "description": "JavaScript package to streamline communication between an assistant and the Maana Q Assistant API.",
   "main": "AssistantAPIClient.js",
