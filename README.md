@@ -3,9 +3,12 @@ A lightweight JavaScript client for Maana-Q Assistant developers that wraps post
 
 ## Usage
 This is intented to be used in a web application being leveraged as a Maana Q assistant (embedded as an iframe).
-This assistant client will facilitate communication between the assistant the parent frame.
+This assistant client will facilitate communication between the assistant and the parent frame.
 The client provides a rich, asynchronous experience over what would otherwise be 'fire-and-forget'-style messaging 
 via post-post message communication. 
+
+## Requirements and Assumptions
+@TODO Logan
 
 ## Singleton Instance
 The client is exported as a singleton to avoid duplicate registration on event listeners.

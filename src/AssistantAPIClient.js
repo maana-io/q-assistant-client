@@ -32,78 +32,48 @@ class AssistantAPIClient{
   //
   // Selection
   //
-  addSelectionChangedListener = async (cb) =>{
-    EventEmitter.addListener('selectionChanged',cb)
-  }
+  addSelectionChangedListener = cb => EventEmitter.addListener('selectionChanged',cb)
 
-  removeSelectionChangedListener = async (cb) =>{
-    EventEmitter.removeListener('selectionChanged',cb)
-  }
+  removeSelectionChangedListener = cb => EventEmitter.removeListener('selectionChanged',cb)
 
-  getCurrentSelection = async () =>{
-    return await APICall('getCurrentSelection')
-  }
+  getCurrentSelection = () => APICall('getCurrentSelection')
+
 
   //
   // Services
   //
-  getServiceById = async (id) =>{
-    var res = await APICall('getServiceById', id)
-    // Call function on returned object--call by reference to parent
-    console.log('res',res)
-    if(res.someFunction) res.someFunction('hello')
-    return res
-  }
+  getServiceById = id => APICall('getServiceById', id)
 
   //
   // Workspace
   //
   // Returns the backing, aggregate service for the workspace.
-  getWorkspace = async () =>{
-    return await APICall('getWorkspace')
-  }
+  getWorkspace = () => APICall('getWorkspace')
 
   //
   // Functions
   //
-  executeFunction = async (input) => {
-    return await APICall('executeFunction', input)
-  }
+  executeFunction = input => APICall('executeFunction', input)
 
-  createFunction = async (input) => {
-    return await APICall('createFunction', input)
-  }
+  createFunction = input => APICall('createFunction', input)
 
-  updateFunction = async (input) => {
-    return await APICall('updateFunction', input)
-  }
+  updateFunction = input => APICall('updateFunction', input)
 
-  deleteFunction = async (input) => {
-    return await APICall('deleteFunction', input)
-  }
+  deleteFunction = input => APICall('deleteFunction', input)
 
-  getFunctionById  = async (id) =>{
-    return await APICall('getFunctionById', id)
-  }
+  getFunctionById = id => APICall('getFunctionById', id)
+
 
   //
   // Kinds
   //
-  createKind = async (input) => {
-    return await APICall('createKind', input)
-  }
+  createKind = input => APICall('createKind', input)
 
-  updateKind = async (input) => {
-    return await APICall('updateKind', input)
-  }
+  updateKind = input => APICall('updateKind', input)
 
-  deleteKind = async (input) => {
-    return await APICall('deleteKind', input)
-  }
+  deleteKind = input => APICall('deleteKind', input)
 
-  getKindById  = async (id) =>{
-    return await APICall('getKindById', id)
-  }
+  getKindById = id => APICall('getKindById', id)
 }
 
 // Export as singleton. 
