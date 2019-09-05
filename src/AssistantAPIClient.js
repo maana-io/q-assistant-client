@@ -30,6 +30,11 @@ class AssistantAPIClient{
   }
 
   //
+  // User Info
+  //
+  getUserInfo = () => APICall('getUserInfo')
+
+  //
   // Selection
   //
   addSelectionChangedListener = cb => EventEmitter.addListener('selectionChanged',cb)
