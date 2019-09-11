@@ -27,6 +27,12 @@ class AssistantAPIClient{
     createAPIListener('selectionChanged', async function(event){
       EventEmitter.emit('selectionChanged',event.data)
     })
+
+    // Attach event emmiter to API listener for function execution.
+    // Use convention to filter by function ID.
+    createAPIListener('functionExecuted', async function(event){
+      EventEmitter.emit(`function:${event.data.id}`,event.data.result)
+    })
   }
 
   //
@@ -68,6 +74,21 @@ class AssistantAPIClient{
 
   getFunctionById = id => APICall('getFunctionById', id)
 
+  addFunctionExecutionListener = async (id, cb) => {
+    if (await APICall('addFunctionExecutionListener', id)){
+      EventEmitter.addListener(`function:${id}`, cb)
+    } else{
+      throw new Error('Assistant Client Error: Failed to attach event listener.')
+    }
+  }
+
+  removeFunctionExecutionListener = async (id, cb) => {
+    if (await APICall('removeFunctionExecutionListener', id)){
+      EventEmitter.removeListener(`function:${id}`, cb)
+    } else{
+      throw new Error('Assistant Client Error: Failed to remove event listener.')
+    }
+  }
 
   //
   // Kinds
