@@ -54,7 +54,7 @@ class AssistantAPIClient{
   // Selection
   //
   addSelectionChangedListener = async cb => {
-    // Implicitly enable selection notifications the from API.
+    // Implicitly enable selection notifications from the API.
     this.enableSelectionChangedNotification()
 
     // Add listener now that notifications are enabled.
@@ -115,7 +115,7 @@ class AssistantAPIClient{
 
   removeFunctionExecutionListener = async (id, cb) => {
     if (await APICall('removeFunctionExecutionListener', id)){
-      // If the callaback is not provided, then remove all of the listeners.
+      // If the callback is not provided, then remove all of the listeners.
       if (cb){
         EventEmitter.removeListener(`function:${id}`, cb)
       } else{
