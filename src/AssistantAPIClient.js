@@ -54,21 +54,21 @@ class AssistantAPIClient{
   // Selection
   //
   addSelectionChangedListener = async cb => {
-    // Implicitly enable selection notification from API in this call.
+    // Implicitly enable selection notifications the from API.
     this.enableSelectionChangedNotification()
 
-    // Add listener not that notification is enabled.
+    // Add listener now that notifications are enabled.
     EventEmitter.addListener('selectionChanged',cb)
   }
 
   removeSelectionChangedListener = async cb => {
-    // If callback is not provided remove all listeners.
+    // If the callback is not provided, then remove all listeners.
     if(cb){
       EventEmitter.removeListener('selectionChanged', cb)
     } else{
       EventEmitter.removeAllListeners('selectionChanged')
     }
-    // After removal, determine if we should implicitly disable notification.
+    // After removing the callback, determine if the noticiations should be implicitly disabled.
     if(EventEmitter.listenerCount('selectionChanged') === 0){
       this.disableSelectionChangedNotification()
     }
@@ -76,10 +76,10 @@ class AssistantAPIClient{
 
   getCurrentSelection = () => APICall('getCurrentSelection')
 
-  // Expected to be called by adding listener
+  // Called when adding a selection event listener. 
   enableSelectionChangedNotification = async () => APICall('enableSelectionChangedNotification')
 
-  // Expected to be called by removing listener (when count is zero it's called).
+  // Called when removing a seledtion event listener. 
   disableSelectionChangedNotification = async () => APICall('disableSelectionChangedNotification')
 
   //
