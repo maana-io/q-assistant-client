@@ -36,6 +36,16 @@ class AssistantAPIClient{
   }
 
   //
+  // State management
+  //
+  clearState = () =>{
+    EventEmitter.removeAllListeners()
+    APICall('clearState')
+  }
+
+  getEventEmitter = () => EventEmitter
+
+  //
   // User Info
   //
   getUserInfo = () => APICall('getUserInfo')
@@ -43,12 +53,34 @@ class AssistantAPIClient{
   //
   // Selection
   //
-  addSelectionChangedListener = cb => EventEmitter.addListener('selectionChanged',cb)
+  addSelectionChangedListener = async cb => {
+    // Implicitly enable selection notification from API in this call.
+    this.enableSelectionChangedNotification()
 
-  removeSelectionChangedListener = cb => EventEmitter.removeListener('selectionChanged',cb)
+    // Add listener not that notification is enabled.
+    EventEmitter.addListener('selectionChanged',cb)
+  }
+
+  removeSelectionChangedListener = async cb => {
+    // If callback is not provided remove all listeners.
+    if(cb){
+      EventEmitter.removeListener('selectionChanged', cb)
+    } else{
+      EventEmitter.removeAllListeners('selectionChanged')
+    }
+    // After removal, determine if we should implicitly disable notification.
+    if(EventEmitter.listenerCount('selectionChanged') === 0){
+      this.disableSelectionChangedNotification()
+    }
+  }
 
   getCurrentSelection = () => APICall('getCurrentSelection')
 
+  // Expected to be called by adding listener
+  enableSelectionChangedNotification = async () => APICall('enableSelectionChangedNotification')
+
+  // Expected to be called by removing listener (when count is zero it's called).
+  disableSelectionChangedNotification = async () => APICall('disableSelectionChangedNotification')
 
   //
   // Services
@@ -58,7 +90,6 @@ class AssistantAPIClient{
   //
   // Workspace
   //
-  // Returns the backing, aggregate service for the workspace.
   getWorkspace = () => APICall('getWorkspace')
 
   //
@@ -84,7 +115,12 @@ class AssistantAPIClient{
 
   removeFunctionExecutionListener = async (id, cb) => {
     if (await APICall('removeFunctionExecutionListener', id)){
-      EventEmitter.removeListener(`function:${id}`, cb)
+      // If callback is not provided remove all listeners.
+      if (cb){
+        EventEmitter.removeListener(`function:${id}`, cb)
+      } else{
+        EventEmitter.removeAllListeners(`function:${id}`)
+      }
     } else{
       throw new Error('Assistant Client Error: Failed to remove event listener.')
     }
