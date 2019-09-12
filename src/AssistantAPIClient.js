@@ -79,7 +79,7 @@ class AssistantAPIClient{
   // Called when adding a selection event listener. 
   enableSelectionChangedNotification = async () => APICall('enableSelectionChangedNotification')
 
-  // Called when removing a seledtion event listener. 
+  // Called when removing a selection event listener. 
   disableSelectionChangedNotification = async () => APICall('disableSelectionChangedNotification')
 
   //
