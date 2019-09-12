@@ -115,7 +115,7 @@ class AssistantAPIClient{
 
   removeFunctionExecutionListener = async (id, cb) => {
     if (await APICall('removeFunctionExecutionListener', id)){
-      // If callback is not provided remove all listeners.
+      // If the callaback is not provided, then remove all of the listeners.
       if (cb){
         EventEmitter.removeListener(`function:${id}`, cb)
       } else{
