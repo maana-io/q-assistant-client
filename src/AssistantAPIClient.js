@@ -23,15 +23,20 @@ const createAPIListener = async (callName, cb)=>{
  */
 class AssistantAPIClient{
   constructor(){
-    // Attach event emmiter to API listener
+    // Attach selection event emmiter to API listener
     createAPIListener('selectionChanged', async function(event){
       EventEmitter.emit('selectionChanged',event.data)
     })
 
-    // Attach event emmiter to API listener for function execution.
+    // Attach function execution event emmiter to API listener.
     // Use convention to filter by function ID.
     createAPIListener('functionExecuted', async function(event){
       EventEmitter.emit(`function:${event.data.id}`,event.data.result)
+    })
+
+    // Attach inventory event emitter to API listener.
+    createAPIListener('inventoryChanged', async function(event){
+      EventEmitter.emit('inventoryChanged',event.data)
     })
   }
 
@@ -62,7 +67,7 @@ class AssistantAPIClient{
   }
 
   removeSelectionChangedListener = async cb => {
-    // If the callback is not provided, then remove all listeners.
+    // If the callback is not provided, then remove all of the listeners.
     if(cb){
       EventEmitter.removeListener('selectionChanged', cb)
     } else{
@@ -136,6 +141,34 @@ class AssistantAPIClient{
   deleteKind = input => APICall('deleteKind', input)
 
   getKindById = id => APICall('getKindById', id)
+
+  //
+  // Inventory
+  //
+
+  // Called when adding an inventory changed event listener.
+  enableInventoryChangedNotification = async () => APICall('enableInventoryChangedNotification')
+
+  // Called when removing the last inventory changed event listener.
+  disableInventoryChangedNotification = async () => APICall('disableInventoryChangedNotification')
+
+  addInventoryChangedListener = async cb => {
+    this.enableInventoryChangedNotification()
+    EventEmitter.addListener('inventoryChanged', cb)
+  }
+
+  removeInventoryChangedListener = async cb => {
+    // If the callback is not provided, then remove all of the listeners.
+    if(cb){
+      EventEmitter.removeListener('inventoryChanged', cb)
+    } else{
+      EventEmitter.removeAllListeners('inventoryChanged')
+    }
+    // After removing the callback, determine if the notifications should be implicitly disabled.
+    if(EventEmitter.listenerCount('inventoryChanged') === 0){
+      this.disableInventoryChangedNotification()
+    }
+  }
 }
 
 // Export as singleton. 
