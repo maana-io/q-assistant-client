@@ -67,7 +67,7 @@ class AssistantAPIClient{
   }
 
   removeSelectionChangedListener = async cb => {
-    // If the callback is not provided, then remove all listeners.
+    // If the callback is not provided, then remove all of the listeners.
     if(cb){
       EventEmitter.removeListener('selectionChanged', cb)
     } else{
@@ -146,10 +146,10 @@ class AssistantAPIClient{
   // Inventory
   //
 
-  // Called when adding inventory changed listener.
+  // Called when adding an inventory changed event listener.
   enableInventoryChangedNotification = async () => APICall('enableInventoryChangedNotification')
 
-  // Called when removing inventory changed listener if listener count is zero.
+  // Called when removing the last inventory changed event listener.
   disableInventoryChangedNotification = async () => APICall('disableInventoryChangedNotification')
 
   addInventoryChangedListener = async cb => {
@@ -158,13 +158,13 @@ class AssistantAPIClient{
   }
 
   removeInventoryChangedListener = async cb => {
-    // If the callback is not provided, then remove all listeners.
+    // If the callback is not provided, then remove all of the listeners.
     if(cb){
       EventEmitter.removeListener('inventoryChanged', cb)
     } else{
       EventEmitter.removeAllListeners('inventoryChanged')
     }
-    // After removal, determine if we should implicitly disable notification.
+    // After removing the callback, determine if the notifications should be implicitly disabled.
     if(EventEmitter.listenerCount('inventoryChanged') === 0){
       this.disableInventoryChangedNotification()
     }
