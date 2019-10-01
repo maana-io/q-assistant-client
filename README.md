@@ -9,12 +9,12 @@ via post-post message communication.
 
 ## Requirements and Assumptions
 
-###Post-Robot Library
+### Post-Robot Library
 The Maana Knowledge Portal (KPortal) uses the kraken/post-robot library to enrich the communication with the assistant. Post-robot allows for asynchronous, promise-based request/response style behavior between the assistant and the assistant API.
 
 The API requires that the client use the post-robot library. This assistant-client library is the easiest way to achieve this, and also adds a fair amount of 'sugar' to the process to improve developer productivity. Developers could, however, use post-robot directly in their own client implementation. 
 
-###Maana-Gateway Proxy Requirements
+### Maana-Gateway Proxy Requirements
 The Maana-Gateway service requires relative paths (paths relative to the root) in the assistant web application in order to proxy the application and its content. For create-react-apps, for instance, this means setting "homepage" to "." in the package.json file.
 
 ## Singleton Instance
@@ -43,9 +43,9 @@ Post-robot is used to provide a richer communication layer atop post-message.
 
 ## API Documentation
 
-###State management
+### State management
 
-####clearState = () =>
+#### clearState = () =>
 
 This will clear all ‘attached’ state between the assistant and the API. 
 
@@ -55,7 +55,7 @@ Specifically, this will clear selection and inventory changed event listeners.
 await AssistantAPIClient.clearState()
 ```
 
-###User Info
+### User Info
 The `UserInfo` object:
 ```js
 {
@@ -64,14 +64,14 @@ The `UserInfo` object:
 }
 ```
 
-####getUserInfo = () => 
+#### getUserInfo = () => 
 
 Returns a Userinfo object pertaining to the logged in user.
 
 ```js
 const userInfo = await AssistantAPIClient.getUserInfo()
 ```
-###Selection
+### Selection
 The `Selection` object:
 ```js
 {
@@ -81,7 +81,7 @@ The `Selection` object:
 }
 ```
 
-####getCurrentSelection = () => 
+#### getCurrentSelection = () => 
 
 Returns an Array of `Selection` objects:
 
@@ -89,7 +89,7 @@ Returns an Array of `Selection` objects:
 const {selection} = await AssistantAPIClient.getCurrentSelection();
 ```
 
-####addSelectionChangedListener = async cb =>
+#### addSelectionChangedListener = async cb =>
 
 Adds a callback function to be executed upon a valid workspace selection change.
 
@@ -112,7 +112,7 @@ AssistantAPIClient.addSelectionChangedListener(selectionCB);
 
 This function only exists on the Q-Assistant-Client--only enableSelectionChangedNotification is called on the API. 
 
-####removeSelectionChangedListener = async cb =>
+#### removeSelectionChangedListener = async cb =>
 
 This will have to be called on a 1:1 basis with addSelectionChangedListener calls if supplying a callback.
 
@@ -129,7 +129,7 @@ AssistantAPIClient.removeSelectionChangedListener()
 This function only exists on the Q-Assistant-Client--only disableSelectionChangedNotification is called on the API. 
 
 
-###Services
+### Services
 The `Service` object:
 ```js
 {
@@ -141,7 +141,7 @@ The `Service` object:
 }
 ```
 
-####getServiceById = id =>
+#### getServiceById = id =>
 This will return a service that exists within the scope of the workspace. 
 ** Assistant services will return null. Services outside the scope of the workspace will cause an error to be returned as 'Unable to load a Service from outside of the workspace.'
 
@@ -149,7 +149,7 @@ This will return a service that exists within the scope of the workspace.
 const svc = await AssistantAPIClient.getServiceById(id)
 ```
 
-###Workspace
+### Workspace
 The `Workspace` object:
 ```js
 {
@@ -175,7 +175,7 @@ getImportedServices: () => {
 }
 ```
 
-####getWorkspace = () =>
+#### getWorkspace = () =>
 
 Returns a Workspace object representing the workspace. 
 
@@ -183,7 +183,7 @@ Returns a Workspace object representing the workspace.
 const ws = await AssistantAPIClient.getWorkspace()
 ```
 
-###Graphs
+### Graphs
 The `Graph` object:
 ```js
 {     
@@ -208,7 +208,7 @@ updateGraphLayout: async ({ offsetX, offsetY, zoom }) => {
 }
 ```
 
-####Getting a graph object:
+#### Getting a graph object:
 Graph objects are obtained through an instance of a Workspace 
 
 ```js
@@ -221,7 +221,7 @@ or
 const kgs = await ws.getKnowledgeGraphs()
 ```
 
-####Manipulating Graphs
+#### Manipulating Graphs
 
 **Only the active graph may be manipulated.
 
@@ -242,7 +242,7 @@ knowledgeGraphNode {
 }
 ```
 
-####addNode(type, instance, changeSelection) =>
+#### addNode(type, instance, changeSelection) =>
 
 Takes type (“Function” or “Kind”), instance (the Function or Kind object), and optionally a boolean to indicate whether the selection should be changed to this new node. 
 
@@ -252,7 +252,7 @@ Returns the newly created Node object.
 const node = await ag.addNode('Kind',kind)
 ```
 
-####removeNode(id) =>
+#### removeNode(id) =>
 
 Takes the id of Node to be deleted. Returns either undefined or an error. 
 
@@ -260,14 +260,14 @@ Takes the id of Node to be deleted. Returns either undefined or an error.
 await ag.removeNode(node.id)
 ```
 
-####getNodes() =>
+#### getNodes() =>
 Returns an array of Node objects from the graph. 
 
 ```js
 const nodes = await ag.getNodes()
 ```
 
-####updateNodeLayout: async (nodeId, { x, y, collapsed})=>
+#### updateNodeLayout: async (nodeId, { x, y, collapsed})=>
 
 Updates a Node layout given a node ID and node coordinates (`x` and/or `y`) or a `collapsed` value. x/y values must be a number, and collapsed must be a boolean. Whatever is not specified will remain current.
 
@@ -275,7 +275,7 @@ Updates a Node layout given a node ID and node coordinates (`x` and/or `y`) or a
 ag.updateNodeLayout(id,{x:100,y:100,collapsed:true})
 ```
 
-####updateGraphLayout: async ({ offsetX, offsetY, zoom})=>
+#### updateGraphLayout: async ({ offsetX, offsetY, zoom})=>
 
 Updates a Graph layout given numerical values for x/y offsets and the zoom. 
 
@@ -283,7 +283,7 @@ Updates a Graph layout given numerical values for x/y offsets and the zoom.
 ag.updateGraphLayout({offsetX:50, offsetY:50, zoom: 70})
 ```
 
-###Functions
+### Functions
 
 The `Function` object:
 ```js
@@ -324,7 +324,7 @@ The `Function` object:
 }
 ```
 
-####executeFunction = ( {id, variables, resolve} ) =>
+#### executeFunction = ( {id, variables, resolve} ) =>
 
 Executes a function based on its id, with optional inputs for variables and a resolve string (this specifies the fields to be returned, which must be valid based on the result).
 
@@ -336,7 +336,7 @@ This following piece of code will execute a Function given a function ID, and pa
 const res = await AssistantAPIClient.executeFunction({functionId: func.id, variables: {example: "example"}, resolve: "{ id name }");
 ```
 
-####createFunction = input =>
+#### createFunction = input =>
 
 Creates a function based on the input provided. 
 
@@ -356,7 +356,7 @@ const createFunctionInput = {
 const createdFunction = await AssistantAPIClient.createFunction(createFunctionInput)
 ```
 
-####updateFunction = input =>
+#### updateFunction = input =>
 
 Input is the same for creating a function. It’s important to note that the arguments property will be replaced in it’s entirety with whatever is provided (if a value is provided.
 
@@ -366,7 +366,7 @@ Input is the same for creating a function. It’s important to note that the arg
 const updatedFunction = await AssistantAPIClient.updateFunction(input);
 ```
 
-####deleteFunction = input =>
+#### deleteFunction = input =>
 
 Input is the id of the Function to be deleted. Returns the deleted function as a promise.
 
@@ -374,7 +374,7 @@ Input is the id of the Function to be deleted. Returns the deleted function as a
 const deletedFunction = await AssistantAPIClient.deleteFunction('id...');
 ```
 
-####getFunctionById = id =>
+#### getFunctionById = id =>
 
 Returns a Function as a promise based on the ID provided.
 
@@ -382,7 +382,7 @@ Returns a Function as a promise based on the ID provided.
 const func = await AssistantAPIClient.getFunctionById('id...');
 ```
 
-####addFunctionExecutionListener = async (id, cb) =>
+#### addFunctionExecutionListener = async (id, cb) =>
 
 Associates a callback function with the execution of a particular Function. When the Function matching the id parameter is executed, its FunctionExecutionResult object passed to the callback. Returns undefined.
 
@@ -396,7 +396,7 @@ function exampleFunctionCB (result){
 AssistantAPIClient.addFunctionExecutionListener('id...', exampleFunctionCB)
 ```
 
-####removeFunctionExecutionListener = async (id, cb) =>
+#### removeFunctionExecutionListener = async (id, cb) =>
 
 Removes a Function execution listener based on the function ID and a reference to the callback function. If no callback is supplied, all listeners associated with the Function ID will be removed. Returns undefined.
 
@@ -404,7 +404,7 @@ Removes a Function execution listener based on the function ID and a reference t
 AssistantAPIClient.removeFunctionExecutionListener('id..', exampleFunctionCB)
 ```
 
-###Kinds
+### Kinds
 The `Kind` object:
 ```js
 {
@@ -429,7 +429,7 @@ The `Kind` object:
 }
 ```
 
-####createKind = input =>
+#### createKind = input =>
 
 Creates a Kind based on an input object. Returns a promise that resolves to the created Kind object.
 
@@ -445,7 +445,7 @@ const kindInput = {
 const newKind = await AssistantAPIClient.createKind(kindInput)
 ```
 
-####updateKind = input =>
+#### updateKind = input =>
 
 @TODO return value
 
@@ -457,7 +457,7 @@ Update Semantics: Only properties specified will be updated. If updating the sch
 const updated = await AssistantAPIClient.updateKind(input)
 ```
 
-####deleteKind = input =>
+#### deleteKind = input =>
 
 Deletes a Kind given a kind ID.
 
@@ -465,7 +465,7 @@ Deletes a Kind given a kind ID.
 const deleted = await AssistantAPIClient.deleteKind(input)
 ```
 
-####getKindById = id =>
+#### getKindById = id =>
 
 Returns a promise that resolves to a Kind object given the specified kind ID. Only kinds in the workspace or those of imported services will be returned. 
 
@@ -473,7 +473,7 @@ Returns a promise that resolves to a Kind object given the specified kind ID. On
 const kind = await AssistantAPIClient.getKindById(id)
 ```
 
-###Inventory
+### Inventory
 
 The `InventoryChanged` object:
 ```js
@@ -504,7 +504,7 @@ The `DiffItem` object:
 }
 ```
 
-####addInventoryChangedListener = async cb =>
+#### addInventoryChangedListener = async cb =>
 
 Registers a callback function with the inventory changed event. When workspace inventory changes the callback function will be called with the InventoryChangedobject. Returns undefined.
 
@@ -524,7 +524,7 @@ AssistantAPIClient.addInventoryChangedListener(inventoryCB)
 
 This function exists on the Q-Assisant-Client only--only enableSelectionChangedNotification is used on the API side. 
 
-####removeInventoryChangedListener = async cb =>
+#### removeInventoryChangedListener = async cb =>
 
 Removes an inventory changed listener given the referenced callback. If no callback is specified, all listeners will be removed. Returns undefined.
 
@@ -534,9 +534,9 @@ AssistantAPIClient.removeInventoryChangedListener(inventoryCB)
 
 This function exists on the Q-Assisant-Client only--only disableSelectionChangedNotification is used on the API side. 
 
-##Troubleshooting Assistant Issues
-###Assistant root file has loaded, but not other content
+## Troubleshooting Assistant Issues
+### Assistant root file has loaded, but not other content
 Observing in the browser's dev tools that some resources have loaded correctly (usually the root), but other's haven't (usually nested files or chunks), is indicative of a failure of Q Gateway to proxy due to not having a 'relative' path structure.
 
-###You are seeing post-robot `NO ACK` errors in the console.
+### You are seeing post-robot `NO ACK` errors in the console.
 These errors stem from a failed acknowledgement for a call either between the client and the API or vice-versa. 
