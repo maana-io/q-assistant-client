@@ -10,7 +10,7 @@ via post-post message communication.
 ## Requirements and Assumptions
 
 ### Post-Robot Library
-The Maana Knowledge Portal (KPortal) uses the kraken/post-robot library to enrich the communication with the assistant. Post-robot allows for asynchronous, promise-based request/response style behavior between the assistant and the assistant API.
+The Maana Knowledge Portal (KPortal) uses the kraken/post-robot library (https://github.com/krakenjs/post-robot) to enrich the communication with the assistant. Post-robot allows for asynchronous, promise-based request/response style behavior between the assistant and the assistant API.
 
 The API requires that the client use the post-robot library. This assistant-client library is the easiest way to achieve this, and also adds a fair amount of 'sugar' to the process to improve developer productivity. Developers could, however, use post-robot directly in their own client implementation. 
 
@@ -539,4 +539,4 @@ This function exists on the Q-Assisant-Client only--only disableSelectionChanged
 Observing in the browser's dev tools that some resources have loaded correctly (usually the root), but other's haven't (usually nested files or chunks), is indicative of a failure of Q Gateway to proxy due to not having a 'relative' path structure.
 
 ### You are seeing post-robot `NO ACK` errors in the console.
-These errors stem from a failed acknowledgement for a call either between the client and the API or vice-versa. 
+These errors stem from a failed acknowledgement for a call either between the client and the API or vice-versa. Ensure that your window and window.parent objects are valid and they are able to communicate with one another.
