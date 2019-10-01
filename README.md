@@ -10,7 +10,7 @@ via post-post message communication.
 ## Requirements and Assumptions
 
 ### Post-Robot Library
-The Maana Knowledge Portal (KPortal) uses the kraken/post-robot library (https://github.com/krakenjs/post-robot) to enrich the communication with the assistant. Post-robot allows for asynchronous, promise-based request/response style behavior between the assistant and the assistant API.
+The Maana Knowledge Portal (KPortal) uses the kraken/post-robot library [kraken/post-robot](https://github.com/krakenjs/post-robot) to enrich the communication with the assistant. Post-robot allows for asynchronous, promise-based request/response style behavior between the assistant and the assistant API.
 
 The API requires that the client use the post-robot library. This assistant-client library is the easiest way to achieve this, and also adds a fair amount of 'sugar' to the process to improve developer productivity. Developers could, however, use post-robot directly in their own client implementation. 
 
