@@ -187,8 +187,11 @@ const ws = await AssistantAPIClient.getWorkspace()
 The `Graph` object:
 ```js
 {     
-id,
-name,
+id: string,
+name: string,
+offsetX: Number,
+offsetY: Number,
+zoom: Number,
 getNodes: async () => {
     // Returns [Node]
 },
