@@ -305,6 +305,30 @@ The `Function` object:
         name: string
       }
     }
+    implementation {
+      id: string
+      entrypoint {
+        id: string
+      }
+      operations {
+        id: string
+        type: string
+        function {
+          id: string
+          name: string
+        }
+        argumentValues {
+          id: string
+          argument {
+            id: string
+          }
+          operation {
+            id: string
+          }
+          argumentRef: string
+        }
+      }
+    }
     isGenerated: boolean
     outputType: string
     outputKindId: string
@@ -333,7 +357,7 @@ Returns : JSON matching shape of result , unless no sub-selection of fields is r
 This following piece of code will execute a Function given a function ID, and pass in variables for ‘example’, requesting back id and name fields. 
 
 ```js 
-const res = await AssistantAPIClient.executeFunction({functionId: func.id, variables: {example: "example"}, resolve: "{ id name }");
+const res = await AssistantAPIClient.executeFunction({functionId: func.id, variables: {"variableName": "variableValue"}, resolve: "{ id name }");
 ```
 
 #### createFunction = input =>
