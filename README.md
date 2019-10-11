@@ -334,6 +334,8 @@ The `Function` object:
       }
     }
     isGenerated: boolean
+    functionType: string
+    graphqlOperationType: string
     outputType: string
     outputKindId: string
     outputModifiers: Array[string]
