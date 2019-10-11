@@ -162,6 +162,8 @@ getFunctions: () =>
   // Returns an array of functions in the workspace (includes boilerplate).
 getActiveGraph: () => {
   // Returns the active Graph object.
+  // Returns null if active graph is not of type 'Knowledge Graph', or if an
+  // active graph is deleted, thereby setting active graph to null.
 },
 getKnowledgeGraphs: () => {
   // Returns [Graph]
@@ -204,7 +206,6 @@ removeNode: async id => {
     // Currently returning [] in all cases.
 },
 updateNodeLayout: async (nodeId, { x, y, collapsed }) => {
-    // Returns
 },
 updateGraphLayout: async ({ offsetX, offsetY, zoom }) => {
 }
@@ -377,7 +378,7 @@ const createFunctionInput = {
   arguments:[],
   outputType: "STRING",
   graphqlOperationType:"QUERY",
-  functionType: "PROJECTION"
+  functionType: "CKG"
 }
   
 const createdFunction = await AssistantAPIClient.createFunction(createFunctionInput)
@@ -387,7 +388,7 @@ const createdFunction = await AssistantAPIClient.createFunction(createFunctionIn
 
 Input is the same for creating a function. It’s important to note that the arguments property will be replaced in it’s entirety with whatever is provided (if a value is provided.
 
-@TODO: Return value
+Returns the updated `Function` object.
 
 ```js
 const updatedFunction = await AssistantAPIClient.updateFunction(input);
@@ -474,11 +475,11 @@ const newKind = await AssistantAPIClient.createKind(kindInput)
 
 #### updateKind = input =>
 
-@TODO return value
-
 Updates a Kind based on an input object. 
 
 Update Semantics: Only properties specified will be updated. If updating the schema, the entire schema must be specified as it will be replaced in its entirety. 
+
+Returns the updated `Kind` object.
 
 ```js
 const updated = await AssistantAPIClient.updateKind(input)
@@ -566,4 +567,4 @@ This function exists on the Q-Assisant-Client only--only disableSelectionChanged
 Observing in the browser's dev tools that some resources have loaded correctly (usually the root), but other's haven't (usually nested files or chunks), is indicative of a failure of Q Gateway to proxy due to not having a 'relative' path structure.
 
 ### You are seeing post-robot `NO ACK` errors in the console.
-These errors stem from a failed acknowledgement for a call either between the client and the API or vice-versa. Ensure that your window and window.parent objects are valid and they are able to communicate with one another.
+These errors stem from a failed acknowledgement for a call either between the client and the API or vice-versa. Here, this means that the web app 'window' (the assistant) cannot communicate with, or access, the 'window.parent' (Maana K-Portal) object. Improper CORS configuration is a common culprit (also verify if using docker or nginx that your proxying and networking is configured correctly to allow communication and to accout for CORS).
