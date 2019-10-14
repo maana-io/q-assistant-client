@@ -4,12 +4,8 @@ const EventEmitter = new events.EventEmitter()
 
 // Wrapper for post-robot async client -> API call.
 const APICall = async (callName, arg)=>{
-  try{
-    const { source, origin, data } = await postRobot.send(window.parent, callName, arg)
-    return data
-  } catch (ex){
-    return ex.message
-  }
+  const { source, origin, data } = await postRobot.send(window.parent, callName, arg)
+  return data
 }
 
 // Wrapper for post-robot listener.
