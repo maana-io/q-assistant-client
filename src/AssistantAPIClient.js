@@ -179,7 +179,7 @@ class AssistantAPIClient {
   disableSelectionChangedNotification = async () =>
     APICall('disableSelectionChangedNotification')
 
-  addService = input => APICall('addService', input)
+  createService = input => APICall('createService', input)
 
   importService = id => APICall('importService', id)
 
