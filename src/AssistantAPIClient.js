@@ -44,8 +44,6 @@ class AssistantAPIClient{
     APICall('clearState')
   }
 
-  getEventEmitter = () => EventEmitter
-
   //
   // User Info
   //
@@ -76,12 +74,6 @@ class AssistantAPIClient{
   }
 
   getCurrentSelection = () => APICall('getCurrentSelection')
-
-  // Called when adding a selection event listener. 
-  enableSelectionChangedNotification = async () => APICall('enableSelectionChangedNotification')
-
-  // Called when removing a selection event listener. 
-  disableSelectionChangedNotification = async () => APICall('disableSelectionChangedNotification')
 
   //
   // Services
@@ -141,13 +133,6 @@ class AssistantAPIClient{
   //
   // Inventory
   //
-
-  // Called when adding an inventory changed event listener.
-  enableInventoryChangedNotification = async () => APICall('enableInventoryChangedNotification')
-
-  // Called when removing the last inventory changed event listener.
-  disableInventoryChangedNotification = async () => APICall('disableInventoryChangedNotification')
-
   addInventoryChangedListener = async cb => {
     this.enableInventoryChangedNotification()
     EventEmitter.addListener('inventoryChanged', cb)
@@ -165,6 +150,36 @@ class AssistantAPIClient{
       this.disableInventoryChangedNotification()
     }
   }
+
+  //
+  // Undocumented
+  //
+
+  // Called when adding an inventory changed event listener.
+  enableInventoryChangedNotification = async () =>
+  APICall('enableInventoryChangedNotification')
+
+  // Called when removing the last inventory changed event listener.
+  disableInventoryChangedNotification = async () =>
+    APICall('disableInventoryChangedNotification')
+
+  // Called when adding a selection event listener.
+  enableSelectionChangedNotification = async () =>
+    APICall('enableSelectionChangedNotification')
+
+  // Called when removing a selection event listener.
+  disableSelectionChangedNotification = async () =>
+    APICall('disableSelectionChangedNotification')
+
+  addService = input => APICall('addService', input)
+
+  importService = id => APICall('importService', id)
+
+  refreshServiceSchema = input => APICall('refreshServiceSchema', input)
+
+  reloadServiceSchema = id => APICall('reloadServiceSchema', id)
+
+  getEventEmitter = () => EventEmitter
 }
 
 // Export as singleton. 
