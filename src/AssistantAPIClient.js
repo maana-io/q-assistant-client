@@ -188,6 +188,8 @@ class AssistantAPIClient {
   reloadServiceSchema = id => APICall('reloadServiceSchema', id)
 
   getEventEmitter = () => EventEmitter
+
+  executeGraphql = input => APICall('executeGraphql', input)
 }
 
 // Export as singleton.
