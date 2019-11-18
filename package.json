@@ -1,6 +1,6 @@
 {
   "name": "@io-maana/q-assistant-client",
-  "version": "3.2.1-beta",
+  "version": "3.2.2-beta",
   "description": "JavaScript package to streamline communication between an assistant and the Maana Q Assistant API.",
   "main": "build/AssistantAPIClient.js",
   "scripts": {
