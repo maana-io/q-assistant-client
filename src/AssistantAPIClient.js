@@ -84,6 +84,8 @@ class AssistantAPIClient {
   //
   getServiceById = id => APICall('getServiceById', id)
 
+  addServices = input => APICall('addServices', input)
+
   //
   // Workspace
   //
@@ -96,7 +98,11 @@ class AssistantAPIClient {
 
   createFunction = input => APICall('createFunction', input)
 
+  createFunctions = input => APICall('createFunctions', input)
+
   updateFunction = input => APICall('updateFunction', input)
+
+  updateFunctions = input => APICall('updateFunctions', input)
 
   deleteFunction = input => APICall('deleteFunction', input)
 
@@ -132,7 +138,11 @@ class AssistantAPIClient {
   //
   createKind = input => APICall('createKind', input)
 
+  createKinds = input => APICall('createKinds', input)
+
   updateKind = input => APICall('updateKind', input)
+
+  updateKinds = input => APICall('updateKinds', input)
 
   deleteKind = input => APICall('deleteKind', input)
 
