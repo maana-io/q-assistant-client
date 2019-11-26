@@ -170,6 +170,11 @@ class AssistantAPIClient {
   }
 
   //
+  // Graphs
+  //
+  getFunctionGraph = id => APICall('getFunctionGraph', id)
+
+  //
   // Undocumented
   //
 
