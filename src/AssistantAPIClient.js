@@ -84,6 +84,16 @@ class AssistantAPIClient {
   //
   getServiceById = id => APICall('getServiceById', id)
 
+  createService = input => APICall('createService', input)
+
+  importService = id => APICall('importService', id)
+
+  importServices = input => APICall('importServices', input)
+
+  refreshServiceSchema = input => APICall('refreshServiceSchema', input)
+
+  reloadServiceSchema = id => APICall('reloadServiceSchema', id)
+
   //
   // Workspace
   //
@@ -96,7 +106,11 @@ class AssistantAPIClient {
 
   createFunction = input => APICall('createFunction', input)
 
+  createFunctions = input => APICall('createFunctions', input)
+
   updateFunction = input => APICall('updateFunction', input)
+
+  updateFunctions = input => APICall('updateFunctions', input)
 
   deleteFunction = input => APICall('deleteFunction', input)
 
@@ -132,7 +146,11 @@ class AssistantAPIClient {
   //
   createKind = input => APICall('createKind', input)
 
+  createKinds = input => APICall('createKinds', input)
+
   updateKind = input => APICall('updateKind', input)
+
+  updateKinds = input => APICall('updateKinds', input)
 
   deleteKind = input => APICall('deleteKind', input)
 
@@ -160,6 +178,11 @@ class AssistantAPIClient {
   }
 
   //
+  // Graphs
+  //
+  getFunctionGraph = id => APICall('getFunctionGraph', id)
+
+  //
   // Undocumented
   //
 
@@ -178,14 +201,6 @@ class AssistantAPIClient {
   // Called when removing a selection event listener.
   disableSelectionChangedNotification = async () =>
     APICall('disableSelectionChangedNotification')
-
-  createService = input => APICall('createService', input)
-
-  importService = id => APICall('importService', id)
-
-  refreshServiceSchema = input => APICall('refreshServiceSchema', input)
-
-  reloadServiceSchema = id => APICall('reloadServiceSchema', id)
 
   getEventEmitter = () => EventEmitter
 
