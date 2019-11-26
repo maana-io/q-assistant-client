@@ -84,11 +84,11 @@ class AssistantAPIClient {
   //
   getServiceById = id => APICall('getServiceById', id)
 
-  addServices = input => APICall('addServices', input)
-
   createService = input => APICall('createService', input)
 
   importService = id => APICall('importService', id)
+
+  importServices = input => APICall('importServices', input)
 
   refreshServiceSchema = input => APICall('refreshServiceSchema', input)
 
