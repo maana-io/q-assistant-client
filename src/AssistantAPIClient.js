@@ -86,6 +86,14 @@ class AssistantAPIClient {
 
   addServices = input => APICall('addServices', input)
 
+  createService = input => APICall('createService', input)
+
+  importService = id => APICall('importService', id)
+
+  refreshServiceSchema = input => APICall('refreshServiceSchema', input)
+
+  reloadServiceSchema = id => APICall('reloadServiceSchema', id)
+
   //
   // Workspace
   //
@@ -193,14 +201,6 @@ class AssistantAPIClient {
   // Called when removing a selection event listener.
   disableSelectionChangedNotification = async () =>
     APICall('disableSelectionChangedNotification')
-
-  createService = input => APICall('createService', input)
-
-  importService = id => APICall('importService', id)
-
-  refreshServiceSchema = input => APICall('refreshServiceSchema', input)
-
-  reloadServiceSchema = id => APICall('reloadServiceSchema', id)
 
   getEventEmitter = () => EventEmitter
 
