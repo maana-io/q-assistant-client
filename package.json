@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/maana-io/q-assistant-client#readme",
   "dependencies": {
-    "post-robot": "10.0.18"
+    "post-robot": "10.0.29"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
