@@ -38,6 +38,11 @@ class AssistantAPIClient {
     createAPIListener('inventoryChanged', async function(event) {
       EventEmitter.emit('inventoryChanged', event.data)
     })
+
+    // Attach render mode event emitter to API listener.
+    createAPIListener('renderModeChanged', async function(event) {
+      EventEmitter.emit('renderModeChanged', event.data)
+    })
   }
 
   //
@@ -155,6 +160,22 @@ class AssistantAPIClient {
   // Graphs
   //
   getFunctionGraph = id => APICall('getFunctionGraph', id)
+
+  //
+  // Render Mode
+  //
+  addRenderModeChangedListener = async cb => {
+    EventEmitter.addListener('renderModeChanged', cb)
+  }
+
+  removeRenderModeChangedListener = async cb => {
+    // If the callback is not provided, then remove all of the listeners.
+    if (cb) {
+      EventEmitter.removeListener('renderModeChanged', cb)
+    } else {
+      EventEmitter.removeAllListeners('renderModeChanged')
+    }
+  }
 
   //
   // Undocumented
