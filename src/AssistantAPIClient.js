@@ -49,7 +49,7 @@ class AssistantAPIClient {
       // Only create a promise or call the event if there's a subscriber.
       if(EventEmitter._events.onClone){
         // Manually invoke event to get promise.
-        let promise = EventEmitter._events.onClone();
+        let promise = EventEmitter._events.onClone()
         return promise
       }
     })
