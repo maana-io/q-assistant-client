@@ -97,7 +97,40 @@ class AssistantAPIClient {
   //
   // Workspace
   //
-  getWorkspace = () => APICall('getWorkspace')
+
+  /**
+   * Returns the requested Workspace, if no Workspace ID is specified it returns
+   * the Workspace that the user is currently using.
+   *
+   * @param {string} id The ID of the Workspace to load. (optional)
+   * @return {Workspace} The requested Workspace.
+   */
+  getWorkspace(id) {
+    APICall('getWorkspace', id)
+  }
+
+  /**
+   * Returns a list of user accessible Workspaces.  By default it will just be
+   * the user owned Workspaces, but can be configured to also return all the
+   * public workspaces.
+   *
+   * @param {boolean} includePublic When true the returned list includes public Workspaces.
+   * @return {Array<Workspace>} The list of Workspaces.
+   */
+  getUserAccessibleWorkspaces(includePublic = false) {
+    APICall('getUserAccessibleWorkspaces', includePublic)
+  }
+
+  /**
+   * Creates a new Workspace.  The id, name, and serviceId can optionally be
+   * set, or they can be left undefined to use the defaults.
+   *
+   * @param {Object} workspace The Workspace information, can container {id, name, serviceId}
+   * @return {Workspace} The new Workspace.
+   */
+  createWorkspace(workspace) {
+    APICall('createWorkspace', workspace)
+  }
 
   //
   // Functions
@@ -175,6 +208,24 @@ class AssistantAPIClient {
     if (EventEmitter.listenerCount('inventoryChanged') === 0) {
       this.disableInventoryChangedNotification()
     }
+  }
+
+  /**
+   * Moves a collection of Kinds and Functions from the origin Workspace to the
+   * target Workspace.
+   *
+   * @param {string} originId The ID of the origin Workspace.
+   * @param {string} targetId The ID of the target Workspace.
+   * @param {Array<string>} kinds An array of the IDs of the kinds to move.
+   * @param {Array<string?} functions An array of the IDs of the functions to move.
+   */
+  moveKindsAndFunctions(originId, targetId, kindIds, functionIds) {
+    APICall('moveKindsAndFunctions', {
+      originId,
+      targetId,
+      kindIds,
+      functionIds
+    })
   }
 
   //
