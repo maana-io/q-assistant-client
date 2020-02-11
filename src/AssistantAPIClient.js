@@ -117,8 +117,8 @@ class AssistantAPIClient {
    * @param {boolean} includePublic When true the returned list includes public Workspaces.
    * @return {Array<Workspace>} The list of Workspaces.
    */
-  userAccessibleWorkspaces(includePublic = false) {
-    APICall('userAccessibleWorkspaces', includePublic)
+  getUserAccessibleWorkspaces(includePublic = false) {
+    APICall('getUserAccessibleWorkspaces', includePublic)
   }
 
   /**
