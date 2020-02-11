@@ -126,6 +126,7 @@ class AssistantAPIClient {
    * set, or they can be left undefined to use the defaults.
    *
    * @param {Object} workspace The Workspace information, can container {id, name, serviceId}
+   * @return {Workspace} The new Workspace.
    */
   createWorkspace(workspace) {
     APICall('createWorkspace', workspace)
