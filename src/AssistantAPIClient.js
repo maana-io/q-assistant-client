@@ -106,7 +106,7 @@ class AssistantAPIClient {
    * @return {Workspace} The requested Workspace.
    */
   getWorkspace(id) {
-    APICall('getWorkspace', id)
+    return APICall('getWorkspace', id)
   }
 
   /**
@@ -118,7 +118,7 @@ class AssistantAPIClient {
    * @return {Array<Workspace>} The list of Workspaces.
    */
   getUserAccessibleWorkspaces(includePublic = false) {
-    APICall('getUserAccessibleWorkspaces', includePublic)
+    return APICall('getUserAccessibleWorkspaces', includePublic)
   }
 
   /**
@@ -129,7 +129,7 @@ class AssistantAPIClient {
    * @return {Workspace} The new Workspace.
    */
   createWorkspace(workspace) {
-    APICall('createWorkspace', workspace)
+    return APICall('createWorkspace', workspace)
   }
 
   //
