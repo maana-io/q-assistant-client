@@ -44,12 +44,12 @@ class AssistantAPIClient {
       EventEmitter.emit('renderModeChanged', event.data)
     })
 
-    // Attch clone listener.
-    createAPIListener('onClone', async function(event){
+    // Attch repair listener.
+    createAPIListener('onRepair', async function(event){
       // Only create a promise or call the event if there's a subscriber.
-      if(EventEmitter._events.onClone){
+      if(EventEmitter._events.onRepair){
         // Manually invoke event to get promise.
-        let promise = EventEmitter._events.onClone()
+        let promise = EventEmitter._events.onRepair()
         return promise
       }
     })
@@ -188,18 +188,18 @@ class AssistantAPIClient {
   }
 
   //
-  // Clone
+  // Repair
   //
-  addOnCloneListener = async (cb) => {
-    EventEmitter.addListener('onClone', cb)
+  addOnRepairListener = async (cb) => {
+    EventEmitter.addListener('onRepair', cb)
   }
 
-  removeOnCloneListener = async (cb) => {
+  removeOnRepairListener = async (cb) => {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
-      EventEmitter.removeListener('onClone', cb)
+      EventEmitter.removeListener('onRepair', cb)
     } else {
-      EventEmitter.removeAllListeners('onClone')
+      EventEmitter.removeAllListeners('onRepair')
     }
   }
 
