@@ -216,11 +216,11 @@ class AssistantAPIClient {
    *
    * @param {string} originId The ID of the origin Workspace.
    * @param {string} targetId The ID of the target Workspace.
-   * @param {Array<string>} kinds An array of the IDs of the kinds to move.
-   * @param {Array<string?} functions An array of the IDs of the functions to move.
+   * @param {Array<string>} kindIds An array of the IDs of the kinds to move.
+   * @param {Array<string>} functionIds An array of the IDs of the functions to move.
    */
   moveKindsAndFunctions(originId, targetId, kindIds, functionIds) {
-    APICall('moveKindsAndFunctions', {
+    return APICall('moveKindsAndFunctions', {
       originId,
       targetId,
       kindIds,
