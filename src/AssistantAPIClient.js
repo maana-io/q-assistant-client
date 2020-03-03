@@ -38,6 +38,21 @@ class AssistantAPIClient {
     createAPIListener('inventoryChanged', async function(event) {
       EventEmitter.emit('inventoryChanged', event.data)
     })
+
+    // Attach render mode event emitter to API listener.
+    createAPIListener('renderModeChanged', async function(event) {
+      EventEmitter.emit('renderModeChanged', event.data)
+    })
+
+    // Attch repair listener.
+    createAPIListener('onRepair', async function(event){
+      // Only create a promise or call the event if there's a subscriber.
+      if(EventEmitter._events.onRepair){
+        // Manually invoke event to get promise.
+        let promise = EventEmitter._events.onRepair()
+        return promise
+      }
+    })
   }
 
   //
@@ -45,7 +60,6 @@ class AssistantAPIClient {
   //
   clearState = () => {
     EventEmitter.removeAllListeners()
-    APICall('clearState')
   }
 
   //
@@ -57,10 +71,6 @@ class AssistantAPIClient {
   // Selection
   //
   addSelectionChangedListener = async cb => {
-    // Implicitly enable selection notifications from the API.
-    this.enableSelectionChangedNotification()
-
-    // Add listener now that notifications are enabled.
     EventEmitter.addListener('selectionChanged', cb)
   }
 
@@ -70,10 +80,6 @@ class AssistantAPIClient {
       EventEmitter.removeListener('selectionChanged', cb)
     } else {
       EventEmitter.removeAllListeners('selectionChanged')
-    }
-    // After removing the callback, determine if the noticiations should be implicitly disabled.
-    if (EventEmitter.listenerCount('selectionChanged') === 0) {
-      this.disableSelectionChangedNotification()
     }
   }
 
@@ -150,27 +156,15 @@ class AssistantAPIClient {
   getFunctionById = id => APICall('getFunctionById', id)
 
   addFunctionExecutionListener = async (id, cb) => {
-    if (await APICall('addFunctionExecutionListener', id)) {
-      EventEmitter.addListener(`function:${id}`, cb)
-    } else {
-      throw new Error(
-        'Assistant Client Error: Failed to attach event listener.'
-      )
-    }
+    EventEmitter.addListener(`function:${id}`, cb)
   }
 
   removeFunctionExecutionListener = async (id, cb) => {
-    if (await APICall('removeFunctionExecutionListener', id)) {
-      // If the callback is not provided, then remove all of the listeners.
-      if (cb) {
-        EventEmitter.removeListener(`function:${id}`, cb)
-      } else {
-        EventEmitter.removeAllListeners(`function:${id}`)
-      }
+    // If the callback is not provided, then remove all of the listeners.
+    if (cb) {
+      EventEmitter.removeListener(`function:${id}`, cb)
     } else {
-      throw new Error(
-        'Assistant Client Error: Failed to remove event listener.'
-      )
+      EventEmitter.removeAllListeners(`function:${id}`)
     }
   }
 
@@ -193,7 +187,6 @@ class AssistantAPIClient {
   // Inventory
   //
   addInventoryChangedListener = async cb => {
-    this.enableInventoryChangedNotification()
     EventEmitter.addListener('inventoryChanged', cb)
   }
 
@@ -203,10 +196,6 @@ class AssistantAPIClient {
       EventEmitter.removeListener('inventoryChanged', cb)
     } else {
       EventEmitter.removeAllListeners('inventoryChanged')
-    }
-    // After removing the callback, determine if the notifications should be implicitly disabled.
-    if (EventEmitter.listenerCount('inventoryChanged') === 0) {
-      this.disableInventoryChangedNotification()
     }
   }
 
@@ -234,24 +223,40 @@ class AssistantAPIClient {
   getFunctionGraph = id => APICall('getFunctionGraph', id)
 
   //
+  // Render Mode
+  //
+  addRenderModeChangedListener = async cb => {
+    EventEmitter.addListener('renderModeChanged', cb)
+  }
+
+  removeRenderModeChangedListener = async cb => {
+    // If the callback is not provided, then remove all of the listeners.
+    if (cb) {
+      EventEmitter.removeListener('renderModeChanged', cb)
+    } else {
+      EventEmitter.removeAllListeners('renderModeChanged')
+    }
+  }
+
+  //
+  // Repair
+  //
+  addOnRepairListener = async (cb) => {
+    EventEmitter.addListener('onRepair', cb)
+  }
+
+  removeOnRepairListener = async (cb) => {
+    // If the callback is not provided, then remove all of the listeners.
+    if (cb) {
+      EventEmitter.removeListener('onRepair', cb)
+    } else {
+      EventEmitter.removeAllListeners('onRepair')
+    }
+  }
+
+  //
   // Undocumented
   //
-
-  // Called when adding an inventory changed event listener.
-  enableInventoryChangedNotification = async () =>
-    APICall('enableInventoryChangedNotification')
-
-  // Called when removing the last inventory changed event listener.
-  disableInventoryChangedNotification = async () =>
-    APICall('disableInventoryChangedNotification')
-
-  // Called when adding a selection event listener.
-  enableSelectionChangedNotification = async () =>
-    APICall('enableSelectionChangedNotification')
-
-  // Called when removing a selection event listener.
-  disableSelectionChangedNotification = async () =>
-    APICall('disableSelectionChangedNotification')
 
   getEventEmitter = () => EventEmitter
 
