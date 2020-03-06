@@ -155,6 +155,8 @@ class AssistantAPIClient {
 
   getFunctionById = id => APICall('getFunctionById', id)
 
+  getFunctionsById = ids => APICall('getFunctionsById', ids)
+
   addFunctionExecutionListener = async (id, cb) => {
     EventEmitter.addListener(`function:${id}`, cb)
   }
@@ -182,6 +184,8 @@ class AssistantAPIClient {
   deleteKind = input => APICall('deleteKind', input)
 
   getKindById = id => APICall('getKindById', id)
+
+  getKindsById = ids => APICall('getKindsById', ids)
 
   //
   // Inventory
