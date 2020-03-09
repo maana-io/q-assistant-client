@@ -45,11 +45,11 @@ class AssistantAPIClient {
     })
 
     // Attch repair listener.
-    createAPIListener('onRepair', async function(event){
+    createAPIListener('repair', async function(event) {
       // Only create a promise or call the event if there's a subscriber.
-      if(EventEmitter._events.onRepair){
+      if (EventEmitter._events.repair) {
         // Manually invoke event to get promise.
-        let promise = EventEmitter._events.onRepair()
+        let promise = EventEmitter._events.repair(event.data)
         return promise
       }
     })
@@ -245,16 +245,16 @@ class AssistantAPIClient {
   //
   // Repair
   //
-  addOnRepairListener = async (cb) => {
-    EventEmitter.addListener('onRepair', cb)
+  addRepairListener = async cb => {
+    EventEmitter.addListener('repair', cb)
   }
 
-  removeOnRepairListener = async (cb) => {
+  removeRepairListener = async cb => {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
-      EventEmitter.removeListener('onRepair', cb)
+      EventEmitter.removeListener('repair', cb)
     } else {
-      EventEmitter.removeAllListeners('onRepair')
+      EventEmitter.removeAllListeners('repair')
     }
   }
 
