@@ -242,6 +242,8 @@ class AssistantAPIClient {
     }
   }
 
+  getRenderMode = () => APICall('getRenderMode')
+
   //
   // Repair
   //
