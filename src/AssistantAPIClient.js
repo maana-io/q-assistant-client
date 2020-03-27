@@ -44,7 +44,7 @@ class AssistantAPIClient {
       EventEmitter.emit('renderModeChanged', event.data)
     })
 
-    // Attch repair listener.
+    // Attach repair listener.
     createAPIListener('repair', async function(event) {
       // Only create a promise or call the event if there's a subscriber.
       if (EventEmitter._events.repair) {
@@ -219,6 +219,21 @@ class AssistantAPIClient {
       kindIds,
       functionIds
     })
+  }
+
+  /**
+   * Keeps the Inventory Changed Event from being triggered.
+   */
+  pauseInventoryChangedEvent() {
+    return APICall('pauseInventoryChangedEvent')
+  }
+
+  /**
+   * Starts up triggering the Inventory Changed Event, and will trigger any
+   * changes that happened while it was paused.
+   */
+  resumeInventoryChangedEvent() {
+    return APICall('resumeInventoryChangedEvent')
   }
 
   //
