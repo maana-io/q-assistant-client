@@ -56,6 +56,19 @@ class AssistantAPIClient {
   }
 
   //
+  // Assistant State
+  //
+
+  /**
+   * Updates the current state of the Assistant.
+   *
+   * @param {AssistantState} state The new state of the assistant.
+   */
+  setAssistantState(state) {
+    return APICall('setAssistantState', state)
+  }
+
+  //
   // State management
   //
   clearState = () => {
@@ -219,21 +232,6 @@ class AssistantAPIClient {
       kindIds,
       functionIds
     })
-  }
-
-  /**
-   * Keeps the Inventory Changed Event from being triggered.
-   */
-  pauseInventoryChangedEvent() {
-    return APICall('pauseInventoryChangedEvent')
-  }
-
-  /**
-   * Starts up triggering the Inventory Changed Event, and will trigger any
-   * changes that happened while it was paused.
-   */
-  resumeInventoryChangedEvent() {
-    return APICall('resumeInventoryChangedEvent')
   }
 
   //
