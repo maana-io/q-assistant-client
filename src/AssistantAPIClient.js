@@ -44,7 +44,7 @@ class AssistantAPIClient {
       EventEmitter.emit('renderModeChanged', event.data)
     })
 
-    // Attch repair listener.
+    // Attach repair listener.
     createAPIListener('repair', async function(event) {
       // Only create a promise or call the event if there's a subscriber.
       if (EventEmitter._events.repair) {
@@ -53,6 +53,19 @@ class AssistantAPIClient {
         return promise
       }
     })
+  }
+
+  //
+  // Assistant State
+  //
+
+  /**
+   * Updates the current state of the Assistant.
+   *
+   * @param {AssistantState} state The new state of the assistant.
+   */
+  setAssistantState(state) {
+    return APICall('setAssistantState', state)
   }
 
   //
