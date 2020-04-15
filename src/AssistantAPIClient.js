@@ -46,12 +46,7 @@ class AssistantAPIClient {
 
     // Attach repair listener.
     createAPIListener('repair', async function(event) {
-      // Only create a promise or call the event if there's a subscriber.
-      if (EventEmitter._events.repair) {
-        // Manually invoke event to get promise.
-        let promise = EventEmitter._events.repair(event.data)
-        return promise
-      }
+      EventEmitter.emit('repair',event.data)
     })
   }
 
@@ -272,6 +267,11 @@ class AssistantAPIClient {
       EventEmitter.removeAllListeners('repair')
     }
   }
+
+  //
+  // Errors
+  //
+  reportError = error => APICall('reportError', error)
 
   //
   // Undocumented
