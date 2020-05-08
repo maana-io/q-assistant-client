@@ -195,6 +195,8 @@ class AssistantAPIClient {
 
   getKindsById = ids => APICall('getKindsById', ids)
 
+  getAllReferencedKinds = input => APICall('getAllReferencedKinds', input)
+
   //
   // Inventory
   //
