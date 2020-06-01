@@ -43,6 +43,94 @@ Post-robot is used to provide a richer communication layer atop post-message.
 
 ## API Documentation
 
+### Assistant Render Mode
+An assistant's render mode refers to whether it is being displayed in a visible manner to the user. As of v3.2.2, assistants are not closed when they are out of view.
+All assistants will be loaded and kept in `BACKGROUND` render mode until they are 
+placed in the assistant panel, at which point the `DISPLAY` render mode event will be fired. 
+
+Note: Assistants will receive all notifications/events while in BACKGROUND mode.
+
+Design Consideration: It will be up to the developer to determine how state and resource use will be managed while an assistant is operating between BACKGROUND and DISPLAY modes.
+
+#### addRenderModeChangedListener = (cb) =>
+v3.2.2
+A listener to receive push events as to the assitant's render mode being changed. 
+
+```js
+function handleRenderModeChanged(renderMode){
+  if (renderMode === 'DISPLAY'){
+  // Assistant is visible
+  } else {
+    // Assistant is not visible and running in background.
+  }
+}
+
+AssistantAPIClient.addRenderModeChangedListener(handleRenderModeChanged)
+
+```
+
+#### getRenderMode = () =>
+v3.2.2
+Returns the current assistant render mode.
+
+```js
+const renderMode = await AssistantAPIClient.getRenderMode()
+
+if (renderMode === 'DISPLAY'){
+  // Assistant is visible
+} else {
+  // Assistant is not visible and running in background.
+}
+
+```
+
+### Repair
+Assistants may get into situations where they are either out of sync with the Maana Q UI, or in a failure state. Assistants should be able to recover from these states. 
+
+The repair event functionality added in v3.2.2 is designed to notify the assistant that it must repair itself. This could mean a resync with its resources on the workspace or externally or, for some assistants, nothing at all. 
+
+When is repair triggered? 
+Either manually by a user clicking 'repair workspace' under the
+assistant inventory panel, or upon a workspace clone event. An assistant will be expected to handle either scenario. 
+
+Performance Consideration: 
+For some assistants, repair might involve 'introspecting' 
+and processing the current workspace or Q system resources. This could be very resource intensive. Make sure you review this API guide to have an idea of what tools are
+available to get the best results. It's always a good idea to check performance of repair on a large workspace and ensure necessary optimizations have been made. 
+
+Design Consideration: 
+Make your workflows modular enough to be reused between repair and normal usage if possible. 
+
+#### addRepairListener (cb) =>
+```js
+
+AssistantAPIClient.addRepairListener(()=>{
+  // Self-heal
+})
+
+```
+
+Recommended Usage: A repair process should be wrapped in the try/catch/finally flow shown in the `setAssistantState` API call to provide the user assistant-state and error updates as well as pause `inventoryChanged` notifications during repair (if the assistant has subscribed).
+
+### User-facing Error Handling
+
+#### reportError (error) =>
+v3.2.2
+Reports an error to the UI to be displayed in the assistant's error log in the 
+inventory panel. This call is not disruptive and designed to operated independently of other assistant operations, such as state management. See `setAssistantState` in the next section.
+
+Recommended usage: use this functionality where it would futher the user experience
+to show the user an error and it's cause. Do not use this where things will be retried, 
+cleaned up automatically, or are not relevant to the user. 
+
+```js
+try{
+  // Do work
+} catch(e) {
+  AssistantAPIClient.reportError(e)
+}
+```
+
 ### State management
 
 #### clearState = () =>
@@ -54,6 +142,65 @@ Specifically, this will clear selection and inventory changed event listeners.
 ```js
 await AssistantAPIClient.clearState()
 ```
+
+#### setAssistantState = (state) =>
+v3.2.2
+This sets the current state of the assistant using the 
+`AssistantState` enum. Setting a state of `WORKING` will 
+create the 'working' status spinner in the Assistant 
+Inventory Panel in the Maana Q UI. Conversely, setting an `IDLE` state will 
+remove the spinner. This adds to user experience by informing users of the 
+status of operations.
+
+```js
+import {
+  default as AssistantAPIClient,
+  AssistantState
+} from '@io-maana/q-assistant-client'
+
+...
+
+AssistantAPIClient.setAssistantState(AssistantState.WORKING)
+
+...
+
+AssistantAPIClient.setAssistantState(AssistantState.IDLE)
+
+```
+UI User Prompt: If the assistant is in a `WORKING` state, the Maana Q UI will
+warn the user before leaving the workspace. 
+
+NOTE: while an assistant is in a working state, it will
+not receive `inventoryChanged` events--an aggregated inventory diff
+will be sent once the assistant is set back to `IDLE`.
+
+Recommended usage: Control states at a high level using try/catch/finally
+flow incorporating the `reportError` API call.
+
+```js
+try{
+  AssistantAPIClient.setAssistantState(AssistantState.WORKING)
+  // Do work, await high-level tasks, etc.
+} catch(e) {
+  AssistantAPIClient.reportError(e)
+} finally{
+  AssistantAPIClient.setAssistantState(AssistantState.IDLE)
+}
+```
+
+#### AssistantState (enum)
+v3.2.2
+Contains the valid assistant states: `IDLE` or `WORKING`.
+
+Must be imported in addition to the AssistantAPIClient:
+
+```js
+import {
+  default as AssistantAPIClient,
+  AssistantState
+} from '@io-maana/q-assistant-client'
+```
+
 
 ### User Info
 The `UserInfo` object:
