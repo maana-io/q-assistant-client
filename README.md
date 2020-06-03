@@ -66,10 +66,10 @@ client in v3.2.2, and IS deprecated in the API:
 
 The following surface area WILL BE removed from
 the client in v3.2.4, and WILL BE deprecated in the API:
--AssistantAPIClient.updateFunction
--AssistantAPIClient.deleteFunction
--AssistantAPIClient.updateKind
--AssistantAPIClient.deleteKind
+-AssistantAPIClient.updateFunction (expected move to Workspace object)
+-AssistantAPIClient.updateKind (expected move to Workspace object)
+-AssistantAPIClient.deleteKind (expected move to Workspace object)
+-AssistantAPIClient.deleteFunction (expected move to Workspace object)
 
 ## API Documentation
 
@@ -320,6 +320,46 @@ This will return a service that exists within the scope of the workspace.
 const svc = await AssistantAPIClient.getServiceById(id)
 ```
 
+#### createService = id => 
+Creates a service in Q.
+
+Note: This will create the service, but does NOT import it into the workspace.
+You will need to use `importService` on the Workspace object to import it.
+Returns a promise that resolves
+
+```js
+    const service = {
+      id: ...,
+      name: ...,
+      endpointUrl: ...,
+      serviceType: ...
+    }
+    
+    await AssistantAPIClient.createService(service)
+```
+
+#### deleteService = id =>
+Deletes a service from Q.
+
+```js
+    await AssistantAPIClient.deleteService(id)
+```
+
+#### refreshServiceSchema = id =>
+Refreshes a service by fetching its schema. This will also
+reload the service inventory in the currently visible workspace.
+
+```js
+await AssistantAPIClient.refreshServiceSchema("id")
+```
+
+#### reloadService = id =>
+Reloads a service in the inventory in the currently visible workspace.
+
+```js
+await AssistantAPIClient.reloadService("id")
+```
+
 ### Workspace
 
 #### getWorkspace = () =>
@@ -368,26 +408,14 @@ The `Workspace` object:
       // been imported into the workspace.
       // No assistant services will be returned.
     },
-    // TODO check shape of data returned
     getImportedAssistants: async () => {
       // Returns a list of imported assistants.
-    },
-    deleteService: async serviceId => {
-      // Deletes a service.
-      // This is different than 'removeService'
     },
     importService: serviceId => {
       // Imports a service by it's ID. 
     },
     importServices: serviceIds => {
       // Imports services by their IDs.
-    },
-    refreshServiceSchema: serviceId => {
-      // Refreshes the service schema and reloads the service in inventory. 
-    },
-    reloadServiceSchema: serviceIds => {
-      // Reloads the service in inventory to reflect any changes.
-      // This will not cause changes, only show them.
     },
     removeServices: serviceIds => {
       // Removes a list of services from the workspace.
