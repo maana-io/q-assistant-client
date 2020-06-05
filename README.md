@@ -48,28 +48,30 @@ track the releases of the Maana Q platform.
 
 ## Changes in v3.2.2
 Improvements in v3.2.2
--Assistant State Management: WORKING, IDLE
--Background Messaging/Eventing
--Render Modes: BACKGROUND, DISPLAY
--Expansion of Workspace object capabilities
--Error Reporting
--Repair Event
--Plural versions of calls such as updateKind(s) to improve performance
-and developer experience. 
+- Assistant State Management: WORKING, IDLE
+- Background Messaging/Eventing
+- Render Modes: BACKGROUND, DISPLAY
+- Expansion of Workspace object capabilities
+- Error Reporting
+- Repair Event
+- Plural versions of calls such as updateKind(s) to improve performance and developer experience.
+- InventoryChanged diffing is fully granular in v3.2.2--limitations
+in v3.2.1 only fired the Function diff for changes in Function name.
 
+### Deprecation
 The following surface area IS removed from the 
 client in v3.2.2, and IS deprecated in the API:
--AssistantAPIClient.enableSelectionChangedNotification
--AssistantAPIClient.disableSelectionChangedNotification
--AssistantAPIClient.enableInventoryChangedNotification
--AssistantAPIClient.disableInventoryChangedNotification
+- AssistantAPIClient.enableSelectionChangedNotification
+- AssistantAPIClient.disableSelectionChangedNotification
+- AssistantAPIClient.enableInventoryChangedNotification
+- AssistantAPIClient.disableInventoryChangedNotification
 
 The following surface area WILL BE removed from
 the client in v3.2.4, and WILL BE deprecated in the API:
--AssistantAPIClient.updateFunction (expected move to Workspace object)
--AssistantAPIClient.updateKind (expected move to Workspace object)
--AssistantAPIClient.deleteKind (expected move to Workspace object)
--AssistantAPIClient.deleteFunction (expected move to Workspace object)
+- AssistantAPIClient.updateFunction (expected move to Workspace object)
+- AssistantAPIClient.updateKind (expected move to Workspace object)
+- AssistantAPIClient.deleteKind (expected move to Workspace object)
+- AssistantAPIClient.deleteFunction (expected move to Workspace object)
 
 ## API Documentation
 
@@ -858,8 +860,6 @@ The `DiffItem` object:
 
 #### addInventoryChangedListener = async cb =>
 Registers a callback function with the inventory changed event. When workspace inventory changes the callback function will be called with the InventoryChangedobject. Returns undefined.
-
-*Current limitations: Kind and Function updates only occur where the name property is changed. Updates to services outside of the workspace will not be detected. 
 
 **Use-case note: an ‘update’ diff for inventory services is unlikely in general usage. 
 
