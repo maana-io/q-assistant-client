@@ -2,7 +2,12 @@ const presets = [
   [
     '@babel/env',
     {
-      targets: ['>0.2%', 'not dead', 'not ie <= 10', 'not op_mini all'],
+      targets: [
+        "last 3 chrome version",
+        "last 3 firefox version",
+        "last 3 safari version",
+        "last 3 edge version"
+      ],
       useBuiltIns: 'usage',
       corejs: '3'
     }

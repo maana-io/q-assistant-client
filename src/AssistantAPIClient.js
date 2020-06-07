@@ -96,7 +96,11 @@ class AssistantAPIClient {
   //
   // Services
   //
-  getServiceById = id => APICall('getServiceById', id)
+
+  /**
+   * @param {string} id Service Id
+   */
+  getServiceById = (id) => APICall('getServiceById', id)
 
   createService = input => APICall('createService', input)
 

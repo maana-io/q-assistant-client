@@ -7,7 +7,10 @@
     "./": "./build/"
   },
   "scripts": {
-    "build": "babel src --out-dir build",
+    "build": "npm run build:js && npm run build:tsd",
+    "build:js": "babel src --out-dir build",
+    "build:tsd": "tsc --build tsconfig.json",
+    "clean": "rimraf build",
     "prepack": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"src/**/*.js\""
@@ -35,6 +38,8 @@
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
-    "prettier": "1.19.1"
+    "prettier": "1.19.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.9.5"
   }
 }
