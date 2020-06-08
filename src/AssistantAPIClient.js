@@ -46,7 +46,7 @@ class AssistantAPIClient {
 
     // Attach repair listener.
     createAPIListener('repair', async function(event) {
-      EventEmitter.emit('repair',event.data)
+      EventEmitter.emit('repair', event.data)
     })
   }
 
@@ -100,7 +100,7 @@ class AssistantAPIClient {
   /**
    * @param {string} id Service Id
    */
-  getServiceById = (id) => APICall('getServiceById', id)
+  getServiceById = id => APICall('getServiceById', id)
 
   createService = input => APICall('createService', input)
 
