@@ -1,4 +1,2 @@
-import AssistantAPIClient from './AssistantAPIClient'
-export default AssistantAPIClient
-
+export {default} from './AssistantAPIClient'
 export * from './AssistantState'
