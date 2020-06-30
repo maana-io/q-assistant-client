@@ -48,6 +48,11 @@ class AssistantAPIClient {
     createAPIListener('repair', async function(event) {
       EventEmitter.emit('repair',event.data)
     })
+
+    // Attach locking changed listener.
+    createAPIListener('lockingChanged', async function(event) {
+      EventEmitter.emit('lockingChanged',event.data)
+    })
   }
 
   //
@@ -265,6 +270,12 @@ class AssistantAPIClient {
   //
   reportError = error => APICall('reportError', error)
 
+  //
+  // Locking
+  //
+  addLockingChangedListener = async cb => {
+    EventEmitter.addListener('lockingChanged', cb)
+  }
   //
   // Undocumented
   //
