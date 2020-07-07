@@ -2,6 +2,11 @@ import postRobot from 'post-robot'
 const events = require('events')
 const EventEmitter = new events.EventEmitter()
 
+// The collection of event types used in the API
+const EventTypes = Object.freeze({
+  LOCKING_CHANGED: 'lockingChanged'
+})
+
 // Wrapper for post-robot async client -> API call.
 const APICall = async (callName, arg) => {
   const { source, origin, data } = await postRobot.send(
@@ -46,12 +51,12 @@ class AssistantAPIClient {
 
     // Attach repair listener.
     createAPIListener('repair', async function(event) {
-      EventEmitter.emit('repair',event.data)
+      EventEmitter.emit('repair', event.data)
     })
 
     // Attach locking changed listener.
-    createAPIListener('lockingChanged', async function(event) {
-      EventEmitter.emit('lockingChanged',event.data)
+    createAPIListener(EventTypes.LOCKING_CHANGED, async function(event) {
+      EventEmitter.emit(EventTypes.LOCKING_CHANGED, event.data)
     })
   }
 
@@ -273,9 +278,34 @@ class AssistantAPIClient {
   //
   // Locking
   //
-  addLockingChangedListener = async cb => {
-    EventEmitter.addListener('lockingChanged', cb)
+
+  /**
+   * Adds a callback function to be called every time the locking changed event
+   * is triggered.
+   *
+   * @param {Function} cb The callback function to call
+   */
+  addLockingChangedListener(cb) {
+    EventEmitter.addListener(EventTypes.LOCKING_CHANGED, cb)
   }
+
+  /**
+   * Removes a callback function from the list be called every time the locking
+   * changed event is triggered.  If no callback is passed in, then all
+   * listeners are removed for the locking changed event.
+   *
+   *
+   * @param {Function|undefined} cb The callback function to remove
+   */
+  removedLockingChangedListener(cb) {
+    // If the callback is not provided, then remove all of the listeners.
+    if (cb) {
+      EventEmitter.removeListener(EventTypes.LOCKING_CHANGED, cb)
+    } else {
+      EventEmitter.removeAllListeners(EventTypes.LOCKING_CHANGED)
+    }
+  }
+
   //
   // Undocumented
   //
