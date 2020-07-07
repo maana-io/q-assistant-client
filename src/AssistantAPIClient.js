@@ -297,7 +297,7 @@ class AssistantAPIClient {
    *
    * @param {Function|undefined} cb The callback function to remove
    */
-  removedLockingChangedListener(cb) {
+  removeLockingChangedListener(cb) {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       EventEmitter.removeListener(EventTypes.LOCKING_CHANGED, cb)
