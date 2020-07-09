@@ -390,8 +390,8 @@ The `Workspace` object:
     // Locking information
     //
     async lockedBy() {
-      // Returns the e-mail of the user who locked the Workspace, or null if the
-      // Workspace is not currently locked.
+      // Returns the e-mail address of the user who locked the Workspace, or
+      // null if the Workspace is not currently locked.
     }
     async canEdit() {
       // Returns `true` when the Workspace is not locked, or the current user
@@ -530,8 +530,8 @@ The `Graph` object:
   // Locking information
   //
   async lockedBy() {
-    // Returns the e-mail of the user who locked the Graph, or null if the Graph
-    // is not currently locked.
+    // Returns the e-mail address of the user who locked the Graph, or null if
+    // the Graph is not currently locked.
   }
   async canEdit() {
     // Returns `true` when the Graph is not locked, or the current user owns the
@@ -682,8 +682,8 @@ The `Function` object:
     // Locking information
     //
     async lockedBy() {
-      // Returns the e-mail of the user who locked the Function, or null if the
-      // Function is not currently locked.
+      // Returns the e-mail address of the user who locked the Function, or null
+      // if the Function is not currently locked.
     }
     async canEdit() {
       // Returns `true` when the Function is not locked, or the current user
@@ -985,13 +985,13 @@ active Workspace or its Knowledge Graphs and Functions change the callback
 function will be called with the `LockingChanged` object. Returns undefined.
 
 ```js
-const lockingChangedCB = ({locks}) => {
-  if(locks.workspace) console.log('WORKSPACES CHANGED',locks.workspace)
-  if(locks.knowledgeGraphs) console.log('KNOWLEDGE GRAPHS CHANGED',locks.knowledgeGraphs)
-  if(locks.functions) console.log('FUNCTIONS CHANGED', locks.functions)
+const lockingChangedCB = ({ locks }) => {
+  if(locks.workspace) console.log('WORKSPACES CHANGED', locks.workspace);
+  if(locks.knowledgeGraphs) console.log('KNOWLEDGE GRAPHS CHANGED', locks.knowledgeGraphs);
+  if(locks.functions) console.log('FUNCTIONS CHANGED', locks.functions);
 }
 
-AssistantAPIClient.addLockingChangedListener(lockingChangedCB)
+AssistantAPIClient.addLockingChangedListener(lockingChangedCB);
 ```
 
 #### removeLockingChangedListener = cb =>
