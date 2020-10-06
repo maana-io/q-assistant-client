@@ -124,8 +124,9 @@ class AssistantAPIClient {
    * Returns the requested Workspace, if no Workspace ID is specified it returns
    * the Workspace that the user is currently using.
    *
-   * @param {string} id The ID of the Workspace to load. (optional)
-   * @return {Workspace} The requested Workspace.
+   * @param {string} [id] The ID of the Workspace to load.
+   *
+   * @return {Promise<Workspace>} The requested Workspace.
    */
   getWorkspace(id) {
     return APICall('getWorkspace', id)
@@ -136,8 +137,9 @@ class AssistantAPIClient {
    * the user owned Workspaces, but can be configured to also return all the
    * public workspaces.
    *
-   * @param {boolean} includePublic When true the returned list includes public Workspaces.
-   * @return {Array<Workspace>} The list of Workspaces.
+   * @param {boolean} [includePublic=false] When true the returned list includes public Workspaces.
+   *
+   * @return {Promise<Array<Workspace>>} The list of Workspaces.
    */
   getUserAccessibleWorkspaces(includePublic = false) {
     return APICall('getUserAccessibleWorkspaces', includePublic)
@@ -147,8 +149,8 @@ class AssistantAPIClient {
    * Creates a new Workspace.  The id, name, and serviceId can optionally be
    * set, or they can be left undefined to use the defaults.
    *
-   * @param {Object} workspace The Workspace information, can container {id, name, serviceId}
-   * @return {Workspace} The new Workspace.
+   * @param {Object} workspace The Workspace information, can contain {id, name, serviceId}
+   * @return {Promise<Workspace>} The new Workspace.
    */
   createWorkspace(workspace) {
     return APICall('createWorkspace', workspace)
@@ -157,23 +159,127 @@ class AssistantAPIClient {
   //
   // Functions
   //
-  executeFunction = input => APICall('executeFunction', input)
 
-  createFunction = input => APICall('createFunction', input)
+  /**
+   * Runs a query against a given function with the supplied variables and
+   * resolve string.
+   * @param {Object} input The information to execute.
+   * @param {string} input.functionId The ID of the function to execute.
+   * @param {Object} input.variables The variables to go along with the query.
+   * @param {string} input.resolve The fields to resolve in the query.
+   *
+   * @returns {Promise<Object>} The result of executing the function.
+   */
+  executeFunction(input) {
+    return APICall('executeFunction', input)
+  }
 
-  updateFunction = input => APICall('updateFunction', input)
+  /**
+   * Creates a new function with the supplied information.  At minimum a name
+   * needs to be supplied.
+   *
+   * @param {Object} input Information to create the function with.
+   *
+   * @returns {Promise<Function>} The new function.
+   */
+  createFunction(input) {
+    return APICall('createFunction', input)
+  }
 
-  deleteFunction = input => APICall('deleteFunction', input)
+  /**
+   * Updates a Function in the active workspace with the given information.
+   *
+   * @param {Object} input Updates for the function.
+   *
+   * @returns {Promise<Function>} The updated Function.
+   */
+  updateFunction(input) {
+    return APICall('updateFunction', input)
+  }
 
-  getFunctionById = id => APICall('getFunctionById', id)
+  /**
+   * Deletes a function in the active workspace by the given name.
+   *
+   * @param {string} input The name of the function
+   *
+   * @returns {Promise<Object>} The changes caused by deleting the function.
+   */
+  deleteFunction(input) {
+    return APICall('deleteFunction', input)
+  }
 
-  getFunctionsById = ids => APICall('getFunctionsById', ids)
+  /**
+   * Loads a function by ID.  This can only return information about functions
+   * that the UI already has loaded into memory.
+   *
+   * @deprecated This function is no longer supported and has limited
+   * functionality
+   *
+   * @param {string} id the function's ID.
+   *
+   * @returns {Promise<Function>} The requested function.
+   */
+  getFunctionById(id) {
+    return APICall('getFunctionById', id)
+  }
 
-  addFunctionExecutionListener = async (id, cb) => {
+  /**
+   * Loads a list of functions by ID.  This can only return information about
+   * functions that the UI already has loaded into memory.
+   *
+   * @deprecated This function is no longer supported and has limited
+   * functionality
+   *
+   * @param {Array<string>} ids List of function IDs.
+   *
+   * @returns {Promise<Array<Function>>} The list of requested functions.
+   */
+  getFunctionsById(ids) {
+    return APICall('getFunctionsById', ids)
+  }
+
+  /**
+   * Returns a function with the given name from a specific service.
+   *
+   * @param {string} serviceId ID of the service the function lives in.
+   * @param {string} name The name of the function to find.
+   *
+   * @returns {Promise<Function>} The requested function.
+   */
+  getFunctionOfServiceByName(serviceId, name) {
+    return APICall('getFunctionOfServiceByName', { serviceId, name })
+  }
+
+  /**
+   * Returns a list of functions with the given names from a specific service.
+   *
+   * @param {string} serviceId ID of the service the function lives in.
+   * @param {Array<string>} names The names of the functions to find.
+   *
+   * @returns {Promise<Array<Function>>} The list of requested functions.
+   */
+  getFunctionsOfServiceByName(serviceId, names) {
+    return APICall('getFunctionsOfServiceByName', { serviceId, names })
+  }
+
+  /**
+   * Adds a callback function to be called with the function has been executed.
+   *
+   * @param {string} id ID of the function.
+   * @param {function} cb The callback function.
+   */
+  addFunctionExecutionListener(id, cb) {
     EventEmitter.addListener(`function:${id}`, cb)
   }
 
-  removeFunctionExecutionListener = async (id, cb) => {
+  /**
+   * Removes one or all callbacks listening for the function to be executed.
+   *
+   * @param {string} id ID of the function.
+   * @param {function} [cb] The callback function, if not supplied all of them
+   * are removed.
+   */
+  removeFunctionExecutionListener(id, cb) {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       EventEmitter.removeListener(`function:${id}`, cb)
