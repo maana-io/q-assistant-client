@@ -2,16 +2,11 @@ const presets = [
   [
     '@babel/env',
     {
-      targets: [
-        "last 3 chrome version",
-        "last 3 firefox version",
-        "last 3 safari version",
-        "last 3 edge version"
-      ],
+      targets: ['>0.2%', 'not dead', 'not ie <= 10', 'not op_mini all'],
       useBuiltIns: 'usage',
-      corejs: '3'
-    }
-  ]
+      corejs: '3',
+    },
+  ],
 ]
 
 const plugins = ['@babel/plugin-proposal-class-properties']

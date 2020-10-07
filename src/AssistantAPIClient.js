@@ -4,7 +4,7 @@ const EventEmitter = new events.EventEmitter()
 
 // The collection of event types used in the API
 const EventTypes = Object.freeze({
-  LOCKING_CHANGED: 'lockingChanged'
+  LOCKING_CHANGED: 'lockingChanged',
 })
 
 // Wrapper for post-robot async client -> API call.
@@ -23,39 +23,81 @@ const createAPIListener = async (callName, cb) => {
 }
 
 /**
+ * @typedef {Object} TypeExpression
+ */
+
+/**
+ * @typedef {Object} Kind
+ *
+ * @prop {string} id The ID of the Kind.
+ * @prop {string} name The name of the Kind.
+ * @prop {string} [nameDescriptor] Name of where the kind comes from (Service/Workspace).
+ * @prop {string} [description] Human readable description of the Kind.
+ * @prop {TypeExpression} signature The signature of the Kind.
+ * @prop {Object} service The service that the Kind comes from.
+ * @prop {string} service.id The ID of the service.
+ */
+
+/**
+ * @typedef {Object} Graph
+ * // TODO: QP-1722 Fill this in when handling Function/Knowledge Graphs
+ */
+
+/**
+ * @typedef {Graph} Implementation
+ * Function implementation union.
+ */
+
+/**
+ * @typedef {Object} Function
+ *
+ * @prop {string} id The ID of the Function.
+ * @prop {string} name The name of the Function.
+ * @prop {string} [nameDescriptor] Name of where the Function comes from (Service/Workspace).
+ * @prop {string} [description] Human readable description of the Function.
+ * @prop {TypeExpression} signature The signature of the Function.
+ * @prop {Object} service The service that the Function comes from.
+ * @prop {string} service.id The ID of the service.
+ * @prop {string} graphqlFunctionType The GraphQL type for the Function.
+ * @prop {boolean} [isPure] States the purity of a Function.
+ * @prop {Implementation} [implementation] The implementation of the Function.
+ * @prop {Graph} [graph] The graph of the Function.
+ */
+
+/**
  * Class that exposes concrete API calls to the parent API.
  * These calls are made over post-message via post-robot to the parent window.
  */
 class AssistantAPIClient {
   constructor() {
     // Attach selection event emmiter to API listener
-    createAPIListener('selectionChanged', async function(event) {
+    createAPIListener('selectionChanged', async function (event) {
       EventEmitter.emit('selectionChanged', event.data)
     })
 
     // Attach function execution event emmiter to API listener.
     // Use convention to filter by function ID.
-    createAPIListener('functionExecuted', async function(event) {
+    createAPIListener('functionExecuted', async function (event) {
       EventEmitter.emit(`function:${event.data.id}`, event.data.result)
     })
 
     // Attach inventory event emitter to API listener.
-    createAPIListener('inventoryChanged', async function(event) {
+    createAPIListener('inventoryChanged', async function (event) {
       EventEmitter.emit('inventoryChanged', event.data)
     })
 
     // Attach render mode event emitter to API listener.
-    createAPIListener('renderModeChanged', async function(event) {
+    createAPIListener('renderModeChanged', async function (event) {
       EventEmitter.emit('renderModeChanged', event.data)
     })
 
     // Attach repair listener.
-    createAPIListener('repair', async function(event) {
+    createAPIListener('repair', async function (event) {
       EventEmitter.emit('repair', event.data)
     })
 
     // Attach locking changed listener.
-    createAPIListener(EventTypes.LOCKING_CHANGED, async function(event) {
+    createAPIListener(EventTypes.LOCKING_CHANGED, async function (event) {
       EventEmitter.emit(EventTypes.LOCKING_CHANGED, event.data)
     })
   }
@@ -88,11 +130,11 @@ class AssistantAPIClient {
   //
   // Selection
   //
-  addSelectionChangedListener = async cb => {
+  addSelectionChangedListener = async (cb) => {
     EventEmitter.addListener('selectionChanged', cb)
   }
 
-  removeSelectionChangedListener = async cb => {
+  removeSelectionChangedListener = async (cb) => {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       EventEmitter.removeListener('selectionChanged', cb)
@@ -110,15 +152,15 @@ class AssistantAPIClient {
   /**
    * @param {string} id Service Id
    */
-  getServiceById = id => APICall('getServiceById', id)
+  getServiceById = (id) => APICall('getServiceById', id)
 
-  createService = input => APICall('createService', input)
+  createService = (input) => APICall('createService', input)
 
-  refreshServiceSchema = input => APICall('refreshServiceSchema', input)
+  refreshServiceSchema = (input) => APICall('refreshServiceSchema', input)
 
-  reloadServiceSchema = id => APICall('reloadServiceSchema', id)
+  reloadServiceSchema = (id) => APICall('reloadServiceSchema', id)
 
-  deleteService = id => APICall('deleteService', id)
+  deleteService = (id) => APICall('deleteService', id)
 
   //
   // Workspace
@@ -398,11 +440,11 @@ class AssistantAPIClient {
   //
   // Inventory
   //
-  addInventoryChangedListener = async cb => {
+  addInventoryChangedListener = async (cb) => {
     EventEmitter.addListener('inventoryChanged', cb)
   }
 
-  removeInventoryChangedListener = async cb => {
+  removeInventoryChangedListener = async (cb) => {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       EventEmitter.removeListener('inventoryChanged', cb)
@@ -425,23 +467,23 @@ class AssistantAPIClient {
       originId,
       targetId,
       kindIds,
-      functionIds
+      functionIds,
     })
   }
 
   //
   // Graphs
   //
-  getFunctionGraph = id => APICall('getFunctionGraph', id)
+  getFunctionGraph = (id) => APICall('getFunctionGraph', id)
 
   //
   // Render Mode
   //
-  addRenderModeChangedListener = async cb => {
+  addRenderModeChangedListener = async (cb) => {
     EventEmitter.addListener('renderModeChanged', cb)
   }
 
-  removeRenderModeChangedListener = async cb => {
+  removeRenderModeChangedListener = async (cb) => {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       EventEmitter.removeListener('renderModeChanged', cb)
@@ -455,11 +497,11 @@ class AssistantAPIClient {
   //
   // Repair
   //
-  addRepairListener = async cb => {
+  addRepairListener = async (cb) => {
     EventEmitter.addListener('repair', cb)
   }
 
-  removeRepairListener = async cb => {
+  removeRepairListener = async (cb) => {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       EventEmitter.removeListener('repair', cb)
@@ -471,7 +513,7 @@ class AssistantAPIClient {
   //
   // Errors
   //
-  reportError = error => APICall('reportError', error)
+  reportError = (error) => APICall('reportError', error)
 
   //
   // Locking
@@ -510,7 +552,7 @@ class AssistantAPIClient {
 
   getEventEmitter = () => EventEmitter
 
-  executeGraphql = input => APICall('executeGraphql', input)
+  executeGraphql = (input) => APICall('executeGraphql', input)
 }
 
 // Export as singleton.
