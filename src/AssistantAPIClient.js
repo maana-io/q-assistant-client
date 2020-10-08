@@ -291,17 +291,105 @@ class AssistantAPIClient {
   //
   // Kinds
   //
-  createKind = input => APICall('createKind', input)
 
-  updateKind = input => APICall('updateKind', input)
+  /**
+   * Creates a new Kind with the supplied information.  At minimum a name needs
+   * to be supplied.
+   *
+   * @param {Object} input Information to create the Kind with.
+   *
+   * @returns {Promise<Kind>} The new Kind
+   */
+  createKind(input) {
+    return APICall('createKind', input)
+  }
 
-  deleteKind = input => APICall('deleteKind', input)
+  /**
+   * Updates a Kind in the active workspace with the given information.
+   *
+   * @param {Object} input Updates for the Kind.
+   *
+   * @returns {Promise<Kind>} The updated Kind.
+   */
+  updateKind(input) {
+    return APICall('updateKind', input)
+  }
 
-  getKindById = id => APICall('getKindById', id)
+  /**
+   * Deletes a Kind in the active workspace by the given name.
+   *
+   * @param {string} input The name of the Kind.
+   *
+   * @returns {Promise<Object>} The changes caused by deleting the Kind.
+   */
+  deleteKind(input) {
+    return APICall('deleteKind', input)
+  }
 
-  getKindsById = ids => APICall('getKindsById', ids)
+  /**
+   * Loads a Kind by ID.  This can only return information about Kinds that the
+   * UI already has loaded into memory.
+   *
+   * @deprecated This function is no longer supported and has limited
+   * functionality
+   *
+   * @param {string} id The Kind's ID.
+   *
+   * @returns {Promise<Kind>} The requested Kind.
+   */
+  getKindById(id) {
+    return APICall('getKindById', id)
+  }
 
-  getAllReferencedKinds = input => APICall('getAllReferencedKinds', input)
+  /**
+   * Loads a list of Kinds by ID.  This can only return information about Kinds
+   * that the UI already has loaded into memory.
+   *
+   * @deprecated This function is no longer supported and has limited
+   * functionality
+   *
+   * @param {Array<string>} ids List of Kind IDs.
+   *
+   * @returns {Promise<Array<Kind>>} The list of requested Kind.
+   */
+  getKindsById(ids) {
+    return APICall('getKindsById', ids)
+  }
+
+  /**
+   * Returns a Kind with the given name from a specific service.
+   *
+   * @param {string} serviceId ID of the service the function lives in.
+   * @param {string} name The name of the Kind to find.
+   *
+   * @returns {Promise<Kind>} The requested Kind.
+   */
+  getKindOfServiceByName(serviceId, name) {
+    return APICall('getKindOfServiceByName', { serviceId, name })
+  }
+
+  /**
+   * Returns a list of Kinds with the given names from a specific service.
+   *
+   * @param {string} serviceId ID of the service the function lives in.
+   * @param {Array<string>} names The names of the Kinds to find.
+   *
+   * @returns {Promise<Array<Kind>>} The list of requested Kinds.
+   */
+  getKindsOfServiceByName(serviceId, names) {
+    return APICall('getKindsOfServiceByName', { serviceId, names })
+  }
+
+  /**
+   * Loads up tree of Kinds references by the signature of the Kinds passed in,
+   *
+   * @param {Array<string>} input List of Kind IDs.
+   *
+   * @returns {Promise<Array<Kind>>} The list of references Kinds.
+   */
+  getAllReferencedKinds(input) {
+    return APICall('getAllReferencedKinds', input)
+  }
 
   //
   // Inventory
