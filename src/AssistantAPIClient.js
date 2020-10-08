@@ -23,39 +23,81 @@ const createAPIListener = async (callName, cb) => {
 }
 
 /**
+ * @typedef {Object} TypeExpression
+ */
+
+/**
+ * @typedef {Object} Kind
+ *
+ * @prop {string} id The ID of the Kind.
+ * @prop {string} name The name of the Kind.
+ * @prop {string} [nameDescriptor] Name of where the kind comes from (Service/Workspace).
+ * @prop {string} [description] Human readable description of the Kind.
+ * @prop {TypeExpression} signature The signature of the Kind.
+ * @prop {Object} service The service that the Kind comes from.
+ * @prop {string} service.id The ID of the service.
+ */
+
+/**
+ * @typedef {Object} Graph
+ * // TODO: QP-1722 Fill this in when handling Function/Knowledge Graphs
+ */
+
+/**
+ * @typedef {Graph} Implementation
+ * Function implementation union.
+ */
+
+/**
+ * @typedef {Object} Function
+ *
+ * @prop {string} id The ID of the Function.
+ * @prop {string} name The name of the Function.
+ * @prop {string} [nameDescriptor] Name of where the Function comes from (Service/Workspace).
+ * @prop {string} [description] Human readable description of the Function.
+ * @prop {TypeExpression} signature The signature of the Function.
+ * @prop {Object} service The service that the Function comes from.
+ * @prop {string} service.id The ID of the service.
+ * @prop {string} graphqlFunctionType The GraphQL type for the Function.
+ * @prop {boolean} [isPure] States the purity of a Function.
+ * @prop {Implementation} [implementation] The implementation of the Function.
+ * @prop {Graph} [graph] The graph of the Function.
+ */
+
+/**
  * Class that exposes concrete API calls to the parent API.
  * These calls are made over post-message via post-robot to the parent window.
  */
 class AssistantAPIClient {
   constructor() {
     // Attach selection event emmiter to API listener
-    createAPIListener('selectionChanged', async function(event) {
+    createAPIListener('selectionChanged', async function (event) {
       EventEmitter.emit('selectionChanged', event.data)
     })
 
     // Attach function execution event emmiter to API listener.
     // Use convention to filter by function ID.
-    createAPIListener('functionExecuted', async function(event) {
+    createAPIListener('functionExecuted', async function (event) {
       EventEmitter.emit(`function:${event.data.id}`, event.data.result)
     })
 
     // Attach inventory event emitter to API listener.
-    createAPIListener('inventoryChanged', async function(event) {
+    createAPIListener('inventoryChanged', async function (event) {
       EventEmitter.emit('inventoryChanged', event.data)
     })
 
     // Attach render mode event emitter to API listener.
-    createAPIListener('renderModeChanged', async function(event) {
+    createAPIListener('renderModeChanged', async function (event) {
       EventEmitter.emit('renderModeChanged', event.data)
     })
 
     // Attach repair listener.
-    createAPIListener('repair', async function(event) {
+    createAPIListener('repair', async function (event) {
       EventEmitter.emit('repair', event.data)
     })
 
     // Attach locking changed listener.
-    createAPIListener(EventTypes.LOCKING_CHANGED, async function(event) {
+    createAPIListener(EventTypes.LOCKING_CHANGED, async function (event) {
       EventEmitter.emit(EventTypes.LOCKING_CHANGED, event.data)
     })
   }
@@ -106,6 +148,10 @@ class AssistantAPIClient {
   //
   // Services
   //
+
+  /**
+   * @param {string} id Service Id
+   */
   getServiceById = id => APICall('getServiceById', id)
 
   createService = input => APICall('createService', input)
