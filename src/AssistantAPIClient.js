@@ -23,6 +23,22 @@ const createAPIListener = async (callName, cb) => {
 }
 
 /**
+ * @typedef {Object} User
+ *
+ * @prop {string} email The users email address.
+ * @prop {string} name The users name.
+ */
+
+/**
+ * @typedef {Object} EntityIdentifier
+ *
+ * @prop {string} entityType The type of entity being referenced.
+ * @prop {string} id The ID of the entity. Used for all but Types and Functions.
+ * @prop {string} name The name of the entity. Used by Types and Functions.
+ * @prop {string} serviceId The ID of the service that the entity lives in.  Used by Types and Functions.
+ */
+
+/**
  * @typedef {Object} TypeExpression
  */
 
@@ -65,17 +81,47 @@ const createAPIListener = async (callName, cb) => {
  */
 
 /**
+ * @typedef {Object} Service
+ *
+ * @prop {string} id The ID of the Service.
+ * @prop {string} name The name of the Service.
+ * @prop {string} [description] Human readable description of the Service.
+ * @prop {Object} location The location information about the Service
+ * @prop {string} location.url The URL that the Service can be reached at.
+ * @prop {function} getKinds Returns the list of Kinds in the Service.
+ * @prop {function} getFunctions Returns the list of Functions in the Service.
+ */
+
+/**
+ * @typedef {Object} Workspace
+ *
+ * @prop {string} id The ID of the Workspace.
+ * @prop {string} name The name of the Workspace.
+ * @prop {string} [description] Human readable description of the Service.
+ * @prop {Object} location The location information about the Workspace
+ * @prop {string} location.url The URL that the Workspace can be reached at.
+ * @prop {string} thumbnailUrl the URL to the URL of the thumbnail pic.
+ * @prop {string} serviceId The ID of the logic service backing the Workspace.
+ * @prop {boolean} isPublic When true others can see this Workspace.
+ * @prop {boolean} isTemplate When true it shows up as a template Workspace.
+ * @prop {Array<string>} tags The list of tags for the Workspace.
+ * @prop {Object} owner The user that owns the Workspace.
+ * @prop {string} id The ID of the user.
+ * @prop {string} name The name of the user.
+ */
+
+/**
  * Class that exposes concrete API calls to the parent API.
  * These calls are made over post-message via post-robot to the parent window.
  */
 class AssistantAPIClient {
   constructor() {
-    // Attach selection event emmiter to API listener
+    // Attach selection event emitter to API listener
     createAPIListener('selectionChanged', async function (event) {
       EventEmitter.emit('selectionChanged', event.data)
     })
 
-    // Attach function execution event emmiter to API listener.
+    // Attach function execution event emitter to API listener.
     // Use convention to filter by function ID.
     createAPIListener('functionExecuted', async function (event) {
       EventEmitter.emit(`function:${event.data.id}`, event.data.result)
@@ -118,23 +164,47 @@ class AssistantAPIClient {
   //
   // State management
   //
-  clearState = () => {
+
+  /**
+   * Removes all event listeners for all events.
+   */
+  clearState() {
     EventEmitter.removeAllListeners()
   }
 
   //
   // User Info
   //
-  getUserInfo = () => APICall('getUserInfo')
+
+  /**
+   * Gets the information about the current user.
+   *
+   * @returns {Promise<User>} The current User.
+   */
+  getUserInfo() {
+    return APICall('getUserInfo')
+  }
 
   //
   // Selection
   //
-  addSelectionChangedListener = async cb => {
+
+  /**
+   * Adds a listener to the selection changed event.
+   *
+   * @param {function} cb Callback function.
+   */
+  addSelectionChangedListener(cb) {
     EventEmitter.addListener('selectionChanged', cb)
   }
 
-  removeSelectionChangedListener = async cb => {
+  /**
+   * Removed a listener from the selection changed event, or all of them if no
+   * callback is defined.
+   *
+   * @param {function} [cb] Callback function.
+   */
+  removeSelectionChangedListener(cb) {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       EventEmitter.removeListener('selectionChanged', cb)
@@ -143,24 +213,90 @@ class AssistantAPIClient {
     }
   }
 
-  getCurrentSelection = () => APICall('getCurrentSelection')
+  /**
+   * Gets the current selection from the UI.
+   *
+   * @returns {Promise<Array<EntityIdentifier>>} The list of selected entities.
+   */
+  getCurrentSelection() {
+    return APICall('getCurrentSelection')
+  }
 
   //
   // Services
   //
 
   /**
+   * Gets a specified service by ID
+   *
    * @param {string} id Service Id
+   *
+   * @returns {Promise<Service>} The requested service.
    */
-  getServiceById = id => APICall('getServiceById', id)
+  getServiceById(id) {
+    return APICall('getServiceById', id)
+  }
 
-  createService = input => APICall('createService', input)
+  /**
+   * Creates a new Service in the platform.
+   *
+   * @param {Object} input The inputs used to create the Service.
+   *
+   * @returns {Promise<string>} ID of the created service.
+   */
+  createService(input) {
+    return APICall('createService', input)
+  }
 
-  refreshServiceSchema = input => APICall('refreshServiceSchema', input)
+  /**
+   * Refreshed the service information in the backend.  This is useful for
+   * making sure that the platform is working on the latest schema of an
+   * external service.
+   *
+   * @param {string} input The ID of the service to refresh.
+   *
+   * @returns {Promise<Service>} The refreshed service.
+   */
+  refreshServiceSchema(input) {
+    return APICall('refreshServiceSchema', input)
+  }
 
-  reloadServiceSchema = id => APICall('reloadServiceSchema', id)
+  /**
+   * Has the UI reload the information about the service from the backend to
+   * make sure that it has fresh information.
+   *
+   * @param {string} id The ID of the Service to reload.
+   *
+   * @returns {Promise<Service>} The service with fresh information.
+   */
+  reloadServiceSchema(id) {
+    return APICall('reloadServiceSchema', id)
+  }
 
-  deleteService = id => APICall('deleteService', id)
+  /**
+   * Deletes the given Service from the platform.
+   *
+   * @param {string} id The ID of the Service to delete.
+   *
+   * @returns {Promise<Object>} The changes caused by deleting the Service.
+   */
+  deleteService(id) {
+    return APICall('deleteService', id)
+  }
+
+  /**
+   * Runs an arbitrary GraphQL query against a service in the platform.
+   *
+   * @param {Object} input The data for the execution.
+   * @param {string} input.serviceId The ID of the service to make the call on.
+   * @param {string} input.query The query/mutation to make against the service.
+   * @param {Object} input.variables The variables to go with the query.
+   *
+   * @returns {Promise<Object>} The response from the request.
+   */
+  executeGraphql(input) {
+    return APICall('executeGraphql', input)
+  }
 
   //
   // Workspace
@@ -196,6 +332,7 @@ class AssistantAPIClient {
    * set, or they can be left undefined to use the defaults.
    *
    * @param {Object} workspace The Workspace information, can contain {id, name, serviceId}
+   *
    * @return {Promise<Workspace>} The new Workspace.
    */
   createWorkspace(workspace) {
@@ -440,11 +577,22 @@ class AssistantAPIClient {
   //
   // Inventory
   //
-  addInventoryChangedListener = async cb => {
+  /**
+   * Adds a listener for the inventory changed event.
+   *
+   * @param {function} cb Callback function.
+   */
+  addInventoryChangedListener(cb) {
     EventEmitter.addListener('inventoryChanged', cb)
   }
 
-  removeInventoryChangedListener = async cb => {
+  /**
+   * Removed a listener from the inventory changed event, or all of them if one
+   * is not specified.
+   *
+   * @param {function} [cb] Callback function.
+   */
+  removeInventoryChangedListener(cb) {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       EventEmitter.removeListener('inventoryChanged', cb)
@@ -474,16 +622,38 @@ class AssistantAPIClient {
   //
   // Graphs
   //
-  getFunctionGraph = id => APICall('getFunctionGraph', id)
+
+  /**
+   * Loads the function with its graph information attached.
+   *
+   * @param {string} id ID of the function to load the graph for.
+   *
+   * @returns {Promise<Function>} The function with the information about its graph.
+   */
+  getFunctionGraph(id) {
+    return APICall('getFunctionGraph', id)
+  }
 
   //
   // Render Mode
   //
-  addRenderModeChangedListener = async cb => {
+
+  /**
+   * Adds a listener to the render mode changed event.
+   *
+   * @param {function} cb Callback function.
+   */
+  addRenderModeChangedListener(cb) {
     EventEmitter.addListener('renderModeChanged', cb)
   }
 
-  removeRenderModeChangedListener = async cb => {
+  /**
+   * Removed a listener from the render mode changed event, or all of them if
+   * one is not specified.
+   *
+   * @param {function} [cb] Callback function.
+   */
+  removeRenderModeChangedListener(cb) {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       EventEmitter.removeListener('renderModeChanged', cb)
@@ -492,16 +662,35 @@ class AssistantAPIClient {
     }
   }
 
-  getRenderMode = () => APICall('getRenderMode')
+  /**
+   * Gets the current render mode for the assistant.
+   *
+   * @returns {Promise<string>} The current render mode.
+   */
+  getRenderMode() {
+    return APICall('getRenderMode')
+  }
 
   //
   // Repair
   //
-  addRepairListener = async cb => {
+
+  /**
+   * Adds a listener to the repair changed event.
+   *
+   * @param {function} cb Callback function.
+   */
+  addRepairListener(cb) {
     EventEmitter.addListener('repair', cb)
   }
 
-  removeRepairListener = async cb => {
+  /**
+   * Removed a listener from the repair changed event, or all of them if one is
+   * not specified.
+   *
+   * @param {function} [cb] Callback function.
+   */
+  removeRepairListener(cb) {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       EventEmitter.removeListener('repair', cb)
@@ -513,7 +702,15 @@ class AssistantAPIClient {
   //
   // Errors
   //
-  reportError = error => APICall('reportError', error)
+
+  /**
+   * Reports an error to the UI for the user to be able view it.
+   *
+   * @param {Error|string} error The error object or an error message.
+   */
+  reportError(error) {
+    return APICall('reportError', error)
+  }
 
   //
   // Locking
@@ -550,9 +747,9 @@ class AssistantAPIClient {
   // Undocumented
   //
 
-  getEventEmitter = () => EventEmitter
-
-  executeGraphql = input => APICall('executeGraphql', input)
+  getEventEmitter() {
+    return EventEmitter
+  }
 }
 
 // Export as singleton.
