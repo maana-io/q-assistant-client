@@ -254,6 +254,8 @@ class AssistantAPIClient {
    * external service.
    *
    * @param {string} input The ID of the service to refresh.
+   *
+   * @returns {Promise<Service>} The refreshed service.
    */
   refreshServiceSchema(input) {
     return APICall('refreshServiceSchema', input)
