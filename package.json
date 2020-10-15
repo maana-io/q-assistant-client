@@ -8,9 +8,10 @@
     "./": "./build/"
   },
   "scripts": {
-    "build": "npm run build:js && npm run build:tsd",
+    "build": "npm run build:js && npm run build:tsd && npm run build:doc",
     "build:js": "babel src --out-dir build",
     "build:tsd": "tsc --build tsconfig.json",
+    "build:doc": "jsdoc2md > API.md",
     "prepack": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"src/**/*.js\""
@@ -38,6 +39,7 @@
     "@babel/core": "^7.10.2",
     "@babel/plugin-proposal-class-properties": "^7.10.1",
     "@babel/preset-env": "^7.10.2",
+    "jsdoc-to-markdown": "^6.0.1",
     "prettier": "2.0.5",
     "typescript": "^3.9.5"
   }
