@@ -74,6 +74,7 @@ the client in v3.2.4, and WILL BE deprecated in the API:
 - AssistantAPIClient.deleteFunction (expected move to Workspace object)
 
 ## API Documentation
+More information in the [API File](./API.md)
 
 ### Assistant Render Mode
 An assistant's render mode refers to whether it is being displayed in a visible manner to the user. As of v3.2.2, assistants are not closed when they are out of view.
