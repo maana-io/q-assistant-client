@@ -2,7 +2,11 @@ import { EventEmitter } from 'events';
 import postRobot from 'post-robot';
 const eventEmitter = new EventEmitter();
 
-// The collection of event types used in the API
+/**
+ * The collection of event types used in the API
+ * @enum
+ * @private
+ */
 const EventTypes = Object.freeze({
   FUNCTION_EXECUTED: 'functionExecuted',
   INVENTORY_CHANGED: 'inventoryChanged',
