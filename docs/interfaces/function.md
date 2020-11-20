@@ -1,6 +1,6 @@
 **[Maana Q Assistant API Client - v3.3.0-beta.4](../README.md)**
 
-> [Globals](../globals.md) / Function
+> [Globals](../README.md) / Function
 
 # Interface: Function
 
@@ -47,7 +47,7 @@
 
 *Inherited from [Entity](entity.md).[description](entity.md#description)*
 
-*Defined in [models.ts:50](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L50)*
+*Defined in [models.ts:50](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L50)*
 
 Human readable description of the entity.
 
@@ -59,7 +59,7 @@ ___
 
 *Inherited from [Entity](entity.md).[id](entity.md#id)*
 
-*Defined in [models.ts:41](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L41)*
+*Defined in [models.ts:41](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L41)*
 
 The ID of the entity.
 
@@ -71,7 +71,7 @@ ___
 
 *Inherited from [Entity](entity.md).[name](entity.md#name)*
 
-*Defined in [models.ts:44](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L44)*
+*Defined in [models.ts:44](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L44)*
 
 The name of the entity.
 
@@ -83,7 +83,7 @@ ___
 
 *Inherited from [Entity](entity.md).[nameDescriptor](entity.md#namedescriptor)*
 
-*Defined in [models.ts:47](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L47)*
+*Defined in [models.ts:47](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L47)*
 
 Name of where the entity comes from (Service/Workspace).
 
@@ -93,7 +93,7 @@ ___
 
 •  **service**: [IDObject](idobject.md)
 
-*Defined in [models.ts:183](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L183)*
+*Defined in [models.ts:183](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L183)*
 
 The service that the Kind comes from.
 
@@ -103,7 +103,7 @@ ___
 
 •  **signature**: any
 
-*Defined in [models.ts:180](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L180)*
+*Defined in [models.ts:180](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L180)*
 
 The signature of the Function.
 
@@ -113,7 +113,7 @@ The signature of the Function.
 
 ▸ **canEdit**(): Promise\<boolean>
 
-*Defined in [models.ts:188](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L188)*
+*Defined in [models.ts:188](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L188)*
 
 Returns boolean stating if the Function is editable.
 
@@ -125,7 +125,7 @@ ___
 
 ▸ **execute**(`variables`: any, `resolve`: string): Promise\<any>
 
-*Defined in [models.ts:227](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L227)*
+*Defined in [models.ts:227](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L227)*
 
 Executes a GraphQL request against the Function.
 
@@ -144,13 +144,13 @@ ___
 
 ### lockedBy
 
-▸ **lockedBy**(): Promise\<[Maybe](../globals.md#maybe)\<string>>
+▸ **lockedBy**(): Promise\<[Maybe](../README.md#maybe)\<string>>
 
-*Defined in [models.ts:193](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L193)*
+*Defined in [models.ts:193](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L193)*
 
 Returns the e-mail of the user who locked the Function.
 
-**Returns:** Promise\<[Maybe](../globals.md#maybe)\<string>>
+**Returns:** Promise\<[Maybe](../README.md#maybe)\<string>>
 
 ___
 
@@ -158,7 +158,7 @@ ___
 
 ▸ **setLocked**(`isLocked?`: boolean): Promise\<void>
 
-*Defined in [models.ts:200](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L200)*
+*Defined in [models.ts:200](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L200)*
 
 Updates the locked state of the Function.
 
@@ -176,7 +176,7 @@ ___
 
 ▸ **update**(`changes`: any): Promise\<void>
 
-*Defined in [models.ts:206](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L206)*
+*Defined in [models.ts:206](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L206)*
 
 Updates information about the Function.
 
@@ -194,7 +194,7 @@ ___
 
 ▸ **updateGraphLayout**(`changes`: any): Promise\<void>
 
-*Defined in [models.ts:219](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L219)*
+*Defined in [models.ts:219](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L219)*
 
 Updates the layout information for the graph of the Function.
 
@@ -212,7 +212,7 @@ ___
 
 ▸ **updateNodeLayout**(`nodeId`: string, `changes`: any): Promise\<void>
 
-*Defined in [models.ts:213](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L213)*
+*Defined in [models.ts:213](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L213)*
 
 Updates the layout information for a node in the Function.
 

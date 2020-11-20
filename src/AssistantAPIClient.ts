@@ -30,6 +30,8 @@ enum EventTypes {
   SELECTION_CHANGED = 'selectionChanged'
 }
 
+type EventListenerCallback = (e: any) => void;
+
 /**
  * Wrapper for post-robot async client -> API call.
  * @private
@@ -51,7 +53,7 @@ async function APICall(callName: string, arg?: any): Promise<any> {
  * @param callName The name of the API endpoint to listen on.
  * @param cb The function to call when the endpoint is called.
  */
-function createAPIListener(callName: string, cb: (e: any) => void) {
+function createAPIListener(callName: string, cb: EventListenerCallback) {
   postRobot.on(callName, cb);
 }
 
@@ -155,7 +157,7 @@ export namespace AssistantAPIClient {
    *
    * @param cb Callback function.
    */
-  export function addSelectionChangedListener(cb: (e: any) => void) {
+  export function addSelectionChangedListener(cb: EventListenerCallback) {
     eventEmitter.addListener(EventTypes.SELECTION_CHANGED, cb);
   }
 
@@ -165,7 +167,7 @@ export namespace AssistantAPIClient {
    *
    * @param Callback function.
    */
-  export function removeSelectionChangedListener(cb?: (e: any) => void) {
+  export function removeSelectionChangedListener(cb?: EventListenerCallback) {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener(EventTypes.SELECTION_CHANGED, cb);
@@ -256,7 +258,7 @@ export namespace AssistantAPIClient {
   export function executeGraphql(input: {
     serviceId: string;
     query: string;
-    variables?: any;
+    variables?: Record<string, any>;
   }): Promise<any> {
     return APICall('executeGraphql', input);
   }
@@ -321,7 +323,7 @@ export namespace AssistantAPIClient {
    */
   export function executeFunction(input: {
     entityIdentifier: EntityIdentifier;
-    variables?: any;
+    variables?: Record<string, any>;
     resolve: string;
   }): Promise<any> {
     return APICall('executeFunction', input);
@@ -436,7 +438,7 @@ export namespace AssistantAPIClient {
    */
   export function addFunctionExecutionListener(
     id: string,
-    cb: (e: any) => void
+    cb: EventListenerCallback
   ): void {
     eventEmitter.addListener(`function:${id}`, cb);
   }
@@ -450,7 +452,7 @@ export namespace AssistantAPIClient {
    */
   export function removeFunctionExecutionListener(
     id: string,
-    cb: (e: any) => void
+    cb: EventListenerCallback
   ): void {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
@@ -592,7 +594,7 @@ export namespace AssistantAPIClient {
    *
    * @param cb Callback function.
    */
-  export function addInventoryChangedListener(cb: (e: any) => void): void {
+  export function addInventoryChangedListener(cb: EventListenerCallback): void {
     eventEmitter.addListener(EventTypes.INVENTORY_CHANGED, cb);
   }
 
@@ -602,7 +604,9 @@ export namespace AssistantAPIClient {
    *
    * @param cb Callback function.
    */
-  export function removeInventoryChangedListener(cb?: (e: any) => void): void {
+  export function removeInventoryChangedListener(
+    cb?: EventListenerCallback
+  ): void {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener(EventTypes.INVENTORY_CHANGED, cb);
@@ -665,7 +669,9 @@ export namespace AssistantAPIClient {
    *
    * @param cb Callback function.
    */
-  export function addRenderModeChangedListener(cb: (e: any) => void): void {
+  export function addRenderModeChangedListener(
+    cb: EventListenerCallback
+  ): void {
     eventEmitter.addListener(EventTypes.RENDER_MODE_CHANGED, cb);
   }
 
@@ -675,7 +681,9 @@ export namespace AssistantAPIClient {
    *
    * @param cb Callback function.
    */
-  export function removeRenderModeChangedListener(cb: (e: any) => void): void {
+  export function removeRenderModeChangedListener(
+    cb: EventListenerCallback
+  ): void {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener(EventTypes.RENDER_MODE_CHANGED, cb);
@@ -703,7 +711,7 @@ export namespace AssistantAPIClient {
    *
    * @param cb Callback function.
    */
-  export function addRepairListener(cb: (e: any) => void): void {
+  export function addRepairListener(cb: EventListenerCallback): void {
     eventEmitter.addListener(EventTypes.REPAIR, cb);
   }
 
@@ -714,7 +722,7 @@ export namespace AssistantAPIClient {
    *
    * @param cb Callback function.
    */
-  export function removeRepairListener(cb?: (e: any) => void): void {
+  export function removeRepairListener(cb?: EventListenerCallback): void {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener(EventTypes.REPAIR, cb);
@@ -746,7 +754,7 @@ export namespace AssistantAPIClient {
    *
    * @param cb The callback function to call
    */
-  export function addLockingChangedListener(cb: (e: any) => void): void {
+  export function addLockingChangedListener(cb: EventListenerCallback): void {
     eventEmitter.addListener(EventTypes.LOCKING_CHANGED, cb);
   }
 
@@ -757,7 +765,9 @@ export namespace AssistantAPIClient {
    *
    * @param cb The callback function to remove
    */
-  export function removeLockingChangedListener(cb?: (e: any) => void): void {
+  export function removeLockingChangedListener(
+    cb?: EventListenerCallback
+  ): void {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener(EventTypes.LOCKING_CHANGED, cb);

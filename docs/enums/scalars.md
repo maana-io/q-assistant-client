@@ -1,6 +1,6 @@
 **[Maana Q Assistant API Client - v3.3.0-beta.4](../README.md)**
 
-> [Globals](../globals.md) / Scalars
+> [Globals](../README.md) / Scalars
 
 # Enumeration: Scalars
 
@@ -28,7 +28,7 @@ Names of the default Scalars
 
 •  **BOOLEAN**:  = "Boolean"
 
-*Defined in [constants.ts:22](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/constants.ts#L22)*
+*Defined in [constants.ts:22](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/constants.ts#L22)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 •  **DATE**:  = "Date"
 
-*Defined in [constants.ts:23](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/constants.ts#L23)*
+*Defined in [constants.ts:23](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/constants.ts#L23)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 •  **DATETIME**:  = "DateTime"
 
-*Defined in [constants.ts:25](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/constants.ts#L25)*
+*Defined in [constants.ts:25](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/constants.ts#L25)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 •  **DOUBLE**:  = "Double"
 
-*Defined in [constants.ts:21](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/constants.ts#L21)*
+*Defined in [constants.ts:21](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/constants.ts#L21)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 •  **FLOAT**:  = "Float"
 
-*Defined in [constants.ts:20](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/constants.ts#L20)*
+*Defined in [constants.ts:20](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/constants.ts#L20)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 •  **ID**:  = "ID"
 
-*Defined in [constants.ts:27](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/constants.ts#L27)*
+*Defined in [constants.ts:27](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/constants.ts#L27)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 •  **INT**:  = "Int"
 
-*Defined in [constants.ts:18](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/constants.ts#L18)*
+*Defined in [constants.ts:18](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/constants.ts#L18)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 •  **JSON**:  = "JSON"
 
-*Defined in [constants.ts:26](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/constants.ts#L26)*
+*Defined in [constants.ts:26](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/constants.ts#L26)*
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 •  **LONG**:  = "Long"
 
-*Defined in [constants.ts:19](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/constants.ts#L19)*
+*Defined in [constants.ts:19](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/constants.ts#L19)*
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 •  **STRING**:  = "String"
 
-*Defined in [constants.ts:28](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/constants.ts#L28)*
+*Defined in [constants.ts:28](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/constants.ts#L28)*
 
 ___
 
@@ -108,4 +108,4 @@ ___
 
 •  **TIME**:  = "Time"
 
-*Defined in [constants.ts:24](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/constants.ts#L24)*
+*Defined in [constants.ts:24](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/constants.ts#L24)*

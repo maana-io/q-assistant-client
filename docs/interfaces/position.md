@@ -1,6 +1,6 @@
 **[Maana Q Assistant API Client - v3.3.0-beta.4](../README.md)**
 
-> [Globals](../globals.md) / Position
+> [Globals](../README.md) / Position
 
 # Interface: Position
 
@@ -21,7 +21,7 @@
 
 •  **x**: number
 
-*Defined in [models.ts:8](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L8)*
+*Defined in [models.ts:8](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L8)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 •  **y**: number
 
-*Defined in [models.ts:9](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L9)*
+*Defined in [models.ts:9](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L9)*

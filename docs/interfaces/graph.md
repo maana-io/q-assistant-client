@@ -1,6 +1,6 @@
 **[Maana Q Assistant API Client - v3.3.0-beta.4](../README.md)**
 
-> [Globals](../globals.md) / Graph
+> [Globals](../README.md) / Graph
 
 # Interface: Graph
 
@@ -23,7 +23,7 @@
 
 •  **connections**: any[]
 
-*Defined in [models.ts:64](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L64)*
+*Defined in [models.ts:64](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L64)*
 
 The connections in the Graph.
 
@@ -33,7 +33,7 @@ ___
 
 •  **nodes**: any[]
 
-*Defined in [models.ts:61](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L61)*
+*Defined in [models.ts:61](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L61)*
 
 The nodes in the Graph.
 
@@ -43,7 +43,7 @@ ___
 
 •  **offset**: [Position](position.md)
 
-*Defined in [models.ts:55](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L55)*
+*Defined in [models.ts:55](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L55)*
 
 The offset of the Graph.
 
@@ -53,6 +53,6 @@ ___
 
 •  **zoom**: number
 
-*Defined in [models.ts:58](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L58)*
+*Defined in [models.ts:58](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L58)*
 
 The zoom of the Graph.

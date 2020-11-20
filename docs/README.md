@@ -36,20 +36,29 @@
 
 ### Type aliases
 
-* [Implementation](globals.md#implementation)
-* [Maybe](globals.md#maybe)
+* [EventListenerCallback](README.md#eventlistenercallback)
+* [Implementation](README.md#implementation)
+* [Maybe](README.md#maybe)
 
 ### Variables
 
-* [CORE\_SERVICE\_ID](globals.md#core_service_id)
+* [CORE\_SERVICE\_ID](README.md#core_service_id)
 
 ## Type aliases
+
+### EventListenerCallback
+
+Ƭ  **EventListenerCallback**: (e: any) => void
+
+*Defined in [AssistantAPIClient.ts:33](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/AssistantAPIClient.ts#L33)*
+
+___
 
 ### Implementation
 
 Ƭ  **Implementation**: [Graph](interfaces/graph.md)
 
-*Defined in [models.ts:168](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L168)*
+*Defined in [models.ts:168](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L168)*
 
 Function implementation union.
 
@@ -59,7 +68,7 @@ ___
 
 Ƭ  **Maybe**\<T>: T \| null \| undefined
 
-*Defined in [models.ts:1](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/models.ts#L1)*
+*Defined in [models.ts:1](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L1)*
 
 #### Type parameters:
 
@@ -73,6 +82,6 @@ Name |
 
 • `Const` **CORE\_SERVICE\_ID**: \"io.maana.core\" = "io.maana.core"
 
-*Defined in [constants.ts:12](https://github.com/maana-io/q-assistant-client/blob/b0243f8/src/constants.ts#L12)*
+*Defined in [constants.ts:12](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/constants.ts#L12)*
 
 ID of the io.maana.core service
