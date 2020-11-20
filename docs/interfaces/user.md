@@ -1,4 +1,4 @@
-**[Maana Q Assistant API Client - v3.3.0-beta.4](../README.md)**
+**[Maana Q Assistant API Client](../README.md)**
 
 > [Globals](../README.md) / User
 
@@ -21,7 +21,7 @@
 
 •  **email**: string
 
-*Defined in [models.ts:14](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L14)*
+*Defined in [models.ts:14](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L14)*
 
 The users email address.
 
@@ -31,6 +31,6 @@ ___
 
 •  **name**: string
 
-*Defined in [models.ts:17](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L17)*
+*Defined in [models.ts:17](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L17)*
 
 The users name.

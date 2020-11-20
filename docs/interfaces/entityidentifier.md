@@ -1,4 +1,4 @@
-**[Maana Q Assistant API Client - v3.3.0-beta.4](../README.md)**
+**[Maana Q Assistant API Client](../README.md)**
 
 > [Globals](../README.md) / EntityIdentifier
 
@@ -23,7 +23,7 @@
 
 •  **entityType**: string
 
-*Defined in [models.ts:22](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L22)*
+*Defined in [models.ts:22](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L22)*
 
 The type of entity being referenced.
 
@@ -33,7 +33,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in [models.ts:25](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L25)*
+*Defined in [models.ts:25](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L25)*
 
 The ID of the entity. Used for all but Types and Functions.
 
@@ -43,7 +43,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in [models.ts:28](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L28)*
+*Defined in [models.ts:28](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L28)*
 
 The name of the entity. Used by Types and Functions.
 
@@ -53,6 +53,6 @@ ___
 
 • `Optional` **serviceId**: string
 
-*Defined in [models.ts:31](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L31)*
+*Defined in [models.ts:31](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L31)*
 
 The ID of the service that the entity lives in.  Used by Types and Functions.

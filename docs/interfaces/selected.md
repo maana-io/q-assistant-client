@@ -1,4 +1,4 @@
-**[Maana Q Assistant API Client - v3.3.0-beta.4](../README.md)**
+**[Maana Q Assistant API Client](../README.md)**
 
 > [Globals](../README.md) / Selected
 
@@ -20,6 +20,6 @@
 
 •  **selection**: [EntityIdentifier](entityidentifier.md)[]
 
-*Defined in [models.ts:36](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/models.ts#L36)*
+*Defined in [models.ts:36](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L36)*
 
 The list of selected entities.

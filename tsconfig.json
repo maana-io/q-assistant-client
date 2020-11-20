@@ -25,7 +25,6 @@
     "plugin": "typedoc-plugin-markdown",
     "excludePrivate": true,
     "excludeNotExported": true,
-    "includeVersion": true,
     "readme": "none"
   }
 }

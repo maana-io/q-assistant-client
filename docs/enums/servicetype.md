@@ -1,4 +1,4 @@
-**[Maana Q Assistant API Client - v3.3.0-beta.4](../README.md)**
+**[Maana Q Assistant API Client](../README.md)**
 
 > [Globals](../README.md) / ServiceType
 
@@ -21,7 +21,7 @@ The different types of possible services
 
 •  **ASSISTANT**:  = "AssistantService"
 
-*Defined in [constants.ts:56](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/constants.ts#L56)*
+*Defined in [constants.ts:56](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/constants.ts#L56)*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 •  **EXTERNAL\_GRAPHQL**:  = "ExternalGraphQLService"
 
-*Defined in [constants.ts:57](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/constants.ts#L57)*
+*Defined in [constants.ts:57](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/constants.ts#L57)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 •  **LOGIC**:  = "LogicService"
 
-*Defined in [constants.ts:58](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/constants.ts#L58)*
+*Defined in [constants.ts:58](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/constants.ts#L58)*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 •  **MODEL**:  = "ModelService"
 
-*Defined in [constants.ts:59](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/constants.ts#L59)*
+*Defined in [constants.ts:59](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/constants.ts#L59)*

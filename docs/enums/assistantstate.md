@@ -1,4 +1,4 @@
-**[Maana Q Assistant API Client - v3.3.0-beta.4](../README.md)**
+**[Maana Q Assistant API Client](../README.md)**
 
 > [Globals](../README.md) / AssistantState
 
@@ -19,7 +19,7 @@ The different states that the assistant can be in.
 
 •  **IDLE**:  = "IDLE"
 
-*Defined in [constants.ts:6](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/constants.ts#L6)*
+*Defined in [constants.ts:6](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/constants.ts#L6)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **WORKING**:  = "WORKING"
 
-*Defined in [constants.ts:5](https://github.com/maana-io/q-assistant-client/blob/7fea6ec/src/constants.ts#L5)*
+*Defined in [constants.ts:5](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/constants.ts#L5)*
