@@ -1,6 +1,8 @@
 # q-assistant-client
 A lightweight JavaScript client for Maana-Q Assistant developers that wraps post-message communication between an embedded Maana-Q assistant and the Maana-Q UI.
 
+You can find the [API Documentation here](docs/README.md).
+
 ## Abstract
 The Q-Assistant-Client is intented to be used in a web application being leveraged as a Maana Q assistant (embedded as an iframe).
 This assistant client will facilitate communication between the assistant and the parent frame.
