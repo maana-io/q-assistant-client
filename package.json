@@ -1,6 +1,6 @@
 {
   "name": "@io-maana/q-assistant-client",
-  "version": "3.3.0-beta.4",
+  "version": "3.3.0-beta.5",
   "description": "JavaScript package to streamline communication between an assistant and the Maana Q Assistant API.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -8,10 +8,9 @@
     "./": "./build/"
   },
   "scripts": {
-    "build": "npm run build:js && npm run build:tsd && npm run build:doc",
-    "build:js": "babel src --out-dir build",
-    "build:tsd": "tsc --build tsconfig.json",
-    "build:doc": "jsdoc2md > API.md",
+    "build": "npm run build:ts && npm run build:doc",
+    "build:ts": "tsc --build tsconfig.json",
+    "build:doc": "typedoc",
     "prepack": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"src/**/*.js\""
@@ -35,12 +34,11 @@
     "post-robot": "10.0.29"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.1",
-    "@babel/core": "^7.10.2",
-    "@babel/plugin-proposal-class-properties": "^7.10.1",
-    "@babel/preset-env": "^7.10.2",
-    "jsdoc-to-markdown": "^6.0.1",
+    "@types/node": "^14.14.2",
+    "@types/post-robot": "^10.0.0",
     "prettier": "2.0.5",
+    "typedoc": "^0.19.2",
+    "typedoc-plugin-markdown": "^3.0.11",
     "typescript": "^3.9.5"
   }
 }
