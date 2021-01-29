@@ -67,7 +67,7 @@
 
 *Inherited from [Entity](entity.md).[description](entity.md#description)*
 
-*Defined in [models.ts:50](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L50)*
+*Defined in [models.ts:59](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L59)*
 
 Human readable description of the entity.
 
@@ -79,7 +79,7 @@ ___
 
 *Inherited from [Entity](entity.md).[id](entity.md#id)*
 
-*Defined in [models.ts:41](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L41)*
+*Defined in [models.ts:50](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L50)*
 
 The ID of the entity.
 
@@ -89,7 +89,7 @@ ___
 
 •  **isPublic**: boolean
 
-*Defined in [models.ts:286](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L286)*
+*Defined in [models.ts:403](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L403)*
 
 When true others can see this Workspace.
 
@@ -99,7 +99,7 @@ ___
 
 •  **isTemplate**: boolean
 
-*Defined in [models.ts:289](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L289)*
+*Defined in [models.ts:406](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L406)*
 
 When true it shows up as a template Workspace.
 
@@ -109,7 +109,7 @@ ___
 
 •  **location**: [ServiceLocation](servicelocation.md)
 
-*Defined in [models.ts:277](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L277)*
+*Defined in [models.ts:394](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L394)*
 
 The location information about the Workspace.
 
@@ -121,7 +121,7 @@ ___
 
 *Inherited from [Entity](entity.md).[name](entity.md#name)*
 
-*Defined in [models.ts:44](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L44)*
+*Defined in [models.ts:53](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L53)*
 
 The name of the entity.
 
@@ -133,7 +133,7 @@ ___
 
 *Inherited from [Entity](entity.md).[nameDescriptor](entity.md#namedescriptor)*
 
-*Defined in [models.ts:47](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L47)*
+*Defined in [models.ts:56](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L56)*
 
 Name of where the entity comes from (Service/Workspace).
 
@@ -143,7 +143,7 @@ ___
 
 •  **owner**: { id: string ; name: string  }
 
-*Defined in [models.ts:295](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L295)*
+*Defined in [models.ts:412](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L412)*
 
 The user that owns the Workspace.
 
@@ -160,7 +160,7 @@ ___
 
 •  **serviceId**: string
 
-*Defined in [models.ts:283](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L283)*
+*Defined in [models.ts:400](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L400)*
 
 The ID of the logic service backing the Workspace.
 
@@ -170,7 +170,7 @@ ___
 
 •  **tags**: string[]
 
-*Defined in [models.ts:292](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L292)*
+*Defined in [models.ts:409](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L409)*
 
 The list of tags for the Workspace.
 
@@ -180,7 +180,7 @@ ___
 
 •  **thumbnailUrl**: string
 
-*Defined in [models.ts:280](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L280)*
+*Defined in [models.ts:397](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L397)*
 
 The URL to the URL of the thumbnail pic.
 
@@ -190,7 +190,7 @@ The URL to the URL of the thumbnail pic.
 
 ▸ **canEdit**(): Promise\<boolean>
 
-*Defined in [models.ts:298](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L298)*
+*Defined in [models.ts:415](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L415)*
 
 Returns boolean stating if the Workspace is editable.
 
@@ -200,9 +200,9 @@ ___
 
 ### createFunction
 
-▸ **createFunction**(`input`: any): Promise\<[Function](function.md)>
+▸ **createFunction**(`input`: [CreateFunctionInput](createfunctioninput.md)): Promise\<[Function](function.md)>
 
-*Defined in [models.ts:382](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L382)*
+*Defined in [models.ts:499](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L499)*
 
 Creates a new Function in the Workspace.
 
@@ -210,7 +210,7 @@ Creates a new Function in the Workspace.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`input` | any | Information for the function to create.  |
+`input` | [CreateFunctionInput](createfunctioninput.md) | Information for the function to create.  |
 
 **Returns:** Promise\<[Function](function.md)>
 
@@ -218,9 +218,9 @@ ___
 
 ### createFunctions
 
-▸ **createFunctions**(`input`: any[]): Promise\<[Function](function.md)[]>
+▸ **createFunctions**(`input`: [CreateFunctionInput](createfunctioninput.md)[]): Promise\<[Function](function.md)[]>
 
-*Defined in [models.ts:388](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L388)*
+*Defined in [models.ts:505](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L505)*
 
 Creates a list of new Functions in the Workspace.
 
@@ -228,7 +228,7 @@ Creates a list of new Functions in the Workspace.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`input` | any[] | Information for the functions to create.  |
+`input` | [CreateFunctionInput](createfunctioninput.md)[] | Information for the functions to create.  |
 
 **Returns:** Promise\<[Function](function.md)[]>
 
@@ -236,9 +236,9 @@ ___
 
 ### createKind
 
-▸ **createKind**(`input`: any): Promise\<[Kind](kind.md)>
+▸ **createKind**(`input`: [CreateTypeInput](createtypeinput.md)): Promise\<[Kind](kind.md)>
 
-*Defined in [models.ts:430](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L430)*
+*Defined in [models.ts:547](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L547)*
 
 Creates a new Kind in the Workspace.
 
@@ -246,7 +246,7 @@ Creates a new Kind in the Workspace.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`input` | any | Information for Kind to create.  |
+`input` | [CreateTypeInput](createtypeinput.md) | Information for Kind to create.  |
 
 **Returns:** Promise\<[Kind](kind.md)>
 
@@ -254,9 +254,9 @@ ___
 
 ### createKinds
 
-▸ **createKinds**(`input`: any[]): Promise\<[Kind](kind.md)[]>
+▸ **createKinds**(`input`: [CreateTypeInput](createtypeinput.md)[]): Promise\<[Kind](kind.md)[]>
 
-*Defined in [models.ts:436](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L436)*
+*Defined in [models.ts:553](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L553)*
 
 Creates a list of Kinds in the Workspace.
 
@@ -264,7 +264,7 @@ Creates a list of Kinds in the Workspace.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`input` | any[] | Information for Kinds to create.  |
+`input` | [CreateTypeInput](createtypeinput.md)[] | Information for Kinds to create.  |
 
 **Returns:** Promise\<[Kind](kind.md)[]>
 
@@ -272,9 +272,9 @@ ___
 
 ### createKnowledgeGraph
 
-▸ **createKnowledgeGraph**(`input`: any): Promise\<void>
+▸ **createKnowledgeGraph**(`input`: [CreateKnowledgeGraphInput](createknowledgegraphinput.md)): Promise\<void>
 
-*Defined in [models.ts:329](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L329)*
+*Defined in [models.ts:446](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L446)*
 
 Creates a new Knowledge Graph in the Workspace.
 
@@ -282,7 +282,7 @@ Creates a new Knowledge Graph in the Workspace.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`input` | any | Information about the new Knowledge Graph.  |
+`input` | [CreateKnowledgeGraphInput](createknowledgegraphinput.md) | Information about the new Knowledge Graph.  |
 
 **Returns:** Promise\<void>
 
@@ -290,9 +290,9 @@ ___
 
 ### createKnowledgeGraphs
 
-▸ **createKnowledgeGraphs**(`input`: any[]): Promise\<void>
+▸ **createKnowledgeGraphs**(`input`: [CreateKnowledgeGraphInput](createknowledgegraphinput.md)[]): Promise\<void>
 
-*Defined in [models.ts:335](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L335)*
+*Defined in [models.ts:452](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L452)*
 
 Creates a list of new Knowledge Graphs in the Workspace.
 
@@ -300,7 +300,7 @@ Creates a list of new Knowledge Graphs in the Workspace.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`input` | any[] | Information about the new Knowledge Graphs.  |
+`input` | [CreateKnowledgeGraphInput](createknowledgegraphinput.md)[] | Information about the new Knowledge Graphs.  |
 
 **Returns:** Promise\<void>
 
@@ -310,7 +310,7 @@ ___
 
 ▸ **deleteFunction**(`name`: string): Promise\<void>
 
-*Defined in [models.ts:406](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L406)*
+*Defined in [models.ts:523](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L523)*
 
 Deletes a function in the Workspace.
 
@@ -328,7 +328,7 @@ ___
 
 ▸ **deleteKind**(`name`: string): Promise\<void>
 
-*Defined in [models.ts:454](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L454)*
+*Defined in [models.ts:571](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L571)*
 
 Deletes a Kind in the Workspace.
 
@@ -346,7 +346,7 @@ ___
 
 ▸ **getActiveGraph**(): Promise\<[Maybe](../README.md#maybe)\<[KnowledgeGraph](knowledgegraph.md) \| [Function](function.md)>>
 
-*Defined in [models.ts:320](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L320)*
+*Defined in [models.ts:437](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L437)*
 
 Gets the currently active graph.
 
@@ -358,7 +358,7 @@ ___
 
 ▸ **getFunctionGraph**(`id`: string): Promise\<[Function](function.md)>
 
-*Defined in [models.ts:415](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L415)*
+*Defined in [models.ts:532](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L532)*
 
 Gets the Function based on ID with its implementation and graph
 information.
@@ -380,7 +380,7 @@ ___
 
 ▸ **getFunctions**(): Promise\<[Function](function.md)[]>
 
-*Defined in [models.ts:370](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L370)*
+*Defined in [models.ts:487](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L487)*
 
 Gets the list of Functions that live in the Workspace.
 
@@ -392,7 +392,7 @@ ___
 
 ▸ **getFunctionsByName**(`names`: string[]): Promise\<[Function](function.md)[]>
 
-*Defined in [models.ts:376](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L376)*
+*Defined in [models.ts:493](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L493)*
 
 Gets a list of Functions that live in the Workspace based on their names.
 
@@ -410,7 +410,7 @@ ___
 
 ▸ **getImportedAssistants**(): Promise\<[Assistant](assistant.md)[]>
 
-*Defined in [models.ts:341](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L341)*
+*Defined in [models.ts:458](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L458)*
 
 Gets all of the Assistants imported into the Workspaces inventory.
 
@@ -422,7 +422,7 @@ ___
 
 ▸ **getImportedServices**(): Promise\<[Service](service.md)[]>
 
-*Defined in [models.ts:338](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L338)*
+*Defined in [models.ts:455](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L455)*
 
 Gets all of the Services imported into the Workspaces inventory.
 
@@ -434,7 +434,7 @@ ___
 
 ▸ **getKinds**(): Promise\<[Kind](kind.md)[]>
 
-*Defined in [models.ts:418](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L418)*
+*Defined in [models.ts:535](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L535)*
 
 Gets the list of Kinds that live in the Workspace.
 
@@ -446,7 +446,7 @@ ___
 
 ▸ **getKindsByName**(`names`: string[]): Promise\<[Kind](kind.md)[]>
 
-*Defined in [models.ts:424](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L424)*
+*Defined in [models.ts:541](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L541)*
 
 Gets a list of Kinds that live in the Workspace based on their names.
 
@@ -464,7 +464,7 @@ ___
 
 ▸ **getKnowledgeGraphs**(): Promise\<[KnowledgeGraph](knowledgegraph.md)[]>
 
-*Defined in [models.ts:323](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L323)*
+*Defined in [models.ts:440](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L440)*
 
 Gets all of the Knowledge Graphs in the Workspace.
 
@@ -476,7 +476,7 @@ ___
 
 ▸ **importService**(`serviceId`: string): Promise\<[Maybe](../README.md#maybe)\<string>>
 
-*Defined in [models.ts:348](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L348)*
+*Defined in [models.ts:465](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L465)*
 
 Imports a Service or Assistant into the Workspaces inventory.
 
@@ -496,7 +496,7 @@ ___
 
 ▸ **importServices**(`serviceIds`: string[]): Promise\<string[]>
 
-*Defined in [models.ts:355](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L355)*
+*Defined in [models.ts:472](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L472)*
 
 Imports a list of Services and/or Assistants into the Workspaces inventory.
 
@@ -516,7 +516,7 @@ ___
 
 ▸ **lockedBy**(): Promise\<[Maybe](../README.md#maybe)\<string>>
 
-*Defined in [models.ts:301](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L301)*
+*Defined in [models.ts:418](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L418)*
 
 Returns the e-mail of the user who locked the Workspace.
 
@@ -528,7 +528,7 @@ ___
 
 ▸ **removeService**(`serviceId`: string): Promise\<void>
 
-*Defined in [models.ts:361](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L361)*
+*Defined in [models.ts:478](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L478)*
 
 Removes a Service or Assistant from the Workspaces inventory.
 
@@ -546,7 +546,7 @@ ___
 
 ▸ **removeServices**(`serviceIds`: string): Promise\<void>
 
-*Defined in [models.ts:367](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L367)*
+*Defined in [models.ts:484](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L484)*
 
 Removes a list Services and/or Assistants from the Workspaces inventory.
 
@@ -564,7 +564,7 @@ ___
 
 ▸ **setLocked**(`isLocked?`: boolean): Promise\<void>
 
-*Defined in [models.ts:308](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L308)*
+*Defined in [models.ts:425](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L425)*
 
 Updates the locked state of the Workspace.
 
@@ -582,7 +582,7 @@ ___
 
 ▸ **triggerRepairEvent**(): Promise\<void>
 
-*Defined in [models.ts:317](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L317)*
+*Defined in [models.ts:434](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L434)*
 
 Sends a repair event to all assistants.
 
@@ -592,9 +592,9 @@ ___
 
 ### update
 
-▸ **update**(`changes`: any): Promise\<void>
+▸ **update**(`changes`: [UpdateWorkspaceInput](updateworkspaceinput.md)): Promise\<void>
 
-*Defined in [models.ts:314](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L314)*
+*Defined in [models.ts:431](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L431)*
 
 Updates information about the Workspace.
 
@@ -602,7 +602,7 @@ Updates information about the Workspace.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`changes` | any | Information to update the Workspace with.  |
+`changes` | [UpdateWorkspaceInput](updateworkspaceinput.md) | Information to update the Workspace with.  |
 
 **Returns:** Promise\<void>
 
@@ -610,9 +610,9 @@ ___
 
 ### updateFunction
 
-▸ **updateFunction**(`changes`: any): Promise\<[Function](function.md)>
+▸ **updateFunction**(`changes`: [UpdateFunctionInput](updatefunctioninput.md)): Promise\<[Function](function.md)>
 
-*Defined in [models.ts:394](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L394)*
+*Defined in [models.ts:511](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L511)*
 
 Updates a Function in the Workspace.
 
@@ -620,7 +620,7 @@ Updates a Function in the Workspace.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`changes` | any | The changes to make to the Function.  |
+`changes` | [UpdateFunctionInput](updatefunctioninput.md) | The changes to make to the Function.  |
 
 **Returns:** Promise\<[Function](function.md)>
 
@@ -628,9 +628,9 @@ ___
 
 ### updateFunctions
 
-▸ **updateFunctions**(`changes`: any[]): Promise\<[Function](function.md)[]>
+▸ **updateFunctions**(`changes`: [UpdateFunctionInput](updatefunctioninput.md)[]): Promise\<[Function](function.md)[]>
 
-*Defined in [models.ts:400](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L400)*
+*Defined in [models.ts:517](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L517)*
 
 Updates a list of Function in the Workspace.
 
@@ -638,7 +638,7 @@ Updates a list of Function in the Workspace.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`changes` | any[] | The changes to make to the Functions.  |
+`changes` | [UpdateFunctionInput](updatefunctioninput.md)[] | The changes to make to the Functions.  |
 
 **Returns:** Promise\<[Function](function.md)[]>
 
@@ -646,9 +646,9 @@ ___
 
 ### updateKind
 
-▸ **updateKind**(`changes`: any): Promise\<[Kind](kind.md)>
+▸ **updateKind**(`changes`: [UpdateTypeInput](updatetypeinput.md)): Promise\<[Kind](kind.md)>
 
-*Defined in [models.ts:442](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L442)*
+*Defined in [models.ts:559](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L559)*
 
 Updates a Kind in the Workspace.
 
@@ -656,7 +656,7 @@ Updates a Kind in the Workspace.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`changes` | any | The changes to make to the Kind.  |
+`changes` | [UpdateTypeInput](updatetypeinput.md) | The changes to make to the Kind.  |
 
 **Returns:** Promise\<[Kind](kind.md)>
 
@@ -664,9 +664,9 @@ ___
 
 ### updateKinds
 
-▸ **updateKinds**(`changes`: any[]): Promise\<[Kind](kind.md)[]>
+▸ **updateKinds**(`changes`: [UpdateTypeInput](updatetypeinput.md)[]): Promise\<[Kind](kind.md)[]>
 
-*Defined in [models.ts:448](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L448)*
+*Defined in [models.ts:565](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L565)*
 
 Updates a list of Kinds in the Workspace.
 
@@ -674,6 +674,6 @@ Updates a list of Kinds in the Workspace.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`changes` | any[] | The changes to make to the Kinds.  |
+`changes` | [UpdateTypeInput](updatetypeinput.md)[] | The changes to make to the Kinds.  |
 
 **Returns:** Promise\<[Kind](kind.md)[]>

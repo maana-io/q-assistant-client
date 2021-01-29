@@ -1,4 +1,8 @@
 import {
+  CreateFunctionInput,
+  CreateServiceInput,
+  CreateTypeInput,
+  CreateWorkspaceInput,
   Entity,
   EntityIdentifier,
   Function,
@@ -6,6 +10,8 @@ import {
   Maybe,
   Selected,
   Service,
+  UpdateFunctionInput,
+  UpdateTypeInput,
   User,
   Workspace
 } from './models';
@@ -207,7 +213,7 @@ export namespace AssistantAPIClient {
    *
    * @returns ID of the created service.
    */
-  export function createService(input: any): Promise<string> {
+  export function createService(input: CreateServiceInput): Promise<string> {
     return APICall('createService', input);
   }
 
@@ -302,7 +308,9 @@ export namespace AssistantAPIClient {
    *
    * @return The new Workspace.
    */
-  export function createWorkspace(workspace: any): Promise<Workspace> {
+  export function createWorkspace(
+    workspace: CreateWorkspaceInput
+  ): Promise<Workspace> {
     return APICall('createWorkspace', workspace);
   }
 
@@ -340,7 +348,9 @@ export namespace AssistantAPIClient {
    *
    * @returns The new function.
    */
-  export function createFunction(input: any): Promise<Function> {
+  export function createFunction(
+    input: CreateFunctionInput
+  ): Promise<Function> {
     return APICall('createFunction', input);
   }
 
@@ -354,7 +364,9 @@ export namespace AssistantAPIClient {
    *
    * @returns The updated Function.
    */
-  export function updateFunction(input: any): Promise<Function> {
+  export function updateFunction(
+    input: UpdateFunctionInput
+  ): Promise<Function> {
     return APICall('updateFunction', input);
   }
 
@@ -477,7 +489,7 @@ export namespace AssistantAPIClient {
    *
    * @returns The new Kind
    */
-  export function createKind(input: any): Promise<Kind> {
+  export function createKind(input: CreateTypeInput): Promise<Kind> {
     return APICall('createKind', input);
   }
 
@@ -491,7 +503,7 @@ export namespace AssistantAPIClient {
    *
    * @returns The updated Kind.
    */
-  export function updateKind(input: any): Promise<Kind> {
+  export function updateKind(input: UpdateTypeInput): Promise<Kind> {
     return APICall('updateKind', input);
   }
 

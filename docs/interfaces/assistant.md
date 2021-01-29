@@ -33,7 +33,7 @@
 
 *Inherited from [Entity](entity.md).[description](entity.md#description)*
 
-*Defined in [models.ts:50](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L50)*
+*Defined in [models.ts:59](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L59)*
 
 Human readable description of the entity.
 
@@ -45,7 +45,7 @@ ___
 
 *Inherited from [Entity](entity.md).[id](entity.md#id)*
 
-*Defined in [models.ts:41](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L41)*
+*Defined in [models.ts:50](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L50)*
 
 The ID of the entity.
 
@@ -55,7 +55,7 @@ ___
 
 •  **location**: [ServiceLocation](servicelocation.md)
 
-*Defined in [models.ts:260](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L260)*
+*Defined in [models.ts:377](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L377)*
 
 The location that the Assistant can be reached at.
 
@@ -67,7 +67,7 @@ ___
 
 *Inherited from [Entity](entity.md).[name](entity.md#name)*
 
-*Defined in [models.ts:44](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L44)*
+*Defined in [models.ts:53](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L53)*
 
 The name of the entity.
 
@@ -79,7 +79,7 @@ ___
 
 *Inherited from [Entity](entity.md).[nameDescriptor](entity.md#namedescriptor)*
 
-*Defined in [models.ts:47](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L47)*
+*Defined in [models.ts:56](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L56)*
 
 Name of where the entity comes from (Service/Workspace).
 
@@ -89,7 +89,7 @@ ___
 
 •  **version**: number
 
-*Defined in [models.ts:266](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L266)*
+*Defined in [models.ts:383](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L383)*
 
 The current version of the Assistant.  This is incremented by catalog each
 time the Assistant is updated.
@@ -98,9 +98,9 @@ time the Assistant is updated.
 
 ### update
 
-▸ **update**(`changes`: any): Promise\<void>
+▸ **update**(`changes`: [UpdateAssistantInput](updateassistantinput.md)): Promise\<void>
 
-*Defined in [models.ts:272](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L272)*
+*Defined in [models.ts:389](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L389)*
 
 Updates information about the Assistant.
 
@@ -108,6 +108,6 @@ Updates information about the Assistant.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`changes` | any | Information to update the Assistant with.  |
+`changes` | [UpdateAssistantInput](updateassistantinput.md) | Information to update the Assistant with.  |
 
 **Returns:** Promise\<void>
