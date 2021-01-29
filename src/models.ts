@@ -1,3 +1,12 @@
+import {
+  EntityType,
+  GraphQLFunctionType,
+  GraphRefInputType,
+  ImplementationType,
+  NodeType,
+  ServiceType
+} from './constants';
+
 export type Maybe<T> = T | null | undefined;
 
 export interface IDObject {
@@ -50,6 +59,75 @@ export interface Entity {
   description?: string;
 }
 
+export interface ArgumentRef {
+  argumentName: string;
+  argumentId: string;
+}
+
+export interface OperationArgumentRef {
+  operationId: string;
+  argumentName: string;
+  argumentId: string;
+}
+
+export interface FunctionResultRef {
+  result?: Maybe<boolean>;
+}
+
+export interface OperationResultRef {
+  operationId: string;
+}
+
+export interface OutputArgumentRef {
+  operation: string;
+  fieldPath: string[];
+  argument: string;
+}
+
+/** Info for one end of a connection between two items within the graph. */
+export type GraphRef =
+  | ArgumentRef
+  | OperationArgumentRef
+  | FunctionResultRef
+  | OperationResultRef
+  | OutputArgumentRef;
+
+/* The connection between two items on a graph. */
+export interface Connection {
+  id: string;
+
+  /** End point for the outgoing connection point */
+  from: GraphRef;
+
+  /** End point for the incoming connection point */
+  to: GraphRef;
+}
+
+/**
+ * The core shape of a node
+ */
+export interface Node {
+  id: string;
+
+  /** Human readable description of the Node.*/
+  description?: Maybe<string>;
+
+  /**
+   * Position of the node on the graph. Null indicates the need to layout the
+   * position.
+   */
+  location?: Maybe<Position>;
+
+  /** Indicates if the node is collapsed or expanded in the node display. */
+  isCollapsed: boolean;
+
+  /** The type of node */
+  type: NodeType;
+
+  /** The entity referenced by the node. */
+  entityIdentifier?: Maybe<EntityIdentifier>;
+}
+
 export interface Graph {
   /** The offset of the Graph. */
   offset: Position;
@@ -58,15 +136,15 @@ export interface Graph {
   zoom: number;
 
   /** The nodes in the Graph. */
-  nodes: any[]; // TODO: document what is in the nodes.
+  nodes: Node[];
 
   /** The connections in the Graph. */
-  connections: any[]; // TODO: document what is in the connections.
+  connections: Connection[];
 }
 
 export interface Kind extends Entity {
   /** The signature of the Kind. */
-  signature: any;
+  signature: any; // TODO: Get Type Expressions in here.
 
   /** The service that the Kind comes from. */
   service: IDObject;
@@ -75,7 +153,7 @@ export interface Kind extends Entity {
    * Updates information about the Kind.
    * @param changes Information to update the Kind with.
    */
-  update(changes: any): Promise<void>; // TODO: Document the update kind input.
+  update(changes: UpdateTypeInput): Promise<void>;
 }
 
 /**
@@ -127,13 +205,13 @@ export interface KnowledgeGraph extends Entity {
    * Updates information about the Knowledge Graph.
    * @param changes Information to update the Knowledge Graph with.
    */
-  update(changes: any): Promise<void>; // TODO: Document the update Knowledge Graph input.
+  update(changes: UpdateKnowledgeGraphInput): Promise<void>;
 
   /**
    * Returns the list of nodes inside of the Knowledge Graph.
    * @deprecated use graph.nodes instead.
    */
-  getNodes(): Promise<any[]>;
+  getNodes(): Promise<Node[]>;
 
   /**
    * Adds an entity as a node on the Knowledge Graph.
@@ -153,19 +231,27 @@ export interface KnowledgeGraph extends Entity {
    * @param nodeId The ID of the node to update.
    * @param changes The changes to make to the layout.
    */
-  updateNodeLayout(nodeId: string, changes: any): Promise<void>;
+  updateNodeLayout(
+    nodeId: string,
+    changes: UpdateNodeLayoutInput
+  ): Promise<void>;
 
   /**
    * Updates the layout information for the graph of the Knowledge Graph.
    * @param changes The changes to make to the layout.
    */
-  updateGraphLayout(changes: any): Promise<void>;
+  updateGraphLayout(changes: UpdateGraphLayoutInput): Promise<void>;
 }
 
 /**
  * Function implementation union.
  */
 export type Implementation = Graph;
+
+export interface ArgumentFieldSelection {
+  argument: string;
+  fieldSelection: string[][];
+}
 
 /**
  * @typedef {Object} Function
@@ -181,6 +267,25 @@ export interface Function extends Entity {
 
   /** The service that the Kind comes from. */
   service: IDObject;
+
+  /** Type Parameters are placeholders for types and are used as generics. */
+  typeParameters: string[];
+
+  /** How the function is run (like query or mutation) */
+  graphqlFunctionType: GraphQLFunctionType;
+
+  /**
+   * Defines if this is a pure or impure Function, or if its purity is unknown.
+   */
+  isPure: boolean;
+
+  /**
+   * The implementation representing what the Function does.  This is only used
+   * by Functions on Logic services.
+   */
+  implementation: Implementation;
+
+  inputMask?: ArgumentFieldSelection[];
 
   /**
    * Returns boolean stating if the Function is editable.
@@ -203,20 +308,23 @@ export interface Function extends Entity {
    * Updates information about the Function.
    * @param changes Information to update the Function with.
    */
-  update(changes: any): Promise<void>; // TODO: Document the update function input.
+  update(changes: UpdateFunctionInput): Promise<void>;
 
   /**
    * Updates the layout information for a node in the Function.
    * @param nodeId The ID of the node to update.
    * @param changes The changes to make to the layout.
    */
-  updateNodeLayout(nodeId: string, changes: any): Promise<void>;
+  updateNodeLayout(
+    nodeId: string,
+    changes: UpdateNodeLayoutInput
+  ): Promise<void>;
 
   /**
    * Updates the layout information for the graph of the Function.
    * @param changes The changes to make to the layout.
    */
-  updateGraphLayout(changes: any): Promise<void>;
+  updateGraphLayout(changes: UpdateGraphLayoutInput): Promise<void>;
 
   /**
    * Executes a GraphQL request against the Function.
@@ -224,12 +332,21 @@ export interface Function extends Entity {
    * @param resolve A string with the fields to resolve on the Function.
    * @returns The results of running the Function.
    */
-  execute(variables: any, resolve: string): Promise<any>;
+  execute(
+    variables?: Maybe<Record<string, any>>,
+    resolve?: string
+  ): Promise<any>;
 }
 
 export interface ServiceLocation {
   /** The URL that the locator references. */
   url: string;
+
+  /**
+   * A form of the URL that uses the Maana Q platform to proxy a request to the
+   * service. This is useful if the client cannot directly access the service.
+   */
+  platformUrl: string;
 }
 
 export interface Service extends Entity {
@@ -252,7 +369,7 @@ export interface Service extends Entity {
    * Updates information about the Service.
    * @param changes Information to update the Service with.
    */
-  update(changes: any): Promise<void>; // TODO: Document the update Service input.
+  update(changes: UpdateExternalGraphQLServiceInput): Promise<void>;
 }
 
 export interface Assistant extends Entity {
@@ -269,7 +386,7 @@ export interface Assistant extends Entity {
    * Updates information about the Assistant.
    * @param changes Information to update the Assistant with.
    */
-  update(changes: any): Promise<void>; // TODO: Document the update Assistant input.
+  update(changes: UpdateAssistantInput): Promise<void>;
 }
 
 export interface Workspace extends Entity {
@@ -311,7 +428,7 @@ export interface Workspace extends Entity {
    * Updates information about the Workspace.
    * @param changes Information to update the Workspace with.
    */
-  update(changes: any): Promise<void>; // TODO: Document the update Workspace input.
+  update(changes: UpdateWorkspaceInput): Promise<void>;
 
   /** Sends a repair event to all assistants. */
   triggerRepairEvent(): Promise<void>;
@@ -326,13 +443,13 @@ export interface Workspace extends Entity {
    * Creates a new Knowledge Graph in the Workspace.
    * @param input Information about the new Knowledge Graph.
    */
-  createKnowledgeGraph(input: any): Promise<void>;
+  createKnowledgeGraph(input: CreateKnowledgeGraphInput): Promise<void>;
 
   /**
    * Creates a list of new Knowledge Graphs in the Workspace.
    * @param input Information about the new Knowledge Graphs.
    */
-  createKnowledgeGraphs(input: any[]): Promise<void>;
+  createKnowledgeGraphs(input: CreateKnowledgeGraphInput[]): Promise<void>;
 
   /** Gets all of the Services imported into the Workspaces inventory. */
   getImportedServices(): Promise<Service[]>;
@@ -379,25 +496,25 @@ export interface Workspace extends Entity {
    * Creates a new Function in the Workspace.
    * @param input Information for the function to create.
    */
-  createFunction(input: any): Promise<Function>;
+  createFunction(input: CreateFunctionInput): Promise<Function>;
 
   /**
    * Creates a list of new Functions in the Workspace.
    * @param input Information for the functions to create.
    */
-  createFunctions(input: any[]): Promise<Function[]>;
+  createFunctions(input: CreateFunctionInput[]): Promise<Function[]>;
 
   /**
    * Updates a Function in the Workspace.
    * @param changes The changes to make to the Function.
    */
-  updateFunction(changes: any): Promise<Function>;
+  updateFunction(changes: UpdateFunctionInput): Promise<Function>;
 
   /**
    * Updates a list of Function in the Workspace.
    * @param changes The changes to make to the Functions.
    */
-  updateFunctions(changes: any[]): Promise<Function[]>;
+  updateFunctions(changes: UpdateFunctionInput[]): Promise<Function[]>;
 
   /**
    * Deletes a function in the Workspace.
@@ -427,29 +544,284 @@ export interface Workspace extends Entity {
    * Creates a new Kind in the Workspace.
    * @param input Information for Kind to create.
    */
-  createKind(input: any): Promise<Kind>;
+  createKind(input: CreateTypeInput): Promise<Kind>;
 
   /**
    * Creates a list of Kinds in the Workspace.
    * @param input Information for Kinds to create.
    */
-  createKinds(input: any[]): Promise<Kind[]>;
+  createKinds(input: CreateTypeInput[]): Promise<Kind[]>;
 
   /**
    * Updates a Kind in the Workspace.
    * @param changes The changes to make to the Kind.
    */
-  updateKind(changes: any): Promise<Kind>;
+  updateKind(changes: UpdateTypeInput): Promise<Kind>;
 
   /**
    * Updates a list of Kinds in the Workspace.
    * @param changes The changes to make to the Kinds.
    */
-  updateKinds(changes: any[]): Promise<Kind[]>;
+  updateKinds(changes: UpdateTypeInput[]): Promise<Kind[]>;
 
   /**
    * Deletes a Kind in the Workspace.
    * @param name The name of the Kind to delete.
    */
   deleteKind(name: string): Promise<void>;
+}
+
+export interface UpdateNodeLayoutInput {
+  x?: number;
+  y?: number;
+  collapsed?: boolean;
+}
+
+export interface UpdateGraphLayoutInput {
+  zoom?: number;
+  offsetX?: number;
+  offsetY?: number;
+  nodes?: (UpdateNodeLayoutInput & { id: string })[];
+}
+
+export interface UpdateExternalGraphQLServiceInput {
+  id: string;
+  name?: Maybe<string>;
+  endpointUrl?: Maybe<string>;
+  isSystem?: Maybe<boolean>;
+  isReadOnly?: Maybe<boolean>;
+  tags?: Maybe<Array<string>>;
+  version: number;
+}
+
+export interface UpdateAssistantInput {
+  id: string;
+  name?: Maybe<string>;
+  endpointUrl?: Maybe<string>;
+  isSystem?: Maybe<boolean>;
+  isReadOnly?: Maybe<boolean>;
+  tags?: Maybe<Array<string>>;
+  version: number;
+}
+
+export interface CreateServiceInput {
+  id?: Maybe<string>;
+  serviceType: ServiceType;
+  name: string;
+  description?: Maybe<string>;
+  endpointUrl: string;
+  thumbnailUrl?: Maybe<string>;
+  isSystem?: boolean;
+  isReadOnly?: boolean;
+  tags?: Array<string>;
+}
+
+export interface EntityLockInput {
+  lockedBy: string;
+}
+
+export interface PositionInput {
+  x?: Maybe<number>;
+  y?: Maybe<number>;
+}
+
+export interface CreateNodeInput {
+  id?: Maybe<string>;
+  location?: Maybe<PositionInput>;
+  isCollapsed?: Maybe<boolean>;
+  description?: Maybe<string>;
+  type: NodeType;
+  entity?: Maybe<EntityIdentifier>;
+  operation?: Maybe<EntityIdentifier>;
+}
+
+export interface OperationArgumentRefInput {
+  operation: string;
+  argument: string;
+}
+
+export interface OutputArgumentRefInput {
+  operation: string;
+  fieldPath: Array<string>;
+  argument: string;
+}
+
+export interface GraphRefInput {
+  graphRefInputType: GraphRefInputType;
+  argument?: Maybe<string>;
+  operationArgument?: Maybe<OperationArgumentRefInput>;
+  operationResult?: Maybe<string>;
+  outputArgument?: Maybe<OutputArgumentRefInput>;
+}
+
+export interface CreateConnectionInput {
+  from: GraphRefInput;
+  to: GraphRefInput;
+}
+
+export interface CreateGraphInput {
+  offset?: Maybe<PositionInput>;
+  zoom?: Maybe<number>;
+  nodes?: Maybe<Array<CreateNodeInput>>;
+  connections?: Maybe<Array<CreateConnectionInput>>;
+}
+
+export interface CreateKnowledgeGraphInput {
+  id?: Maybe<string>;
+  name: string;
+  description?: Maybe<string>;
+  graph?: Maybe<CreateGraphInput>;
+}
+
+export interface CreateTypeInput {
+  id?: Maybe<string>;
+  name: string;
+  description?: Maybe<string>;
+  signature: any; // TODO: Get Type Expressions in here.
+  isManaged?: boolean;
+}
+
+export interface ArgumentFieldSelectionInput {
+  argument: string;
+  fieldSelection?: Maybe<Array<Array<string>>>;
+}
+
+export interface CreateFunctionInput {
+  id?: Maybe<string>;
+  name: string;
+  description?: Maybe<string>;
+  signature: any; // TODO: Get Type Expressions in here.
+  isPure?: Maybe<boolean>;
+  graphqlFunctionType: GraphQLFunctionType;
+  implementation: ImplementationType;
+  graphImplementation?: Maybe<CreateGraphInput>;
+  inputMask?: Maybe<Array<ArgumentFieldSelectionInput>>;
+}
+
+export interface CreateFileInput {
+  id?: Maybe<string>;
+  name?: Maybe<string>;
+  description?: Maybe<string>;
+  serviceId: string;
+  url: string;
+  thumbnailUrl?: Maybe<string>;
+  mimeType?: Maybe<string>;
+  size?: Maybe<number>;
+  progress?: Maybe<number>;
+  status?: Maybe<number>;
+  loadExternalMetadata?: Maybe<boolean>;
+}
+
+export interface CreateEntityInput {
+  entityType: EntityType;
+  knowledgeGraph?: Maybe<CreateKnowledgeGraphInput>;
+  type?: Maybe<CreateTypeInput>;
+  function?: Maybe<CreateFunctionInput>;
+  file?: Maybe<CreateFileInput>;
+}
+
+export interface CloneEntityInput {
+  entityType: EntityType;
+  oldName: string;
+  oldServiceId: string;
+  newName: string;
+}
+
+export interface UpdateNodeInput {
+  id: string;
+  location?: Maybe<PositionInput>;
+  isCollapsed?: Maybe<boolean>;
+  description?: Maybe<string>;
+  type: NodeType;
+}
+
+export interface UpdateGraphInput {
+  offset?: Maybe<PositionInput>;
+  zoom?: Maybe<number>;
+  createNodes?: Maybe<Array<CreateNodeInput>>;
+  updateNodes?: Maybe<Array<UpdateNodeInput>>;
+  deleteNodes?: Maybe<Array<string>>;
+  createConnections?: Maybe<Array<CreateConnectionInput>>;
+  deleteConnections?: Maybe<Array<string>>;
+}
+
+export interface UpdateKnowledgeGraphInput {
+  id: string;
+  name?: Maybe<string>;
+  description?: Maybe<string>;
+  lock?: Maybe<EntityLockInput>;
+  graph?: Maybe<UpdateGraphInput>;
+}
+
+export interface UpdateTypeInput {
+  id: string;
+  name?: Maybe<string>;
+  description?: Maybe<string>;
+  signature?: Maybe<any>; // TODO: Get Type Expressions in here.
+  isManaged?: Maybe<boolean>;
+}
+
+export interface UpdateFunctionInput {
+  id: string;
+  name?: Maybe<string>;
+  description?: Maybe<string>;
+  signature?: Maybe<any>; // TODO: Get Type Expressions in here.
+  isPure?: Maybe<boolean>;
+  graphqlFunctionType?: Maybe<GraphQLFunctionType>;
+  lock?: Maybe<EntityLockInput>;
+  implementation?: Maybe<ImplementationType>;
+  graphImplementation?: Maybe<UpdateGraphInput>;
+  inputMask?: Maybe<Array<ArgumentFieldSelectionInput>>;
+}
+
+export interface UpdateFileInput {
+  id: string;
+  name?: Maybe<string>;
+  description?: Maybe<string>;
+  serviceId?: Maybe<string>;
+  url?: Maybe<string>;
+  thumbnailUrl?: Maybe<string>;
+  mimeType?: Maybe<string>;
+  size?: Maybe<number>;
+  progress?: Maybe<number>;
+  status?: Maybe<number>;
+}
+
+export interface UpdateEntityInput {
+  entityType: EntityType;
+  knowledgeGraph?: Maybe<UpdateKnowledgeGraphInput>;
+  type?: Maybe<UpdateTypeInput>;
+  function?: Maybe<UpdateFunctionInput>;
+  file?: Maybe<UpdateFileInput>;
+}
+
+export interface CreateWorkspaceInput {
+  id?: Maybe<string>;
+  serviceId?: Maybe<string>;
+  name: string;
+  description?: Maybe<string>;
+  thumbnailUrl?: Maybe<string>;
+  tags?: Maybe<Array<string>>;
+  owner: string;
+  isPublic?: Maybe<boolean>;
+  isTemplate?: Maybe<boolean>;
+  createEntities?: Maybe<Array<CreateEntityInput>>;
+  addServices?: Maybe<Array<string>>;
+}
+
+export interface UpdateWorkspaceInput {
+  id: string;
+  name?: Maybe<string>;
+  description?: Maybe<string>;
+  thumbnailUrl?: Maybe<string>;
+  tags?: Maybe<Array<string>>;
+  isPublic?: Maybe<boolean>;
+  isTemplate?: Maybe<boolean>;
+  lock?: Maybe<EntityLockInput>;
+  createEntities?: Maybe<Array<CreateEntityInput>>;
+  cloneEntities?: Maybe<Array<CloneEntityInput>>;
+  updateEntities?: Maybe<Array<UpdateEntityInput>>;
+  deleteEntities?: Maybe<Array<EntityIdentifier>>;
+  addServices?: Maybe<Array<string>>;
+  removeServices?: Maybe<Array<string>>;
 }

@@ -21,9 +21,9 @@
 
 ### connections
 
-•  **connections**: any[]
+•  **connections**: [Connection](connection.md)[]
 
-*Defined in [models.ts:64](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L64)*
+*Defined in [models.ts:142](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L142)*
 
 The connections in the Graph.
 
@@ -31,9 +31,9 @@ ___
 
 ### nodes
 
-•  **nodes**: any[]
+•  **nodes**: [Node](node.md)[]
 
-*Defined in [models.ts:61](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L61)*
+*Defined in [models.ts:139](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L139)*
 
 The nodes in the Graph.
 
@@ -43,7 +43,7 @@ ___
 
 •  **offset**: [Position](position.md)
 
-*Defined in [models.ts:55](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L55)*
+*Defined in [models.ts:133](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L133)*
 
 The offset of the Graph.
 
@@ -53,6 +53,6 @@ ___
 
 •  **zoom**: number
 
-*Defined in [models.ts:58](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L58)*
+*Defined in [models.ts:136](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L136)*
 
 The zoom of the Graph.

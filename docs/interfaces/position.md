@@ -21,7 +21,7 @@
 
 •  **x**: number
 
-*Defined in [models.ts:8](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L8)*
+*Defined in [models.ts:17](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L17)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 •  **y**: number
 
-*Defined in [models.ts:9](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L9)*
+*Defined in [models.ts:18](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L18)*

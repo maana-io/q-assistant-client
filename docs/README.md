@@ -14,29 +14,73 @@
 
 * [AssistantState](enums/assistantstate.md)
 * [EntityType](enums/entitytype.md)
+* [FunctionType](enums/functiontype.md)
+* [GraphQLFunctionType](enums/graphqlfunctiontype.md)
+* [GraphRefInputType](enums/graphrefinputtype.md)
+* [ImplementationType](enums/implementationtype.md)
+* [NodeType](enums/nodetype.md)
+* [RenderMode](enums/rendermode.md)
 * [Scalars](enums/scalars.md)
 * [ServiceType](enums/servicetype.md)
 
 ### Interfaces
 
+* [ArgumentFieldSelection](interfaces/argumentfieldselection.md)
+* [ArgumentFieldSelectionInput](interfaces/argumentfieldselectioninput.md)
+* [ArgumentRef](interfaces/argumentref.md)
 * [Assistant](interfaces/assistant.md)
+* [CloneEntityInput](interfaces/cloneentityinput.md)
+* [Connection](interfaces/connection.md)
+* [CreateConnectionInput](interfaces/createconnectioninput.md)
+* [CreateEntityInput](interfaces/createentityinput.md)
+* [CreateFileInput](interfaces/createfileinput.md)
+* [CreateFunctionInput](interfaces/createfunctioninput.md)
+* [CreateGraphInput](interfaces/creategraphinput.md)
+* [CreateKnowledgeGraphInput](interfaces/createknowledgegraphinput.md)
+* [CreateNodeInput](interfaces/createnodeinput.md)
+* [CreateServiceInput](interfaces/createserviceinput.md)
+* [CreateTypeInput](interfaces/createtypeinput.md)
+* [CreateWorkspaceInput](interfaces/createworkspaceinput.md)
 * [Entity](interfaces/entity.md)
 * [EntityIdentifier](interfaces/entityidentifier.md)
+* [EntityLockInput](interfaces/entitylockinput.md)
 * [Function](interfaces/function.md)
+* [FunctionResultRef](interfaces/functionresultref.md)
 * [Graph](interfaces/graph.md)
+* [GraphRefInput](interfaces/graphrefinput.md)
 * [IDObject](interfaces/idobject.md)
 * [Kind](interfaces/kind.md)
 * [KnowledgeGraph](interfaces/knowledgegraph.md)
+* [Node](interfaces/node.md)
+* [OperationArgumentRef](interfaces/operationargumentref.md)
+* [OperationArgumentRefInput](interfaces/operationargumentrefinput.md)
+* [OperationResultRef](interfaces/operationresultref.md)
+* [OutputArgumentRef](interfaces/outputargumentref.md)
+* [OutputArgumentRefInput](interfaces/outputargumentrefinput.md)
 * [Position](interfaces/position.md)
+* [PositionInput](interfaces/positioninput.md)
 * [Selected](interfaces/selected.md)
 * [Service](interfaces/service.md)
 * [ServiceLocation](interfaces/servicelocation.md)
+* [UpdateAssistantInput](interfaces/updateassistantinput.md)
+* [UpdateEntityInput](interfaces/updateentityinput.md)
+* [UpdateExternalGraphQLServiceInput](interfaces/updateexternalgraphqlserviceinput.md)
+* [UpdateFileInput](interfaces/updatefileinput.md)
+* [UpdateFunctionInput](interfaces/updatefunctioninput.md)
+* [UpdateGraphInput](interfaces/updategraphinput.md)
+* [UpdateGraphLayoutInput](interfaces/updategraphlayoutinput.md)
+* [UpdateKnowledgeGraphInput](interfaces/updateknowledgegraphinput.md)
+* [UpdateNodeInput](interfaces/updatenodeinput.md)
+* [UpdateNodeLayoutInput](interfaces/updatenodelayoutinput.md)
+* [UpdateTypeInput](interfaces/updatetypeinput.md)
+* [UpdateWorkspaceInput](interfaces/updateworkspaceinput.md)
 * [User](interfaces/user.md)
 * [Workspace](interfaces/workspace.md)
 
 ### Type aliases
 
 * [EventListenerCallback](README.md#eventlistenercallback)
+* [GraphRef](README.md#graphref)
 * [Implementation](README.md#implementation)
 * [Maybe](README.md#maybe)
 
@@ -50,7 +94,17 @@
 
 Ƭ  **EventListenerCallback**: (e: any) => void
 
-*Defined in [AssistantAPIClient.ts:33](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/AssistantAPIClient.ts#L33)*
+*Defined in [AssistantAPIClient.ts:39](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/AssistantAPIClient.ts#L39)*
+
+___
+
+### GraphRef
+
+Ƭ  **GraphRef**: [ArgumentRef](interfaces/argumentref.md) \| [OperationArgumentRef](interfaces/operationargumentref.md) \| [FunctionResultRef](interfaces/functionresultref.md) \| [OperationResultRef](interfaces/operationresultref.md) \| [OutputArgumentRef](interfaces/outputargumentref.md)
+
+*Defined in [models.ts:88](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L88)*
+
+Info for one end of a connection between two items within the graph.
 
 ___
 
@@ -58,7 +112,7 @@ ___
 
 Ƭ  **Implementation**: [Graph](interfaces/graph.md)
 
-*Defined in [models.ts:168](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L168)*
+*Defined in [models.ts:249](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L249)*
 
 Function implementation union.
 
@@ -68,7 +122,7 @@ ___
 
 Ƭ  **Maybe**\<T>: T \| null \| undefined
 
-*Defined in [models.ts:1](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L1)*
+*Defined in [models.ts:10](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L10)*
 
 #### Type parameters:
 
@@ -82,6 +136,6 @@ Name |
 
 • `Const` **CORE\_SERVICE\_ID**: \"io.maana.core\" = "io.maana.core"
 
-*Defined in [constants.ts:12](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/constants.ts#L12)*
+*Defined in [constants.ts:20](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/constants.ts#L20)*
 
 ID of the io.maana.core service

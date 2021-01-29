@@ -33,7 +33,7 @@
 
 *Inherited from [Entity](entity.md).[description](entity.md#description)*
 
-*Defined in [models.ts:50](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L50)*
+*Defined in [models.ts:59](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L59)*
 
 Human readable description of the entity.
 
@@ -45,7 +45,7 @@ ___
 
 *Inherited from [Entity](entity.md).[id](entity.md#id)*
 
-*Defined in [models.ts:41](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L41)*
+*Defined in [models.ts:50](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L50)*
 
 The ID of the entity.
 
@@ -57,7 +57,7 @@ ___
 
 *Inherited from [Entity](entity.md).[name](entity.md#name)*
 
-*Defined in [models.ts:44](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L44)*
+*Defined in [models.ts:53](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L53)*
 
 The name of the entity.
 
@@ -69,7 +69,7 @@ ___
 
 *Inherited from [Entity](entity.md).[nameDescriptor](entity.md#namedescriptor)*
 
-*Defined in [models.ts:47](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L47)*
+*Defined in [models.ts:56](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L56)*
 
 Name of where the entity comes from (Service/Workspace).
 
@@ -79,7 +79,7 @@ ___
 
 •  **service**: [IDObject](idobject.md)
 
-*Defined in [models.ts:72](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L72)*
+*Defined in [models.ts:150](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L150)*
 
 The service that the Kind comes from.
 
@@ -89,7 +89,7 @@ ___
 
 •  **signature**: any
 
-*Defined in [models.ts:69](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L69)*
+*Defined in [models.ts:147](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L147)*
 
 The signature of the Kind.
 
@@ -97,9 +97,9 @@ The signature of the Kind.
 
 ### update
 
-▸ **update**(`changes`: any): Promise\<void>
+▸ **update**(`changes`: [UpdateTypeInput](updatetypeinput.md)): Promise\<void>
 
-*Defined in [models.ts:78](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L78)*
+*Defined in [models.ts:156](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L156)*
 
 Updates information about the Kind.
 
@@ -107,6 +107,6 @@ Updates information about the Kind.
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`changes` | any | Information to update the Kind with.  |
+`changes` | [UpdateTypeInput](updatetypeinput.md) | Information to update the Kind with.  |
 
 **Returns:** Promise\<void>

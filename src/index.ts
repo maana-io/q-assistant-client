@@ -6,3 +6,4 @@ export const AssistantAPIClient = APIClient;
 export default AssistantAPIClient;
 
 export * from './constants';
+export * from './models';

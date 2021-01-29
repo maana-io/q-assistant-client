@@ -12,14 +12,26 @@
 
 ### Properties
 
+* [platformUrl](servicelocation.md#platformurl)
 * [url](servicelocation.md#url)
 
 ## Properties
+
+### platformUrl
+
+•  **platformUrl**: string
+
+*Defined in [models.ts:349](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L349)*
+
+A form of the URL that uses the Maana Q platform to proxy a request to the
+service. This is useful if the client cannot directly access the service.
+
+___
 
 ### url
 
 •  **url**: string
 
-*Defined in [models.ts:232](https://github.com/maana-io/q-assistant-client/blob/2fdcb17/src/models.ts#L232)*
+*Defined in [models.ts:343](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L343)*
 
 The URL that the locator references.
