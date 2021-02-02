@@ -21,7 +21,7 @@
 
 •  **platformUrl**: string
 
-*Defined in [models.ts:349](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L349)*
+*Defined in [models.ts:352](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L352)*
 
 A form of the URL that uses the Maana Q platform to proxy a request to the
 service. This is useful if the client cannot directly access the service.
@@ -32,6 +32,6 @@ ___
 
 •  **url**: string
 
-*Defined in [models.ts:343](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L343)*
+*Defined in [models.ts:346](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L346)*
 
 The URL that the locator references.

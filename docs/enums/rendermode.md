@@ -19,7 +19,7 @@ The mode in which a custom Assistant should be rendering in.
 
 •  **BACKGROUND**:  = "BACKGROUND"
 
-*Defined in [constants.ts:14](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/constants.ts#L14)*
+*Defined in [constants.ts:14](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L14)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **DISPLAY**:  = "DISPLAY"
 
-*Defined in [constants.ts:13](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/constants.ts#L13)*
+*Defined in [constants.ts:13](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L13)*

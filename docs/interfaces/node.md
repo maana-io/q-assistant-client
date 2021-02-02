@@ -27,7 +27,7 @@ The core shape of a node
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:113](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L113)*
+*Defined in [models.ts:116](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L116)*
 
 Human readable description of the Node.
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **entityIdentifier**: [Maybe](../README.md#maybe)\<[EntityIdentifier](entityidentifier.md)>
 
-*Defined in [models.ts:128](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L128)*
+*Defined in [models.ts:131](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L131)*
 
 The entity referenced by the node.
 
@@ -47,7 +47,7 @@ ___
 
 •  **id**: string
 
-*Defined in [models.ts:110](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L110)*
+*Defined in [models.ts:113](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L113)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 •  **isCollapsed**: boolean
 
-*Defined in [models.ts:122](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L122)*
+*Defined in [models.ts:125](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L125)*
 
 Indicates if the node is collapsed or expanded in the node display.
 
@@ -65,7 +65,7 @@ ___
 
 • `Optional` **location**: [Maybe](../README.md#maybe)\<[Position](position.md)>
 
-*Defined in [models.ts:119](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L119)*
+*Defined in [models.ts:122](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L122)*
 
 Position of the node on the graph. Null indicates the need to layout the
 position.
@@ -76,6 +76,6 @@ ___
 
 •  **type**: [NodeType](../enums/nodetype.md)
 
-*Defined in [models.ts:125](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L125)*
+*Defined in [models.ts:128](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L128)*
 
 The type of node

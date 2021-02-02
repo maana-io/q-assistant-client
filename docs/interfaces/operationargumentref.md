@@ -22,7 +22,7 @@
 
 •  **argumentId**: string
 
-*Defined in [models.ts:70](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L70)*
+*Defined in [models.ts:73](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L73)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 •  **argumentName**: string
 
-*Defined in [models.ts:69](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L69)*
+*Defined in [models.ts:72](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L72)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 •  **operationId**: string
 
-*Defined in [models.ts:68](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L68)*
+*Defined in [models.ts:71](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L71)*

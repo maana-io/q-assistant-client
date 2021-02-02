@@ -23,7 +23,7 @@
 
 • `Optional` **nodes**: [UpdateNodeLayoutInput](updatenodelayoutinput.md) & { id: string  }[]
 
-*Defined in [models.ts:584](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L584)*
+*Defined in [models.ts:593](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L593)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • `Optional` **offsetX**: number
 
-*Defined in [models.ts:582](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L582)*
+*Defined in [models.ts:591](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L591)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **offsetY**: number
 
-*Defined in [models.ts:583](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L583)*
+*Defined in [models.ts:592](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L592)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 • `Optional` **zoom**: number
 
-*Defined in [models.ts:581](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L581)*
+*Defined in [models.ts:590](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L590)*

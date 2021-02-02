@@ -24,7 +24,7 @@
 
 •  **entityType**: [EntityType](../enums/entitytype.md)
 
-*Defined in [models.ts:716](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L716)*
+*Defined in [models.ts:725](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L725)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 • `Optional` **file**: [Maybe](../README.md#maybe)\<[CreateFileInput](createfileinput.md)>
 
-*Defined in [models.ts:720](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L720)*
+*Defined in [models.ts:729](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L729)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • `Optional` **function**: [Maybe](../README.md#maybe)\<[CreateFunctionInput](createfunctioninput.md)>
 
-*Defined in [models.ts:719](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L719)*
+*Defined in [models.ts:728](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L728)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **knowledgeGraph**: [Maybe](../README.md#maybe)\<[CreateKnowledgeGraphInput](createknowledgegraphinput.md)>
 
-*Defined in [models.ts:717](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L717)*
+*Defined in [models.ts:726](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L726)*
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 • `Optional` **type**: [Maybe](../README.md#maybe)\<[CreateTypeInput](createtypeinput.md)>
 
-*Defined in [models.ts:718](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L718)*
+*Defined in [models.ts:727](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L727)*
