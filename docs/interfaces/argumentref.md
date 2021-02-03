@@ -21,7 +21,7 @@
 
 •  **argumentId**: string
 
-*Defined in [models.ts:64](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L64)*
+*Defined in [models.ts:67](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L67)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 •  **argumentName**: string
 
-*Defined in [models.ts:63](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L63)*
+*Defined in [models.ts:66](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L66)*

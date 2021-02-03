@@ -25,7 +25,7 @@ OPERATION nodes are used to add functions onto the function graph.
 
 •  **ARGUMENT**:  = "ARGUMENT"
 
-*Defined in [constants.ts:104](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/constants.ts#L104)*
+*Defined in [constants.ts:104](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L104)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 •  **ENTITY**:  = "ENTITY"
 
-*Defined in [constants.ts:105](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/constants.ts#L105)*
+*Defined in [constants.ts:105](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L105)*
 
 ___
 
@@ -41,4 +41,4 @@ ___
 
 •  **OPERATION**:  = "OPERATION"
 
-*Defined in [constants.ts:106](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/constants.ts#L106)*
+*Defined in [constants.ts:106](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L106)*

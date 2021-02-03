@@ -30,7 +30,7 @@
 
 • `Optional` **addServices**: [Maybe](../README.md#maybe)\<Array\<string>>
 
-*Defined in [models.ts:809](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L809)*
+*Defined in [models.ts:818](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L818)*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • `Optional` **createEntities**: [Maybe](../README.md#maybe)\<Array\<[CreateEntityInput](createentityinput.md)>>
 
-*Defined in [models.ts:808](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L808)*
+*Defined in [models.ts:817](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L817)*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:802](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L802)*
+*Defined in [models.ts:811](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L811)*
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • `Optional` **id**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:799](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L799)*
+*Defined in [models.ts:808](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L808)*
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 • `Optional` **isPublic**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:806](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L806)*
+*Defined in [models.ts:815](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L815)*
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 • `Optional` **isTemplate**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:807](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L807)*
+*Defined in [models.ts:816](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L816)*
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 •  **name**: string
 
-*Defined in [models.ts:801](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L801)*
+*Defined in [models.ts:810](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L810)*
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 •  **owner**: string
 
-*Defined in [models.ts:805](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L805)*
+*Defined in [models.ts:814](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L814)*
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 • `Optional` **serviceId**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:800](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L800)*
+*Defined in [models.ts:809](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L809)*
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 • `Optional` **tags**: [Maybe](../README.md#maybe)\<Array\<string>>
 
-*Defined in [models.ts:804](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L804)*
+*Defined in [models.ts:813](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L813)*
 
 ___
 
@@ -110,4 +110,4 @@ ___
 
 • `Optional` **thumbnailUrl**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:803](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L803)*
+*Defined in [models.ts:812](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L812)*

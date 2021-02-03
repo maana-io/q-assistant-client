@@ -9,6 +9,9 @@ import {
 
 export type Maybe<T> = T | null | undefined;
 
+/** Represents a JSON object used to express a type expression. */
+export type TypeExpressionObject = any;
+
 export interface IDObject {
   id: string;
 }
@@ -144,7 +147,7 @@ export interface Graph {
 
 export interface Kind extends Entity {
   /** The signature of the Kind. */
-  signature: any; // TODO: Get Type Expressions in here.
+  signature: TypeExpressionObject;
 
   /** The service that the Kind comes from. */
   service: IDObject;
@@ -263,7 +266,7 @@ export interface ArgumentFieldSelection {
  */
 export interface Function extends Entity {
   /** The signature of the Function. */
-  signature: any; // TODO: Get Type Expressions in here.
+  signature: TypeExpressionObject;
 
   /** The service that the Kind comes from. */
   service: IDObject;
@@ -359,6 +362,9 @@ export interface Service extends Entity {
    */
   version: number;
 
+  /** The type of the service. */
+  type: ServiceType;
+
   /** Retrieves the list of Kinds that are part of the Service. */
   getKinds(): Promise<Kind[]>;
 
@@ -429,6 +435,9 @@ export interface Workspace extends Entity {
    * @param changes Information to update the Workspace with.
    */
   update(changes: UpdateWorkspaceInput): Promise<void>;
+
+  /** Returns a new copy of the workspace with reloaded information. */
+  reload(): Promise<Workspace>;
 
   /** Sends a repair event to all assistants. */
   triggerRepairEvent(): Promise<void>;
@@ -677,7 +686,7 @@ export interface CreateTypeInput {
   id?: Maybe<string>;
   name: string;
   description?: Maybe<string>;
-  signature: any; // TODO: Get Type Expressions in here.
+  signature: TypeExpressionObject;
   isManaged?: boolean;
 }
 
@@ -690,7 +699,7 @@ export interface CreateFunctionInput {
   id?: Maybe<string>;
   name: string;
   description?: Maybe<string>;
-  signature: any; // TODO: Get Type Expressions in here.
+  signature: TypeExpressionObject;
   isPure?: Maybe<boolean>;
   graphqlFunctionType: GraphQLFunctionType;
   implementation: ImplementationType;
@@ -757,7 +766,7 @@ export interface UpdateTypeInput {
   id: string;
   name?: Maybe<string>;
   description?: Maybe<string>;
-  signature?: Maybe<any>; // TODO: Get Type Expressions in here.
+  signature?: Maybe<TypeExpressionObject>;
   isManaged?: Maybe<boolean>;
 }
 
@@ -765,7 +774,7 @@ export interface UpdateFunctionInput {
   id: string;
   name?: Maybe<string>;
   description?: Maybe<string>;
-  signature?: Maybe<any>; // TODO: Get Type Expressions in here.
+  signature?: Maybe<TypeExpressionObject>;
   isPure?: Maybe<boolean>;
   graphqlFunctionType?: Maybe<GraphQLFunctionType>;
   lock?: Maybe<EntityLockInput>;

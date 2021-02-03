@@ -83,6 +83,7 @@
 * [GraphRef](README.md#graphref)
 * [Implementation](README.md#implementation)
 * [Maybe](README.md#maybe)
+* [TypeExpressionObject](README.md#typeexpressionobject)
 
 ### Variables
 
@@ -94,7 +95,7 @@
 
 Ƭ  **EventListenerCallback**: (e: any) => void
 
-*Defined in [AssistantAPIClient.ts:39](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/AssistantAPIClient.ts#L39)*
+*Defined in [AssistantAPIClient.ts:39](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/AssistantAPIClient.ts#L39)*
 
 ___
 
@@ -102,7 +103,7 @@ ___
 
 Ƭ  **GraphRef**: [ArgumentRef](interfaces/argumentref.md) \| [OperationArgumentRef](interfaces/operationargumentref.md) \| [FunctionResultRef](interfaces/functionresultref.md) \| [OperationResultRef](interfaces/operationresultref.md) \| [OutputArgumentRef](interfaces/outputargumentref.md)
 
-*Defined in [models.ts:88](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L88)*
+*Defined in [models.ts:91](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L91)*
 
 Info for one end of a connection between two items within the graph.
 
@@ -112,7 +113,7 @@ ___
 
 Ƭ  **Implementation**: [Graph](interfaces/graph.md)
 
-*Defined in [models.ts:249](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L249)*
+*Defined in [models.ts:252](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L252)*
 
 Function implementation union.
 
@@ -122,7 +123,7 @@ ___
 
 Ƭ  **Maybe**\<T>: T \| null \| undefined
 
-*Defined in [models.ts:10](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L10)*
+*Defined in [models.ts:10](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L10)*
 
 #### Type parameters:
 
@@ -130,12 +131,22 @@ Name |
 ------ |
 `T` |
 
+___
+
+### TypeExpressionObject
+
+Ƭ  **TypeExpressionObject**: any
+
+*Defined in [models.ts:13](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L13)*
+
+Represents a JSON object used to express a type expression.
+
 ## Variables
 
 ### CORE\_SERVICE\_ID
 
 • `Const` **CORE\_SERVICE\_ID**: \"io.maana.core\" = "io.maana.core"
 
-*Defined in [constants.ts:20](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/constants.ts#L20)*
+*Defined in [constants.ts:20](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L20)*
 
 ID of the io.maana.core service

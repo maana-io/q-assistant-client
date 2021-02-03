@@ -20,4 +20,4 @@
 
 •  **operationId**: string
 
-*Defined in [models.ts:78](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L78)*
+*Defined in [models.ts:81](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L81)*

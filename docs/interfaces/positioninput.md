@@ -21,7 +21,7 @@
 
 • `Optional` **x**: [Maybe](../README.md#maybe)\<number>
 
-*Defined in [models.ts:624](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L624)*
+*Defined in [models.ts:633](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L633)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • `Optional` **y**: [Maybe](../README.md#maybe)\<number>
 
-*Defined in [models.ts:625](https://github.com/maana-io/q-assistant-client/blob/2b2b176/src/models.ts#L625)*
+*Defined in [models.ts:634](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L634)*
