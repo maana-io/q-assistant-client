@@ -24,7 +24,7 @@
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:743](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L743)*
+*Defined in [models.ts:749](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L749)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 •  **id**: string
 
-*Defined in [models.ts:740](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L740)*
+*Defined in [models.ts:746](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L746)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • `Optional` **isCollapsed**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:742](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L742)*
+*Defined in [models.ts:748](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L748)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **location**: [Maybe](../README.md#maybe)\<[PositionInput](positioninput.md)>
 
-*Defined in [models.ts:741](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L741)*
+*Defined in [models.ts:747](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L747)*
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 •  **type**: [NodeType](../enums/nodetype.md)
 
-*Defined in [models.ts:744](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L744)*
+*Defined in [models.ts:750](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L750)*

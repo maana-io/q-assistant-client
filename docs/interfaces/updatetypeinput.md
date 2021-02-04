@@ -24,7 +24,7 @@
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:768](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L768)*
+*Defined in [models.ts:774](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L774)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 •  **id**: string
 
-*Defined in [models.ts:766](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L766)*
+*Defined in [models.ts:772](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L772)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • `Optional` **isManaged**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:770](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L770)*
+*Defined in [models.ts:776](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L776)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **name**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:767](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L767)*
+*Defined in [models.ts:773](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L773)*
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 • `Optional` **signature**: [Maybe](../README.md#maybe)\<[TypeExpressionObject](../README.md#typeexpressionobject)>
 
-*Defined in [models.ts:769](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L769)*
+*Defined in [models.ts:775](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L775)*

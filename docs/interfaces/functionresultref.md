@@ -20,4 +20,4 @@
 
 • `Optional` **result**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:77](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L77)*
+*Defined in [models.ts:77](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L77)*
