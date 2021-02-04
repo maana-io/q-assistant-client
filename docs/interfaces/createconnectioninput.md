@@ -21,7 +21,7 @@
 
 •  **from**: [GraphRefInput](graphrefinput.md)
 
-*Defined in [models.ts:667](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L667)*
+*Defined in [models.ts:673](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L673)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 •  **to**: [GraphRefInput](graphrefinput.md)
 
-*Defined in [models.ts:668](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/models.ts#L668)*
+*Defined in [models.ts:674](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L674)*

@@ -30,7 +30,7 @@ from selection or used in graph nodes.
 
 •  **ACTIVITY**:  = "ACTIVITY"
 
-*Defined in [constants.ts:57](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L57)*
+*Defined in [constants.ts:57](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/constants.ts#L57)*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 •  **CONNECTION**:  = "CONNECTION"
 
-*Defined in [constants.ts:53](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L53)*
+*Defined in [constants.ts:53](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/constants.ts#L53)*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 •  **FILE**:  = "FILE"
 
-*Defined in [constants.ts:44](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L44)*
+*Defined in [constants.ts:44](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/constants.ts#L44)*
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 •  **FUNCTION**:  = "FUNCTION"
 
-*Defined in [constants.ts:45](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L45)*
+*Defined in [constants.ts:45](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/constants.ts#L45)*
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 •  **FUNCTION\_ARGUMENTS**:  = "FUNCTION\_ARGUMENTS"
 
-*Defined in [constants.ts:54](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L54)*
+*Defined in [constants.ts:54](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/constants.ts#L54)*
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 •  **FUNCTION\_OUTPUT**:  = "FUNCTION\_OUTPUT"
 
-*Defined in [constants.ts:55](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L55)*
+*Defined in [constants.ts:55](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/constants.ts#L55)*
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 •  **GRAPH\_NODE**:  = "GRAPH\_NODE"
 
-*Defined in [constants.ts:56](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L56)*
+*Defined in [constants.ts:56](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/constants.ts#L56)*
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 •  **KNOWLEDGE\_GRAPH**:  = "KNOWLEDGE\_GRAPH"
 
-*Defined in [constants.ts:46](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L46)*
+*Defined in [constants.ts:46](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/constants.ts#L46)*
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 •  **SERVICE**:  = "SERVICE"
 
-*Defined in [constants.ts:47](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L47)*
+*Defined in [constants.ts:47](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/constants.ts#L47)*
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 •  **TYPE**:  = "TYPE"
 
-*Defined in [constants.ts:48](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L48)*
+*Defined in [constants.ts:48](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/constants.ts#L48)*
 
 ___
 
@@ -110,7 +110,7 @@ ___
 
 •  **VALUE**:  = "VALUE"
 
-*Defined in [constants.ts:49](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L49)*
+*Defined in [constants.ts:49](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/constants.ts#L49)*
 
 ___
 
@@ -118,4 +118,4 @@ ___
 
 •  **WORKSPACE**:  = "WORKSPACE"
 
-*Defined in [constants.ts:50](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L50)*
+*Defined in [constants.ts:50](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/constants.ts#L50)*

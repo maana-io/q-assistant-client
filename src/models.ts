@@ -152,6 +152,9 @@ export interface Kind extends Entity {
   /** The service that the Kind comes from. */
   service: IDObject;
 
+  /** Used to signify if this type has data that is managed by the platform */
+  isManaged: boolean;
+
   /**
    * Updates information about the Kind.
    * @param changes Information to update the Kind with.
@@ -404,6 +407,9 @@ export interface Workspace extends Entity {
 
   /** The ID of the logic service backing the Workspace. */
   serviceId: string;
+
+  /** The ID of the model service handling persistence for the Workspace */
+  persistenceServiceId: string;
 
   /** When true others can see this Workspace. */
   isPublic: boolean;

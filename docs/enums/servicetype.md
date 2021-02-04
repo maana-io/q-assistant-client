@@ -21,7 +21,7 @@ The different types of possible services
 
 •  **ASSISTANT**:  = "AssistantService"
 
-*Defined in [constants.ts:64](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L64)*
+*Defined in [constants.ts:64](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/constants.ts#L64)*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 •  **EXTERNAL\_GRAPHQL**:  = "ExternalGraphQLService"
 
-*Defined in [constants.ts:65](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L65)*
+*Defined in [constants.ts:65](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/constants.ts#L65)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 •  **LOGIC**:  = "LogicService"
 
-*Defined in [constants.ts:66](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L66)*
+*Defined in [constants.ts:66](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/constants.ts#L66)*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 •  **MODEL**:  = "ModelService"
 
-*Defined in [constants.ts:67](https://github.com/maana-io/q-assistant-client/blob/1a0616f/src/constants.ts#L67)*
+*Defined in [constants.ts:67](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/constants.ts#L67)*
