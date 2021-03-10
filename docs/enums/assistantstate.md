@@ -19,7 +19,7 @@ The different states that the assistant can be in.
 
 •  **IDLE**:  = "IDLE"
 
-*Defined in [constants.ts:6](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/constants.ts#L6)*
+*Defined in [constants.ts:6](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L6)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **WORKING**:  = "WORKING"
 
-*Defined in [constants.ts:5](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/constants.ts#L5)*
+*Defined in [constants.ts:5](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L5)*

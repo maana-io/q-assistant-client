@@ -34,7 +34,7 @@
 
 *Inherited from [Entity](entity.md).[description](entity.md#description)*
 
-*Defined in [models.ts:62](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L62)*
+*Defined in [models.ts:62](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L62)*
 
 Human readable description of the entity.
 
@@ -46,7 +46,7 @@ ___
 
 *Inherited from [Entity](entity.md).[id](entity.md#id)*
 
-*Defined in [models.ts:53](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L53)*
+*Defined in [models.ts:53](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L53)*
 
 The ID of the entity.
 
@@ -56,7 +56,7 @@ ___
 
 •  **isManaged**: boolean
 
-*Defined in [models.ts:156](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L156)*
+*Defined in [models.ts:156](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L156)*
 
 Used to signify if this type has data that is managed by the platform
 
@@ -68,7 +68,7 @@ ___
 
 *Inherited from [Entity](entity.md).[name](entity.md#name)*
 
-*Defined in [models.ts:56](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L56)*
+*Defined in [models.ts:56](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L56)*
 
 The name of the entity.
 
@@ -80,7 +80,7 @@ ___
 
 *Inherited from [Entity](entity.md).[nameDescriptor](entity.md#namedescriptor)*
 
-*Defined in [models.ts:59](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L59)*
+*Defined in [models.ts:59](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L59)*
 
 Name of where the entity comes from (Service/Workspace).
 
@@ -90,7 +90,7 @@ ___
 
 •  **service**: [IDObject](idobject.md)
 
-*Defined in [models.ts:153](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L153)*
+*Defined in [models.ts:153](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L153)*
 
 The service that the Kind comes from.
 
@@ -100,7 +100,7 @@ ___
 
 •  **signature**: [TypeExpressionObject](../README.md#typeexpressionobject)
 
-*Defined in [models.ts:150](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L150)*
+*Defined in [models.ts:150](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L150)*
 
 The signature of the Kind.
 
@@ -110,7 +110,7 @@ The signature of the Kind.
 
 ▸ **update**(`changes`: [UpdateTypeInput](updatetypeinput.md)): Promise\<void>
 
-*Defined in [models.ts:162](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L162)*
+*Defined in [models.ts:162](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L162)*
 
 Updates information about the Kind.
 

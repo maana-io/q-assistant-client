@@ -23,7 +23,7 @@
 
 •  **entityType**: [EntityType](../enums/entitytype.md)
 
-*Defined in [models.ts:739](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L739)*
+*Defined in [models.ts:739](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L739)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 •  **newName**: string
 
-*Defined in [models.ts:742](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L742)*
+*Defined in [models.ts:742](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L742)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 •  **oldName**: string
 
-*Defined in [models.ts:740](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L740)*
+*Defined in [models.ts:740](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L740)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 •  **oldServiceId**: string
 
-*Defined in [models.ts:741](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L741)*
+*Defined in [models.ts:741](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L741)*

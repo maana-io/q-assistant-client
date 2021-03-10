@@ -24,7 +24,7 @@
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:766](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L766)*
+*Defined in [models.ts:766](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L766)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 • `Optional` **graph**: [Maybe](../README.md#maybe)\<[UpdateGraphInput](updategraphinput.md)>
 
-*Defined in [models.ts:768](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L768)*
+*Defined in [models.ts:768](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L768)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 •  **id**: string
 
-*Defined in [models.ts:764](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L764)*
+*Defined in [models.ts:764](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L764)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **lock**: [Maybe](../README.md#maybe)\<[EntityLockInput](entitylockinput.md)>
 
-*Defined in [models.ts:767](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L767)*
+*Defined in [models.ts:767](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L767)*
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 • `Optional` **name**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:765](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L765)*
+*Defined in [models.ts:765](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L765)*

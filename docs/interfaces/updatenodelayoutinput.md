@@ -22,7 +22,7 @@
 
 • `Optional` **collapsed**: boolean
 
-*Defined in [models.ts:592](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L592)*
+*Defined in [models.ts:592](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L592)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • `Optional` **x**: number
 
-*Defined in [models.ts:590](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L590)*
+*Defined in [models.ts:590](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L590)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • `Optional` **y**: number
 
-*Defined in [models.ts:591](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L591)*
+*Defined in [models.ts:591](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L591)*
