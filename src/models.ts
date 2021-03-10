@@ -836,6 +836,13 @@ export interface UpdateWorkspaceInput {
   createEntities?: Maybe<Array<CreateEntityInput>>;
   cloneEntities?: Maybe<Array<CloneEntityInput>>;
   updateEntities?: Maybe<Array<UpdateEntityInput>>;
+
+  /**
+   * Moves the given entities from their current Workspace to this one.
+   * Currently only Types and Functions support being moved between Workspaces.
+   */
+  moveEntities?: Maybe<Array<EntityIdentifier>>;
+
   deleteEntities?: Maybe<Array<EntityIdentifier>>;
   addServices?: Maybe<Array<string>>;
   removeServices?: Maybe<Array<string>>;

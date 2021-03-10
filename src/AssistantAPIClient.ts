@@ -71,7 +71,7 @@ function createAPIListener(callName: string, cb: EventListenerCallback) {
  * Attach selection event emitter to API listener
  * @private
  */
-createAPIListener(EventTypes.SELECTION_CHANGED, async function (event) {
+createAPIListener(EventTypes.SELECTION_CHANGED, async function(event) {
   eventEmitter.emit(EventTypes.SELECTION_CHANGED, event.data);
 });
 
@@ -80,7 +80,7 @@ createAPIListener(EventTypes.SELECTION_CHANGED, async function (event) {
  * Use convention to filter by function ID.
  * @private
  */
-createAPIListener(EventTypes.FUNCTION_EXECUTED, async function (event) {
+createAPIListener(EventTypes.FUNCTION_EXECUTED, async function(event) {
   eventEmitter.emit(`function:${event.data.id}`, event.data.result);
 });
 
@@ -88,7 +88,7 @@ createAPIListener(EventTypes.FUNCTION_EXECUTED, async function (event) {
  * Attach inventory event emitter to API listener.
  * @private
  */
-createAPIListener(EventTypes.INVENTORY_CHANGED, async function (event) {
+createAPIListener(EventTypes.INVENTORY_CHANGED, async function(event) {
   eventEmitter.emit(EventTypes.INVENTORY_CHANGED, event.data);
 });
 
@@ -96,7 +96,7 @@ createAPIListener(EventTypes.INVENTORY_CHANGED, async function (event) {
  * Attach render mode event emitter to API listener.
  * @private
  */
-createAPIListener(EventTypes.RENDER_MODE_CHANGED, async function (event) {
+createAPIListener(EventTypes.RENDER_MODE_CHANGED, async function(event) {
   eventEmitter.emit(EventTypes.RENDER_MODE_CHANGED, event.data);
 });
 
@@ -104,7 +104,7 @@ createAPIListener(EventTypes.RENDER_MODE_CHANGED, async function (event) {
  * Attach repair listener.
  * @private
  */
-createAPIListener(EventTypes.REPAIR, async function (event) {
+createAPIListener(EventTypes.REPAIR, async function(event) {
   eventEmitter.emit(EventTypes.REPAIR, event.data);
 });
 
@@ -112,7 +112,7 @@ createAPIListener(EventTypes.REPAIR, async function (event) {
  * Attach locking changed listener.
  * @private
  */
-createAPIListener(EventTypes.LOCKING_CHANGED, async function (event) {
+createAPIListener(EventTypes.LOCKING_CHANGED, async function(event) {
   eventEmitter.emit(EventTypes.LOCKING_CHANGED, event.data);
 });
 
@@ -631,8 +631,8 @@ export namespace AssistantAPIClient {
    * Moves a collection of Kinds and Functions from the origin Workspace to the
    * target Workspace.
    *
-   * @deprecated This has been deprecated in favor of calling it directly off of
-   * the origin workspace.
+   * @deprecated This has been deprecated in favor of calling update on the
+   * target Workspace to move the entities.
    *
    * @param originId The ID of the origin Workspace.
    * @param targetId The ID of the target Workspace.
