@@ -95,7 +95,7 @@
 
 Ƭ  **EventListenerCallback**: (e: any) => void
 
-*Defined in [AssistantAPIClient.ts:39](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/AssistantAPIClient.ts#L39)*
+*Defined in [AssistantAPIClient.ts:39](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L39)*
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 Ƭ  **GraphRef**: [ArgumentRef](interfaces/argumentref.md) \| [OperationArgumentRef](interfaces/operationargumentref.md) \| [FunctionResultRef](interfaces/functionresultref.md) \| [OperationResultRef](interfaces/operationresultref.md) \| [OutputArgumentRef](interfaces/outputargumentref.md)
 
-*Defined in [models.ts:91](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L91)*
+*Defined in [models.ts:91](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L91)*
 
 Info for one end of a connection between two items within the graph.
 
@@ -113,7 +113,7 @@ ___
 
 Ƭ  **Implementation**: [Graph](interfaces/graph.md)
 
-*Defined in [models.ts:255](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L255)*
+*Defined in [models.ts:255](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L255)*
 
 Function implementation union.
 
@@ -123,7 +123,7 @@ ___
 
 Ƭ  **Maybe**\<T>: T \| null \| undefined
 
-*Defined in [models.ts:10](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L10)*
+*Defined in [models.ts:10](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L10)*
 
 #### Type parameters:
 
@@ -137,7 +137,7 @@ ___
 
 Ƭ  **TypeExpressionObject**: any
 
-*Defined in [models.ts:13](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/models.ts#L13)*
+*Defined in [models.ts:13](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L13)*
 
 Represents a JSON object used to express a type expression.
 
@@ -147,6 +147,6 @@ Represents a JSON object used to express a type expression.
 
 • `Const` **CORE\_SERVICE\_ID**: \"io.maana.core\" = "io.maana.core"
 
-*Defined in [constants.ts:20](https://github.com/maana-io/q-assistant-client/blob/18eccdb/src/constants.ts#L20)*
+*Defined in [constants.ts:20](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L20)*
 
 ID of the io.maana.core service
