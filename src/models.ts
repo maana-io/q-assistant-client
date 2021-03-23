@@ -12,6 +12,23 @@ export type Maybe<T> = T | null | undefined;
 /** Represents a JSON object used to express a type expression. */
 export type TypeExpressionObject = any;
 
+interface ErrorLike {
+  message: string;
+}
+
+/**
+ * The top level error object returned by the Assistant API that wraps and
+ * returns any errors that occurred during a API call. Contains an array of
+ * errors that caused the this error to be returned.
+ */
+export interface AssistantAPIError {
+  /** The top level message for the error. */
+  message: string;
+
+  /** A list of errors like objects that were the cause of this error. */
+  cause?: Maybe<ErrorLike[]>;
+}
+
 export interface IDObject {
   id: string;
 }
@@ -822,6 +839,12 @@ export interface CreateWorkspaceInput {
   isTemplate?: Maybe<boolean>;
   createEntities?: Maybe<Array<CreateEntityInput>>;
   addServices?: Maybe<Array<string>>;
+
+  /**
+   * Moves the given entities from their current Workspace to this one.
+   * Currently only Types and Functions support being moved between Workspaces.
+   */
+  moveEntities?: Maybe<Array<EntityIdentifier>>;
 }
 
 export interface UpdateWorkspaceInput {
