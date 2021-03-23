@@ -822,6 +822,12 @@ export interface CreateWorkspaceInput {
   isTemplate?: Maybe<boolean>;
   createEntities?: Maybe<Array<CreateEntityInput>>;
   addServices?: Maybe<Array<string>>;
+
+  /**
+   * Moves the given entities from their current Workspace to this one.
+   * Currently only Types and Functions support being moved between Workspaces.
+   */
+  moveEntities?: Maybe<Array<EntityIdentifier>>;
 }
 
 export interface UpdateWorkspaceInput {
