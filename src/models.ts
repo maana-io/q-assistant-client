@@ -14,6 +14,7 @@ export type TypeExpressionObject = any;
 
 interface ErrorLike {
   message: string;
+  statusCode?: number;
 }
 
 /**
