@@ -19,7 +19,7 @@ The types of a functions.
 
 •  **CKG**:  = "CKG"
 
-*Defined in [constants.ts:75](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L75)*
+*Defined in [constants.ts:73](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L73)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **EXTERNAL**:  = "EXTERNAL"
 
-*Defined in [constants.ts:74](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L74)*
+*Defined in [constants.ts:72](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L72)*

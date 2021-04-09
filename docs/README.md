@@ -29,6 +29,7 @@
 * [ArgumentFieldSelectionInput](interfaces/argumentfieldselectioninput.md)
 * [ArgumentRef](interfaces/argumentref.md)
 * [Assistant](interfaces/assistant.md)
+* [AssistantAPIError](interfaces/assistantapierror.md)
 * [CloneEntityInput](interfaces/cloneentityinput.md)
 * [Connection](interfaces/connection.md)
 * [CreateConnectionInput](interfaces/createconnectioninput.md)
@@ -44,6 +45,7 @@
 * [Entity](interfaces/entity.md)
 * [EntityIdentifier](interfaces/entityidentifier.md)
 * [EntityLockInput](interfaces/entitylockinput.md)
+* [ErrorLike](interfaces/errorlike.md)
 * [Function](interfaces/function.md)
 * [FunctionResultRef](interfaces/functionresultref.md)
 * [Graph](interfaces/graph.md)
@@ -103,7 +105,7 @@ ___
 
 Ƭ  **GraphRef**: [ArgumentRef](interfaces/argumentref.md) \| [OperationArgumentRef](interfaces/operationargumentref.md) \| [FunctionResultRef](interfaces/functionresultref.md) \| [OperationResultRef](interfaces/operationresultref.md) \| [OutputArgumentRef](interfaces/outputargumentref.md)
 
-*Defined in [models.ts:91](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L91)*
+*Defined in [models.ts:109](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L109)*
 
 Info for one end of a connection between two items within the graph.
 
@@ -113,7 +115,7 @@ ___
 
 Ƭ  **Implementation**: [Graph](interfaces/graph.md)
 
-*Defined in [models.ts:255](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L255)*
+*Defined in [models.ts:273](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L273)*
 
 Function implementation union.
 

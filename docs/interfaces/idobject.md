@@ -20,4 +20,4 @@
 
 •  **id**: string
 
-*Defined in [models.ts:16](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L16)*
+*Defined in [models.ts:34](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L34)*

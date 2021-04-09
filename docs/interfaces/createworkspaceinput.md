@@ -18,6 +18,7 @@
 * [id](createworkspaceinput.md#id)
 * [isPublic](createworkspaceinput.md#ispublic)
 * [isTemplate](createworkspaceinput.md#istemplate)
+* [moveEntities](createworkspaceinput.md#moveentities)
 * [name](createworkspaceinput.md#name)
 * [owner](createworkspaceinput.md#owner)
 * [serviceId](createworkspaceinput.md#serviceid)
@@ -30,7 +31,7 @@
 
 • `Optional` **addServices**: [Maybe](../README.md#maybe)\<Array\<string>>
 
-*Defined in [models.ts:824](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L824)*
+*Defined in [models.ts:842](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L842)*
 
 ___
 
@@ -38,7 +39,7 @@ ___
 
 • `Optional` **createEntities**: [Maybe](../README.md#maybe)\<Array\<[CreateEntityInput](createentityinput.md)>>
 
-*Defined in [models.ts:823](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L823)*
+*Defined in [models.ts:841](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L841)*
 
 ___
 
@@ -46,7 +47,7 @@ ___
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:817](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L817)*
+*Defined in [models.ts:835](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L835)*
 
 ___
 
@@ -54,7 +55,7 @@ ___
 
 • `Optional` **id**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:814](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L814)*
+*Defined in [models.ts:832](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L832)*
 
 ___
 
@@ -62,7 +63,7 @@ ___
 
 • `Optional` **isPublic**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:821](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L821)*
+*Defined in [models.ts:839](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L839)*
 
 ___
 
@@ -70,7 +71,18 @@ ___
 
 • `Optional` **isTemplate**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:822](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L822)*
+*Defined in [models.ts:840](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L840)*
+
+___
+
+### moveEntities
+
+• `Optional` **moveEntities**: [Maybe](../README.md#maybe)\<Array\<[EntityIdentifier](entityidentifier.md)>>
+
+*Defined in [models.ts:848](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L848)*
+
+Moves the given entities from their current Workspace to this one.
+Currently only Types and Functions support being moved between Workspaces.
 
 ___
 
@@ -78,7 +90,7 @@ ___
 
 •  **name**: string
 
-*Defined in [models.ts:816](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L816)*
+*Defined in [models.ts:834](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L834)*
 
 ___
 
@@ -86,7 +98,7 @@ ___
 
 •  **owner**: string
 
-*Defined in [models.ts:820](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L820)*
+*Defined in [models.ts:838](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L838)*
 
 ___
 
@@ -94,7 +106,7 @@ ___
 
 • `Optional` **serviceId**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:815](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L815)*
+*Defined in [models.ts:833](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L833)*
 
 ___
 
@@ -102,7 +114,7 @@ ___
 
 • `Optional` **tags**: [Maybe](../README.md#maybe)\<Array\<string>>
 
-*Defined in [models.ts:819](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L819)*
+*Defined in [models.ts:837](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L837)*
 
 ___
 
@@ -110,4 +122,4 @@ ___
 
 • `Optional` **thumbnailUrl**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:818](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L818)*
+*Defined in [models.ts:836](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L836)*

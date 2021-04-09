@@ -21,7 +21,7 @@
 
 •  **argument**: string
 
-*Defined in [models.ts:258](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L258)*
+*Defined in [models.ts:276](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L276)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 •  **fieldSelection**: string[][]
 
-*Defined in [models.ts:259](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L259)*
+*Defined in [models.ts:277](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L277)*

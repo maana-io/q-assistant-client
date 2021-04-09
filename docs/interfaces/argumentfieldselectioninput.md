@@ -21,7 +21,7 @@
 
 •  **argument**: string
 
-*Defined in [models.ts:700](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L700)*
+*Defined in [models.ts:718](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L718)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • `Optional` **fieldSelection**: [Maybe](../README.md#maybe)\<Array\<Array\<string>>>
 
-*Defined in [models.ts:701](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L701)*
+*Defined in [models.ts:719](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L719)*
