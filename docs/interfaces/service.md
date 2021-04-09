@@ -36,7 +36,7 @@
 
 *Inherited from [Entity](entity.md).[description](entity.md#description)*
 
-*Defined in [models.ts:62](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L62)*
+*Defined in [models.ts:80](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L80)*
 
 Human readable description of the entity.
 
@@ -48,7 +48,7 @@ ___
 
 *Inherited from [Entity](entity.md).[id](entity.md#id)*
 
-*Defined in [models.ts:53](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L53)*
+*Defined in [models.ts:71](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L71)*
 
 The ID of the entity.
 
@@ -58,7 +58,7 @@ ___
 
 •  **location**: [ServiceLocation](servicelocation.md)
 
-*Defined in [models.ts:360](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L360)*
+*Defined in [models.ts:378](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L378)*
 
 The location that the service can be reached at.
 
@@ -70,7 +70,7 @@ ___
 
 *Inherited from [Entity](entity.md).[name](entity.md#name)*
 
-*Defined in [models.ts:56](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L56)*
+*Defined in [models.ts:74](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L74)*
 
 The name of the entity.
 
@@ -82,7 +82,7 @@ ___
 
 *Inherited from [Entity](entity.md).[nameDescriptor](entity.md#namedescriptor)*
 
-*Defined in [models.ts:59](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L59)*
+*Defined in [models.ts:77](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L77)*
 
 Name of where the entity comes from (Service/Workspace).
 
@@ -92,7 +92,7 @@ ___
 
 •  **type**: [ServiceType](../enums/servicetype.md)
 
-*Defined in [models.ts:369](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L369)*
+*Defined in [models.ts:387](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L387)*
 
 The type of the service.
 
@@ -102,7 +102,7 @@ ___
 
 •  **version**: number
 
-*Defined in [models.ts:366](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L366)*
+*Defined in [models.ts:384](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L384)*
 
 The current version of the Service.  This is incremented by catalog each
 time the service is updated.
@@ -113,7 +113,7 @@ time the service is updated.
 
 ▸ **getFunctions**(): Promise\<[Function](function.md)[]>
 
-*Defined in [models.ts:375](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L375)*
+*Defined in [models.ts:393](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L393)*
 
 Retrieves the list of Function that are part of the Service.
 
@@ -125,7 +125,7 @@ ___
 
 ▸ **getKinds**(): Promise\<[Kind](kind.md)[]>
 
-*Defined in [models.ts:372](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L372)*
+*Defined in [models.ts:390](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L390)*
 
 Retrieves the list of Kinds that are part of the Service.
 
@@ -137,7 +137,7 @@ ___
 
 ▸ **update**(`changes`: [UpdateExternalGraphQLServiceInput](updateexternalgraphqlserviceinput.md)): Promise\<void>
 
-*Defined in [models.ts:381](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L381)*
+*Defined in [models.ts:399](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L399)*
 
 Updates information about the Service.
 

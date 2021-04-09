@@ -34,7 +34,7 @@
 
 • `Optional` **addServices**: [Maybe](../README.md#maybe)\<Array\<string>>
 
-*Defined in [models.ts:847](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L847)*
+*Defined in [models.ts:871](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L871)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • `Optional` **cloneEntities**: [Maybe](../README.md#maybe)\<Array\<[CloneEntityInput](cloneentityinput.md)>>
 
-*Defined in [models.ts:837](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L837)*
+*Defined in [models.ts:861](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L861)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • `Optional` **createEntities**: [Maybe](../README.md#maybe)\<Array\<[CreateEntityInput](createentityinput.md)>>
 
-*Defined in [models.ts:836](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L836)*
+*Defined in [models.ts:860](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L860)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **deleteEntities**: [Maybe](../README.md#maybe)\<Array\<[EntityIdentifier](entityidentifier.md)>>
 
-*Defined in [models.ts:846](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L846)*
+*Defined in [models.ts:870](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L870)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:830](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L830)*
+*Defined in [models.ts:854](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L854)*
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 •  **id**: string
 
-*Defined in [models.ts:828](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L828)*
+*Defined in [models.ts:852](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L852)*
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 • `Optional` **isPublic**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:833](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L833)*
+*Defined in [models.ts:857](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L857)*
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 • `Optional` **isTemplate**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:834](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L834)*
+*Defined in [models.ts:858](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L858)*
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 • `Optional` **lock**: [Maybe](../README.md#maybe)\<[EntityLockInput](entitylockinput.md)>
 
-*Defined in [models.ts:835](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L835)*
+*Defined in [models.ts:859](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L859)*
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **moveEntities**: [Maybe](../README.md#maybe)\<Array\<[EntityIdentifier](entityidentifier.md)>>
 
-*Defined in [models.ts:844](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L844)*
+*Defined in [models.ts:868](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L868)*
 
 Moves the given entities from their current Workspace to this one.
 Currently only Types and Functions support being moved between Workspaces.
@@ -117,7 +117,7 @@ ___
 
 • `Optional` **name**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:829](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L829)*
+*Defined in [models.ts:853](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L853)*
 
 ___
 
@@ -125,7 +125,7 @@ ___
 
 • `Optional` **removeServices**: [Maybe](../README.md#maybe)\<Array\<string>>
 
-*Defined in [models.ts:848](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L848)*
+*Defined in [models.ts:872](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L872)*
 
 ___
 
@@ -133,7 +133,7 @@ ___
 
 • `Optional` **tags**: [Maybe](../README.md#maybe)\<Array\<string>>
 
-*Defined in [models.ts:832](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L832)*
+*Defined in [models.ts:856](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L856)*
 
 ___
 
@@ -141,7 +141,7 @@ ___
 
 • `Optional` **thumbnailUrl**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:831](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L831)*
+*Defined in [models.ts:855](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L855)*
 
 ___
 
@@ -149,4 +149,4 @@ ___
 
 • `Optional` **updateEntities**: [Maybe](../README.md#maybe)\<Array\<[UpdateEntityInput](updateentityinput.md)>>
 
-*Defined in [models.ts:838](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L838)*
+*Defined in [models.ts:862](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L862)*

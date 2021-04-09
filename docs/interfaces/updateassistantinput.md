@@ -26,7 +26,7 @@
 
 • `Optional` **endpointUrl**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:615](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L615)*
+*Defined in [models.ts:633](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L633)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 •  **id**: string
 
-*Defined in [models.ts:613](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L613)*
+*Defined in [models.ts:631](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L631)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • `Optional` **isReadOnly**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:617](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L617)*
+*Defined in [models.ts:635](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L635)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • `Optional` **isSystem**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:616](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L616)*
+*Defined in [models.ts:634](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L634)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **name**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:614](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L614)*
+*Defined in [models.ts:632](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L632)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **tags**: [Maybe](../README.md#maybe)\<Array\<string>>
 
-*Defined in [models.ts:618](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L618)*
+*Defined in [models.ts:636](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L636)*
 
 ___
 
@@ -74,4 +74,4 @@ ___
 
 •  **version**: number
 
-*Defined in [models.ts:619](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L619)*
+*Defined in [models.ts:637](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L637)*
