@@ -24,9 +24,7 @@ export const CORE_SERVICE_ID = 'io.maana.core';
  */
 export enum Scalars {
   INT = 'Int',
-  LONG = 'Long',
   FLOAT = 'Float',
-  DOUBLE = 'Double',
   BOOLEAN = 'Boolean',
   DATE = 'Date',
   TIME = 'Time',
