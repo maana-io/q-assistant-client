@@ -139,8 +139,8 @@ export interface Node {
    */
   location?: Maybe<Position>;
 
-  /** Indicates if the node is collapsed or expanded in the node display. */
-  isCollapsed: boolean;
+  /** List of identifiers to signify different collapsed areas in the node. */
+  isCollapsed: string[];
 
   /** The type of node */
   type: NodeType;
@@ -607,7 +607,7 @@ export interface Workspace extends Entity {
 export interface UpdateNodeLayoutInput {
   x?: number;
   y?: number;
-  collapsed?: boolean;
+  isCollapsed?: string[];
 }
 
 export interface UpdateGraphLayoutInput {
@@ -661,7 +661,7 @@ export interface PositionInput {
 export interface CreateNodeInput {
   id?: Maybe<string>;
   location?: Maybe<PositionInput>;
-  isCollapsed?: Maybe<boolean>;
+  isCollapsed?: Maybe<string[]>;
   description?: Maybe<string>;
   type: NodeType;
   entity?: Maybe<EntityIdentifier>;
@@ -763,7 +763,7 @@ export interface CloneEntityInput {
 export interface UpdateNodeInput {
   id: string;
   location?: Maybe<PositionInput>;
-  isCollapsed?: Maybe<boolean>;
+  isCollapsed?: Maybe<string[]>;
   description?: Maybe<string>;
   type: NodeType;
 }
