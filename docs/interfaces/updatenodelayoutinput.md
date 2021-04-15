@@ -12,15 +12,15 @@
 
 ### Properties
 
-* [collapsed](updatenodelayoutinput.md#collapsed)
+* [isCollapsed](updatenodelayoutinput.md#iscollapsed)
 * [x](updatenodelayoutinput.md#x)
 * [y](updatenodelayoutinput.md#y)
 
 ## Properties
 
-### collapsed
+### isCollapsed
 
-• `Optional` **collapsed**: boolean
+• `Optional` **isCollapsed**: string[]
 
 *Defined in [models.ts:610](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L610)*
 

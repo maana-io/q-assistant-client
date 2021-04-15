@@ -53,11 +53,11 @@ ___
 
 ### isCollapsed
 
-•  **isCollapsed**: boolean
+•  **isCollapsed**: string[]
 
 *Defined in [models.ts:143](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L143)*
 
-Indicates if the node is collapsed or expanded in the node display.
+List of identifiers to signify different collapsed areas in the node.
 
 ___
 
