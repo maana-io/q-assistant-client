@@ -38,7 +38,7 @@ ___
 
 ### isCollapsed
 
-• `Optional` **isCollapsed**: [Maybe](../README.md#maybe)\<boolean>
+• `Optional` **isCollapsed**: [Maybe](../README.md#maybe)\<string[]>
 
 *Defined in [models.ts:766](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L766)*
 
