@@ -21,7 +21,7 @@
 
 •  **email**: string
 
-*Defined in [models.ts:44](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L44)*
+*Defined in [models.ts:46](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L46)*
 
 The users email address.
 
@@ -31,6 +31,6 @@ ___
 
 •  **name**: string
 
-*Defined in [models.ts:47](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L47)*
+*Defined in [models.ts:49](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L49)*
 
 The users name.

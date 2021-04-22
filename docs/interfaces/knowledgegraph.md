@@ -55,7 +55,7 @@
 
 *Inherited from [Entity](entity.md).[description](entity.md#description)*
 
-*Defined in [models.ts:80](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L80)*
+*Defined in [models.ts:82](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L82)*
 
 Human readable description of the entity.
 
@@ -65,7 +65,7 @@ ___
 
 •  **graph**: [Graph](graph.md)
 
-*Defined in [models.ts:213](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L213)*
+*Defined in [models.ts:215](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L215)*
 
 The graph information for the Knowledge Graph.
 
@@ -77,7 +77,7 @@ ___
 
 *Inherited from [Entity](entity.md).[id](entity.md#id)*
 
-*Defined in [models.ts:71](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L71)*
+*Defined in [models.ts:73](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L73)*
 
 The ID of the entity.
 
@@ -89,7 +89,7 @@ ___
 
 *Inherited from [Entity](entity.md).[name](entity.md#name)*
 
-*Defined in [models.ts:74](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L74)*
+*Defined in [models.ts:76](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L76)*
 
 The name of the entity.
 
@@ -101,7 +101,7 @@ ___
 
 *Inherited from [Entity](entity.md).[nameDescriptor](entity.md#namedescriptor)*
 
-*Defined in [models.ts:77](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L77)*
+*Defined in [models.ts:79](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L79)*
 
 Name of where the entity comes from (Service/Workspace).
 
@@ -111,7 +111,7 @@ ___
 
 •  **offsetX**: number
 
-*Defined in [models.ts:198](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L198)*
+*Defined in [models.ts:200](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L200)*
 
 The X offset of the Knowledge Graph.
 
@@ -123,7 +123,7 @@ ___
 
 •  **offsetY**: number
 
-*Defined in [models.ts:204](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L204)*
+*Defined in [models.ts:206](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L206)*
 
 The Y offset of the Knowledge Graph.
 
@@ -135,7 +135,7 @@ ___
 
 •  **zoom**: number
 
-*Defined in [models.ts:210](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L210)*
+*Defined in [models.ts:212](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L212)*
 
 The zoom of the Knowledge Graph.
 
@@ -147,7 +147,7 @@ The zoom of the Knowledge Graph.
 
 ▸ **addNode**(`entityIdentifier`: [EntityIdentifier](entityidentifier.md)): Promise\<string>
 
-*Defined in [models.ts:244](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L244)*
+*Defined in [models.ts:246](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L246)*
 
 Adds an entity as a node on the Knowledge Graph.
 
@@ -167,7 +167,7 @@ ___
 
 ▸ **canEdit**(): Promise\<boolean>
 
-*Defined in [models.ts:216](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L216)*
+*Defined in [models.ts:218](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L218)*
 
 Returns boolean stating if the Knowledge Graph is editable.
 
@@ -179,7 +179,7 @@ ___
 
 ▸ **getNodes**(): Promise\<[Node](node.md)[]>
 
-*Defined in [models.ts:238](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L238)*
+*Defined in [models.ts:240](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L240)*
 
 Returns the list of nodes inside of the Knowledge Graph.
 
@@ -193,7 +193,7 @@ ___
 
 ▸ **lockedBy**(): Promise\<[Maybe](../README.md#maybe)\<string>>
 
-*Defined in [models.ts:219](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L219)*
+*Defined in [models.ts:221](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L221)*
 
 Returns the e-mail of the user who locked the Knowledge Graph.
 
@@ -205,7 +205,7 @@ ___
 
 ▸ **removeNode**(`nodeId`: string): Promise\<void>
 
-*Defined in [models.ts:251](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L251)*
+*Defined in [models.ts:253](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L253)*
 
 Removed a node from the Knowledge Graph.
 
@@ -225,7 +225,7 @@ ___
 
 ▸ **setLocked**(`isLocked?`: boolean): Promise\<void>
 
-*Defined in [models.ts:226](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L226)*
+*Defined in [models.ts:228](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L228)*
 
 Updates the locked state of the Knowledge Graph.
 
@@ -243,7 +243,7 @@ ___
 
 ▸ **update**(`changes`: [UpdateKnowledgeGraphInput](updateknowledgegraphinput.md)): Promise\<void>
 
-*Defined in [models.ts:232](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L232)*
+*Defined in [models.ts:234](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L234)*
 
 Updates information about the Knowledge Graph.
 
@@ -261,7 +261,7 @@ ___
 
 ▸ **updateGraphLayout**(`changes`: [UpdateGraphLayoutInput](updategraphlayoutinput.md)): Promise\<void>
 
-*Defined in [models.ts:267](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L267)*
+*Defined in [models.ts:269](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L269)*
 
 Updates the layout information for the graph of the Knowledge Graph.
 
@@ -279,7 +279,7 @@ ___
 
 ▸ **updateNodeLayout**(`nodeId`: string, `changes`: [UpdateNodeLayoutInput](updatenodelayoutinput.md)): Promise\<void>
 
-*Defined in [models.ts:258](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L258)*
+*Defined in [models.ts:260](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L260)*
 
 Updates the layout information for a node in the Knowledge Graph.
 
