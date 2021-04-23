@@ -22,7 +22,7 @@
 
 •  **from**: [GraphRef](../README.md#graphref)
 
-*Defined in [models.ts:121](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L121)*
+*Defined in [models.ts:123](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L123)*
 
 End point for the outgoing connection point
 
@@ -32,7 +32,7 @@ ___
 
 •  **id**: string
 
-*Defined in [models.ts:118](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L118)*
+*Defined in [models.ts:120](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L120)*
 
 ___
 
@@ -40,6 +40,6 @@ ___
 
 •  **to**: [GraphRef](../README.md#graphref)
 
-*Defined in [models.ts:124](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L124)*
+*Defined in [models.ts:126](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L126)*
 
 End point for the incoming connection point

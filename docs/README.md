@@ -18,6 +18,7 @@
 * [GraphQLFunctionType](enums/graphqlfunctiontype.md)
 * [GraphRefInputType](enums/graphrefinputtype.md)
 * [ImplementationType](enums/implementationtype.md)
+* [MaanaErrorCode](enums/maanaerrorcode.md)
 * [NodeType](enums/nodetype.md)
 * [RenderMode](enums/rendermode.md)
 * [Scalars](enums/scalars.md)
@@ -105,7 +106,7 @@ ___
 
 Ƭ  **GraphRef**: [ArgumentRef](interfaces/argumentref.md) \| [OperationArgumentRef](interfaces/operationargumentref.md) \| [FunctionResultRef](interfaces/functionresultref.md) \| [OperationResultRef](interfaces/operationresultref.md) \| [OutputArgumentRef](interfaces/outputargumentref.md)
 
-*Defined in [models.ts:109](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L109)*
+*Defined in [models.ts:111](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L111)*
 
 Info for one end of a connection between two items within the graph.
 
@@ -115,7 +116,7 @@ ___
 
 Ƭ  **Implementation**: [Graph](interfaces/graph.md)
 
-*Defined in [models.ts:273](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L273)*
+*Defined in [models.ts:275](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L275)*
 
 Function implementation union.
 
@@ -125,7 +126,7 @@ ___
 
 Ƭ  **Maybe**\<T>: T \| null \| undefined
 
-*Defined in [models.ts:10](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L10)*
+*Defined in [models.ts:11](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L11)*
 
 #### Type parameters:
 
@@ -139,7 +140,7 @@ ___
 
 Ƭ  **TypeExpressionObject**: any
 
-*Defined in [models.ts:13](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L13)*
+*Defined in [models.ts:14](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L14)*
 
 Represents a JSON object used to express a type expression.
 

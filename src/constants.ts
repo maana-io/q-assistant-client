@@ -115,3 +115,19 @@ export enum GraphRefInputType {
   OPERATION_RESULT = 'OPERATION_RESULT',
   OUTPUT_ARGUMENT_REF = 'OUTPUT_ARGUMENT_REF'
 }
+
+/**
+ * The different Maana specific error codes that can show up in the errors
+ * coming through the Assistant API.
+ */
+export enum MaanaErrorCode {
+  UNKNOWN_ERROR = 0,
+  UNKNOWN_GRAPHQL_ERROR = 1,
+  MISSING_PARAMS = 100,
+  INVALID_PARAMS = 101,
+  DATA_NOT_FOUND = 102,
+  GRAPHQL = 103,
+  NOT_IMPLEMENTED = 104,
+  PERMISSION = 105,
+  VERSION = 106
+}

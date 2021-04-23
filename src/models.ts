@@ -3,6 +3,7 @@ import {
   GraphQLFunctionType,
   GraphRefInputType,
   ImplementationType,
+  MaanaErrorCode,
   NodeType,
   ServiceType
 } from './constants';
@@ -15,6 +16,7 @@ export type TypeExpressionObject = any;
 interface ErrorLike {
   message: string;
   statusCode?: number;
+  maanaErrorCode?: MaanaErrorCode;
 }
 
 /**
