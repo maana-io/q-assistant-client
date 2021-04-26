@@ -873,3 +873,40 @@ export interface UpdateWorkspaceInput {
   addServices?: Maybe<Array<string>>;
   removeServices?: Maybe<Array<string>>;
 }
+
+/** The information returned from an inventory changed event. */
+export interface InventoryChanged {
+  diff: {
+    kinds: {
+      adds: Maybe<Kind[]>;
+      deletes: Maybe<Kind[]>;
+      updates: Maybe<Kind[]>;
+    };
+    functions: {
+      adds: Maybe<Function[]>;
+      deletes: Maybe<Function[]>;
+      updates: Maybe<Function[]>;
+    };
+    services: {
+      adds: Maybe<Service[]>;
+      deletes: Maybe<Service[]>;
+      updates: Maybe<Service[]>;
+    };
+  };
+}
+
+/** Information about an entity that had its locked state changed. */
+export interface LockChangedItem {
+  id: string;
+  lock: Maybe<{
+    id: string;
+    email: string;
+  }>;
+}
+
+/** The information returned from an locking changed event. */
+export interface LockingChanged {
+  workspaces: Maybe<LockChangedItem[]>;
+  knowledgeGraphs: Maybe<LockChangedItem[]>;
+  functions: Maybe<LockChangedItem[]>;
+}
