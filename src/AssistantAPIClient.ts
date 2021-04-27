@@ -1,3 +1,4 @@
+import { AssistantState, RenderMode } from './constants';
 import {
   CreateFunctionInput,
   CreateServiceInput,
@@ -6,7 +7,9 @@ import {
   Entity,
   EntityIdentifier,
   Function,
+  InventoryChanged,
   Kind,
+  LockingChanged,
   Maybe,
   Selected,
   Service,
@@ -16,7 +19,6 @@ import {
   Workspace
 } from './models';
 
-import { AssistantState } from './constants';
 import { EventEmitter } from 'events';
 import postRobot from 'post-robot';
 
@@ -71,7 +73,7 @@ function createAPIListener(callName: string, cb: EventListenerCallback) {
  * Attach selection event emitter to API listener
  * @private
  */
-createAPIListener(EventTypes.SELECTION_CHANGED, async function(event) {
+createAPIListener(EventTypes.SELECTION_CHANGED, async function (event) {
   eventEmitter.emit(EventTypes.SELECTION_CHANGED, event.data);
 });
 
@@ -80,7 +82,7 @@ createAPIListener(EventTypes.SELECTION_CHANGED, async function(event) {
  * Use convention to filter by function ID.
  * @private
  */
-createAPIListener(EventTypes.FUNCTION_EXECUTED, async function(event) {
+createAPIListener(EventTypes.FUNCTION_EXECUTED, async function (event) {
   eventEmitter.emit(`function:${event.data.id}`, event.data.result);
 });
 
@@ -88,7 +90,7 @@ createAPIListener(EventTypes.FUNCTION_EXECUTED, async function(event) {
  * Attach inventory event emitter to API listener.
  * @private
  */
-createAPIListener(EventTypes.INVENTORY_CHANGED, async function(event) {
+createAPIListener(EventTypes.INVENTORY_CHANGED, async function (event) {
   eventEmitter.emit(EventTypes.INVENTORY_CHANGED, event.data);
 });
 
@@ -96,7 +98,7 @@ createAPIListener(EventTypes.INVENTORY_CHANGED, async function(event) {
  * Attach render mode event emitter to API listener.
  * @private
  */
-createAPIListener(EventTypes.RENDER_MODE_CHANGED, async function(event) {
+createAPIListener(EventTypes.RENDER_MODE_CHANGED, async function (event) {
   eventEmitter.emit(EventTypes.RENDER_MODE_CHANGED, event.data);
 });
 
@@ -104,7 +106,7 @@ createAPIListener(EventTypes.RENDER_MODE_CHANGED, async function(event) {
  * Attach repair listener.
  * @private
  */
-createAPIListener(EventTypes.REPAIR, async function(event) {
+createAPIListener(EventTypes.REPAIR, async function (event) {
   eventEmitter.emit(EventTypes.REPAIR, event.data);
 });
 
@@ -112,7 +114,7 @@ createAPIListener(EventTypes.REPAIR, async function(event) {
  * Attach locking changed listener.
  * @private
  */
-createAPIListener(EventTypes.LOCKING_CHANGED, async function(event) {
+createAPIListener(EventTypes.LOCKING_CHANGED, async function (event) {
   eventEmitter.emit(EventTypes.LOCKING_CHANGED, event.data);
 });
 
@@ -122,7 +124,33 @@ export namespace AssistantAPIClient {
   //
 
   /**
-   * Updates the current state of the Assistant.
+   * This sets the current state of the assistant using the `AssistantState`
+   * enum. Setting a state of `WORKING` will create the 'working' status spinner
+   * in the Assistant Inventory Panel in the Maana Q UI. Conversely, setting an
+   * `IDLE` state will remove the spinner. This adds to user experience by
+   * informing users of the status of operations.
+   *
+   * @note If the assistant is in a `WORKING` state, the Maana Q UI will warn
+   * the user before leaving the workspace.
+   *
+   * @note While an assistant is in a working state, it will not receive
+   * `inventoryChanged` events. An aggregated inventory diff will be sent once
+   * the assistant is set back to `IDLE`.
+   *
+   * @note It is recommended to control states at a high level using
+   * try/catch/finally flow incorporating the `reportError` API call.
+   *
+   * @example
+   * ```typescript
+   * try {
+   *   AssistantAPIClient.setAssistantState(AssistantState.WORKING)
+   *   // Do some work
+   * } catch(e) {
+   *   // Handle errors
+   * } finally {
+   *   AssistantAPIClient.setAssistantState(AssistantState.IDLE)
+   * }
+   * ```
    *
    * @param state The new state of the assistant.
    */
@@ -148,6 +176,11 @@ export namespace AssistantAPIClient {
   /**
    * Gets the information about the current user.
    *
+   * @example
+   * ```typescript
+   * const userInfo = await AssistantAPIClient.getUserInfo()
+   * ```
+   *
    * @returns The current User.
    */
   export function getUserInfo(): Promise<User> {
@@ -161,6 +194,22 @@ export namespace AssistantAPIClient {
   /**
    * Adds a listener to the selection changed event.
    *
+   * @example
+   * ```typescript
+   * // Create the selection callback.
+   * const selectionCB = ({selection})=>{
+   *   console.log('Workspace selection has changed.')
+   *   selection.forEach(i=>{
+   *     console.log('Kind: ',i.kindName)
+   *     console.log('Instance Id:',i.id)
+   *     console.log('Kind Id:',i.kindId)
+   *   })
+   * }
+   *
+   * // Add the listener.
+   * AssistantAPIClient.addSelectionChangedListener(selectionCB);
+   * ```
+   *
    * @param cb Callback function.
    */
   export function addSelectionChangedListener(cb: EventListenerCallback) {
@@ -168,10 +217,15 @@ export namespace AssistantAPIClient {
   }
 
   /**
-   * Removed a listener from the selection changed event, or all of them if no
+   * Removes a listener from the selection changed event, or all of them if no
    * callback is defined.
    *
-   * @param Callback function.
+   * @example
+   * ```typescript
+   * AssistantAPIClient.removeSelectionChangedListener(selectionCB)
+   * ```
+   *
+   * @param cb Callback function.
    */
   export function removeSelectionChangedListener(cb?: EventListenerCallback) {
     // If the callback is not provided, then remove all of the listeners.
@@ -185,6 +239,11 @@ export namespace AssistantAPIClient {
   /**
    * Gets the current selection from the UI.
    *
+   * @example
+   * ```typescript
+   * const {selection} = await AssistantAPIClient.getCurrentSelection();
+   * ```
+   *
    * @returns The list of selected entities.
    */
   export function getCurrentSelection(): Promise<Selected> {
@@ -196,7 +255,12 @@ export namespace AssistantAPIClient {
   //
 
   /**
-   * Gets a specified service by ID
+   * Loads a service by its ID.
+   *
+   * @example
+   * ```typescript
+   * const svc = await AssistantAPIClient.getServiceById(id)
+   * ```
    *
    * @param id Service Id
    *
@@ -208,6 +272,20 @@ export namespace AssistantAPIClient {
 
   /**
    * Creates a new Service in the platform.
+   *
+   * @note This will create the service, but does NOT import it into the
+   * workspace. You will need to use `importService` on the Workspace object to
+   * import it.
+   *
+   * @example
+   * ```typescript
+   * const service = {
+   *   name: ...,
+   *   endpointUrl: ...,
+   *   serviceType: ServiceType.EXTERNAL_GRAPHQL
+   * }
+   * const svcId = await AssistantAPIClient.createService(service)
+   * ```
    *
    * @param input The inputs used to create the Service.
    *
@@ -222,6 +300,11 @@ export namespace AssistantAPIClient {
    * making sure that the platform is working on the latest schema of an
    * external service.
    *
+   * @example
+   * ```typescript
+   * await AssistantAPIClient.refreshServiceSchema(id)
+   * ```
+   *
    * @param input The ID of the service to refresh.
    *
    * @returns The refreshed service.
@@ -234,6 +317,11 @@ export namespace AssistantAPIClient {
    * Has the UI reload the information about the service from the backend to
    * make sure that it has fresh information.
    *
+   * @example
+   * ```typescript
+   * await AssistantAPIClient.reloadService(id)
+   * ```
+   *
    * @param id The ID of the Service to reload.
    *
    * @returns The service with fresh information.
@@ -244,6 +332,11 @@ export namespace AssistantAPIClient {
 
   /**
    * Deletes the given Service from the platform.
+   *
+   * @example
+   * ```typescript
+   * await AssistantAPIClient.deleteService(id)
+   * ```
    *
    * @param id The ID of the Service to delete.
    */
@@ -276,6 +369,14 @@ export namespace AssistantAPIClient {
   /**
    * Returns the requested Workspace, if no Workspace ID is specified it returns
    * the Workspace that the user is currently using.
+   *
+   * @note The `id` parameter is optional. If it is not supplied, the query will
+   * return the current/visible workspace.
+   *
+   * @example
+   * ```typescript
+   * const ws = await AssistantAPIClient.getWorkspace(id)
+   * ```
    *
    * @param id The ID of the Workspace to load.
    *
@@ -321,6 +422,19 @@ export namespace AssistantAPIClient {
   /**
    * Runs a query against a given function with the supplied variables and
    * resolve string.
+   *
+   * @example
+   * ```typescript
+   * const res = await AssistantAPIClient.executeFunction({
+   *   entityIdentifier: {
+   *     entityType: EntityType.Function,
+   *     name: 'myFunc',
+   *     serviceId: 'myServiceId'
+   *   },
+   *   variables: { input: 'value' },
+   *   resolve: '{ id name }'
+   * })
+   * ```
    *
    * @param input The information to execute.
    * @param input.entityIdentifier The reference to the function.
@@ -443,7 +557,18 @@ export namespace AssistantAPIClient {
   }
 
   /**
-   * Adds a callback function to be called with the function has been executed.
+   * Associates a callback function with the execution of a particular Function.
+   * When the Function matching the id parameter is executed, its
+   * FunctionExecutionResult object passed to the callback.
+   *
+   * @example
+   * ```typescript
+   * function exampleFunctionCB (result){
+   *   console.log(`Function executed with result:`, result)
+   * }
+   *
+   * AssistantAPIClient.addFunctionExecutionListener(id, exampleFunctionCB)
+   * ```
    *
    * @param id ID of the function.
    * @param cb The callback function.
@@ -456,7 +581,14 @@ export namespace AssistantAPIClient {
   }
 
   /**
-   * Removes one or all callbacks listening for the function to be executed.
+   * Removes a Function execution listener based on the function ID and a
+   * reference to the callback function. If no callback is supplied, all
+   * listeners associated with the Function ID will be removed.
+   *
+   * @example
+   * ```typescript
+   * AssistantAPIClient.removeFunctionExecutionListener(id, exampleFunctionCB)
+   * ```
    *
    * @param id ID of the function.
    * @param cb The callback function, if not supplied all of them
@@ -580,7 +712,21 @@ export namespace AssistantAPIClient {
   }
 
   /**
-   * Loads up tree of Kinds references by the signature of the Entities passed in.
+   * Recursively collects all kinds that are referenced in the entities signature,
+   * starting with the entity identifiers. For example if Kind A is supplied as
+   * an input, and Kind A contains a field of type Kind B, and B contains a
+   * field of type Kind C, an array containing the kinds objects for A, B, and C
+   * will be returned.
+   *
+   * @example
+   * ```typescript
+   * const entities = [{
+   *   entityType: EntityType.TYPE,
+   *   name: 'kind1',
+   *   serviceId: 'example-service'
+   * }]
+   * const kinds = await AssistantAPIClient.getAllReferencedKinds({ entities })
+   * ```
    *
    * @param data The data passed in for finding the referenced kinds.
    * @param data.entities The starting entities to check.
@@ -602,22 +748,43 @@ export namespace AssistantAPIClient {
   //
 
   /**
-   * Adds a listener for the inventory changed event.
+   * Registers a callback function with the inventory changed event. When
+   * workspace inventory changes the callback function will be called.
+   *
+   * @note An 'update' diff for inventory services is unlikely in general usage.
+   *
+   * @example
+   * ```typescript
+   * const inventoryCB = ({diff}: InventoryChanged) => {
+   *   if(diff.kinds) console.log('KINDS CHANGED',diff.kinds)
+   *   if(diff.functions) console.log('FUNCTIONS CHANGED', diff.functions)
+   *   if(diff.services) console.log('SERVICES CHANGED',diff.services)
+   * }
+   *
+   * AssistantAPIClient.addInventoryChangedListener(inventoryCB)
+   * ```
    *
    * @param cb Callback function.
    */
-  export function addInventoryChangedListener(cb: EventListenerCallback): void {
+  export function addInventoryChangedListener(
+    cb: (changes: InventoryChanged) => void
+  ): void {
     eventEmitter.addListener(EventTypes.INVENTORY_CHANGED, cb);
   }
 
   /**
-   * Removed a listener from the inventory changed event, or all of them if one
-   * is not specified.
+   * Removes an inventory changed listener given the referenced callback. If no
+   * callback is specified, all listeners will be removed.
+   *
+   * @example
+   * ```typescript
+   * AssistantAPIClient.removeInventoryChangedListener(inventoryCB)
+   * ```
    *
    * @param cb Callback function.
    */
   export function removeInventoryChangedListener(
-    cb?: EventListenerCallback
+    cb?: (changes: InventoryChanged) => void
   ): void {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
@@ -633,6 +800,11 @@ export namespace AssistantAPIClient {
    *
    * @deprecated This has been deprecated in favor of calling update on the
    * target Workspace to move the entities.
+   *
+   * @example
+   * ```typescript
+   * await AssistantAPIClient.moveKindsAndFunctions(originWorkspaceId, targetId, kindIds, functionIds);
+   * ```
    *
    * @param originId The ID of the origin Workspace.
    * @param targetId The ID of the target Workspace.
@@ -679,10 +851,22 @@ export namespace AssistantAPIClient {
   /**
    * Adds a listener to the render mode changed event.
    *
+   * @example
+   * ```typescript
+   * function handleRenderModeChanged(renderMode: RenderMode) {
+   *   if (renderMode === RenderMode.DISPLAY) {
+   *     // Assistant is visible
+   *   } else {
+   *     // Assistant is not visible and is running in the background
+   *   }
+   * }
+   * AssistantAPIClient.addRenderModeChangedListener(handleRenderModeChanged)
+   * ```
+   *
    * @param cb Callback function.
    */
   export function addRenderModeChangedListener(
-    cb: EventListenerCallback
+    cb: (renderMode: RenderMode) => void
   ): void {
     eventEmitter.addListener(EventTypes.RENDER_MODE_CHANGED, cb);
   }
@@ -691,10 +875,15 @@ export namespace AssistantAPIClient {
    * Removed a listener from the render mode changed event, or all of them if
    * one is not specified.
    *
+   * @example
+   * ```typescript
+   * AssistantAPIClient.removeRenderModeChangedListener(handleRenderModeChanged)
+   * ```
+   *
    * @param cb Callback function.
    */
   export function removeRenderModeChangedListener(
-    cb: EventListenerCallback
+    cb: (renderMode: RenderMode) => void
   ): void {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
@@ -707,9 +896,20 @@ export namespace AssistantAPIClient {
   /**
    * Gets the current render mode for the assistant.
    *
+   * @example
+   * ```typescript
+   * const renderMode = await AssistantAPIClient.getRenderMode()
+   *
+   * if (renderMode === RenderMode.DISPLAY) {
+   *   // Assistant is visible
+   * } else {
+   *   // Assistant is not visible and is running in the background
+   * }
+   * ```
+   *
    * @returns The current render mode.
    */
-  export function getRenderMode(): Promise<string> {
+  export function getRenderMode(): Promise<RenderMode> {
     return APICall('getRenderMode');
   }
 
@@ -719,22 +919,35 @@ export namespace AssistantAPIClient {
 
   /**
    * Adds a listener to the repair changed event.
-   * @function AssistantAPIClient.addRepairListener
+   *
+   * @example
+   * ```typescript
+   * function handleRepair (workspaceId: string) {
+   *   // Implement self healing of the assistants data here.
+   * }
+   * AssistantAPIClient.addRepairListener(handleRepair)
+   * ```
    *
    * @param cb Callback function.
    */
-  export function addRepairListener(cb: EventListenerCallback): void {
+  export function addRepairListener(cb: (workspaceId: string) => void): void {
     eventEmitter.addListener(EventTypes.REPAIR, cb);
   }
 
   /**
    * Removed a listener from the repair changed event, or all of them if one is
    * not specified.
-   * @function AssistantAPIClient.removeRepairListener
+   *
+   * @example
+   * ```typescript
+   * AssistantAPIClient.removeRepairListener(handleRepair)
+   * ```
    *
    * @param cb Callback function.
    */
-  export function removeRepairListener(cb?: EventListenerCallback): void {
+  export function removeRepairListener(
+    cb?: (worksapceId: string) => void
+  ): void {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener(EventTypes.REPAIR, cb);
@@ -748,7 +961,24 @@ export namespace AssistantAPIClient {
   //
 
   /**
-   * Reports an error to the UI for the user to be able view it.
+   * Reports an error to the UI to be displayed in the assistant's error log in
+   * the inventory panel. This call is not disruptive and designed to operated
+   * independently of other assistant operations, such as state management. See
+   * `setAssistantState` in the next section.
+   *
+   * @note It is recommended to use this functionality where it would further
+   * the user experience to show the user an error and it's cause. Do not use
+   * this where things will be retried, cleaned up automatically, or are not
+   * relevant to the user.
+   *
+   * @example
+   * ```typescript
+   * try {
+   *   // Do some work
+   * } catch(e) {
+   *   AssistantAPIClient.reportError(e)
+   * }
+   * ```
    *
    * @param error The error object or an error message.
    */
@@ -761,24 +991,42 @@ export namespace AssistantAPIClient {
   //
 
   /**
-   * Adds a callback function to be called every time the locking changed event
-   * is triggered.
+   * Registers a callback function with the locking changed event. When the
+   * currently active Workspace or its Knowledge Graphs and Functions change the
+   * callback function will be called with the `LockingChanged` object.
+   *
+   * @example
+   * ```typescript
+   * const lockingChangedCB = ({ locks }: LockingChanged) => {
+   *   if(locks.workspace) console.log('WORKSPACES CHANGED', locks.workspace);
+   *   if(locks.knowledgeGraphs) console.log('KNOWLEDGE GRAPHS CHANGED', locks.knowledgeGraphs);
+   *   if(locks.functions) console.log('FUNCTIONS CHANGED', locks.functions);
+   * }
+   *
+   * AssistantAPIClient.addLockingChangedListener(lockingChangedCB);
+   * ```
    *
    * @param cb The callback function to call
    */
-  export function addLockingChangedListener(cb: EventListenerCallback): void {
+  export function addLockingChangedListener(
+    cb: (changes: LockingChanged) => void
+  ): void {
     eventEmitter.addListener(EventTypes.LOCKING_CHANGED, cb);
   }
 
   /**
-   * Removes a callback function from the list be called every time the locking
-   * changed event is triggered.  If no callback is passed in, then all
-   * listeners are removed for the locking changed event.
+   * Removes an locking changed listener given the referenced callback. If no
+   * callback is specified, all listeners will be removed.
+   *
+   * @example
+   * ```typescript
+   * AssistantAPIClient.removeLockingChangedListener(lockingChangedCB)
+   * ```
    *
    * @param cb The callback function to remove
    */
   export function removeLockingChangedListener(
-    cb?: EventListenerCallback
+    cb?: (changes: LockingChanged) => void
   ): void {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {

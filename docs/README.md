@@ -52,8 +52,11 @@
 * [Graph](interfaces/graph.md)
 * [GraphRefInput](interfaces/graphrefinput.md)
 * [IDObject](interfaces/idobject.md)
+* [InventoryChanged](interfaces/inventorychanged.md)
 * [Kind](interfaces/kind.md)
 * [KnowledgeGraph](interfaces/knowledgegraph.md)
+* [LockChangedItem](interfaces/lockchangeditem.md)
+* [LockingChanged](interfaces/lockingchanged.md)
 * [Node](interfaces/node.md)
 * [OperationArgumentRef](interfaces/operationargumentref.md)
 * [OperationArgumentRefInput](interfaces/operationargumentrefinput.md)
@@ -98,7 +101,7 @@
 
 Ƭ  **EventListenerCallback**: (e: any) => void
 
-*Defined in [AssistantAPIClient.ts:39](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L39)*
+*Defined in [AssistantAPIClient.ts:41](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L41)*
 
 ___
 
