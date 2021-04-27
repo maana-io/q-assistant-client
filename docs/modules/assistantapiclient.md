@@ -434,7 +434,7 @@ const res = await AssistantAPIClient.executeFunction({
   entityIdentifier: {
     entityType: EntityType.Function,
     name: 'myFunc',
-    serviceId: 'myServiceId`
+    serviceId: 'myServiceId'
   },
   variables: { input: 'value' },
   resolve: '{ id name }'
