@@ -20,4 +20,4 @@
 
 •  **lockedBy**: string
 
-*Defined in [models.ts:655](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L655)*
+*Defined in [models.ts:662](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L662)*

@@ -1033,7 +1033,7 @@ ___
 
 ### removeRepairListener
 
-▸ **removeRepairListener**(`cb?`: (worksapceId: string) => void): void
+▸ **removeRepairListener**(`cb?`: (workspaceId: string) => void): void
 
 *Defined in [AssistantAPIClient.ts:948](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L948)*
 
@@ -1049,7 +1049,7 @@ AssistantAPIClient.removeRepairListener(handleRepair)
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`cb?` | (worksapceId: string) => void | Callback function.  |
+`cb?` | (workspaceId: string) => void | Callback function.  |
 
 **Returns:** void
 

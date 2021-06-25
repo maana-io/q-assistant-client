@@ -946,7 +946,7 @@ export namespace AssistantAPIClient {
    * @param cb Callback function.
    */
   export function removeRepairListener(
-    cb?: (worksapceId: string) => void
+    cb?: (workspaceId: string) => void
   ): void {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {

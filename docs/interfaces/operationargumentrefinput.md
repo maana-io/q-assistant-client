@@ -21,7 +21,7 @@
 
 •  **argument**: string
 
-*Defined in [models.ts:675](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L675)*
+*Defined in [models.ts:682](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L682)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 •  **operation**: string
 
-*Defined in [models.ts:674](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L674)*
+*Defined in [models.ts:681](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L681)*

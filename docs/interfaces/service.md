@@ -26,6 +26,7 @@
 
 * [getFunctions](service.md#getfunctions)
 * [getKinds](service.md#getkinds)
+* [getWorkspace](service.md#getworkspace)
 * [update](service.md#update)
 
 ## Properties
@@ -133,11 +134,25 @@ Retrieves the list of Kinds that are part of the Service.
 
 ___
 
+### getWorkspace
+
+▸ **getWorkspace**(): Promise\<[Maybe](../README.md#maybe)\<[Workspace](workspace.md)>>
+
+*Defined in [models.ts:402](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L402)*
+
+Loads the Workspace that is connected with the service. Only works for for
+Logic services. If there is no workspace connected with the service then
+null is returned.
+
+**Returns:** Promise\<[Maybe](../README.md#maybe)\<[Workspace](workspace.md)>>
+
+___
+
 ### update
 
 ▸ **update**(`changes`: [UpdateExternalGraphQLServiceInput](updateexternalgraphqlserviceinput.md)): Promise\<void>
 
-*Defined in [models.ts:401](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L401)*
+*Defined in [models.ts:408](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L408)*
 
 Updates information about the Service.
 
