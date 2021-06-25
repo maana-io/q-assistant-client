@@ -23,7 +23,7 @@
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:707](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L707)*
+*Defined in [models.ts:714](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L714)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • `Optional` **graph**: [Maybe](../README.md#maybe)\<[CreateGraphInput](creategraphinput.md)>
 
-*Defined in [models.ts:708](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L708)*
+*Defined in [models.ts:715](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L715)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **id**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:705](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L705)*
+*Defined in [models.ts:712](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L712)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 •  **name**: string
 
-*Defined in [models.ts:706](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L706)*
+*Defined in [models.ts:713](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L713)*

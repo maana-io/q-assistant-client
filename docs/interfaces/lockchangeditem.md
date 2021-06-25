@@ -23,7 +23,7 @@ Information about an entity that had its locked state changed.
 
 •  **id**: string
 
-*Defined in [models.ts:900](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L900)*
+*Defined in [models.ts:907](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L907)*
 
 ___
 
@@ -31,4 +31,4 @@ ___
 
 •  **lock**: [Maybe](../README.md#maybe)\<{ email: string ; id: string  }>
 
-*Defined in [models.ts:901](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L901)*
+*Defined in [models.ts:908](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L908)*

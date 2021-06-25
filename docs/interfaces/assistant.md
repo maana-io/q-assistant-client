@@ -55,7 +55,7 @@ ___
 
 •  **location**: [ServiceLocation](servicelocation.md)
 
-*Defined in [models.ts:406](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L406)*
+*Defined in [models.ts:413](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L413)*
 
 The location that the Assistant can be reached at.
 
@@ -89,7 +89,7 @@ ___
 
 •  **version**: number
 
-*Defined in [models.ts:412](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L412)*
+*Defined in [models.ts:419](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L419)*
 
 The current version of the Assistant.  This is incremented by catalog each
 time the Assistant is updated.
@@ -100,7 +100,7 @@ time the Assistant is updated.
 
 ▸ **update**(`changes`: [UpdateAssistantInput](updateassistantinput.md)): Promise\<void>
 
-*Defined in [models.ts:418](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L418)*
+*Defined in [models.ts:425](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L425)*
 
 Updates information about the Assistant.
 
