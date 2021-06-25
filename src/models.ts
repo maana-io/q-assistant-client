@@ -395,6 +395,13 @@ export interface Service extends Entity {
   getFunctions(): Promise<Function[]>;
 
   /**
+   * Loads the Workspace that is connected with the service. Only works for for
+   * Logic services. If there is no workspace connected with the service then
+   * null is returned.
+   * */
+  getWorkspace(): Promise<Maybe<Workspace>>;
+
+  /**
    * Updates information about the Service.
    * @param changes Information to update the Service with.
    */
