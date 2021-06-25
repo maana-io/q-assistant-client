@@ -12,6 +12,7 @@
 
 ### Properties
 
+* [annotation](updateentityinput.md#annotation)
 * [entityType](updateentityinput.md#entitytype)
 * [file](updateentityinput.md#file)
 * [function](updateentityinput.md#function)
@@ -20,11 +21,19 @@
 
 ## Properties
 
+### annotation
+
+• `Optional` **annotation**: [Maybe](../README.md#maybe)\<[UpdateAnnotationInput](updateannotationinput.md)>
+
+*Defined in [models.ts:865](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L865)*
+
+___
+
 ### entityType
 
 •  **entityType**: [EntityType](../enums/entitytype.md)
 
-*Defined in [models.ts:833](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L833)*
+*Defined in [models.ts:860](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L860)*
 
 ___
 
@@ -32,7 +41,7 @@ ___
 
 • `Optional` **file**: [Maybe](../README.md#maybe)\<[UpdateFileInput](updatefileinput.md)>
 
-*Defined in [models.ts:837](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L837)*
+*Defined in [models.ts:864](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L864)*
 
 ___
 
@@ -40,7 +49,7 @@ ___
 
 • `Optional` **function**: [Maybe](../README.md#maybe)\<[UpdateFunctionInput](updatefunctioninput.md)>
 
-*Defined in [models.ts:836](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L836)*
+*Defined in [models.ts:863](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L863)*
 
 ___
 
@@ -48,7 +57,7 @@ ___
 
 • `Optional` **knowledgeGraph**: [Maybe](../README.md#maybe)\<[UpdateKnowledgeGraphInput](updateknowledgegraphinput.md)>
 
-*Defined in [models.ts:834](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L834)*
+*Defined in [models.ts:861](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L861)*
 
 ___
 
@@ -56,4 +65,4 @@ ___
 
 • `Optional` **type**: [Maybe](../README.md#maybe)\<[UpdateTypeInput](updatetypeinput.md)>
 
-*Defined in [models.ts:835](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L835)*
+*Defined in [models.ts:862](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L862)*

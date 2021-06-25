@@ -82,6 +82,14 @@ export interface Entity {
   description?: string;
 }
 
+export interface Annotation {
+  id: string;
+  name: string;
+  nameDescriptor?: string;
+  description?: string;
+  workspaceId?: string;
+}
+
 export interface ArgumentRef {
   argumentName: string;
   argumentId: string;
@@ -606,6 +614,12 @@ export interface Workspace extends Entity {
    */
   updateKinds(changes: UpdateTypeInput[]): Promise<Kind[]>;
 
+  /** Gets the list of Annotations that live in the Workspace */
+  getAnnotations(): Promise<Annotation[]>;
+
+  /** Gets an Annotation in the Workspace by ID */
+  getAnnotationById(id: string): Promise<Maybe<Annotation>>;
+
   /**
    * Deletes a Kind in the Workspace.
    * @param name The name of the Kind to delete.
@@ -723,6 +737,12 @@ export interface CreateTypeInput {
   isManaged?: boolean;
 }
 
+export interface CreateAnnotationInput {
+  id?: Maybe<string>;
+  name: string;
+  description?: Maybe<string>;
+}
+
 export interface ArgumentFieldSelectionInput {
   argument: string;
   fieldSelection?: Maybe<Array<Array<string>>>;
@@ -760,6 +780,7 @@ export interface CreateEntityInput {
   type?: Maybe<CreateTypeInput>;
   function?: Maybe<CreateFunctionInput>;
   file?: Maybe<CreateFileInput>;
+  annotation?: Maybe<CreateAnnotationInput>;
 }
 
 export interface CloneEntityInput {
@@ -803,6 +824,12 @@ export interface UpdateTypeInput {
   isManaged?: Maybe<boolean>;
 }
 
+export interface UpdateAnnotationInput {
+  id: string;
+  name?: Maybe<string>;
+  description?: Maybe<string>;
+}
+
 export interface UpdateFunctionInput {
   id: string;
   name?: Maybe<string>;
@@ -835,6 +862,7 @@ export interface UpdateEntityInput {
   type?: Maybe<UpdateTypeInput>;
   function?: Maybe<UpdateFunctionInput>;
   file?: Maybe<UpdateFileInput>;
+  annotation?: Maybe<UpdateAnnotationInput>;
 }
 
 export interface CreateWorkspaceInput {

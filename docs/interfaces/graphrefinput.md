@@ -24,7 +24,7 @@
 
 • `Optional` **argument**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:693](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L693)*
+*Defined in [models.ts:707](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L707)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 •  **graphRefInputType**: [GraphRefInputType](../enums/graphrefinputtype.md)
 
-*Defined in [models.ts:692](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L692)*
+*Defined in [models.ts:706](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L706)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • `Optional` **operationArgument**: [Maybe](../README.md#maybe)\<[OperationArgumentRefInput](operationargumentrefinput.md)>
 
-*Defined in [models.ts:694](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L694)*
+*Defined in [models.ts:708](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L708)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **operationResult**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:695](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L695)*
+*Defined in [models.ts:709](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L709)*
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 • `Optional` **outputArgument**: [Maybe](../README.md#maybe)\<[OutputArgumentRefInput](outputargumentrefinput.md)>
 
-*Defined in [models.ts:696](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L696)*
+*Defined in [models.ts:710](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L710)*

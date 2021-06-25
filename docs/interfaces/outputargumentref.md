@@ -22,7 +22,7 @@
 
 •  **argument**: string
 
-*Defined in [models.ts:107](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L107)*
+*Defined in [models.ts:115](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L115)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 •  **fieldPath**: string[]
 
-*Defined in [models.ts:106](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L106)*
+*Defined in [models.ts:114](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L114)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 •  **operation**: string
 
-*Defined in [models.ts:105](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L105)*
+*Defined in [models.ts:113](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L113)*

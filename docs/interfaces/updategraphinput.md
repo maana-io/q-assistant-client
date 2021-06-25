@@ -26,7 +26,7 @@
 
 • `Optional` **createConnections**: [Maybe](../README.md#maybe)\<Array\<[CreateConnectionInput](createconnectioninput.md)>>
 
-*Defined in [models.ts:786](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L786)*
+*Defined in [models.ts:807](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L807)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • `Optional` **createNodes**: [Maybe](../README.md#maybe)\<Array\<[CreateNodeInput](createnodeinput.md)>>
 
-*Defined in [models.ts:783](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L783)*
+*Defined in [models.ts:804](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L804)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • `Optional` **deleteConnections**: [Maybe](../README.md#maybe)\<Array\<string>>
 
-*Defined in [models.ts:787](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L787)*
+*Defined in [models.ts:808](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L808)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • `Optional` **deleteNodes**: [Maybe](../README.md#maybe)\<Array\<string>>
 
-*Defined in [models.ts:785](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L785)*
+*Defined in [models.ts:806](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L806)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **offset**: [Maybe](../README.md#maybe)\<[PositionInput](positioninput.md)>
 
-*Defined in [models.ts:781](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L781)*
+*Defined in [models.ts:802](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L802)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **updateNodes**: [Maybe](../README.md#maybe)\<Array\<[UpdateNodeInput](updatenodeinput.md)>>
 
-*Defined in [models.ts:784](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L784)*
+*Defined in [models.ts:805](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L805)*
 
 ___
 
@@ -74,4 +74,4 @@ ___
 
 • `Optional` **zoom**: [Maybe](../README.md#maybe)\<number>
 
-*Defined in [models.ts:782](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L782)*
+*Defined in [models.ts:803](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L803)*

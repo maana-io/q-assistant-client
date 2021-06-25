@@ -65,7 +65,7 @@ ___
 
 •  **graph**: [Graph](graph.md)
 
-*Defined in [models.ts:215](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L215)*
+*Defined in [models.ts:223](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L223)*
 
 The graph information for the Knowledge Graph.
 
@@ -111,7 +111,7 @@ ___
 
 •  **offsetX**: number
 
-*Defined in [models.ts:200](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L200)*
+*Defined in [models.ts:208](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L208)*
 
 The X offset of the Knowledge Graph.
 
@@ -123,7 +123,7 @@ ___
 
 •  **offsetY**: number
 
-*Defined in [models.ts:206](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L206)*
+*Defined in [models.ts:214](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L214)*
 
 The Y offset of the Knowledge Graph.
 
@@ -135,7 +135,7 @@ ___
 
 •  **zoom**: number
 
-*Defined in [models.ts:212](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L212)*
+*Defined in [models.ts:220](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L220)*
 
 The zoom of the Knowledge Graph.
 
@@ -147,7 +147,7 @@ The zoom of the Knowledge Graph.
 
 ▸ **addNode**(`entityIdentifier`: [EntityIdentifier](entityidentifier.md)): Promise\<string>
 
-*Defined in [models.ts:246](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L246)*
+*Defined in [models.ts:254](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L254)*
 
 Adds an entity as a node on the Knowledge Graph.
 
@@ -167,7 +167,7 @@ ___
 
 ▸ **canEdit**(): Promise\<boolean>
 
-*Defined in [models.ts:218](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L218)*
+*Defined in [models.ts:226](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L226)*
 
 Returns boolean stating if the Knowledge Graph is editable.
 
@@ -179,7 +179,7 @@ ___
 
 ▸ **getNodes**(): Promise\<[Node](node.md)[]>
 
-*Defined in [models.ts:240](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L240)*
+*Defined in [models.ts:248](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L248)*
 
 Returns the list of nodes inside of the Knowledge Graph.
 
@@ -193,7 +193,7 @@ ___
 
 ▸ **lockedBy**(): Promise\<[Maybe](../README.md#maybe)\<string>>
 
-*Defined in [models.ts:221](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L221)*
+*Defined in [models.ts:229](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L229)*
 
 Returns the e-mail of the user who locked the Knowledge Graph.
 
@@ -205,7 +205,7 @@ ___
 
 ▸ **removeNode**(`nodeId`: string): Promise\<void>
 
-*Defined in [models.ts:253](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L253)*
+*Defined in [models.ts:261](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L261)*
 
 Removed a node from the Knowledge Graph.
 
@@ -225,7 +225,7 @@ ___
 
 ▸ **setLocked**(`isLocked?`: boolean): Promise\<void>
 
-*Defined in [models.ts:228](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L228)*
+*Defined in [models.ts:236](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L236)*
 
 Updates the locked state of the Knowledge Graph.
 
@@ -243,7 +243,7 @@ ___
 
 ▸ **update**(`changes`: [UpdateKnowledgeGraphInput](updateknowledgegraphinput.md)): Promise\<void>
 
-*Defined in [models.ts:234](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L234)*
+*Defined in [models.ts:242](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L242)*
 
 Updates information about the Knowledge Graph.
 
@@ -261,7 +261,7 @@ ___
 
 ▸ **updateGraphLayout**(`changes`: [UpdateGraphLayoutInput](updategraphlayoutinput.md)): Promise\<void>
 
-*Defined in [models.ts:269](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L269)*
+*Defined in [models.ts:277](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L277)*
 
 Updates the layout information for the graph of the Knowledge Graph.
 
@@ -279,7 +279,7 @@ ___
 
 ▸ **updateNodeLayout**(`nodeId`: string, `changes`: [UpdateNodeLayoutInput](updatenodelayoutinput.md)): Promise\<void>
 
-*Defined in [models.ts:260](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L260)*
+*Defined in [models.ts:268](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L268)*
 
 Updates the layout information for a node in the Knowledge Graph.
 

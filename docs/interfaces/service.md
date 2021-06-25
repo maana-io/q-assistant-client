@@ -59,7 +59,7 @@ ___
 
 •  **location**: [ServiceLocation](servicelocation.md)
 
-*Defined in [models.ts:380](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L380)*
+*Defined in [models.ts:388](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L388)*
 
 The location that the service can be reached at.
 
@@ -93,7 +93,7 @@ ___
 
 •  **type**: [ServiceType](../enums/servicetype.md)
 
-*Defined in [models.ts:389](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L389)*
+*Defined in [models.ts:397](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L397)*
 
 The type of the service.
 
@@ -103,7 +103,7 @@ ___
 
 •  **version**: number
 
-*Defined in [models.ts:386](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L386)*
+*Defined in [models.ts:394](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L394)*
 
 The current version of the Service.  This is incremented by catalog each
 time the service is updated.
@@ -114,7 +114,7 @@ time the service is updated.
 
 ▸ **getFunctions**(): Promise\<[Function](function.md)[]>
 
-*Defined in [models.ts:395](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L395)*
+*Defined in [models.ts:403](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L403)*
 
 Retrieves the list of Function that are part of the Service.
 
@@ -126,7 +126,7 @@ ___
 
 ▸ **getKinds**(): Promise\<[Kind](kind.md)[]>
 
-*Defined in [models.ts:392](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L392)*
+*Defined in [models.ts:400](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L400)*
 
 Retrieves the list of Kinds that are part of the Service.
 
@@ -138,7 +138,7 @@ ___
 
 ▸ **getWorkspace**(): Promise\<[Maybe](../README.md#maybe)\<[Workspace](workspace.md)>>
 
-*Defined in [models.ts:402](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L402)*
+*Defined in [models.ts:410](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L410)*
 
 Loads the Workspace that is connected with the service. Only works for for
 Logic services. If there is no workspace connected with the service then
@@ -152,7 +152,7 @@ ___
 
 ▸ **update**(`changes`: [UpdateExternalGraphQLServiceInput](updateexternalgraphqlserviceinput.md)): Promise\<void>
 
-*Defined in [models.ts:408](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L408)*
+*Defined in [models.ts:416](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L416)*
 
 Updates information about the Service.
 

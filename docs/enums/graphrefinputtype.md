@@ -23,7 +23,7 @@ function graph implementation.
 
 •  **ARGUMENT**:  = "ARGUMENT"
 
-*Defined in [constants.ts:112](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L112)*
+*Defined in [constants.ts:113](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L113)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 •  **FUNCTION\_RESULT**:  = "FUNCTION\_RESULT"
 
-*Defined in [constants.ts:113](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L113)*
+*Defined in [constants.ts:114](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L114)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 •  **OPERATION\_ARGUMENT**:  = "OPERATION\_ARGUMENT"
 
-*Defined in [constants.ts:114](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L114)*
+*Defined in [constants.ts:115](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L115)*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 •  **OPERATION\_RESULT**:  = "OPERATION\_RESULT"
 
-*Defined in [constants.ts:115](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L115)*
+*Defined in [constants.ts:116](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L116)*
 
 ___
 
@@ -55,4 +55,4 @@ ___
 
 •  **OUTPUT\_ARGUMENT\_REF**:  = "OUTPUT\_ARGUMENT\_REF"
 
-*Defined in [constants.ts:116](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L116)*
+*Defined in [constants.ts:117](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L117)*

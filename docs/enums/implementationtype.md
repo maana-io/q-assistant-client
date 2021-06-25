@@ -18,4 +18,4 @@ The different types implementations that can be used on a CKG function.
 
 •  **FUNCTION\_GRAPH**:  = "FUNCTION\_GRAPH"
 
-*Defined in [constants.ts:90](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L90)*
+*Defined in [constants.ts:91](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L91)*

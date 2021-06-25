@@ -22,7 +22,7 @@
 
 • `Optional` **isCollapsed**: string[]
 
-*Defined in [models.ts:619](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L619)*
+*Defined in [models.ts:633](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L633)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • `Optional` **x**: number
 
-*Defined in [models.ts:617](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L617)*
+*Defined in [models.ts:631](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L631)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • `Optional` **y**: number
 
-*Defined in [models.ts:618](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L618)*
+*Defined in [models.ts:632](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L632)*

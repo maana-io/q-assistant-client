@@ -28,7 +28,7 @@
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:653](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L653)*
+*Defined in [models.ts:667](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L667)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 •  **endpointUrl**: string
 
-*Defined in [models.ts:654](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L654)*
+*Defined in [models.ts:668](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L668)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • `Optional` **id**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:650](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L650)*
+*Defined in [models.ts:664](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L664)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • `Optional` **isReadOnly**: boolean
 
-*Defined in [models.ts:657](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L657)*
+*Defined in [models.ts:671](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L671)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • `Optional` **isSystem**: boolean
 
-*Defined in [models.ts:656](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L656)*
+*Defined in [models.ts:670](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L670)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 •  **name**: string
 
-*Defined in [models.ts:652](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L652)*
+*Defined in [models.ts:666](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L666)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 •  **serviceType**: [ServiceType](../enums/servicetype.md)
 
-*Defined in [models.ts:651](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L651)*
+*Defined in [models.ts:665](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L665)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 • `Optional` **tags**: Array\<string>
 
-*Defined in [models.ts:658](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L658)*
+*Defined in [models.ts:672](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L672)*
 
 ___
 
@@ -92,4 +92,4 @@ ___
 
 • `Optional` **thumbnailUrl**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:655](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L655)*
+*Defined in [models.ts:669](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L669)*

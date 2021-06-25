@@ -39,6 +39,7 @@ export enum Scalars {
  * from selection or used in graph nodes.
  */
 export enum EntityType {
+  ANNOTATION = 'ANNOTATION',
   FILE = 'FILE',
   FUNCTION = 'FUNCTION',
   KNOWLEDGE_GRAPH = 'KNOWLEDGE_GRAPH',
