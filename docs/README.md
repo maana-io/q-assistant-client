@@ -26,6 +26,7 @@
 
 ### Interfaces
 
+* [Annotation](interfaces/annotation.md)
 * [ArgumentFieldSelection](interfaces/argumentfieldselection.md)
 * [ArgumentFieldSelectionInput](interfaces/argumentfieldselectioninput.md)
 * [ArgumentRef](interfaces/argumentref.md)
@@ -33,6 +34,7 @@
 * [AssistantAPIError](interfaces/assistantapierror.md)
 * [CloneEntityInput](interfaces/cloneentityinput.md)
 * [Connection](interfaces/connection.md)
+* [CreateAnnotationInput](interfaces/createannotationinput.md)
 * [CreateConnectionInput](interfaces/createconnectioninput.md)
 * [CreateEntityInput](interfaces/createentityinput.md)
 * [CreateFileInput](interfaces/createfileinput.md)
@@ -68,6 +70,7 @@
 * [Selected](interfaces/selected.md)
 * [Service](interfaces/service.md)
 * [ServiceLocation](interfaces/servicelocation.md)
+* [UpdateAnnotationInput](interfaces/updateannotationinput.md)
 * [UpdateAssistantInput](interfaces/updateassistantinput.md)
 * [UpdateEntityInput](interfaces/updateentityinput.md)
 * [UpdateExternalGraphQLServiceInput](interfaces/updateexternalgraphqlserviceinput.md)
@@ -109,7 +112,7 @@ ___
 
 Ƭ  **GraphRef**: [ArgumentRef](interfaces/argumentref.md) \| [OperationArgumentRef](interfaces/operationargumentref.md) \| [FunctionResultRef](interfaces/functionresultref.md) \| [OperationResultRef](interfaces/operationresultref.md) \| [OutputArgumentRef](interfaces/outputargumentref.md)
 
-*Defined in [models.ts:111](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L111)*
+*Defined in [models.ts:119](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L119)*
 
 Info for one end of a connection between two items within the graph.
 
@@ -119,7 +122,7 @@ ___
 
 Ƭ  **Implementation**: [Graph](interfaces/graph.md)
 
-*Defined in [models.ts:275](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L275)*
+*Defined in [models.ts:283](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L283)*
 
 Function implementation union.
 

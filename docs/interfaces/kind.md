@@ -56,7 +56,7 @@ ___
 
 •  **isManaged**: boolean
 
-*Defined in [models.ts:176](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L176)*
+*Defined in [models.ts:184](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L184)*
 
 Used to signify if this type has data that is managed by the platform
 
@@ -90,7 +90,7 @@ ___
 
 •  **service**: [IDObject](idobject.md)
 
-*Defined in [models.ts:173](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L173)*
+*Defined in [models.ts:181](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L181)*
 
 The service that the Kind comes from.
 
@@ -100,7 +100,7 @@ ___
 
 •  **signature**: [TypeExpressionObject](../README.md#typeexpressionobject)
 
-*Defined in [models.ts:170](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L170)*
+*Defined in [models.ts:178](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L178)*
 
 The signature of the Kind.
 
@@ -110,7 +110,7 @@ The signature of the Kind.
 
 ▸ **update**(`changes`: [UpdateTypeInput](updatetypeinput.md)): Promise\<void>
 
-*Defined in [models.ts:182](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L182)*
+*Defined in [models.ts:190](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L190)*
 
 Updates information about the Kind.
 

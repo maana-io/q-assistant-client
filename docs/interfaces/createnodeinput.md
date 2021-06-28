@@ -26,7 +26,7 @@
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:674](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L674)*
+*Defined in [models.ts:688](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L688)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • `Optional` **entity**: [Maybe](../README.md#maybe)\<[EntityIdentifier](entityidentifier.md)>
 
-*Defined in [models.ts:676](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L676)*
+*Defined in [models.ts:690](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L690)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • `Optional` **id**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:671](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L671)*
+*Defined in [models.ts:685](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L685)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • `Optional` **isCollapsed**: [Maybe](../README.md#maybe)\<string[]>
 
-*Defined in [models.ts:673](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L673)*
+*Defined in [models.ts:687](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L687)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **location**: [Maybe](../README.md#maybe)\<[PositionInput](positioninput.md)>
 
-*Defined in [models.ts:672](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L672)*
+*Defined in [models.ts:686](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L686)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **operation**: [Maybe](../README.md#maybe)\<[EntityIdentifier](entityidentifier.md)>
 
-*Defined in [models.ts:677](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L677)*
+*Defined in [models.ts:691](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L691)*
 
 ___
 
@@ -74,4 +74,4 @@ ___
 
 •  **type**: [NodeType](../enums/nodetype.md)
 
-*Defined in [models.ts:675](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L675)*
+*Defined in [models.ts:689](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L689)*

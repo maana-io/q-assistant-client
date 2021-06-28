@@ -23,7 +23,7 @@
 
 • `Optional` **connections**: [Maybe](../README.md#maybe)\<Array\<[CreateConnectionInput](createconnectioninput.md)>>
 
-*Defined in [models.ts:708](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L708)*
+*Defined in [models.ts:722](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L722)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • `Optional` **nodes**: [Maybe](../README.md#maybe)\<Array\<[CreateNodeInput](createnodeinput.md)>>
 
-*Defined in [models.ts:707](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L707)*
+*Defined in [models.ts:721](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L721)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **offset**: [Maybe](../README.md#maybe)\<[PositionInput](positioninput.md)>
 
-*Defined in [models.ts:705](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L705)*
+*Defined in [models.ts:719](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L719)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 • `Optional` **zoom**: [Maybe](../README.md#maybe)\<number>
 
-*Defined in [models.ts:706](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L706)*
+*Defined in [models.ts:720](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L720)*

@@ -23,7 +23,7 @@
 
 •  **connections**: [Connection](connection.md)[]
 
-*Defined in [models.ts:165](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L165)*
+*Defined in [models.ts:173](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L173)*
 
 The connections in the Graph.
 
@@ -33,7 +33,7 @@ ___
 
 •  **nodes**: [Node](node.md)[]
 
-*Defined in [models.ts:162](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L162)*
+*Defined in [models.ts:170](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L170)*
 
 The nodes in the Graph.
 
@@ -43,7 +43,7 @@ ___
 
 •  **offset**: [Position](position.md)
 
-*Defined in [models.ts:156](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L156)*
+*Defined in [models.ts:164](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L164)*
 
 The offset of the Graph.
 
@@ -53,6 +53,6 @@ ___
 
 •  **zoom**: number
 
-*Defined in [models.ts:159](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L159)*
+*Defined in [models.ts:167](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L167)*
 
 The zoom of the Graph.

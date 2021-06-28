@@ -24,7 +24,7 @@ The information returned from an locking changed event.
 
 •  **functions**: [Maybe](../README.md#maybe)\<[LockChangedItem](lockchangeditem.md)[]>
 
-*Defined in [models.ts:918](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L918)*
+*Defined in [models.ts:946](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L946)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 •  **knowledgeGraphs**: [Maybe](../README.md#maybe)\<[LockChangedItem](lockchangeditem.md)[]>
 
-*Defined in [models.ts:917](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L917)*
+*Defined in [models.ts:945](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L945)*
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 •  **workspaces**: [Maybe](../README.md#maybe)\<[LockChangedItem](lockchangeditem.md)[]>
 
-*Defined in [models.ts:916](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L916)*
+*Defined in [models.ts:944](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L944)*
