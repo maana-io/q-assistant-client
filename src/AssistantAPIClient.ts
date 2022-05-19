@@ -1,63 +1,68 @@
-import postRobot from 'post-robot'
-const events = require('events')
-const EventEmitter = new events.EventEmitter()
+import postRobot from 'post-robot';
+import events from 'events';
+import { AssistantState } from '.';
+
+const EventEmitter = new events.EventEmitter();
 
 // The collection of event types used in the API
 const EventTypes = Object.freeze({
-  LOCKING_CHANGED: 'lockingChanged'
-})
+  LOCKING_CHANGED: 'lockingChanged',
+});
 
 // Wrapper for post-robot async client -> API call.
-const APICall = async (callName, arg) => {
+const APICall = async (callName: string, arg?: any) => {
   const { source, origin, data } = await postRobot.send(
     window.parent,
     callName,
-    arg
-  )
-  return data
-}
+    arg,
+  );
+  return data;
+};
 
 // Wrapper for post-robot listener.
-const createAPIListener = async (callName, cb) => {
-  postRobot.on(callName, cb)
-}
+const createAPIListener = async (
+  callName: string,
+  cb: (...args: any[]) => any,
+) => {
+  postRobot.on(callName, cb);
+};
 
 /**
  * Class that exposes concrete API calls to the parent API.
  * These calls are made over post-message via post-robot to the parent window.
  */
-class AssistantAPIClient {
+export class AssistantAPIClient {
   constructor() {
     // Attach selection event emmiter to API listener
     createAPIListener('selectionChanged', async function(event) {
-      EventEmitter.emit('selectionChanged', event.data)
-    })
+      EventEmitter.emit('selectionChanged', event.data);
+    });
 
     // Attach function execution event emmiter to API listener.
     // Use convention to filter by function ID.
     createAPIListener('functionExecuted', async function(event) {
-      EventEmitter.emit(`function:${event.data.id}`, event.data.result)
-    })
+      EventEmitter.emit(`function:${event.data.id}`, event.data.result);
+    });
 
     // Attach inventory event emitter to API listener.
     createAPIListener('inventoryChanged', async function(event) {
-      EventEmitter.emit('inventoryChanged', event.data)
-    })
+      EventEmitter.emit('inventoryChanged', event.data);
+    });
 
     // Attach render mode event emitter to API listener.
     createAPIListener('renderModeChanged', async function(event) {
-      EventEmitter.emit('renderModeChanged', event.data)
-    })
+      EventEmitter.emit('renderModeChanged', event.data);
+    });
 
     // Attach repair listener.
     createAPIListener('repair', async function(event) {
-      EventEmitter.emit('repair', event.data)
-    })
+      EventEmitter.emit('repair', event.data);
+    });
 
     // Attach locking changed listener.
     createAPIListener(EventTypes.LOCKING_CHANGED, async function(event) {
-      EventEmitter.emit(EventTypes.LOCKING_CHANGED, event.data)
-    })
+      EventEmitter.emit(EventTypes.LOCKING_CHANGED, event.data);
+    });
   }
 
   //
@@ -69,52 +74,52 @@ class AssistantAPIClient {
    *
    * @param {AssistantState} state The new state of the assistant.
    */
-  setAssistantState(state) {
-    return APICall('setAssistantState', state)
+  setAssistantState(state: AssistantState) {
+    return APICall('setAssistantState', state);
   }
 
   //
   // State management
   //
   clearState = () => {
-    EventEmitter.removeAllListeners()
-  }
+    EventEmitter.removeAllListeners();
+  };
 
   //
   // User Info
   //
-  getUserInfo = () => APICall('getUserInfo')
+  getUserInfo = () => APICall('getUserInfo');
 
   //
   // Selection
   //
-  addSelectionChangedListener = async cb => {
-    EventEmitter.addListener('selectionChanged', cb)
-  }
+  addSelectionChangedListener = async (cb: (...args: any[]) => void) => {
+    EventEmitter.addListener('selectionChanged', cb);
+  };
 
-  removeSelectionChangedListener = async cb => {
+  removeSelectionChangedListener = async (cb: (...args: any[]) => void) => {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
-      EventEmitter.removeListener('selectionChanged', cb)
+      EventEmitter.removeListener('selectionChanged', cb);
     } else {
-      EventEmitter.removeAllListeners('selectionChanged')
+      EventEmitter.removeAllListeners('selectionChanged');
     }
-  }
+  };
 
-  getCurrentSelection = () => APICall('getCurrentSelection')
+  getCurrentSelection = () => APICall('getCurrentSelection');
 
   //
   // Services
   //
-  getServiceById = id => APICall('getServiceById', id)
+  getServiceById = (id: string) => APICall('getServiceById', id);
 
-  createService = input => APICall('createService', input)
+  createService = (input: any) => APICall('createService', input);
 
-  refreshServiceSchema = input => APICall('refreshServiceSchema', input)
+  refreshServiceSchema = (input: any) => APICall('refreshServiceSchema', input);
 
-  reloadServiceSchema = id => APICall('reloadServiceSchema', id)
+  reloadServiceSchema = (id: string) => APICall('reloadServiceSchema', id);
 
-  deleteService = id => APICall('deleteService', id)
+  deleteService = (id: string) => APICall('deleteService', id);
 
   //
   // Workspace
@@ -127,8 +132,8 @@ class AssistantAPIClient {
    * @param {string} id The ID of the Workspace to load. (optional)
    * @return {Workspace} The requested Workspace.
    */
-  getWorkspace(id) {
-    return APICall('getWorkspace', id)
+  getWorkspace(id: string) {
+    return APICall('getWorkspace', id);
   }
 
   /**
@@ -140,7 +145,7 @@ class AssistantAPIClient {
    * @return {Array<Workspace>} The list of Workspaces.
    */
   getUserAccessibleWorkspaces(includePublic = false) {
-    return APICall('getUserAccessibleWorkspaces', includePublic)
+    return APICall('getUserAccessibleWorkspaces', includePublic);
   }
 
   /**
@@ -151,67 +156,67 @@ class AssistantAPIClient {
    * @return {Workspace} The new Workspace.
    */
   createWorkspace(workspace) {
-    return APICall('createWorkspace', workspace)
+    return APICall('createWorkspace', workspace);
   }
 
   //
   // Functions
   //
-  executeFunction = input => APICall('executeFunction', input)
+  executeFunction = input => APICall('executeFunction', input);
 
-  createFunction = input => APICall('createFunction', input)
+  createFunction = input => APICall('createFunction', input);
 
-  updateFunction = input => APICall('updateFunction', input)
+  updateFunction = input => APICall('updateFunction', input);
 
-  deleteFunction = input => APICall('deleteFunction', input)
+  deleteFunction = input => APICall('deleteFunction', input);
 
-  getFunctionById = id => APICall('getFunctionById', id)
+  getFunctionById = id => APICall('getFunctionById', id);
 
-  getFunctionsById = ids => APICall('getFunctionsById', ids)
+  getFunctionsById = ids => APICall('getFunctionsById', ids);
 
   addFunctionExecutionListener = async (id, cb) => {
-    EventEmitter.addListener(`function:${id}`, cb)
-  }
+    EventEmitter.addListener(`function:${id}`, cb);
+  };
 
   removeFunctionExecutionListener = async (id, cb) => {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
-      EventEmitter.removeListener(`function:${id}`, cb)
+      EventEmitter.removeListener(`function:${id}`, cb);
     } else {
-      EventEmitter.removeAllListeners(`function:${id}`)
+      EventEmitter.removeAllListeners(`function:${id}`);
     }
-  }
+  };
 
   //
   // Kinds
   //
-  createKind = input => APICall('createKind', input)
+  createKind = input => APICall('createKind', input);
 
-  updateKind = input => APICall('updateKind', input)
+  updateKind = input => APICall('updateKind', input);
 
-  deleteKind = input => APICall('deleteKind', input)
+  deleteKind = input => APICall('deleteKind', input);
 
-  getKindById = id => APICall('getKindById', id)
+  getKindById = id => APICall('getKindById', id);
 
-  getKindsById = ids => APICall('getKindsById', ids)
+  getKindsById = ids => APICall('getKindsById', ids);
 
-  getAllReferencedKinds = input => APICall('getAllReferencedKinds', input)
+  getAllReferencedKinds = input => APICall('getAllReferencedKinds', input);
 
   //
   // Inventory
   //
   addInventoryChangedListener = async cb => {
-    EventEmitter.addListener('inventoryChanged', cb)
-  }
+    EventEmitter.addListener('inventoryChanged', cb);
+  };
 
   removeInventoryChangedListener = async cb => {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
-      EventEmitter.removeListener('inventoryChanged', cb)
+      EventEmitter.removeListener('inventoryChanged', cb);
     } else {
-      EventEmitter.removeAllListeners('inventoryChanged')
+      EventEmitter.removeAllListeners('inventoryChanged');
     }
-  }
+  };
 
   /**
    * Moves a collection of Kinds and Functions from the origin Workspace to the
@@ -227,53 +232,53 @@ class AssistantAPIClient {
       originId,
       targetId,
       kindIds,
-      functionIds
-    })
+      functionIds,
+    });
   }
 
   //
   // Graphs
   //
-  getFunctionGraph = id => APICall('getFunctionGraph', id)
+  getFunctionGraph = id => APICall('getFunctionGraph', id);
 
   //
   // Render Mode
   //
   addRenderModeChangedListener = async cb => {
-    EventEmitter.addListener('renderModeChanged', cb)
-  }
+    EventEmitter.addListener('renderModeChanged', cb);
+  };
 
   removeRenderModeChangedListener = async cb => {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
-      EventEmitter.removeListener('renderModeChanged', cb)
+      EventEmitter.removeListener('renderModeChanged', cb);
     } else {
-      EventEmitter.removeAllListeners('renderModeChanged')
+      EventEmitter.removeAllListeners('renderModeChanged');
     }
-  }
+  };
 
-  getRenderMode = () => APICall('getRenderMode')
+  getRenderMode = () => APICall('getRenderMode');
 
   //
   // Repair
   //
   addRepairListener = async cb => {
-    EventEmitter.addListener('repair', cb)
-  }
+    EventEmitter.addListener('repair', cb);
+  };
 
   removeRepairListener = async cb => {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
-      EventEmitter.removeListener('repair', cb)
+      EventEmitter.removeListener('repair', cb);
     } else {
-      EventEmitter.removeAllListeners('repair')
+      EventEmitter.removeAllListeners('repair');
     }
-  }
+  };
 
   //
   // Errors
   //
-  reportError = error => APICall('reportError', error)
+  reportError = error => APICall('reportError', error);
 
   //
   // Locking
@@ -286,7 +291,7 @@ class AssistantAPIClient {
    * @param {Function} cb The callback function to call
    */
   addLockingChangedListener(cb) {
-    EventEmitter.addListener(EventTypes.LOCKING_CHANGED, cb)
+    EventEmitter.addListener(EventTypes.LOCKING_CHANGED, cb);
   }
 
   /**
@@ -300,9 +305,9 @@ class AssistantAPIClient {
   removeLockingChangedListener(cb) {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
-      EventEmitter.removeListener(EventTypes.LOCKING_CHANGED, cb)
+      EventEmitter.removeListener(EventTypes.LOCKING_CHANGED, cb);
     } else {
-      EventEmitter.removeAllListeners(EventTypes.LOCKING_CHANGED)
+      EventEmitter.removeAllListeners(EventTypes.LOCKING_CHANGED);
     }
   }
 
@@ -310,10 +315,7 @@ class AssistantAPIClient {
   // Undocumented
   //
 
-  getEventEmitter = () => EventEmitter
+  getEventEmitter = () => EventEmitter;
 
-  executeGraphql = input => APICall('executeGraphql', input)
+  executeGraphql = input => APICall('executeGraphql', input);
 }
-
-// Export as singleton.
-export default new AssistantAPIClient()
