@@ -6,6 +6,10 @@ on:
         description: The tag value for npm publish command
         default: latest
         required: true
+      branch:
+        description: The branch to publish
+        default: develop
+        required: true
 
 jobs:
   build:
@@ -13,6 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.inputs.branch }}
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
