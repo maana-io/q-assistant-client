@@ -22,14 +22,14 @@ const EventTypes = Object.freeze({
 });
 
 // Wrapper for post-robot async client -> API call.
-async function APICall(callName: string, arg?: any): Promise<any> {
+async function APICall<I, O>(callName: string, arg?: I): Promise<O> {
   const { source, origin, data } = await postRobot.send(
     window.parent,
     callName,
-    arg
+    arg as any
   );
 
-  return data;
+  return (data as unknown) as O;
 }
 
 // Wrapper for post-robot listener.
