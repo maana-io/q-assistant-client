@@ -1,37 +1,37 @@
-import {ID} from './scalars'
-import { Maybe } from "./common";
 import {
-  Service,
-  User,
-  Kind,
-  KindBoilerplate,
+  BotAction,
+  EntitySearchActionResult,
+  EntitySearchResult,
+  Image,
+  Info,
   Instance,
+  InstanceIdsByKind,
   InstanceRef,
   InstanceSet,
-  Relation,
+  Kind,
+  KindBoilerplate,
   Link,
-  Info,
+  PortalGraph,
+  Relation,
+  SearchResult,
+  Service,
+  User,
   Workspace,
   WorkspaceLayout,
-  PortalGraph,
-  SearchResult,
-  EntitySearchResult,
-  EntitySearchActionResult,
-  Image,
-  BotAction,
-  InstanceIdsByKind,
-} from "./outputTypes";
-
+} from './outputTypes';
 import {
-  KindQueryInput,
+  EntitySearchInput,
   InstanceRefInput,
-  EntitySearchInput } from './inputTypes'
-
+  KindQueryInput,
+} from './inputTypes';
 import {
   ServiceCategory,
   ServiceDataProvider,
-  ServiceLogicProvider
-} from './enums'
+  ServiceLogicProvider,
+} from './enums';
+
+import { ID } from './scalars';
+import { Maybe } from './common';
 
 export type Query = {
   componentVersions: () => Promise<Array<string>>;
@@ -124,7 +124,7 @@ export type Query = {
     tenantId: ID,
     ids: Array<ID>,
     kindId?: Maybe<ID>,
-    kindName?: Maybe<string>,
+    kindName?: Maybe<string>
   ) => Promise<Maybe<InstanceSet> | undefined>;
   instancesByRef: (
     tenantId: ID,

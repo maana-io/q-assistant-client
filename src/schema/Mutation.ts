@@ -1,6 +1,4 @@
-import { Maybe } from "./common";
-import { Theme } from "./enums";
-import { ID } from "./scalars";
+import { AddBotActionInput, UpdateBotActionInput } from './inputTypes';
 import {
   AddDocumentInput,
   AddEntitiesInput,
@@ -37,7 +35,7 @@ import {
   UpdateKindInput,
   UpdateServiceInput,
   UpdateWorkspaceLayoutInput,
-} from "./inputTypes";
+} from './inputTypes';
 import {
   AddFunctionOutput,
   AddKindOutput,
@@ -54,8 +52,11 @@ import {
   UpdateFunctionsOutput,
   UpdateGraphOutput,
   Workspace,
-} from "./outputTypes";
-import { AddBotActionInput, UpdateBotActionInput } from "./inputTypes";
+} from './outputTypes';
+
+import { ID } from './scalars';
+import { Maybe } from './common';
+import { Theme } from './enums';
 
 export type Mutation = {
   submitFeedback: (

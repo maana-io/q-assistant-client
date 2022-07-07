@@ -1,5 +1,3 @@
-import { ID, DateTime, JSON, ScalarDate, ScalarTime } from "./scalars";
-import { Maybe } from "./common";
 import {
   BotActionStatus,
   FieldModifiers,
@@ -11,7 +9,10 @@ import {
   ServiceCategory,
   ServiceDataProvider,
   ServiceLogicProvider,
-} from "./enums";
+} from './enums';
+import { DateTime, ID, JSON, ScalarDate, ScalarTime } from './scalars';
+
+import { Maybe } from './common';
 
 export type BotAction = {
   id: ID;
