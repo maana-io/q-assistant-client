@@ -2,12 +2,15 @@ import {
   AddServiceInput,
   CreateFunctionInGraphInput,
   Service,
+  User,
   Workspace,
 } from './schema';
+import { AssistantState, EntityType } from './constants';
 
-import { AssistantState } from './constants';
 import { EventEmitter } from 'events';
+import { InstanceRef } from './schema/outputTypes';
 import { Maybe } from './models';
+import { ServiceFragment } from './fragments';
 import { WorkspaceClient } from './types/workspaceClient';
 import postRobot from 'post-robot';
 
@@ -87,30 +90,31 @@ export class AssistantAPIClient {
    *
    * @param {AssistantState} state The new state of the assistant.
    */
-  setAssistantState(state: AssistantState) {
+  setAssistantState(state: AssistantState): Promise<void> {
     return APICall('setAssistantState', state);
   }
 
   //
   // State management
   //
-  clearState = () => {
+  clearState = (): void => {
     eventEmitter.removeAllListeners();
   };
 
   //
   // User Info
   //
-  getUserInfo = () => APICall('getUserInfo');
+  getUserInfo = () =>
+    APICall<void, Pick<User, 'email' | 'name'>>('getUserInfo');
 
   //
   // Selection
   //
-  addSelectionChangedListener = async (cb: EventListenerCallback) => {
+  addSelectionChangedListener = (cb: EventListenerCallback): void => {
     eventEmitter.addListener('selectionChanged', cb);
   };
 
-  removeSelectionChangedListener = async (cb: EventListenerCallback) => {
+  removeSelectionChangedListener = (cb: EventListenerCallback): void => {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener('selectionChanged', cb);
@@ -119,24 +123,31 @@ export class AssistantAPIClient {
     }
   };
 
-  getCurrentSelection = () => APICall('getCurrentSelection');
+  getCurrentSelection = () =>
+    APICall<void, Pick<InstanceRef, 'id' | 'kindId' | 'kindName'>>(
+      'getCurrentSelection'
+    );
 
   //
   // Services
   //
-  getServiceById = (id: string): Promise<Maybe<Service>> =>
+  getServiceById = (id: string): Promise<Maybe<ServiceFragment>> =>
     APICall('getServiceById', id);
 
-  createService = (input: AddServiceInput) => APICall('createService', input);
+  createService = (input: AddServiceInput) =>
+    APICall<AddServiceInput, ServiceFragment>('createService', input);
 
   /**
    * @param id string value of service ID to refresh
    */
-  refreshServiceSchema = (id: string) => APICall('refreshServiceSchema', id);
+  refreshServiceSchema = (id: string) =>
+    APICall<void, void>('refreshServiceSchema', id);
 
-  reloadServiceSchema = (id: string) => APICall('reloadServiceSchema', id);
+  reloadServiceSchema = (id: string) =>
+    APICall<void, void>('reloadServiceSchema', id);
 
-  deleteService = (id: string) => APICall('deleteService', id);
+  deleteService = (id: string) =>
+    APICall<string, ServiceFragment>('deleteService', id);
 
   //
   // Workspace
