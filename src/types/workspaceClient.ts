@@ -12,9 +12,10 @@
  * ! inside `assistantAPI/workspace.js` in the kportal codebase.
  */
 
-import { ID } from '../schema/scalars';
 import { Maybe, UpdateFunctionInput } from '../schema';
+
 import { FunctionClient } from './functionClient';
+import { ID } from '../schema/scalars';
 
 export type NamedEntityInput = {
   id?: Maybe<ID>;
@@ -31,44 +32,28 @@ export interface WorkspaceClient {
   createKnowledgeGraphs: () => {};
   deleteFunction: (functionId: ID) => Promise<void>;
   deleteKind: () => {};
-  description: null;
+  endpointUrl: string;
   getActiveGraph: () => {};
-  getAnnotationById: () => {};
-  getAnnotations: () => {};
   getFunctionGraph: () => {};
   getFunctions: () => {};
-  getFunctionsByName: () => {};
   getImportedAssistants: () => {};
   getImportedServices: () => {};
   getKinds: () => {};
-  getKindsByName: () => {};
   getKnowledgeGraphs: () => {};
   id: string;
   importService: () => {};
   importServices: () => {};
-  isPublic: false;
-  isTemplate: false;
-  location: {
-    url: string;
-    platformUrl: string;
-  };
   lockedBy: () => {};
+  logicServiceId: string;
+  modelServiceId: string;
   name: string;
-  owner: { id: string; name: string };
-  persistenceServiceId: string;
-  reload: () => {};
   removeService: () => {};
   removeServices: () => {};
-  serviceId: string;
   setLocked: () => {};
-  tags: [];
-  thumbnailUrl: string;
   triggerRepairEvent: () => {};
-  update: () => {};
-  updateFunction: (
-    input: UpdateFunctionInput
-  ) => Promise<Maybe<FunctionClient>>;
-  updateFunctions: (input: UpdateFunctionInput[]) => Promise<FunctionClient[]>;
+  updateFunction: () => {};
+  updateFunctions: () => {};
   updateKind: () => {};
   updateKinds: () => {};
+  workspaceServiceId: string;
 }

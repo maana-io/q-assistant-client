@@ -7,7 +7,9 @@ import {
 } from './schema';
 import { AssistantState, EntityType } from './constants';
 
+import { CreateWorkspaceInputType } from './types/createWorkspace';
 import { EventEmitter } from 'events';
+import { ExecuteFunctionInputType } from './types/executeFunction';
 import { InstanceRef } from './schema/outputTypes';
 import { Maybe } from './models';
 import { ServiceFragment } from './fragments';
@@ -141,10 +143,10 @@ export class AssistantAPIClient {
    * @param id string value of service ID to refresh
    */
   refreshServiceSchema = (id: string) =>
-    APICall<void, void>('refreshServiceSchema', id);
+    APICall<string, void>('refreshServiceSchema', id);
 
   reloadServiceSchema = (id: string) =>
-    APICall<void, void>('reloadServiceSchema', id);
+    APICall<string, void>('reloadServiceSchema', id);
 
   deleteService = (id: string) =>
     APICall<string, ServiceFragment>('deleteService', id);
@@ -160,9 +162,8 @@ export class AssistantAPIClient {
    * @param {string} id The ID of the Workspace to load. (optional)
    * @return {Workspace} The requested Workspace.
    */
-  getWorkspace(id: string): Promise<WorkspaceClient> {
-    return APICall('getWorkspace', id);
-  }
+  getWorkspace = (id: string) =>
+    APICall<string, WorkspaceClient>('getWorkspace', id);
 
   /**
    * Returns a list of user accessible Workspaces.  By default it will just be
@@ -172,11 +173,11 @@ export class AssistantAPIClient {
    * @param {boolean} includePublic When true the returned list includes public Workspaces.
    * @return {Array<Workspace>} The list of Workspaces.
    */
-  getUserAccessibleWorkspaces(
-    includePublic = false
-  ): Promise<Array<WorkspaceClient>> {
-    return APICall('getUserAccessibleWorkspaces', includePublic);
-  }
+  getUserAccessibleWorkspaces = (includePublic = false) =>
+    APICall<boolean, WorkspaceClient>(
+      'getUserAccessibleWorkspaces',
+      includePublic
+    );
 
   /**
    * Creates a new Workspace.  The id, name, and serviceId can optionally be
@@ -185,26 +186,19 @@ export class AssistantAPIClient {
    * @param {Object} workspace The Workspace information, can container {id, name, serviceId}
    * @return {Workspace} The new Workspace.
    */
-  createWorkspace(workspace: {
-    name: string;
-    id?: string;
-    serviceId?: string;
-  }): Promise<WorkspaceClient> {
-    return APICall('createWorkspace', workspace);
-  }
+  createWorkspace = (workspace: CreateWorkspaceInputType) =>
+    APICall<CreateWorkspaceInputType, WorkspaceClient>(
+      'createWorkspace',
+      workspace
+    );
 
   //
   // Functions
   //
-  executeFunction = (input: {
-    // ID of function to execute
-    functionId: string;
-    // input variables
-    variables?: Record<string, any>;
-    // the fields to resolve from the query
-    // ? is this comma-separated? needs testing
-    resolve: string;
-  }) => APICall('executeFunction', input);
+  // todo: update the return type
+  // ? this might be the most difficult one to type
+  executeFunction = (input: ExecuteFunctionInputType) =>
+    APICall<ExecuteFunctionInputType, void>('executeFunction', input);
 
   createFunction = (input: CreateFunctionInGraphInput) =>
     APICall('createFunction', input);
