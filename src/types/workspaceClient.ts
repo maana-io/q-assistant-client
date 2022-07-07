@@ -12,15 +12,24 @@
  * ! inside `assistantAPI/workspace.js` in the kportal codebase.
  */
 
+import { ID } from '../schema/scalars';
+import { Maybe, UpdateFunctionInput } from '../schema';
+import { FunctionClient } from './functionClient';
+
+export type NamedEntityInput = {
+  id?: Maybe<ID>;
+  name: string;
+};
+
 export interface WorkspaceClient {
-  canEdit: () => {};
-  createFunction: () => {};
-  createFunctions: () => {};
+  canEdit: () => Promise<boolean>;
+  createFunction: (input: NamedEntityInput) => Promise<Maybe<FunctionClient>>;
+  createFunctions: (input: NamedEntityInput[]) => Promise<FunctionClient[]>;
   createKind: () => {};
   createKinds: () => {};
   createKnowledgeGraph: () => {};
   createKnowledgeGraphs: () => {};
-  deleteFunction: () => {};
+  deleteFunction: (functionId: ID) => Promise<void>;
   deleteKind: () => {};
   description: null;
   getActiveGraph: () => {};
@@ -56,8 +65,10 @@ export interface WorkspaceClient {
   thumbnailUrl: string;
   triggerRepairEvent: () => {};
   update: () => {};
-  updateFunction: () => {};
-  updateFunctions: () => {};
+  updateFunction: (
+    input: UpdateFunctionInput
+  ) => Promise<Maybe<FunctionClient>>;
+  updateFunctions: (input: UpdateFunctionInput[]) => Promise<FunctionClient[]>;
   updateKind: () => {};
   updateKinds: () => {};
 }
