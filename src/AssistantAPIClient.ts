@@ -5,7 +5,7 @@ import {
   User,
   Workspace,
 } from './schema';
-import { AssistantState, EntityType } from './constants';
+import { AssistantState, EntityType, RenderMode } from './constants';
 
 import { CreateWorkspaceInputType } from './types/createWorkspace';
 import { EventEmitter } from 'events';
@@ -200,22 +200,33 @@ export class AssistantAPIClient {
   executeFunction = (input: ExecuteFunctionInputType) =>
     APICall<ExecuteFunctionInputType, void>('executeFunction', input);
 
+  // todo
   createFunction = (input: CreateFunctionInGraphInput) =>
     APICall('createFunction', input);
 
+  // todo
   updateFunction = (input) => APICall('updateFunction', input);
 
+  // todo
   deleteFunction = (input) => APICall('deleteFunction', input);
 
+  // todo
   getFunctionById = (id) => APICall('getFunctionById', id);
 
+  // todo
   getFunctionsById = (ids) => APICall('getFunctionsById', ids);
 
-  addFunctionExecutionListener = async (id, cb) => {
+  addFunctionExecutionListener = (
+    id: string,
+    cb: EventListenerCallback
+  ): void => {
     eventEmitter.addListener(`function:${id}`, cb);
   };
 
-  removeFunctionExecutionListener = async (id, cb) => {
+  removeFunctionExecutionListener = (
+    id: string,
+    cb: EventListenerCallback
+  ): void => {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener(`function:${id}`, cb);
@@ -227,26 +238,32 @@ export class AssistantAPIClient {
   //
   // Kinds
   //
+  // todo
   createKind = (input) => APICall('createKind', input);
 
+  // todo
   updateKind = (input) => APICall('updateKind', input);
 
+  // todo
   deleteKind = (input) => APICall('deleteKind', input);
 
+  // todo
   getKindById = (id) => APICall('getKindById', id);
 
+  // todo
   getKindsById = (ids) => APICall('getKindsById', ids);
 
+  // todo
   getAllReferencedKinds = (input) => APICall('getAllReferencedKinds', input);
 
   //
   // Inventory
   //
-  addInventoryChangedListener = async (cb) => {
+  addInventoryChangedListener = (cb: EventListenerCallback) => {
     eventEmitter.addListener('inventoryChanged', cb);
   };
 
-  removeInventoryChangedListener = async (cb) => {
+  removeInventoryChangedListener = (cb: EventListenerCallback) => {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener('inventoryChanged', cb);
@@ -264,28 +281,29 @@ export class AssistantAPIClient {
    * @param {Array<string>} kindIds An array of the IDs of the kinds to move.
    * @param {Array<string>} functionIds An array of the IDs of the functions to move.
    */
-  moveKindsAndFunctions(originId, targetId, kindIds, functionIds) {
-    return APICall('moveKindsAndFunctions', {
+  // todo
+  moveKindsAndFunctions = (originId, targetId, kindIds, functionIds) =>
+    APICall('moveKindsAndFunctions', {
       originId,
       targetId,
       kindIds,
       functionIds,
     });
-  }
 
   //
   // Graphs
   //
+  // todo
   getFunctionGraph = (id) => APICall('getFunctionGraph', id);
 
   //
   // Render Mode
   //
-  addRenderModeChangedListener = async (cb) => {
+  addRenderModeChangedListener = (cb: EventListenerCallback): void => {
     eventEmitter.addListener('renderModeChanged', cb);
   };
 
-  removeRenderModeChangedListener = async (cb) => {
+  removeRenderModeChangedListener = (cb: EventListenerCallback): void => {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener('renderModeChanged', cb);
@@ -294,16 +312,16 @@ export class AssistantAPIClient {
     }
   };
 
-  getRenderMode = () => APICall('getRenderMode');
+  getRenderMode = () => APICall<void, RenderMode>('getRenderMode');
 
   //
   // Repair
   //
-  addRepairListener = async (cb) => {
+  addRepairListener = (cb: EventListenerCallback): void => {
     eventEmitter.addListener('repair', cb);
   };
 
-  removeRepairListener = async (cb) => {
+  removeRepairListener = (cb: EventListenerCallback): void => {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener('repair', cb);
@@ -315,7 +333,7 @@ export class AssistantAPIClient {
   //
   // Errors
   //
-  reportError = (error) => APICall('reportError', error);
+  reportError = (error) => APICall<Error, void>('reportError', error);
 
   //
   // Locking
@@ -327,9 +345,9 @@ export class AssistantAPIClient {
    *
    * @param {Function} cb The callback function to call
    */
-  addLockingChangedListener(cb) {
+  addLockingChangedListener = (cb): void => {
     eventEmitter.addListener(EventTypes.LOCKING_CHANGED, cb);
-  }
+  };
 
   /**
    * Removes a callback function from the list be called every time the locking
@@ -339,20 +357,19 @@ export class AssistantAPIClient {
    *
    * @param {Function|undefined} cb The callback function to remove
    */
-  removeLockingChangedListener(cb) {
+  removeLockingChangedListener = (cb: EventListenerCallback) => {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener(EventTypes.LOCKING_CHANGED, cb);
     } else {
       eventEmitter.removeAllListeners(EventTypes.LOCKING_CHANGED);
     }
-  }
+  };
 
   //
   // Undocumented
   //
-
   getEventEmitter = () => eventEmitter;
 
-  executeGraphql = (input) => APICall('executeGraphql', input);
+  executeGraphql = <I, O>(input) => APICall<I, O>('executeGraphql', input);
 }
