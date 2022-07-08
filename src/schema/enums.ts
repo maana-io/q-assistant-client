@@ -81,3 +81,9 @@ export enum ServiceLogicProvider {
   MaanaCkg = 'MAANA_CKG',
   Docker = 'DOCKER',
 }
+
+export enum NodeTypeEnum {
+  KN_ANNOTATION = 'Annotation',
+  KN_FUNCTION = 'Function',
+  KN_KIND = 'Kind',
+}

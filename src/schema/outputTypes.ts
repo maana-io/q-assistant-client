@@ -474,6 +474,15 @@ export type KnowledgeGraphNode = {
   innerFunction?: Maybe<Function>;
 };
 
+export type GraphOrAnnotationNode = {
+  id: ID;
+  kind?: Maybe<Kind>;
+  instance?: Maybe<Instance>;
+  innerKind?: Maybe<Kind>;
+  innerFunction?: Maybe<Function>;
+  innerAnnotation?: Maybe<{ name: string; url: string }>;
+};
+
 export type FunctionGraphNode = {
   id: ID;
   operationId: ID;
@@ -650,20 +659,6 @@ export type AddKindOutput = {
   boilerplateKinds: Array<Kind>;
   boilerplateFunctions: Array<Function>;
   updatedWorkspaces: Array<Workspace>;
-};
-
-export type CreatedKind = {
-  id: ID;
-  schema?: Maybe<
-    Array<
-      Maybe<{
-        id: ID;
-        name: string;
-        type: FieldType;
-        modifiers?: Maybe<Array<Maybe<FieldModifiers>>>;
-      }>
-    >
-  >;
 };
 
 export type AddFunctionOutput = {
