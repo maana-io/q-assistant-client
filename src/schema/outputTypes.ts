@@ -652,6 +652,20 @@ export type AddKindOutput = {
   updatedWorkspaces: Array<Workspace>;
 };
 
+export type CreatedKind = {
+  id: ID;
+  schema?: Maybe<
+    Array<
+      Maybe<{
+        id: ID;
+        name: string;
+        type: FieldType;
+        modifiers?: Maybe<Array<Maybe<FieldModifiers>>>;
+      }>
+    >
+  >;
+};
+
 export type AddFunctionOutput = {
   newFunctions: Array<Function>;
   workspaceServiceReferences: Array<ID>;

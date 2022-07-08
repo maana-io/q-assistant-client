@@ -12,34 +12,58 @@
  * ! inside `assistantAPI/workspace.js` in the kportal codebase.
  */
 
-import { Maybe, UpdateFunctionInput } from '../schema';
+import {
+  AddKindInput,
+  FieldModifiers,
+  FieldType,
+  Maybe,
+  PortalGraphNodeInput,
+  UpdateFunctionInput,
+  UpdateKindInput,
+} from '../schema';
 
 import { FunctionClient } from './functionClient';
 import { ID } from '../schema/scalars';
+import { KindDetailsFragment } from './Fragments';
+import { GraphClient } from './GraphClient';
 
 export type NamedEntityInput = {
   id?: Maybe<ID>;
   name: string;
 };
 
+export type CreatePortalGraphInput = {
+  name: string;
+  id?: Maybe<ID>;
+  index?: Maybe<number>;
+  offsetX?: Maybe<number>;
+  offsetY?: Maybe<number>;
+  zoom?: Maybe<number>;
+  nodes?: Maybe<Array<PortalGraphNodeInput>>;
+};
+
 export interface WorkspaceClient {
   canEdit: () => Promise<boolean>;
   createFunction: (input: NamedEntityInput) => Promise<Maybe<FunctionClient>>;
   createFunctions: (input: NamedEntityInput[]) => Promise<FunctionClient[]>;
-  createKind: () => {};
-  createKinds: () => {};
-  createKnowledgeGraph: () => {};
-  createKnowledgeGraphs: () => {};
+  createKind: (input: AddKindInput) => Promise<Maybe<KindDetailsFragment>>;
+  createKinds: (input: AddKindInput[]) => Promise<KindDetailsFragment[]>;
+  createKnowledgeGraph: (
+    input: CreatePortalGraphInput
+  ) => Promise<Maybe<GraphClient>>;
+  createKnowledgeGraphs: (
+    input: CreatePortalGraphInput[]
+  ) => Promise<GraphClient[]>;
   deleteFunction: (functionId: ID) => Promise<void>;
-  deleteKind: () => {};
+  deleteKind: (kindId: ID) => Promise<void>;
   endpointUrl: string;
-  getActiveGraph: () => {};
-  getFunctionGraph: () => {};
+  getActiveGraph: () => Promise<Maybe<GraphClient>>;
+  getFunctionGraph: (graphId: ID) => Promise<Maybe<GraphClient>>;
   getFunctions: () => Promise<FunctionClient[]>;
   getImportedAssistants: () => {};
   getImportedServices: () => {};
   getKinds: () => {};
-  getKnowledgeGraphs: () => {};
+  getKnowledgeGraphs: () => Promise<Array<GraphClient>>;
   id: string;
   importService: () => {};
   importServices: () => {};
@@ -49,13 +73,13 @@ export interface WorkspaceClient {
   name: string;
   removeService: () => {};
   removeServices: () => {};
-  setLocked: () => {};
-  triggerRepairEvent: () => {};
+  setLocked: (isLocked: boolean) => {};
+  triggerRepairEvent: () => Promise<boolean>;
   updateFunction: (
     input: UpdateFunctionInput
   ) => Promise<Maybe<FunctionClient>>;
   updateFunctions: (input: UpdateFunctionInput[]) => Promise<FunctionClient[]>;
-  updateKind: () => {};
-  updateKinds: () => {};
+  updateKind: (input: UpdateKindInput) => Promise<Maybe<KindDetailsFragment>>;
+  updateKinds: (input: UpdateKindInput[]) => Promise<KindDetailsFragment[]>;
   workspaceServiceId: string;
 }

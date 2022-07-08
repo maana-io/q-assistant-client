@@ -101,3 +101,34 @@ export type AddFunctionOutputFragment = {
   newFunctions: [];
   workspaceServiceReferences: ID[];
 };
+
+export type KindDetailsFragment = {
+  id: ID;
+  name: string;
+  description?: Maybe<string>;
+  isPublic?: Maybe<boolean>;
+  isGenerated: boolean;
+  nameField?: Maybe<ID>;
+  schema?: Promise<Maybe<Array<Maybe<FieldDetailsFragment>>>>;
+  service?: Maybe<NamedEntity>;
+  serviceId?: Maybe<ID>;
+};
+
+export type FieldDetailsFragment = {
+  id: ID;
+  name: string;
+  description?: Maybe<string>;
+  type: FieldType;
+  typeKindId?: Maybe<ID>;
+  modifiers?: Maybe<Array<Maybe<FieldModifiers>>>;
+  kind?: Maybe<{
+    id: ID;
+    name: string;
+    isGenerated: boolean;
+    service?: Maybe<NamedEntity>;
+  }>;
+  hide?: Maybe<boolean>;
+  autoFocus?: Maybe<boolean>;
+  displayAs?: Maybe<Array<Maybe<string>>>;
+  readonly?: Maybe<boolean>;
+};
