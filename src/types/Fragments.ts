@@ -132,3 +132,29 @@ export type FieldDetailsFragment = {
   displayAs?: Maybe<Array<Maybe<string>>>;
   readonly?: Maybe<boolean>;
 };
+
+export type AssistantKindsFragment = {
+  id: ID;
+  name: string;
+  description?: Maybe<string>;
+  service?: Maybe<NamedEntity>;
+  isGenerated: boolean;
+  schema?: Promise<
+    Maybe<
+      Array<
+        Maybe<{
+          id: ID;
+          name: string;
+          type: FieldType;
+          typeKindId?: Maybe<ID>;
+          modifiers?: Maybe<Array<Maybe<FieldModifiers>>>;
+          kind?: Maybe<{
+            id: ID;
+            name: string;
+            service?: Maybe<NamedEntity>;
+          }>;
+        }>
+      >
+    >
+  >;
+};

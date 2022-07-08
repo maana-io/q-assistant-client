@@ -18,14 +18,16 @@ import {
   FieldType,
   Maybe,
   PortalGraphNodeInput,
+  ServiceCategory,
   UpdateFunctionInput,
   UpdateKindInput,
 } from '../schema';
 
 import { FunctionClient } from './functionClient';
 import { ID } from '../schema/scalars';
-import { KindDetailsFragment } from './Fragments';
+import { AssistantKindsFragment, KindDetailsFragment } from './Fragments';
 import { GraphClient } from './GraphClient';
+import { ServiceClient } from './ServiceClient';
 
 export type NamedEntityInput = {
   id?: Maybe<ID>;
@@ -40,6 +42,14 @@ export type CreatePortalGraphInput = {
   offsetY?: Maybe<number>;
   zoom?: Maybe<number>;
   nodes?: Maybe<Array<PortalGraphNodeInput>>;
+};
+
+export type AssistantObject = {
+  id: ID;
+  name: string;
+  description?: Maybe<string>;
+  serviceType: ServiceCategory;
+  endpointUrl: string;
 };
 
 export interface WorkspaceClient {
@@ -60,20 +70,22 @@ export interface WorkspaceClient {
   getActiveGraph: () => Promise<Maybe<GraphClient>>;
   getFunctionGraph: (graphId: ID) => Promise<Maybe<GraphClient>>;
   getFunctions: () => Promise<FunctionClient[]>;
-  getImportedAssistants: () => {};
-  getImportedServices: () => {};
-  getKinds: () => {};
+  getImportedAssistants: () => Promise<AssistantObject[]>;
+  getImportedServices: () => Promise<ServiceClient[]>;
+  getKinds: () => Promise<AssistantKindsFragment[]>;
   getKnowledgeGraphs: () => Promise<Array<GraphClient>>;
-  id: string;
-  importService: () => {};
-  importServices: () => {};
-  lockedBy: () => {};
+  id: ID;
+  importService: (serviceId: ID) => Promise<Maybe<ID>>;
+  importServices: (serviceIds: ID[]) => Promise<ID[]>;
+  lockedBy: () => Maybe<string>;
   logicServiceId: string;
   modelServiceId: string;
   name: string;
-  removeService: () => {};
-  removeServices: () => {};
-  setLocked: (isLocked: boolean) => {};
+  removeService: (serviceId: ID) => Promise<void>;
+  removeServices: (serviceIds: ID[]) => Promise<void>;
+  setLocked: (
+    isLocked: boolean
+  ) => Promise<{ id: ID; lockedBy: Maybe<string> }>;
   triggerRepairEvent: () => Promise<boolean>;
   updateFunction: (
     input: UpdateFunctionInput
