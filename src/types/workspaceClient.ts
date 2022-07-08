@@ -35,7 +35,7 @@ export interface WorkspaceClient {
   endpointUrl: string;
   getActiveGraph: () => {};
   getFunctionGraph: () => {};
-  getFunctions: () => {};
+  getFunctions: () => Promise<FunctionClient[]>;
   getImportedAssistants: () => {};
   getImportedServices: () => {};
   getKinds: () => {};
@@ -51,8 +51,10 @@ export interface WorkspaceClient {
   removeServices: () => {};
   setLocked: () => {};
   triggerRepairEvent: () => {};
-  updateFunction: () => {};
-  updateFunctions: () => {};
+  updateFunction: (
+    input: UpdateFunctionInput
+  ) => Promise<Maybe<FunctionClient>>;
+  updateFunctions: (input: UpdateFunctionInput[]) => Promise<FunctionClient[]>;
   updateKind: () => {};
   updateKinds: () => {};
   workspaceServiceId: string;
