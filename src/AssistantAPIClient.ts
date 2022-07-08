@@ -1,16 +1,20 @@
+import { AddKindInput, UpdateKindInput } from './schema/inputTypes';
 import {
   AddServiceInput,
   CreateFunctionInGraphInput,
+  QueryAllReferencedKindsArgs,
   Service,
   User,
   Workspace,
 } from './schema';
 import { AssistantState, EntityType, RenderMode } from './constants';
+import { CreateKindInput, CreateKindOutput } from './types/createKind';
 
 import { CreateWorkspaceInputType } from './types/createWorkspace';
 import { EventEmitter } from 'events';
 import { ExecuteFunctionInputType } from './types/executeFunction';
 import { InstanceRef } from './schema/outputTypes';
+import { MakeOptional } from './schema/common';
 import { Maybe } from './models';
 import { ServiceFragment } from './fragments';
 import { WorkspaceClient } from './types/workspaceClient';
@@ -37,10 +41,17 @@ async function APICall<I, O>(callName: string, arg?: I): Promise<O> {
   return (data as unknown) as O;
 }
 
+// pulled and condensed from @types/post-robot
+type PostRobotHandlerType<T = any> = (event: {
+  source: Window;
+  origin: string;
+  data: T;
+}) => Promise<any>;
+
 // Wrapper for post-robot listener.
 const createAPIListener = async (
   callName: string,
-  cb: EventListenerCallback
+  cb: PostRobotHandlerType
 ) => {
   postRobot.on(callName, cb);
 };
@@ -195,8 +206,26 @@ export class AssistantAPIClient {
   //
   // Functions
   //
-  // todo: update the return type
-  // ? this might be the most difficult one to type
+
+  /**
+   * Executes a function based on its id, with optional inputs for variables and a resolve string (this specifies the
+   * fields to be returned, which must be valid based on the result).
+   *
+   * Returns : JSON matching shape of result , unless no sub-selection of fields is required in the execution.
+   *
+   * The following piece of code will execute a Function given a function ID, and pass in variables for `example`,
+   * requesting back `id` and `name` fields.
+   *
+   * ```js
+   * const res = await AssistantAPIClient.executeFunction({
+   *   functionId: func.id,
+   *   variables: {
+   *     "variableName": "variableValue"
+   *   },
+   *   resolve: "{ id name }"
+   * });
+   * ```
+   */
   executeFunction = (input: ExecuteFunctionInputType) =>
     APICall<ExecuteFunctionInputType, void>('executeFunction', input);
 
@@ -238,23 +267,57 @@ export class AssistantAPIClient {
   //
   // Kinds
   //
-  // todo
-  createKind = (input) => APICall('createKind', input);
+  /**
+   * Creates a Kind based on an input object. Returns a promise that resolves to the created Kind object.
+   */
+  createKind = (input: CreateKindInput) =>
+    APICall<MakeOptional<AddKindInput, 'serviceId'>, CreateKindOutput>(
+      'createKind',
+      input
+    );
+
+  /**
+   * Updates a Kind based on an input object.
+   *
+   * Update Semantics: Only properties specified will be updated. If updating the schema, the entire schema must be
+   * specified as it will be replaced in its entirety.
+   *
+   * Returns a promise that resolves to the updated `Kind` object.
+   */
+  updateKind = (input: UpdateKindInput) =>
+    APICall<UpdateKindInput, CreateKindOutput>('updateKind', input);
 
   // todo
-  updateKind = (input) => APICall('updateKind', input);
+  /**
+   * Deletes a Kind given a kind ID.
+   */
+  deleteKind = (id: string) => APICall('deleteKind', id);
 
-  // todo
-  deleteKind = (input) => APICall('deleteKind', input);
+  /**
+   * Returns a promise that resolves to a Kind object given the specified kind ID.
+   */
+  getKindById = (id: string) =>
+    APICall<string, CreateKindOutput>('getKindById', id);
 
-  // todo
-  getKindById = (id) => APICall('getKindById', id);
+  /**
+   * Same as `getKindById` but works for multiple Kind IDs provided.
+   */
+  getKindsById = (ids: string[]) =>
+    APICall<string[], CreateKindOutput[]>('getKindsById', ids);
 
-  // todo
-  getKindsById = (ids) => APICall('getKindsById', ids);
-
-  // todo
-  getAllReferencedKinds = (input) => APICall('getAllReferencedKinds', input);
+  /**
+   * Recursively collects all kinds that are referenced in a kind's schema, starting with a
+   * kind ID. For example if the ID of kind A is supplied as an input, and Kind `A` contains
+   * a field of type Kind `B`, and `B` contains a field of type Kind `C`, an array containing
+   * the kinds objects for `A`, `B`, `C` will be returned (as a promise).
+   */
+  getAllReferencedKinds = (
+    input: Omit<QueryAllReferencedKindsArgs, 'tenantId'>
+  ) =>
+    APICall<Omit<QueryAllReferencedKindsArgs, 'tenantId'>, CreateKindOutput[]>(
+      'getAllReferencedKinds',
+      input
+    );
 
   //
   // Inventory

@@ -875,15 +875,13 @@ const kind = await AssistantAPIClient.getKindsById(ids)
 ```
 
 #### getAllReferencedKinds = input =>
-Recursively collects all kinds that are referenced in a kind's schema, starting
-with a kind ID. For example if the ID of kind A is supplied as an input, and Kind `A` contains a field of type Kind `B`, and `B` contains a field of type Kind `C`,
-an array containing the kinds objects for `A`, `B`, `C` will be returned (as a promise).
+Recursively collects all kinds that are referenced in a kind's schema, starting with a kind ID. For example if the ID of kind A is supplied as an input, and Kind `A` contains a field of type Kind `B`, and `B` contains a field of type Kind `C`, an array containing the kinds objects for `A`, `B`, `C` will be returned (as a promise).
 
 ```js
 const initialId = ["..."]
 const kinds = await AssistantAPIClient.getAllReferencedKinds({
-          ids: initialId
-        })
+  ids: initialId
+})
 ```
 
 

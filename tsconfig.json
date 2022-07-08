@@ -2,21 +2,26 @@
   "include": ["src/**/*"],
 
   "compilerOptions": {
+    "target": "ES6",
     "module": "CommonJS",
     "esModuleInterop": true,
-    "target": "ES6",
     // "noImplicitAny": true,
     "lib": ["es2018", "dom"],
     "moduleResolution": "node",
 
     // Generate d.ts files
     "declaration": true,
+    "declarationMap": true,
 
     // Types should go into this directory.
     // Removing this would place the .d.ts files
     // next to the .js files
     "outDir": "build"
   },
+  "exclude": [
+    "node_modules",
+    "build"
+  ],
   "typedocOptions": {
     "entryPoint": "src/index.ts",
     "name": "Maana Q Assistant API Client",
