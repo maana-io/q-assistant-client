@@ -72,7 +72,9 @@ export type FunctionClient = {
     >;
   }>;
 
-  lockedBy: () => {};
-  canEdit: () => {};
-  setLockedBy: () => {};
+  lockedBy: () => Maybe<string>;
+  canEdit: () => Promise<boolean>;
+  setLocked: (
+    isLocked: boolean
+  ) => Promise<{ id: ID; lockedBy: Maybe<string> }>;
 };
