@@ -1,5 +1,5 @@
-import { Maybe } from '../schema/common';
-import { ID } from '../schema/scalars';
+import { Maybe } from './common';
+import { ID } from './scalars';
 import {
   Argument,
   ArgumentValue,
@@ -15,7 +15,7 @@ import {
   PortalGraphNode,
   Service,
   Workspace,
-} from '../schema/outputTypes';
+} from './outputTypes';
 
 // TODO: FIX THESE
 export type AddFunctionGraphFragment = {};

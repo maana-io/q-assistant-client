@@ -4,7 +4,7 @@ import {
   AssistantFunctionsFragment,
   AssistantKindsFragment,
   AssistantServicesFragment,
-} from './Fragments';
+} from '../schema/Fragments';
 import { WorkspaceClient } from './WorkspaceClient';
 
 export type ServiceClient = Pick<

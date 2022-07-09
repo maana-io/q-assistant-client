@@ -1,23 +1,20 @@
-import { AddKindInput, UpdateKindInput } from '../schema/inputTypes';
-import {
-  AddServiceInput,
-  CreateFunctionInGraphInput,
-  QueryAllReferencedKindsArgs,
-  Service,
-  User,
-  Workspace,
-} from '../schema';
-import { AssistantState, EntityType, RenderMode } from '../constants';
-import { CreateKindInput, CreateKindOutput } from './createKind';
+import { KindDetailsFragment } from '../schema';
+import { AssistantState, RenderMode } from '../constants';
 
-import { CreateWorkspaceInputType } from './createWorkspace';
 import { EventEmitter } from 'events';
-import { ExecuteFunctionInputType } from './executeFunction';
-import { InstanceRef } from '../schema/outputTypes';
-import { MakeOptional } from '../schema/common';
-import { Maybe } from '../models';
-import { ServiceFragment } from '../fragments';
-import { WorkspaceClient } from '../types/workspaceClient';
+import { InstanceRef, User } from '../schema/output-types';
+
+import {
+  AddKindInput,
+  AddServiceInput,
+  AddWorkspaceInput,
+  ExecuteFunctionInputType,
+  FunctionInput,
+  UpdateKindInput,
+} from '../schema/input-types';
+import { ID } from '../schema/scalars';
+import { Maybe, MakeOptional } from '../schema/common';
+import { WorkspaceClient, ServiceClient } from './';
 import postRobot from 'post-robot';
 
 /** Generic event listener; should be more strongly typed if possible */
@@ -144,11 +141,11 @@ export class AssistantAPIClient {
   //
   // Services
   //
-  getServiceById = (id: string): Promise<Maybe<ServiceFragment>> =>
+  getServiceById = (id: string): Promise<Maybe<ServiceClient>> =>
     APICall('getServiceById', id);
 
   createService = (input: AddServiceInput) =>
-    APICall<AddServiceInput, ServiceFragment>('createService', input);
+    APICall<AddServiceInput, ServiceClient>('createService', input);
 
   /**
    * @param id string value of service ID to refresh
@@ -159,8 +156,7 @@ export class AssistantAPIClient {
   reloadServiceSchema = (id: string) =>
     APICall<string, void>('reloadServiceSchema', id);
 
-  deleteService = (id: string) =>
-    APICall<string, ServiceFragment>('deleteService', id);
+  deleteService = (id: string) => APICall<string, ID>('deleteService', id);
 
   //
   // Workspace
@@ -197,11 +193,13 @@ export class AssistantAPIClient {
    * @param {Object} workspace The Workspace information, can container {id, name, serviceId}
    * @return {Workspace} The new Workspace.
    */
-  createWorkspace = (workspace: CreateWorkspaceInputType) =>
-    APICall<CreateWorkspaceInputType, WorkspaceClient>(
-      'createWorkspace',
-      workspace
-    );
+  createWorkspace = (
+    workspace: Pick<AddWorkspaceInput, 'name' | 'id' | 'workspaceServiceId'>
+  ) =>
+    APICall<
+      Pick<AddWorkspaceInput, 'name' | 'id' | 'workspaceServiceId'>,
+      WorkspaceClient
+    >('createWorkspace', workspace);
 
   //
   // Functions
@@ -230,8 +228,7 @@ export class AssistantAPIClient {
     APICall<ExecuteFunctionInputType, void>('executeFunction', input);
 
   // todo
-  createFunction = (input: CreateFunctionInGraphInput) =>
-    APICall('createFunction', input);
+  createFunction = (input: FunctionInput) => APICall('createFunction', input);
 
   // todo
   updateFunction = (input) => APICall('updateFunction', input);
@@ -270,8 +267,8 @@ export class AssistantAPIClient {
   /**
    * Creates a Kind based on an input object. Returns a promise that resolves to the created Kind object.
    */
-  createKind = (input: CreateKindInput) =>
-    APICall<MakeOptional<AddKindInput, 'serviceId'>, CreateKindOutput>(
+  createKind = (input: AddKindInput) =>
+    APICall<MakeOptional<AddKindInput, 'serviceId'>, KindDetailsFragment>(
       'createKind',
       input
     );
@@ -285,7 +282,7 @@ export class AssistantAPIClient {
    * Returns a promise that resolves to the updated `Kind` object.
    */
   updateKind = (input: UpdateKindInput) =>
-    APICall<UpdateKindInput, CreateKindOutput>('updateKind', input);
+    APICall<UpdateKindInput, KindDetailsFragment>('updateKind', input);
 
   // todo
   /**
@@ -297,13 +294,13 @@ export class AssistantAPIClient {
    * Returns a promise that resolves to a Kind object given the specified kind ID.
    */
   getKindById = (id: string) =>
-    APICall<string, CreateKindOutput>('getKindById', id);
+    APICall<string, KindDetailsFragment>('getKindById', id);
 
   /**
    * Same as `getKindById` but works for multiple Kind IDs provided.
    */
   getKindsById = (ids: string[]) =>
-    APICall<string[], CreateKindOutput[]>('getKindsById', ids);
+    APICall<string[], KindDetailsFragment[]>('getKindsById', ids);
 
   /**
    * Recursively collects all kinds that are referenced in a kind's schema, starting with a
@@ -311,13 +308,19 @@ export class AssistantAPIClient {
    * a field of type Kind `B`, and `B` contains a field of type Kind `C`, an array containing
    * the kinds objects for `A`, `B`, `C` will be returned (as a promise).
    */
-  getAllReferencedKinds = (
-    input: Omit<QueryAllReferencedKindsArgs, 'tenantId'>
-  ) =>
-    APICall<Omit<QueryAllReferencedKindsArgs, 'tenantId'>, CreateKindOutput[]>(
-      'getAllReferencedKinds',
-      input
-    );
+  getAllReferencedKinds = (input: {
+    ids: Array<ID>;
+    maxDepth?: Maybe<number>;
+    idsToSkip?: Maybe<Array<ID>>;
+  }) =>
+    APICall<
+      {
+        ids: Array<ID>;
+        maxDepth?: Maybe<number>;
+        idsToSkip?: Maybe<Array<ID>>;
+      },
+      KindDetailsFragment[]
+    >('getAllReferencedKinds', input);
 
   //
   // Inventory

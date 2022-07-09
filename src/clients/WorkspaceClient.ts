@@ -27,7 +27,7 @@ import {
   AssistantKindsFragment,
   KindDetailsFragment,
   AssistantWorkspaceInfoFragment,
-} from './Fragments';
+} from '../schema/Fragments';
 import { GraphClient } from './GraphClient';
 import { ServiceClient } from './ServiceClient';
 

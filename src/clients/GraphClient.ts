@@ -1,8 +1,8 @@
 import { ID } from '../schema/scalars';
 import { Maybe } from '../schema/common';
 import { GraphOrAnnotationNode, PortalGraph } from '../schema/outputTypes';
-import { NodeTypeEnum } from '../schema/enums';
-import { AssistantPortalGraphNodeFragment } from './Fragments';
+import { NodeType } from '../schema/enums';
+import { AssistantPortalGraphNodeFragment } from '../schema/Fragments';
 
 type AddNodeInfo = {
   operationId?: Maybe<ID>;
@@ -47,7 +47,7 @@ export type GraphClient = Pick<
   getNodes: () => Promise<GraphOrAnnotationNode[]>;
   addNode: Maybe<
     (
-      type: NodeTypeEnum,
+      type: NodeType,
       instance: AddNodeInput,
       changeSelection: boolean
     ) => Promise<AssistantPortalGraphNodeFragment>

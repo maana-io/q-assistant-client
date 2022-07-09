@@ -67,14 +67,6 @@ export enum ServiceType {
 }
 
 /**
- * The types of a functions.
- */
-export enum FunctionType {
-  EXTERNAL = 'EXTERNAL',
-  CKG = 'CKG',
-}
-
-/**
  * The different GraphQL operations that the function can be used for.
  */
 export enum GraphQLFunctionType {
@@ -89,20 +81,6 @@ export enum GraphQLFunctionType {
  */
 export enum ImplementationType {
   FUNCTION_GRAPH = 'FUNCTION_GRAPH',
-}
-
-/**
- * The different types of nodes that can be created or show up on the graphs.
- *
- * Knowledge Graphs only use ENTITY nodes.
- *
- * Function graphs comes with two ARGUMENT nodes and no more should be created.
- * OPERATION nodes are used to add functions onto the function graph.
- */
-export enum NodeType {
-  ARGUMENT = 'ARGUMENT',
-  ENTITY = 'ENTITY',
-  OPERATION = 'OPERATION',
 }
 
 /**

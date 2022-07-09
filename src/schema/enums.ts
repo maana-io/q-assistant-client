@@ -82,7 +82,7 @@ export enum ServiceLogicProvider {
   Docker = 'DOCKER',
 }
 
-export enum NodeTypeEnum {
+export enum NodeType {
   KN_ANNOTATION = 'Annotation',
   KN_FUNCTION = 'Function',
   KN_KIND = 'Kind',
