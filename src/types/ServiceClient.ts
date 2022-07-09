@@ -1,17 +1,17 @@
-import { Maybe } from '../schema';
+import { Maybe, Service } from '../schema';
 import { ID } from '../schema/scalars';
 import {
   AssistantFunctionsFragment,
   AssistantKindsFragment,
+  AssistantServicesFragment,
 } from './Fragments';
-import { WorkspaceClient } from './workspaceClient';
+import { WorkspaceClient } from './WorkspaceClient';
 
-export type ServiceClient = {
-  id: ID;
-  name: string;
-  description?: Maybe<string>;
-  endpointUrl: string;
-  aggregatedServices?: Array<Maybe<ID>>;
+export type ServiceClient = Pick<
+  AssistantServicesFragment,
+  'id' | 'name' | 'description' | 'endpointUrl'
+> & {
+  aggregatedServices?: Array<Pick<Service, 'id'>>;
   getKinds: () => Promise<Array<AssistantKindsFragment>>;
   getFunctions: () => Promise<Array<AssistantFunctionsFragment>>;
   getWorkspace: () => Maybe<WorkspaceClient>;

@@ -14,6 +14,7 @@ import {
   PortalGraph,
   PortalGraphNode,
   Service,
+  Workspace,
 } from '../schema/outputTypes';
 
 // TODO: FIX THESE
@@ -240,7 +241,31 @@ export type AssistantFunctionsFragment = Pick<
   >;
 };
 
+export type AssistantServicesFragment = Pick<
+  Service,
+  | 'id'
+  | 'name'
+  | 'description'
+  | 'serviceType'
+  | 'endpointUrl'
+  | 'isDeleted'
+  | 'isSystem'
+> & {
+  aggregatedServices?: Maybe<Array<Maybe<Pick<Service, 'id'>>>>;
+};
+
 export type InstanceDetailsFragment = Pick<
   Instance,
   'id' | 'kindId' | 'fieldIds' | 'fieldValues'
+>;
+
+export type AssistantWorkspaceInfoFragment = Pick<
+  Workspace,
+  | 'id'
+  | 'name'
+  | 'thumbnailUrl'
+  | 'workspaceServiceId'
+  | 'modelServiceId'
+  | 'logicServiceId'
+  | 'activeGraphPath'
 >;

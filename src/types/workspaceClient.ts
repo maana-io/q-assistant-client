@@ -14,18 +14,20 @@
 
 import {
   AddKindInput,
-  FieldModifiers,
-  FieldType,
-  Maybe,
   PortalGraphNodeInput,
-  ServiceCategory,
   UpdateFunctionInput,
   UpdateKindInput,
-} from '../schema';
+} from '../schema/inputTypes';
 
-import { FunctionClient } from './functionClient';
+import { ServiceCategory } from '../schema/enums';
+import { Maybe } from '../schema/common';
+import { FunctionClient } from './FunctionClient';
 import { ID } from '../schema/scalars';
-import { AssistantKindsFragment, KindDetailsFragment } from './Fragments';
+import {
+  AssistantKindsFragment,
+  KindDetailsFragment,
+  AssistantWorkspaceInfoFragment,
+} from './Fragments';
 import { GraphClient } from './GraphClient';
 import { ServiceClient } from './ServiceClient';
 
@@ -52,7 +54,11 @@ export type AssistantObject = {
   endpointUrl: string;
 };
 
-export interface WorkspaceClient {
+export type WorkspaceClient = Pick<
+  AssistantWorkspaceInfoFragment,
+  'id' | 'name' | 'logicServiceId' | 'modelServiceId' | 'workspaceServiceId'
+> & {
+  endpointUrl: string;
   canEdit: () => Promise<boolean>;
   createFunction: (input: NamedEntityInput) => Promise<Maybe<FunctionClient>>;
   createFunctions: (input: NamedEntityInput[]) => Promise<FunctionClient[]>;
@@ -66,7 +72,7 @@ export interface WorkspaceClient {
   ) => Promise<GraphClient[]>;
   deleteFunction: (functionId: ID) => Promise<void>;
   deleteKind: (kindId: ID) => Promise<void>;
-  endpointUrl: string;
+
   getActiveGraph: () => Promise<Maybe<GraphClient>>;
   getFunctionGraph: (graphId: ID) => Promise<Maybe<GraphClient>>;
   getFunctions: () => Promise<FunctionClient[]>;
@@ -74,13 +80,10 @@ export interface WorkspaceClient {
   getImportedServices: () => Promise<ServiceClient[]>;
   getKinds: () => Promise<AssistantKindsFragment[]>;
   getKnowledgeGraphs: () => Promise<Array<GraphClient>>;
-  id: ID;
+
   importService: (serviceId: ID) => Promise<Maybe<ID>>;
   importServices: (serviceIds: ID[]) => Promise<ID[]>;
   lockedBy: () => Maybe<string>;
-  logicServiceId: string;
-  modelServiceId: string;
-  name: string;
   removeService: (serviceId: ID) => Promise<void>;
   removeServices: (serviceIds: ID[]) => Promise<void>;
   setLocked: (
@@ -93,5 +96,4 @@ export interface WorkspaceClient {
   updateFunctions: (input: UpdateFunctionInput[]) => Promise<FunctionClient[]>;
   updateKind: (input: UpdateKindInput) => Promise<Maybe<KindDetailsFragment>>;
   updateKinds: (input: UpdateKindInput[]) => Promise<KindDetailsFragment[]>;
-  workspaceServiceId: string;
-}
+};

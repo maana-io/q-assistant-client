@@ -1,12 +1,8 @@
 import { ID } from '../schema/scalars';
-import { FieldInput, Maybe } from '../schema';
-import { PortalGraphType } from '../schema';
-import { GraphOrAnnotationNode } from '../schema/outputTypes';
+import { Maybe } from '../schema/common';
+import { GraphOrAnnotationNode, PortalGraph } from '../schema/outputTypes';
 import { NodeTypeEnum } from '../schema/enums';
-import {
-  AssistantPortalGraphFragment,
-  AssistantPortalGraphNodeFragment,
-} from './Fragments';
+import { AssistantPortalGraphNodeFragment } from './Fragments';
 
 type AddNodeInfo = {
   operationId?: Maybe<ID>;
@@ -39,10 +35,10 @@ export type AddNodeInput =
   | AddFunctionNodeInput
   | AddKindNodeInput;
 
-export type GraphClient = {
-  id: ID;
-  name: string;
-  type: PortalGraphType;
+export type GraphClient = Pick<
+  PortalGraph,
+  'id' | 'name' | 'offsetX' | 'offsetY' | 'zoom'
+> & {
   lockedBy: () => Promise<Maybe<string>>;
   canEdit: () => Promise<boolean>;
   setLocked: (
