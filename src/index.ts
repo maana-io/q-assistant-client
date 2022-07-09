@@ -1,4 +1,4 @@
-import { AssistantAPIClient } from './AssistantAPIClient';
+import { AssistantAPIClient } from './types/AssistantAPIClient';
 
 const Client = new AssistantAPIClient();
 

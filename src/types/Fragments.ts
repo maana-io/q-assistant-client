@@ -1,252 +1,246 @@
 import { Maybe } from '../schema/common';
 import { ID } from '../schema/scalars';
 import {
-  GraphqlOperationType,
-  FunctionType,
-  FieldModifiers,
-  FieldType,
-  OperationType,
-} from '../schema/enums';
-import { PortalGraphType } from '../schema';
-import { FieldValue } from '../schema/outputTypes';
+  Argument,
+  ArgumentValue,
+  Field,
+  Function,
+  FunctionGraphNode,
+  Implementation,
+  Instance,
+  Kind,
+  KnowledgeGraphNode,
+  Operation,
+  PortalGraph,
+  PortalGraphNode,
+  Service,
+} from '../schema/outputTypes';
 
+// TODO: FIX THESE
 export type AddFunctionGraphFragment = {};
-
-export type JustID = { id: ID };
-export type NamedEntity = { id: ID; name: string };
-
-export type ImplementationDetailsFragment = {
-  id: ID;
-  entrypoint?: Maybe<JustID>;
-  operations: Array<OperationDetailsFragment>;
-};
-
-export type OperationDetailsFragment = {
-  id: ID;
-  type: OperationType;
-  function?: Maybe<OperationFunctionDetailsFragment>;
-  argumentValues: Array<{
-    id: ID;
-    argument?: Maybe<JustID>;
-    operation?: Maybe<JustID>;
-    argumentRef?: Maybe<ID>;
-  }>;
-};
-
-export type OperationFunctionDetailsFragment = {
-  id: ID;
-  name: string;
-  graphqlOperationType?: Maybe<GraphqlOperationType>;
-  functionType: FunctionType;
-  isGenerated: boolean;
-  service?: Maybe<NamedEntity>;
-  arguments: Array<{
-    id: ID;
-    name: string;
-    type: FieldType;
-    description?: Maybe<string>;
-    modifiers?: Maybe<Array<Maybe<FieldModifiers>>>;
-    typeKindId?: Maybe<ID>;
-    kind?: Maybe<NamedEntity>;
-  }>;
-  implementation?: Maybe<{
-    id: ID;
-    operations: Array<{
-      id: ID;
-      function?: Maybe<{
-        id: ID;
-        service?: Maybe<JustID>;
-      }>;
-    }>;
-  }>;
-
-  outputType: FieldType;
-  outputKindId?: Maybe<ID>;
-  outputModifiers?: Maybe<Array<Maybe<FieldModifiers>>>;
-  kind?: Maybe<NamedEntity>;
-};
-
-export type FunctionDetialsFragment = {
-  id: ID;
-  name: string;
-  graphqlOperationType?: Maybe<GraphqlOperationType>;
-  functionType: FunctionType;
-  isGenerated: boolean;
-  service?: Maybe<NamedEntity>;
-  arguments: Array<{
-    id: ID;
-    name: string;
-    type: FieldType;
-    description?: Maybe<string>;
-    modifiers?: Maybe<Array<Maybe<FieldModifiers>>>;
-    typeKindId?: Maybe<ID>;
-    kind?: Maybe<{
-      id: ID;
-      name: string;
-      isGenerated: boolean;
-      service?: Maybe<NamedEntity>;
-    }>;
-  }>;
-  implementation?: Maybe<ImplementationDetailsFragment>;
-  outputType: FieldType;
-  outputKindId?: Maybe<ID>;
-  outputModifiers?: Maybe<Array<Maybe<FieldModifiers>>>;
-  kind?: Maybe<{
-    id: ID;
-    name: string;
-    isGenerated: boolean;
-    service?: Maybe<NamedEntity>;
-  }>;
-};
 
 export type AddFunctionOutputFragment = {
   newFunctions: [];
   workspaceServiceReferences: ID[];
 };
 
-export type KindDetailsFragment = {
-  id: ID;
-  name: string;
-  description?: Maybe<string>;
-  isPublic?: Maybe<boolean>;
-  isGenerated: boolean;
-  nameField?: Maybe<ID>;
+export type ImplementationDetailsFragment = Pick<
+  Implementation,
+  'id' | 'entrypoint' | 'operations'
+>;
+
+export type OperationDetailsFragment = Pick<Operation, 'id' | 'type'> & {
+  function?: Maybe<OperationFunctionDetailsFragment>;
+  argumentValues: Array<
+    Pick<ArgumentValue, 'id' | 'argumentRef'> & {
+      argument?: Maybe<Pick<Argument, 'id'>>;
+      operation?: Maybe<Pick<Operation, 'id'>>;
+    }
+  >;
+};
+
+export type OperationFunctionDetailsFragment = Pick<
+  Function,
+  | 'id'
+  | 'name'
+  | 'graphqlOperationType'
+  | 'functionType'
+  | 'isGenerated'
+  | 'outputKindId'
+  | 'outputType'
+  | 'outputModifiers'
+> & {
+  service?: Maybe<Pick<Service, 'id' | 'name'>>;
+  arguments: Pick<
+    Argument,
+    'id' | 'name' | 'type' | 'description' | 'modifiers' | 'typeKindId'
+  > & { kind?: Maybe<Pick<Kind, 'id' | 'name'>> };
+  implementation?: Maybe<
+    Pick<Implementation, 'id'> & {
+      operations: Array<
+        Pick<Operation, 'id'> & {
+          function?: Maybe<
+            Pick<Function, 'id'> & {
+              service?: Maybe<Pick<Service, 'id'>>;
+            }
+          >;
+        }
+      >;
+    }
+  >;
+  kind?: Maybe<Pick<Kind, 'id' | 'name'>>;
+};
+
+export type FunctionDetialsFragment = Pick<
+  Function,
+  | 'id'
+  | 'name'
+  | 'graphqlOperationType'
+  | 'functionType'
+  | 'isGenerated'
+  | 'outputType'
+  | 'outputKindId'
+  | 'outputModifiers'
+> & {
+  service?: Maybe<Pick<Service, 'id' | 'name'>>;
+  arguments: Array<
+    Pick<
+      Argument,
+      'id' | 'name' | 'type' | 'description' | 'modifiers' | 'typeKindId'
+    > & {
+      kind?: Maybe<
+        Pick<Kind, 'id' | 'name' | 'isGenerated'> & {
+          service?: Maybe<Pick<Service, 'id' | 'name'>>;
+        }
+      >;
+    }
+  >;
+  implementation?: Maybe<ImplementationDetailsFragment>;
+  kind?: Maybe<
+    Pick<Kind, 'id' | 'name' | 'isGenerated'> & {
+      service?: Maybe<Pick<Service, 'id' | 'name'>>;
+    }
+  >;
+};
+
+export type KindDetailsFragment = Pick<
+  Kind,
+  | 'id'
+  | 'name'
+  | 'description'
+  | 'isPublic'
+  | 'isGenerated'
+  | 'nameField'
+  | 'serviceId'
+> & {
   schema?: Promise<Maybe<Array<Maybe<FieldDetailsFragment>>>>;
-  service?: Maybe<NamedEntity>;
-  serviceId?: Maybe<ID>;
+  service?: Maybe<Pick<Service, 'id' | 'name'>>;
 };
 
-export type FieldDetailsFragment = {
-  id: ID;
-  name: string;
-  description?: Maybe<string>;
-  type: FieldType;
-  typeKindId?: Maybe<ID>;
-  modifiers?: Maybe<Array<Maybe<FieldModifiers>>>;
-  kind?: Maybe<{
-    id: ID;
-    name: string;
-    isGenerated: boolean;
-    service?: Maybe<NamedEntity>;
-  }>;
-  hide?: Maybe<boolean>;
-  autoFocus?: Maybe<boolean>;
-  displayAs?: Maybe<Array<Maybe<string>>>;
-  readonly?: Maybe<boolean>;
+export type FieldDetailsFragment = Pick<
+  Field,
+  | 'id'
+  | 'name'
+  | 'description'
+  | 'type'
+  | 'typeKindId'
+  | 'modifiers'
+  | 'hide'
+  | 'autoFocus'
+  | 'displayAs'
+  | 'readonly'
+> & {
+  kind?: Maybe<
+    Pick<Kind, 'id' | 'name' | 'isGenerated'> & {
+      service?: Maybe<Pick<Service, 'id' | 'name'>>;
+    }
+  >;
 };
 
-export type AssistantKindsFragment = {
-  id: ID;
-  name: string;
-  description?: Maybe<string>;
-  service?: Maybe<NamedEntity>;
-  isGenerated: boolean;
-  schema?: Promise<
-    Maybe<
-      Array<
-        Maybe<{
-          id: ID;
-          name: string;
-          type: FieldType;
-          typeKindId?: Maybe<ID>;
-          modifiers?: Maybe<Array<Maybe<FieldModifiers>>>;
-          kind?: Maybe<{
-            id: ID;
-            name: string;
-            service?: Maybe<NamedEntity>;
-          }>;
-        }>
+export type AssistantKindsFragment = Pick<
+  Kind,
+  'id' | 'name' | 'description' | 'isGenerated'
+> & {
+  service?: Maybe<Pick<Service, 'id' | 'name'>>;
+  schema?: Maybe<
+    Array<
+      Maybe<
+        Pick<Field, 'id' | 'name' | 'type' | 'typeKindId' | 'modifiers'> & {
+          kind?: Maybe<
+            Pick<Kind, 'id' | 'name'> & {
+              service?: Maybe<Pick<Service, 'id' | 'name'>>;
+            }
+          >;
+        }
       >
     >
   >;
 };
 
-export type AssistantPortalGraphFragment = {
-  id: ID;
-  name: string;
-  type: PortalGraphType;
-  lockedBy?: Maybe<string>;
+export type AssistantPortalGraphFragment = Pick<
+  PortalGraph,
+  'id' | 'name' | 'type' | 'lockedBy'
+>;
+
+export type AssistantPortalGraphNodeFragment = Pick<
+  PortalGraphNode,
+  'id' | 'x' | 'y' | 'collapsed'
+> & {
+  knowledgeGraphNode?: Maybe<
+    Pick<KnowledgeGraphNode, 'id'> & {
+      instance?: Maybe<InstanceDetailsFragment>;
+      innerKind?: Maybe<AssistantKindsFragment>;
+      innerFunction?: Maybe<AssistantFunctionsFragment>;
+    }
+  >;
+  functionGraphNode?: Maybe<Pick<FunctionGraphNode, 'id' | 'operationId'>>;
 };
 
-export type AssistantPortalGraphNodeFragment = {
-  id: ID;
-  x: number;
-  y: number;
-  collapsed: boolean;
-  knowledgeGraphNode?: Maybe<{
-    id: ID;
-    instance?: Maybe<InstanceDetailsFragment>;
-    innerKind?: Maybe<AssistantKindsFragment>;
-    innerFunction?: Maybe<AssistantFunctionsFragment>;
-  }>;
-  functionGraphNode?: Maybe<{ id: ID; operationId: ID }>;
+export type AssistantFunctionsFragment = Pick<
+  Function,
+  | 'id'
+  | 'name'
+  | 'description'
+  | 'isDeleted'
+  | 'isGenerated'
+  | 'functionType'
+  | 'graphqlOperationType'
+  | 'outputType'
+  | 'outputKindId'
+  | 'outputModifiers'
+> & {
+  service?: Maybe<Pick<Service, 'id' | 'name'>>;
+  arguments: Array<
+    Pick<Argument, 'id' | 'name' | 'type' | 'modifiers' | 'typeKindId'> & {
+      kind?: Maybe<
+        Pick<Kind, 'id' | 'name'> & {
+          service?: Maybe<Pick<Service, 'id' | 'name'>>;
+        }
+      >;
+    }
+  >;
+  implementation?: Maybe<
+    Pick<Implementation, 'id'> & {
+      entrypoint?: Maybe<Pick<Operation, 'id'>>;
+      operations: Array<
+        Pick<Operation, 'id' | 'type'> & {
+          function?: Maybe<
+            Pick<Function, 'id' | 'name'> & {
+              service?: Maybe<Pick<Service, 'id' | 'name'>>;
+            }
+          >;
+          argumentValues: Array<
+            Pick<ArgumentValue, 'id' | 'argumentRef'> & {
+              argument?: Maybe<Pick<Argument, 'id' | 'name'>>;
+              operation?: Maybe<Pick<Operation, 'id'>>;
+            }
+          >;
+        }
+      >;
+    }
+  >;
+  kind?: Maybe<
+    Pick<Kind, 'id' | 'name'> & {
+      service?: Maybe<Pick<Service, 'id' | 'name'>>;
+    }
+  >;
+  graph?: Maybe<
+    Pick<PortalGraph, 'id' | 'lockedBy'> & {
+      nodes?: Maybe<
+        Array<
+          Pick<PortalGraphNode, 'id'> & {
+            knowledgeGraphNode?: Maybe<Pick<KnowledgeGraphNode, 'id'>>;
+            functionGraphNode?: Maybe<
+              Pick<FunctionGraphNode, 'id' | 'operationId'>
+            >;
+          }
+        >
+      >;
+    }
+  >;
 };
 
-export type AssistantFunctionsFragment = {
-  id: ID;
-  name: string;
-  description?: Maybe<string>;
-  isDeleted: boolean;
-  service?: Maybe<NamedEntity>;
-  arguments: Array<{
-    id: ID;
-    name: string;
-    type: FieldType;
-    modifiers?: Maybe<Array<Maybe<FieldModifiers>>>;
-    typeKindId?: Maybe<ID>;
-    kind?: Maybe<{
-      id: ID;
-      name: string;
-      service?: Maybe<NamedEntity>;
-    }>;
-  }>;
-  implementation?: Maybe<{
-    id: ID;
-    entrypoint?: Maybe<JustID>;
-    operations: Array<{
-      id: ID;
-      type: OperationType;
-      function?: Maybe<{
-        id: ID;
-        name: string;
-        service?: Maybe<NamedEntity>;
-      }>;
-      argumentValues: Array<{
-        id: ID;
-        argument?: Maybe<NamedEntity>;
-        operation?: Maybe<JustID>;
-        argumentRef?: Maybe<ID>;
-      }>;
-    }>;
-  }>;
-
-  isGenerated: boolean;
-  functionType: FunctionType;
-  graphqlOperationType?: Maybe<GraphqlOperationType>;
-  outputType: FieldType;
-  outputKindId?: Maybe<ID>;
-  outputModifiers?: Maybe<Array<Maybe<FieldModifiers>>>;
-  kind?: Maybe<{
-    id: ID;
-    name: string;
-    service?: Maybe<NamedEntity>;
-  }>;
-  graph?: Maybe<{
-    id: ID;
-    lockedBy?: Maybe<string>;
-    nodes?: Maybe<
-      Array<{
-        id: ID;
-        knowledgeGraphNode?: Maybe<JustID>;
-        functionGraphNode?: Maybe<{ id: ID; operationId: ID }>;
-      }>
-    >;
-  }>;
-};
-
-export type InstanceDetailsFragment = {
-  id: ID;
-  kindId: ID;
-  fieldIds?: Maybe<Array<Maybe<ID>>>;
-  fieldValues?: Maybe<Array<Maybe<FieldValue>>>;
-};
+export type InstanceDetailsFragment = Pick<
+  Instance,
+  'id' | 'kindId' | 'fieldIds' | 'fieldValues'
+>;

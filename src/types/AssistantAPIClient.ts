@@ -1,4 +1,4 @@
-import { AddKindInput, UpdateKindInput } from './schema/inputTypes';
+import { AddKindInput, UpdateKindInput } from '../schema/inputTypes';
 import {
   AddServiceInput,
   CreateFunctionInGraphInput,
@@ -6,18 +6,18 @@ import {
   Service,
   User,
   Workspace,
-} from './schema';
-import { AssistantState, EntityType, RenderMode } from './constants';
-import { CreateKindInput, CreateKindOutput } from './types/createKind';
+} from '../schema';
+import { AssistantState, EntityType, RenderMode } from '../constants';
+import { CreateKindInput, CreateKindOutput } from './createKind';
 
-import { CreateWorkspaceInputType } from './types/createWorkspace';
+import { CreateWorkspaceInputType } from './createWorkspace';
 import { EventEmitter } from 'events';
-import { ExecuteFunctionInputType } from './types/executeFunction';
-import { InstanceRef } from './schema/outputTypes';
-import { MakeOptional } from './schema/common';
-import { Maybe } from './models';
-import { ServiceFragment } from './fragments';
-import { WorkspaceClient } from './types/workspaceClient';
+import { ExecuteFunctionInputType } from './executeFunction';
+import { InstanceRef } from '../schema/outputTypes';
+import { MakeOptional } from '../schema/common';
+import { Maybe } from '../models';
+import { ServiceFragment } from '../fragments';
+import { WorkspaceClient } from '../types/workspaceClient';
 import postRobot from 'post-robot';
 
 /** Generic event listener; should be more strongly typed if possible */
