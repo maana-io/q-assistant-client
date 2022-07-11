@@ -4,7 +4,7 @@ import { GraphOrAnnotationNode, PortalGraph } from '../schema/output-types';
 import { NodeType } from '../schema/enums';
 import { AssistantPortalGraphNodeFragment } from '../schema/Fragments';
 
-type AddNodeInfo = {
+export type AddNodeInfo = {
   operationId?: Maybe<ID>;
   height?: number;
   width?: number;
@@ -12,18 +12,18 @@ type AddNodeInfo = {
   y?: number;
 };
 
-type AddAnnotationNodeInput = {
+export type AddAnnotationNodeInput = {
   name?: string;
   url?: string;
   nodeInfo: AddNodeInfo;
 };
-type AddKindNodeInput = {
+export type AddKindNodeInput = {
   kindId?: Maybe<ID>;
   kindName?: Maybe<string>;
   id: ID;
   nodeInfo: AddNodeInfo;
 };
-type AddFunctionNodeInput = {
+export type AddFunctionNodeInput = {
   kindId?: Maybe<ID>;
   kindName?: Maybe<string>;
   id: ID;
