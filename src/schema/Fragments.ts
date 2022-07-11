@@ -114,7 +114,7 @@ export type KindDetailsFragment = Pick<
   | 'nameField'
   | 'serviceId'
 > & {
-  schema?: Promise<Maybe<Array<Maybe<FieldDetailsFragment>>>>;
+  schema?: Maybe<Array<Maybe<FieldDetailsFragment>>>;
   service?: Maybe<Pick<Service, 'id' | 'name'>>;
 };
 
