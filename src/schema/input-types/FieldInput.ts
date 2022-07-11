@@ -8,8 +8,8 @@ export type FieldInput = {
   description?: Maybe<string>;
   type: FieldType;
   typeKindId?: Maybe<ID>;
-  modifiers?: Maybe<Array<FieldModifiers>>;
-  displayAs?: Maybe<Array<string>>;
+  modifiers?: Maybe<Array<Maybe<FieldModifiers>>>;
+  displayAs?: Maybe<Array<Maybe<string>>>;
   hide?: Maybe<boolean>;
   autoFocus?: Maybe<boolean>;
   readonly?: Maybe<boolean>;
