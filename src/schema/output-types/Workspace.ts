@@ -1,4 +1,13 @@
-import { ID } from '../scalars';
+import { Maybe } from '../common';
+import { DateTime, ID } from '../scalars';
+import {
+  User,
+  WorkspaceLayout,
+  PortalGraph,
+  InstanceRef,
+  Inventory,
+  Service,
+} from './';
 
 export type Workspace = {
   id: ID;

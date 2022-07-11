@@ -14,37 +14,28 @@
 
 import {
   AddKindInput,
-  PortalGraphNodeInput,
   UpdateFunctionInput,
+  PortalGraphNodeInput,
   UpdateKindInput,
-} from '../schema/inputTypes';
+} from '../schema/input-types';
 
 import { ServiceCategory } from '../schema/enums';
-import { Maybe } from '../schema/common';
-import { FunctionClient } from './FunctionClient';
+import { MakeOptional, Maybe } from '../schema/common';
 import { ID } from '../schema/scalars';
 import {
   AssistantKindsFragment,
   KindDetailsFragment,
   AssistantWorkspaceInfoFragment,
 } from '../schema/Fragments';
-import { GraphClient } from './GraphClient';
-import { ServiceClient } from './ServiceClient';
+import { GraphClient, ServiceClient, FunctionClient } from './';
+import { AddPortalGraphInput } from '../schema/input-types';
 
 export type NamedEntityInput = {
   id?: Maybe<ID>;
   name: string;
 };
 
-export type CreatePortalGraphInput = {
-  name: string;
-  id?: Maybe<ID>;
-  index?: Maybe<number>;
-  offsetX?: Maybe<number>;
-  offsetY?: Maybe<number>;
-  zoom?: Maybe<number>;
-  nodes?: Maybe<Array<PortalGraphNodeInput>>;
-};
+export type CreatePortalGraphInput = Partial<AddPortalGraphInput>;
 
 export type AssistantObject = {
   id: ID;

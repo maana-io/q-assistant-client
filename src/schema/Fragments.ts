@@ -15,7 +15,7 @@ import {
   PortalGraphNode,
   Service,
   Workspace,
-} from './outputTypes';
+} from './output-types';
 
 // TODO: FIX THESE
 export type AddFunctionGraphFragment = {};

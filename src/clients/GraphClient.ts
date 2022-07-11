@@ -1,6 +1,6 @@
 import { ID } from '../schema/scalars';
 import { Maybe } from '../schema/common';
-import { GraphOrAnnotationNode, PortalGraph } from '../schema/outputTypes';
+import { GraphOrAnnotationNode, PortalGraph } from '../schema/output-types';
 import { NodeType } from '../schema/enums';
 import { AssistantPortalGraphNodeFragment } from '../schema/Fragments';
 

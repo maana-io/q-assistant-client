@@ -1,5 +1,4 @@
 import { Maybe, Service } from '../schema';
-import { ID } from '../schema/scalars';
 import {
   AssistantFunctionsFragment,
   AssistantKindsFragment,
