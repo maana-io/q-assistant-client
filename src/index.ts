@@ -6,3 +6,4 @@ export default Client;
 export { FunctionClient, GraphClient, WorkspaceClient } from './clients';
 
 export * from './constants';
+export * from './schema';

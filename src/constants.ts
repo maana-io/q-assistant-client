@@ -20,21 +20,6 @@ export enum RenderMode {
 export const CORE_SERVICE_ID = 'io.maana.core';
 
 /**
- * Names of the default Scalars
- */
-export enum Scalars {
-  INT = 'Int',
-  FLOAT = 'Float',
-  BOOLEAN = 'Boolean',
-  DATE = 'Date',
-  TIME = 'Time',
-  DATETIME = 'DateTime',
-  JSON = 'JSON',
-  ID = 'ID',
-  STRING = 'String',
-}
-
-/**
  * The different entity types used in entity identifiers, like the ones returned
  * from selection or used in graph nodes.
  */

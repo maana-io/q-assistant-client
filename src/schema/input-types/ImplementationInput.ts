@@ -1,6 +1,6 @@
 import { Maybe } from '../common';
 import { ID } from '../scalars';
-import * from './OperationInput'
+import { OperationInput } from './';
 
 export type ImplementationInput = {
   id?: Maybe<ID>;
