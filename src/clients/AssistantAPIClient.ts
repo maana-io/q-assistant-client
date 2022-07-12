@@ -1,9 +1,3 @@
-import { KindDetailsFragment } from '../schema';
-import { AssistantState, RenderMode } from '../constants';
-
-import { EventEmitter } from 'events';
-import { InstanceRef, User } from '../schema/output-types';
-
 import {
   AddKindInput,
   AddServiceInput,
@@ -12,9 +6,14 @@ import {
   FunctionInput,
   UpdateKindInput,
 } from '../schema/input-types';
+import { AssistantState, RenderMode } from '../constants';
+import { InstanceRef, User } from '../schema/output-types';
+import { MakeOptional, Maybe } from '../schema/common';
+import { ServiceClient, WorkspaceClient } from './';
+
+import { EventEmitter } from 'events';
 import { ID } from '../schema/scalars';
-import { Maybe, MakeOptional } from '../schema/common';
-import { WorkspaceClient, ServiceClient } from './';
+import { KindDetailsFragment } from '../schema';
 import postRobot from 'post-robot';
 
 /** Generic event listener; should be more strongly typed if possible */
@@ -35,7 +34,7 @@ async function APICall<I, O>(callName: string, arg?: I): Promise<O> {
     arg as any
   );
 
-  return (data as unknown) as O;
+  return data as unknown as O;
 }
 
 // pulled and condensed from @types/post-robot
@@ -224,8 +223,8 @@ export class AssistantAPIClient {
    * });
    * ```
    */
-  executeFunction = (input: ExecuteFunctionInputType) =>
-    APICall<ExecuteFunctionInputType, void>('executeFunction', input);
+  executeFunction = <O = any>(input: ExecuteFunctionInputType) =>
+    APICall<ExecuteFunctionInputType, O>('executeFunction', input);
 
   // todo
   createFunction = (input: FunctionInput) => APICall('createFunction', input);
@@ -267,7 +266,7 @@ export class AssistantAPIClient {
   /**
    * Creates a Kind based on an input object. Returns a promise that resolves to the created Kind object.
    */
-  createKind = (input: AddKindInput) =>
+  createKind = (input: MakeOptional<AddKindInput, 'serviceId'>) =>
     APICall<MakeOptional<AddKindInput, 'serviceId'>, KindDetailsFragment>(
       'createKind',
       input

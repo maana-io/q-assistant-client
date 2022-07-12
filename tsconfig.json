@@ -3,7 +3,7 @@
 
   "compilerOptions": {
     "target": "ES6",
-    "module": "CommonJS",
+    "module": "ESNext",
     "esModuleInterop": true,
     // "noImplicitAny": true,
     "lib": ["es2018", "dom"],
@@ -12,11 +12,7 @@
     // Generate d.ts files
     "declaration": true,
     "declarationMap": true,
-
-    // Types should go into this directory.
-    // Removing this would place the .d.ts files
-    // next to the .js files
-    "outDir": "build"
+    "declarationDir": "dts"
   },
   "exclude": [
     "node_modules",
