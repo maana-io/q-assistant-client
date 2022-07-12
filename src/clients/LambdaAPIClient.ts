@@ -68,6 +68,8 @@ export type LambdaInput = {
 };
 
 export type LambdaAPIClient = {
+  id: ID;
+  serviceEndpoint: string;
   getLambdas: (serviceId: string) => Promise<Lambda[]>;
   getLambda: (functionId: string) => Promise<Lambda[]>;
   getRuntimes: () => Promise<Runtime[]>;
@@ -78,20 +80,31 @@ export type LambdaAPIClient = {
 };
 
 export async function getLambdaClient(
-  assistant: AssistantAPIClient
+  assistant: AssistantAPIClient,
+  MaanaEnv?: Record<string, any>
 ): Promise<LambdaAPIClient> {
-  const LAMBDA_SERIVCE_ID: string = '';
-
-  async function executeGQL(gql: string, variables: Record<string, any>) {
+  const LAMBDA_SERIVCE_ID =
+    (MaanaEnv.MAANA_ENV && MaanaEnv.MAANA_ENV.LAMBDA_SERIVCE_ID) ||
+    'io.maana.lambda-server';
+  async function getLambdaServiceEndpoint(): Promise<string> {
     try {
-      const result = await assistant.executeGraphql({
-        serviceId: LAMBDA_SERIVCE_ID,
-        query: gql,
-        variables,
+      const res = await assistant.executeGraphql<
+        void,
+        { data?: { service: { endpointUrl: string } }; errors?: string[] }
+      >({
+        serviceId: 'io.maana.catalog',
+        query:
+          'query getLambda($lambdaServiceId: ID!){ service(id: $lambdaServiceId) { endpointUrl } }',
+        variables: {
+          lambdaServiceId: LAMBDA_SERIVCE_ID,
+        },
       });
-      return result;
+
+      if (res && res.data)
+        return res.data.service.endpointUrl.replace('graphql', '');
+      throw new Error(res.errors ? res.errors[0] : 'Unexpected failure');
     } catch (e) {
-      console.error('Failed executing GraphQL Query', e);
+      console.error('Failed getting lambda service endpoint', e);
       throw new Error(e);
     }
   }
@@ -99,13 +112,18 @@ export async function getLambdaClient(
   const lambdaFunctionFragment: string =
     'id name serviceId runtime { id name language} code input { name kind modifiers } outputKind outputModifiers kinds graphQLOperationType sequenceNo';
 
+  const serviceEndpoint = await getLambdaServiceEndpoint();
+
   return {
+    id: LAMBDA_SERIVCE_ID,
+    serviceEndpoint,
     getLambda: async (lambdaId: ID) => {
       try {
         const res = await assistant.executeGraphql<
           void,
           { data?: { getLambda: Maybe<Lambda> }; errors?: string[] }
         >({
+          serviceId: LAMBDA_SERIVCE_ID,
           query: `query getLambda($lambdaId: ID!) { getLambda( id: $lambdaId) { ${lambdaFunctionFragment} }}`,
           variables: {
             lambdaId,
@@ -124,6 +142,7 @@ export async function getLambdaClient(
           void,
           { data?: { getRuntimes: Runtime[] }; errors?: string[] }
         >({
+          serviceId: LAMBDA_SERIVCE_ID,
           query: `query { getRuntimes{ id host language }}`,
           variables: {},
         });
@@ -140,6 +159,7 @@ export async function getLambdaClient(
           void,
           { data?: { createLambda: LambdaInput }; errors?: string[] }
         >({
+          serviceId: LAMBDA_SERIVCE_ID,
           query: `mutation createLambda($input: LambdaInput!) { createLambda( input: $input) { ${lambdaFunctionFragment} }}`,
           variables: {
             input,
@@ -158,6 +178,7 @@ export async function getLambdaClient(
           void,
           { data?: { createLambdas: LambdaInput[] }; errors?: string[] }
         >({
+          serviceId: LAMBDA_SERIVCE_ID,
           query: `mutation createLambdas($input: [LambdaInput!]!) { createLambdas( input: $input) { ${lambdaFunctionFragment} }}`,
           variables: {
             input,
@@ -176,6 +197,7 @@ export async function getLambdaClient(
           void,
           { data?: { deleteLambda: number }; errors?: string[] }
         >({
+          serviceId: LAMBDA_SERIVCE_ID,
           query: `mutation deleteLambda($input: DeleteLambdaInput!) { deleteLambda( input: $input) }`,
           variables: {},
         });
@@ -192,6 +214,7 @@ export async function getLambdaClient(
           void,
           { data?: { deleteLambdas: number[] }; errors?: string[] }
         >({
+          serviceId: LAMBDA_SERIVCE_ID,
           query: `mutation deleteLambdas($input: [DeleteLambdaInput!]!) { deleteLambdas( input: $input) }`,
           variables: {},
         });
@@ -208,6 +231,7 @@ export async function getLambdaClient(
           void,
           { data?: { listLambdas: Lambda[] }; errors?: string[] }
         >({
+          serviceId: LAMBDA_SERIVCE_ID,
           query: `query listLambdas($serviceId: ID!) { listLambdas(serviceId: $serviceId) { ${lambdaFunctionFragment} }}`,
           variables: {
             serviceId,
