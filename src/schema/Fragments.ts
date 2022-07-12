@@ -1,5 +1,3 @@
-import { Maybe } from './common';
-import { ID } from './scalars';
 import {
   Argument,
   ArgumentValue,
@@ -8,6 +6,7 @@ import {
   FunctionGraphNode,
   Implementation,
   Instance,
+  InstanceRef,
   Kind,
   KnowledgeGraphNode,
   Operation,
@@ -16,6 +15,22 @@ import {
   Service,
   Workspace,
 } from './output-types';
+
+import { ID } from './scalars';
+import { Maybe } from './common';
+
+/**
+ * Selection event object
+ */
+export type Selection = Pick<InstanceRef, 'id' | 'kindId'> & {
+  kindName:
+    | 'Kind'
+    | 'Function'
+    | 'FunctionArguments'
+    | 'FunctionOutput'
+    | 'PortalGraph'
+    | 'Service';
+};
 
 // TODO: FIX THESE
 export type AddFunctionGraphFragment = {};

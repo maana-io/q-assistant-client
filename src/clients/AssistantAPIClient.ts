@@ -20,10 +20,11 @@ import { MakeOptional, Maybe } from '../schema/common';
 import { EventEmitter } from 'events';
 import { ID } from '../schema/scalars';
 import { KindDetailsFragment } from '../schema';
+import { MoveKindsAndFunctionsInput } from '../schema/input-types/MoveKindsAndFunctions';
 import postRobot from 'post-robot';
 
 /** Generic event listener; should be more strongly typed if possible */
-type EventListenerCallback = (e: any) => Promise<any>;
+type EventListenerCallback<T = any> = (e: any) => Promise<T>;
 
 const eventEmitter = new EventEmitter();
 
@@ -112,13 +113,19 @@ export class AssistantAPIClient {
   //
   // State management
   //
-  clearState(): void {
+  /**
+   * Remove all registered state listeners.
+   */
+  clearState() {
     eventEmitter.removeAllListeners();
   }
 
   //
   // User Info
   //
+  /**
+   * Returns a Userinfo object pertaining to the logged in user.
+   */
   getUserInfo() {
     return APICall<void, Pick<User, 'email' | 'name'>>('getUserInfo');
   }
@@ -126,11 +133,19 @@ export class AssistantAPIClient {
   //
   // Selection
   //
-  addSelectionChangedListener(cb: EventListenerCallback): void {
+  /**
+   * Adds a callback function to be executed upon a valid workspace selection change.
+
+   * Callback value is an array of Selection objects:
+   */
+  addSelectionChangedListener(cb: EventListenerCallback<Selection[]>) {
     eventEmitter.addListener('selectionChanged', cb);
   }
 
-  removeSelectionChangedListener(cb: EventListenerCallback): void {
+  /**
+   * Remove a single selection-changed callback listener (if provided) or all listeners if none are provided.
+   */
+  removeSelectionChangedListener(cb: EventListenerCallback<Selection[]>) {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener('selectionChanged', cb);
@@ -139,34 +154,59 @@ export class AssistantAPIClient {
     }
   }
 
+  /**
+   * Returns the current selection instance ref.
+   */
   getCurrentSelection() {
-    return APICall<void, Pick<InstanceRef, 'id' | 'kindId' | 'kindName'>>(
-      'getCurrentSelection'
-    );
+    return APICall<void, Selection>('getCurrentSelection');
   }
 
   //
   // Services
   //
+  /**
+   * This will return a service that exists within the scope of the workspace.
+   * Assistant services will return null. Services outside the scope of the workspace will cause an error to be returned
+   * as: 'Unable to load a Service from outside of the workspace.'
+   */
   getServiceById(id: string) {
     return APICall<string, ServiceClient>('getServiceById', id);
   }
 
+  /**
+   * Creates a service in Q; returns a ServiceClient ref.
+   *
+   * Note: This will create the service, but does NOT import it into the workspace.
+   * You will need to use `importService` on the Workspace object to import it.
+   */
   createService(input: AddServiceInput) {
     return APICall<AddServiceInput, ServiceClient>('createService', input);
   }
 
   /**
+   * Refreshes a service by fetching its schema.
+   * This will also reload the service inventory in the currently visible workspace.
+   *
    * @param id string value of service ID to refresh
    */
   refreshServiceSchema(id: string) {
     return APICall<string, void>('refreshServiceSchema', id);
   }
 
+  /**
+   * Reloads a service in the inventory in the currently visible workspace.
+   *
+   * @param id string value of service ID to reload
+   */
   reloadServiceSchema(id: string) {
     return APICall<string, void>('reloadServiceSchema', id);
   }
 
+  /**
+   * Deletes a service from the current workspace (does not delete it in Q).
+   * @param id ID of service to delete
+   * @returns ID of deleted service
+   */
   deleteService(id: string) {
     return APICall<string, ID>('deleteService', id);
   }
@@ -267,11 +307,11 @@ export class AssistantAPIClient {
     return APICall<string[], FunctionClient[]>('getFunctionsById', ids);
   }
 
-  addFunctionExecutionListener(id: string, cb: EventListenerCallback): void {
+  addFunctionExecutionListener(id: string, cb: EventListenerCallback) {
     eventEmitter.addListener(`function:${id}`, cb);
   }
 
-  removeFunctionExecutionListener(id: string, cb: EventListenerCallback): void {
+  removeFunctionExecutionListener(id: string, cb: EventListenerCallback) {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener(`function:${id}`, cb);
@@ -367,18 +407,26 @@ export class AssistantAPIClient {
    * Moves a collection of Kinds and Functions from the origin Workspace to the
    * target Workspace.
    *
-   * @param {string} originId The ID of the origin Workspace.
-   * @param {string} targetId The ID of the target Workspace.
+   * @param {string} sourceWorkspaceId The ID of the origin Workspace.
+   * @param {string} targetWorkspaceId The ID of the target Workspace.
    * @param {Array<string>} kindIds An array of the IDs of the kinds to move.
    * @param {Array<string>} functionIds An array of the IDs of the functions to move.
    */
-  moveKindsAndFunctions(originId, targetId, kindIds, functionIds) {
-    return APICall('moveKindsAndFunctions', {
-      originId,
-      targetId,
-      kindIds,
-      functionIds,
-    });
+  moveKindsAndFunctions(
+    sourceWorkspaceId: string,
+    targetWorkspaceId: string,
+    kindIds: string[],
+    functionIds?: string[]
+  ) {
+    return APICall<MoveKindsAndFunctionsInput, undefined>(
+      'moveKindsAndFunctions',
+      {
+        originId: sourceWorkspaceId,
+        targetId: targetWorkspaceId,
+        kindIds,
+        functionIds,
+      }
+    );
   }
 
   //
@@ -391,11 +439,11 @@ export class AssistantAPIClient {
   //
   // Render Mode
   //
-  addRenderModeChangedListener(cb: EventListenerCallback): void {
+  addRenderModeChangedListener(cb: EventListenerCallback) {
     eventEmitter.addListener('renderModeChanged', cb);
   }
 
-  removeRenderModeChangedListener(cb: EventListenerCallback): void {
+  removeRenderModeChangedListener(cb: EventListenerCallback) {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener('renderModeChanged', cb);
@@ -411,11 +459,11 @@ export class AssistantAPIClient {
   //
   // Repair
   //
-  addRepairListener(cb: EventListenerCallback): void {
+  addRepairListener(cb: EventListenerCallback) {
     eventEmitter.addListener('repair', cb);
   }
 
-  removeRepairListener(cb: EventListenerCallback): void {
+  removeRepairListener(cb: EventListenerCallback) {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener('repair', cb);
@@ -441,7 +489,7 @@ export class AssistantAPIClient {
    *
    * @param {Function} cb The callback function to call
    */
-  addLockingChangedListener(cb): void {
+  addLockingChangedListener(cb) {
     eventEmitter.addListener(EventTypes.LOCKING_CHANGED, cb);
   }
 
