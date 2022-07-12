@@ -4,12 +4,13 @@ import {
   AddWorkspaceInput,
   ExecuteFunctionInputType,
   FunctionInput,
+  UpdateFunctionInput,
   UpdateKindInput,
 } from '../schema/input-types';
 import { AssistantState, RenderMode } from '../constants';
+import { FunctionClient, ServiceClient, WorkspaceClient } from './';
 import { InstanceRef, User } from '../schema/output-types';
 import { MakeOptional, Maybe } from '../schema/common';
-import { ServiceClient, WorkspaceClient } from './';
 
 import { EventEmitter } from 'events';
 import { ID } from '../schema/scalars';
@@ -226,20 +227,20 @@ export class AssistantAPIClient {
   executeFunction = <O = any>(input: ExecuteFunctionInputType) =>
     APICall<ExecuteFunctionInputType, O>('executeFunction', input);
 
-  // todo
-  createFunction = (input: FunctionInput) => APICall('createFunction', input);
+  createFunction = (input: FunctionInput) =>
+    APICall<FunctionInput, FunctionClient>('createFunction', input);
 
-  // todo
-  updateFunction = (input) => APICall('updateFunction', input);
+  updateFunction = (input: UpdateFunctionInput) =>
+    APICall<UpdateFunctionInput, FunctionClient>('updateFunction', input);
 
-  // todo
-  deleteFunction = (input) => APICall('deleteFunction', input);
+  deleteFunction = (id: string) =>
+    APICall<string, undefined>('deleteFunction', id);
 
-  // todo
-  getFunctionById = (id) => APICall('getFunctionById', id);
+  getFunctionById = (id: string) =>
+    APICall<string, FunctionClient>('getFunctionById', id);
 
-  // todo
-  getFunctionsById = (ids) => APICall('getFunctionsById', ids);
+  getFunctionsById = (ids: string[]) =>
+    APICall<string[], FunctionClient[]>('getFunctionsById', ids);
 
   addFunctionExecutionListener = (
     id: string,
@@ -283,11 +284,10 @@ export class AssistantAPIClient {
   updateKind = (input: UpdateKindInput) =>
     APICall<UpdateKindInput, KindDetailsFragment>('updateKind', input);
 
-  // todo
   /**
    * Deletes a Kind given a kind ID.
    */
-  deleteKind = (id: string) => APICall('deleteKind', id);
+  deleteKind = (id: string) => APICall<string, undefined>('deleteKind', id);
 
   /**
    * Returns a promise that resolves to a Kind object given the specified kind ID.
