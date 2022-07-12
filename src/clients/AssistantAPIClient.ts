@@ -222,7 +222,7 @@ export class AssistantAPIClient {
    * @param {string} id The ID of the Workspace to load. (optional)
    * @return {Workspace} The requested Workspace.
    */
-  getWorkspace(id: string) {
+  getWorkspace(id?: string) {
     return APICall<string, WorkspaceClient>('getWorkspace', id);
   }
 
