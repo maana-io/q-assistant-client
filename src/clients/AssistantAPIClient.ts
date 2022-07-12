@@ -8,7 +8,12 @@ import {
   UpdateKindInput,
 } from '../schema/input-types';
 import { AssistantState, RenderMode } from '../constants';
-import { FunctionClient, ServiceClient, WorkspaceClient } from './';
+import {
+  FunctionClient,
+  GraphClient,
+  ServiceClient,
+  WorkspaceClient,
+} from './';
 import { InstanceRef, User } from '../schema/output-types';
 import { MakeOptional, Maybe } from '../schema/common';
 
@@ -107,56 +112,64 @@ export class AssistantAPIClient {
   //
   // State management
   //
-  clearState = (): void => {
+  clearState(): void {
     eventEmitter.removeAllListeners();
-  };
+  }
 
   //
   // User Info
   //
-  getUserInfo = () =>
-    APICall<void, Pick<User, 'email' | 'name'>>('getUserInfo');
+  getUserInfo() {
+    return APICall<void, Pick<User, 'email' | 'name'>>('getUserInfo');
+  }
 
   //
   // Selection
   //
-  addSelectionChangedListener = (cb: EventListenerCallback): void => {
+  addSelectionChangedListener(cb: EventListenerCallback): void {
     eventEmitter.addListener('selectionChanged', cb);
-  };
+  }
 
-  removeSelectionChangedListener = (cb: EventListenerCallback): void => {
+  removeSelectionChangedListener(cb: EventListenerCallback): void {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener('selectionChanged', cb);
     } else {
       eventEmitter.removeAllListeners('selectionChanged');
     }
-  };
+  }
 
-  getCurrentSelection = () =>
-    APICall<void, Pick<InstanceRef, 'id' | 'kindId' | 'kindName'>>(
+  getCurrentSelection() {
+    return APICall<void, Pick<InstanceRef, 'id' | 'kindId' | 'kindName'>>(
       'getCurrentSelection'
     );
+  }
 
   //
   // Services
   //
-  getServiceById = (id: string): Promise<Maybe<ServiceClient>> =>
-    APICall('getServiceById', id);
+  getServiceById(id: string) {
+    return APICall<string, ServiceClient>('getServiceById', id);
+  }
 
-  createService = (input: AddServiceInput) =>
-    APICall<AddServiceInput, ServiceClient>('createService', input);
+  createService(input: AddServiceInput) {
+    return APICall<AddServiceInput, ServiceClient>('createService', input);
+  }
 
   /**
    * @param id string value of service ID to refresh
    */
-  refreshServiceSchema = (id: string) =>
-    APICall<string, void>('refreshServiceSchema', id);
+  refreshServiceSchema(id: string) {
+    return APICall<string, void>('refreshServiceSchema', id);
+  }
 
-  reloadServiceSchema = (id: string) =>
-    APICall<string, void>('reloadServiceSchema', id);
+  reloadServiceSchema(id: string) {
+    return APICall<string, void>('reloadServiceSchema', id);
+  }
 
-  deleteService = (id: string) => APICall<string, ID>('deleteService', id);
+  deleteService(id: string) {
+    return APICall<string, ID>('deleteService', id);
+  }
 
   //
   // Workspace
@@ -169,8 +182,9 @@ export class AssistantAPIClient {
    * @param {string} id The ID of the Workspace to load. (optional)
    * @return {Workspace} The requested Workspace.
    */
-  getWorkspace = (id: string) =>
-    APICall<string, WorkspaceClient>('getWorkspace', id);
+  getWorkspace(id: string) {
+    return APICall<string, WorkspaceClient>('getWorkspace', id);
+  }
 
   /**
    * Returns a list of user accessible Workspaces.  By default it will just be
@@ -180,11 +194,12 @@ export class AssistantAPIClient {
    * @param {boolean} includePublic When true the returned list includes public Workspaces.
    * @return {Array<Workspace>} The list of Workspaces.
    */
-  getUserAccessibleWorkspaces = (includePublic = false) =>
-    APICall<boolean, WorkspaceClient>(
+  getUserAccessibleWorkspaces(includePublic = false) {
+    return APICall<boolean, WorkspaceClient>(
       'getUserAccessibleWorkspaces',
       includePublic
     );
+  }
 
   /**
    * Creates a new Workspace.  The id, name, and serviceId can optionally be
@@ -193,13 +208,14 @@ export class AssistantAPIClient {
    * @param {Object} workspace The Workspace information, can container {id, name, serviceId}
    * @return {Workspace} The new Workspace.
    */
-  createWorkspace = (
+  createWorkspace(
     workspace: Pick<AddWorkspaceInput, 'name' | 'id' | 'workspaceServiceId'>
-  ) =>
-    APICall<
+  ) {
+    return APICall<
       Pick<AddWorkspaceInput, 'name' | 'id' | 'workspaceServiceId'>,
       WorkspaceClient
     >('createWorkspace', workspace);
+  }
 
   //
   // Functions
@@ -224,42 +240,45 @@ export class AssistantAPIClient {
    * });
    * ```
    */
-  executeFunction = <O = any>(input: ExecuteFunctionInputType) =>
-    APICall<ExecuteFunctionInputType, O>('executeFunction', input);
+  executeFunction<O = any>(input: ExecuteFunctionInputType) {
+    return APICall<ExecuteFunctionInputType, O>('executeFunction', input);
+  }
 
-  createFunction = (input: FunctionInput) =>
-    APICall<FunctionInput, FunctionClient>('createFunction', input);
+  createFunction(input: FunctionInput) {
+    return APICall<FunctionInput, FunctionClient>('createFunction', input);
+  }
 
-  updateFunction = (input: UpdateFunctionInput) =>
-    APICall<UpdateFunctionInput, FunctionClient>('updateFunction', input);
+  updateFunction(input: UpdateFunctionInput) {
+    return APICall<UpdateFunctionInput, FunctionClient>(
+      'updateFunction',
+      input
+    );
+  }
 
-  deleteFunction = (id: string) =>
-    APICall<string, undefined>('deleteFunction', id);
+  deleteFunction(id: string) {
+    return APICall<string, undefined>('deleteFunction', id);
+  }
 
-  getFunctionById = (id: string) =>
-    APICall<string, FunctionClient>('getFunctionById', id);
+  getFunctionById(id: string) {
+    return APICall<string, FunctionClient>('getFunctionById', id);
+  }
 
-  getFunctionsById = (ids: string[]) =>
-    APICall<string[], FunctionClient[]>('getFunctionsById', ids);
+  getFunctionsById(ids: string[]) {
+    return APICall<string[], FunctionClient[]>('getFunctionsById', ids);
+  }
 
-  addFunctionExecutionListener = (
-    id: string,
-    cb: EventListenerCallback
-  ): void => {
+  addFunctionExecutionListener(id: string, cb: EventListenerCallback): void {
     eventEmitter.addListener(`function:${id}`, cb);
-  };
+  }
 
-  removeFunctionExecutionListener = (
-    id: string,
-    cb: EventListenerCallback
-  ): void => {
+  removeFunctionExecutionListener(id: string, cb: EventListenerCallback): void {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener(`function:${id}`, cb);
     } else {
       eventEmitter.removeAllListeners(`function:${id}`);
     }
-  };
+  }
 
   //
   // Kinds
@@ -267,11 +286,12 @@ export class AssistantAPIClient {
   /**
    * Creates a Kind based on an input object. Returns a promise that resolves to the created Kind object.
    */
-  createKind = (input: MakeOptional<AddKindInput, 'serviceId'>) =>
-    APICall<MakeOptional<AddKindInput, 'serviceId'>, KindDetailsFragment>(
-      'createKind',
-      input
-    );
+  createKind(input: MakeOptional<AddKindInput, 'serviceId'>) {
+    return APICall<
+      MakeOptional<AddKindInput, 'serviceId'>,
+      KindDetailsFragment
+    >('createKind', input);
+  }
 
   /**
    * Updates a Kind based on an input object.
@@ -281,25 +301,30 @@ export class AssistantAPIClient {
    *
    * Returns a promise that resolves to the updated `Kind` object.
    */
-  updateKind = (input: UpdateKindInput) =>
-    APICall<UpdateKindInput, KindDetailsFragment>('updateKind', input);
+  updateKind(input: UpdateKindInput) {
+    return APICall<UpdateKindInput, KindDetailsFragment>('updateKind', input);
+  }
 
   /**
    * Deletes a Kind given a kind ID.
    */
-  deleteKind = (id: string) => APICall<string, undefined>('deleteKind', id);
+  deleteKind(id: string) {
+    return APICall<string, undefined>('deleteKind', id);
+  }
 
   /**
    * Returns a promise that resolves to a Kind object given the specified kind ID.
    */
-  getKindById = (id: string) =>
-    APICall<string, KindDetailsFragment>('getKindById', id);
+  getKindById(id: string) {
+    return APICall<string, KindDetailsFragment>('getKindById', id);
+  }
 
   /**
    * Same as `getKindById` but works for multiple Kind IDs provided.
    */
-  getKindsById = (ids: string[]) =>
-    APICall<string[], KindDetailsFragment[]>('getKindsById', ids);
+  getKindsById(ids: string[]) {
+    return APICall<string[], KindDetailsFragment[]>('getKindsById', ids);
+  }
 
   /**
    * Recursively collects all kinds that are referenced in a kind's schema, starting with a
@@ -307,12 +332,12 @@ export class AssistantAPIClient {
    * a field of type Kind `B`, and `B` contains a field of type Kind `C`, an array containing
    * the kinds objects for `A`, `B`, `C` will be returned (as a promise).
    */
-  getAllReferencedKinds = (input: {
+  getAllReferencedKinds(input: {
     ids: Array<ID>;
     maxDepth?: Maybe<number>;
     idsToSkip?: Maybe<Array<ID>>;
-  }) =>
-    APICall<
+  }) {
+    return APICall<
       {
         ids: Array<ID>;
         maxDepth?: Maybe<number>;
@@ -320,22 +345,23 @@ export class AssistantAPIClient {
       },
       KindDetailsFragment[]
     >('getAllReferencedKinds', input);
+  }
 
   //
   // Inventory
   //
-  addInventoryChangedListener = (cb: EventListenerCallback) => {
+  addInventoryChangedListener(cb: EventListenerCallback) {
     eventEmitter.addListener('inventoryChanged', cb);
-  };
+  }
 
-  removeInventoryChangedListener = (cb: EventListenerCallback) => {
+  removeInventoryChangedListener(cb: EventListenerCallback) {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener('inventoryChanged', cb);
     } else {
       eventEmitter.removeAllListeners('inventoryChanged');
     }
-  };
+  }
 
   /**
    * Moves a collection of Kinds and Functions from the origin Workspace to the
@@ -346,59 +372,64 @@ export class AssistantAPIClient {
    * @param {Array<string>} kindIds An array of the IDs of the kinds to move.
    * @param {Array<string>} functionIds An array of the IDs of the functions to move.
    */
-  // todo
-  moveKindsAndFunctions = (originId, targetId, kindIds, functionIds) =>
-    APICall('moveKindsAndFunctions', {
+  moveKindsAndFunctions(originId, targetId, kindIds, functionIds) {
+    return APICall('moveKindsAndFunctions', {
       originId,
       targetId,
       kindIds,
       functionIds,
     });
+  }
 
   //
   // Graphs
   //
-  // todo
-  getFunctionGraph = (id) => APICall('getFunctionGraph', id);
+  getFunctionGraph(id: string) {
+    return APICall<string, GraphClient>('getFunctionGraph', id);
+  }
 
   //
   // Render Mode
   //
-  addRenderModeChangedListener = (cb: EventListenerCallback): void => {
+  addRenderModeChangedListener(cb: EventListenerCallback): void {
     eventEmitter.addListener('renderModeChanged', cb);
-  };
+  }
 
-  removeRenderModeChangedListener = (cb: EventListenerCallback): void => {
+  removeRenderModeChangedListener(cb: EventListenerCallback): void {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener('renderModeChanged', cb);
     } else {
       eventEmitter.removeAllListeners('renderModeChanged');
     }
-  };
+  }
 
-  getRenderMode = () => APICall<void, RenderMode>('getRenderMode');
+  getRenderMode() {
+    return APICall<void, RenderMode>('getRenderMode');
+  }
 
   //
   // Repair
   //
-  addRepairListener = (cb: EventListenerCallback): void => {
+  addRepairListener(cb: EventListenerCallback): void {
     eventEmitter.addListener('repair', cb);
-  };
+  }
 
-  removeRepairListener = (cb: EventListenerCallback): void => {
+  removeRepairListener(cb: EventListenerCallback): void {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener('repair', cb);
     } else {
       eventEmitter.removeAllListeners('repair');
     }
-  };
+  }
 
   //
   // Errors
   //
-  reportError = (error) => APICall<Error, void>('reportError', error);
+  reportError(error) {
+    return APICall<Error, void>('reportError', error);
+  }
 
   //
   // Locking
@@ -410,9 +441,9 @@ export class AssistantAPIClient {
    *
    * @param {Function} cb The callback function to call
    */
-  addLockingChangedListener = (cb): void => {
+  addLockingChangedListener(cb): void {
     eventEmitter.addListener(EventTypes.LOCKING_CHANGED, cb);
-  };
+  }
 
   /**
    * Removes a callback function from the list be called every time the locking
@@ -422,19 +453,23 @@ export class AssistantAPIClient {
    *
    * @param {Function|undefined} cb The callback function to remove
    */
-  removeLockingChangedListener = (cb: EventListenerCallback) => {
+  removeLockingChangedListener(cb: EventListenerCallback) {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener(EventTypes.LOCKING_CHANGED, cb);
     } else {
       eventEmitter.removeAllListeners(EventTypes.LOCKING_CHANGED);
     }
-  };
+  }
 
   //
   // Undocumented
   //
-  getEventEmitter = () => eventEmitter;
+  getEventEmitter() {
+    return eventEmitter;
+  }
 
-  executeGraphql = <I, O>(input) => APICall<I, O>('executeGraphql', input);
+  executeGraphql<I, O>(input) {
+    return APICall<I, O>('executeGraphql', input);
+  }
 }
