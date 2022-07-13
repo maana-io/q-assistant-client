@@ -71,10 +71,10 @@ export type LambdaAPIClient = {
   id: ID;
   serviceEndpoint: string;
   getLambdas: (serviceId: string) => Promise<Lambda[]>;
-  getLambda: (functionId: string) => Promise<Lambda[]>;
+  getLambda: (functionId: string) => Promise<Lambda>;
   getRuntimes: () => Promise<Runtime[]>;
   addLambda: (input: LambdaInput) => Promise<Maybe<Lambda>>;
-  addLambdas: (input: LambdaInput[]) => Promise<Lambda>;
+  addLambdas: (input: LambdaInput[]) => Promise<Lambda[]>;
   deleteLambda: (input: DeleteLambdaInput) => Promise<number>;
   deleteLambdas: (input: DeleteLambdaInput[]) => Promise<number[]>;
 };
