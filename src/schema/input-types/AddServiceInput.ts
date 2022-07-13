@@ -8,7 +8,7 @@ export type AddServiceInput = {
   description?: Maybe<string>;
   isSystem: boolean;
   isReadOnly?: Maybe<boolean>;
-  thumbnailUrl: string;
+  thumbnailUrl?: string;
   endpointUrl: string;
   subscriptionEndpointUrl?: Maybe<string>;
   tags?: Maybe<Array<Maybe<string>>>;
