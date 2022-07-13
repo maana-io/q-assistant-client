@@ -15,12 +15,14 @@ export enum LambdaModifier {
 }
 
 export type LambdaField = {
+  id: ID;
   name: string;
   kind: string;
   modifiers: LambdaModifier[];
 };
 
 export type LambdaFieldInput = {
+  id?: Maybe<ID>;
   name?: Maybe<string>;
   kind?: string;
   modifiers?: Maybe<LambdaModifier[]>;
