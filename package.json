@@ -32,6 +32,7 @@
   "homepage": "https://github.com/maana-io/q-assistant-client#readme",
   "dependencies": {
     "core-js": "3.6.4",
+    "lodash": "^4.17.21",
     "post-robot": "10.0.29"
   },
   "devDependencies": {
