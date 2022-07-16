@@ -235,7 +235,7 @@ export class AssistantAPIClient {
    * @return {Array<Workspace>} The list of Workspaces.
    */
   getUserAccessibleWorkspaces(includePublic = false) {
-    return APICall<boolean, WorkspaceClient>(
+    return APICall<boolean, Array<WorkspaceClient>>(
       'getUserAccessibleWorkspaces',
       includePublic
     );
@@ -296,7 +296,7 @@ export class AssistantAPIClient {
   }
 
   deleteFunction(id: string) {
-    return APICall<string, undefined>('deleteFunction', id);
+    return APICall<string, void>('deleteFunction', id);
   }
 
   getFunctionById(id: string) {
@@ -349,7 +349,7 @@ export class AssistantAPIClient {
    * Deletes a Kind given a kind ID.
    */
   deleteKind(id: string) {
-    return APICall<string, undefined>('deleteKind', id);
+    return APICall<string, void>('deleteKind', id);
   }
 
   /**
@@ -418,15 +418,12 @@ export class AssistantAPIClient {
     kindIds: string[],
     functionIds?: string[]
   ) {
-    return APICall<MoveKindsAndFunctionsInput, undefined>(
-      'moveKindsAndFunctions',
-      {
-        originId: sourceWorkspaceId,
-        targetId: targetWorkspaceId,
-        kindIds,
-        functionIds,
-      }
-    );
+    return APICall<MoveKindsAndFunctionsInput, void>('moveKindsAndFunctions', {
+      originId: sourceWorkspaceId,
+      targetId: targetWorkspaceId,
+      kindIds,
+      functionIds,
+    });
   }
 
   //

@@ -24,8 +24,8 @@ import {
   AssistantAPIClient,
   FunctionClient,
   WorkspaceClient,
-} from '../..';
-import { randomUUID } from 'crypto';
+} from '../index';
+import { v4 as randomUUID } from 'uuid';
 
 function nonNulls<T>(xs: (Maybe<T> | undefined)[]): T[] {
   return xs.filter((x) => x != null) as T[];

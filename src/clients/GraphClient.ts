@@ -12,23 +12,17 @@ export type AddNodeInfo = {
   y?: number;
 };
 
-export type AddAnnotationNodeInput = {
+export interface AddAnnotationNodeInput {
   name?: string;
   url?: string;
-  nodeInfo: AddNodeInfo;
-};
-export type AddKindNodeInput = {
-  kindId?: Maybe<ID>;
-  kindName?: Maybe<string>;
+  nodeInfo?: AddNodeInfo;
+}
+export interface AddKindNodeInput {
   id: ID;
-  nodeInfo: AddNodeInfo;
-};
-export type AddFunctionNodeInput = {
-  kindId?: Maybe<ID>;
-  kindName?: Maybe<string>;
+}
+export interface AddFunctionNodeInput {
   id: ID;
-  nodeInfo: AddNodeInfo;
-};
+}
 
 export type AddNodeInput =
   | AddAnnotationNodeInput
@@ -43,14 +37,17 @@ export type GraphClient = Pick<
   canEdit: () => Promise<boolean>;
   setLocked: (
     isLocked: boolean
-  ) => Promise<{ id: ID; lockedBy: Maybe<string> }>;
+  ) => Promise<Maybe<{ id: ID; lockedBy?: Maybe<string> }>>;
   getNodes: () => Promise<GraphOrAnnotationNode[]>;
   addNode: Maybe<
     (
       type: NodeType,
-      instance: AddNodeInput,
+      instance:
+        | AddFunctionNodeInput
+        | AddKindNodeInput
+        | AddAnnotationNodeInput,
       changeSelection: boolean
-    ) => Promise<AssistantPortalGraphNodeFragment>
+    ) => Promise<GraphOrAnnotationNode>
   >;
   removeNode: Maybe<(id: ID) => Promise<void>>;
   updateNodeLayout: (

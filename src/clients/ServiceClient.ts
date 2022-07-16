@@ -13,5 +13,5 @@ export type ServiceClient = Pick<
   aggregatedServices?: Array<Pick<Service, 'id'>>;
   getKinds: () => Promise<Array<AssistantKindsFragment>>;
   getFunctions: () => Promise<Array<AssistantFunctionsFragment>>;
-  getWorkspace: () => Maybe<WorkspaceClient>;
+  getWorkspace: () => Promise<Maybe<WorkspaceClient>>;
 };
