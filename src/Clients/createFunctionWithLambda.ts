@@ -9,42 +9,44 @@ export async function createFunctionWithLambda(
   code: string,
   updateIfExists: boolean,
   wksClient: WorkspaceClient,
-  lambdaClient: LambdaClient,
+  lambdaClient: LambdaClient
 ): Promise<any> {
   const preExistingFunction = await wksClient.getFunction({
-    name: functionToCreate.name,
+    name: functionToCreate.name
   });
 
   if (preExistingFunction) {
     if (!updateIfExists) return;
+    // todo: fix
+    // @ts-ignore
     wksClient.updateFunction({
       ...functionToCreate,
-      id: preExistingFunction!.id,
+      id: preExistingFunction!.id
     });
   } else {
     wksClient.createFunction(functionToCreate);
   }
 
   const existingFunction = await wksClient.getFunction({
-    name: functionToCreate.name,
+    name: functionToCreate.name
   });
   const lambdaToCreate = await makeCreateLambdaInput(
     wksClient,
     code,
     existingFunction,
-    0,
+    0
   );
 
   await wksClient.refresh();
   await lambdaClient.createLambda({
     ...lambdaToCreate,
-    id: existingFunction!.id,
+    id: existingFunction!.id
   });
   await ensureWSContainsRefreshedLambdaSvc(wksClient, lambdaClient);
   await implementFunctionWithLambda(
     existingFunction!.id,
     lambdaToCreate,
     wksClient,
-    lambdaClient,
+    lambdaClient
   );
 }

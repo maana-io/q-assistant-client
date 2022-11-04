@@ -27,7 +27,7 @@ coming through the Assistant API.
 
 •  **DATA\_NOT\_FOUND**:  = 102
 
-*Defined in [constants.ts:129](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L129)*
+*Defined in Clients/AssistantAPIClient/constants.ts:126*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 •  **GRAPHQL**:  = 103
 
-*Defined in [constants.ts:130](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L130)*
+*Defined in Clients/AssistantAPIClient/constants.ts:127*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 •  **INVALID\_PARAMS**:  = 101
 
-*Defined in [constants.ts:128](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L128)*
+*Defined in Clients/AssistantAPIClient/constants.ts:125*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 •  **MISSING\_PARAMS**:  = 100
 
-*Defined in [constants.ts:127](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L127)*
+*Defined in Clients/AssistantAPIClient/constants.ts:124*
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 •  **NOT\_IMPLEMENTED**:  = 104
 
-*Defined in [constants.ts:131](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L131)*
+*Defined in Clients/AssistantAPIClient/constants.ts:128*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 •  **PERMISSION**:  = 105
 
-*Defined in [constants.ts:132](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L132)*
+*Defined in Clients/AssistantAPIClient/constants.ts:129*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 •  **UNKNOWN\_ERROR**:  = 0
 
-*Defined in [constants.ts:125](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L125)*
+*Defined in Clients/AssistantAPIClient/constants.ts:122*
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 •  **UNKNOWN\_GRAPHQL\_ERROR**:  = 1
 
-*Defined in [constants.ts:126](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L126)*
+*Defined in Clients/AssistantAPIClient/constants.ts:123*
 
 ___
 
@@ -91,4 +91,4 @@ ___
 
 •  **VERSION**:  = 106
 
-*Defined in [constants.ts:133](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L133)*
+*Defined in Clients/AssistantAPIClient/constants.ts:130*

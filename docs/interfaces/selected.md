@@ -20,6 +20,6 @@
 
 •  **selection**: [EntityIdentifier](entityidentifier.md)[]
 
-*Defined in [models.ts:68](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L68)*
+*Defined in Clients/AssistantAPIClient/models.ts:69*
 
 The list of selected entities.

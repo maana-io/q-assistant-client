@@ -5,6 +5,7 @@
 # Enumeration: NodeType
 
 The different types of nodes that can be created or show up on the graphs.
+NodeType num - the different types of nodes used on the graphs.
 
 Knowledge Graphs only use ENTITY nodes.
 
@@ -25,7 +26,9 @@ OPERATION nodes are used to add functions onto the function graph.
 
 •  **ARGUMENT**:  = "ARGUMENT"
 
-*Defined in [constants.ts:103](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L103)*
+*Defined in Clients/AssistantAPIClient/constants.ts:100*
+
+*Defined in types/all-types.ts:1465*
 
 ___
 
@@ -33,7 +36,9 @@ ___
 
 •  **ENTITY**:  = "ENTITY"
 
-*Defined in [constants.ts:104](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L104)*
+*Defined in Clients/AssistantAPIClient/constants.ts:101*
+
+*Defined in types/all-types.ts:1466*
 
 ___
 
@@ -41,4 +46,6 @@ ___
 
 •  **OPERATION**:  = "OPERATION"
 
-*Defined in [constants.ts:105](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L105)*
+*Defined in Clients/AssistantAPIClient/constants.ts:102*
+
+*Defined in types/all-types.ts:1467*

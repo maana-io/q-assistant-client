@@ -60,7 +60,7 @@
 
 ▸ **addFunctionExecutionListener**(`id`: string, `cb`: [EventListenerCallback](../README.md#eventlistenercallback)): void
 
-*Defined in [AssistantAPIClient.ts:576](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L576)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:577*
 
 Associates a callback function with the execution of a particular Function.
 When the Function matching the id parameter is executed, its
@@ -90,7 +90,7 @@ ___
 
 ▸ **addInventoryChangedListener**(`cb`: (changes: [InventoryChanged](../interfaces/inventorychanged.md)) => void): void
 
-*Defined in [AssistantAPIClient.ts:769](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L769)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:770*
 
 Registers a callback function with the inventory changed event. When
 workspace inventory changes the callback function will be called.
@@ -122,7 +122,7 @@ ___
 
 ▸ **addLockingChangedListener**(`cb`: (changes: [LockingChanged](../interfaces/lockingchanged.md)) => void): void
 
-*Defined in [AssistantAPIClient.ts:1011](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L1011)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:1012*
 
 Registers a callback function with the locking changed event. When the
 currently active Workspace or its Knowledge Graphs and Functions change the
@@ -153,7 +153,7 @@ ___
 
 ▸ **addRenderModeChangedListener**(`cb`: (renderMode: [RenderMode](../enums/rendermode.md)) => void): void
 
-*Defined in [AssistantAPIClient.ts:868](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L868)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:869*
 
 Adds a listener to the render mode changed event.
 
@@ -183,7 +183,7 @@ ___
 
 ▸ **addRepairListener**(`cb`: (workspaceId: string) => void): void
 
-*Defined in [AssistantAPIClient.ts:933](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L933)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:934*
 
 Adds a listener to the repair changed event.
 
@@ -207,9 +207,9 @@ ___
 
 ### addSelectionChangedListener
 
-▸ **addSelectionChangedListener**(`cb`: [EventListenerCallback](../README.md#eventlistenercallback)): void
+▸ **addSelectionChangedListener**(`cb`: [EventListenerCallback](../README.md#eventlistenercallback)): [addSelectionChangedListener](assistantapiclient.md#addselectionchangedlistener)
 
-*Defined in [AssistantAPIClient.ts:215](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L215)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:216*
 
 Adds a listener to the selection changed event.
 
@@ -235,19 +235,19 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `cb` | [EventListenerCallback](../README.md#eventlistenercallback) | Callback function.  |
 
-**Returns:** void
+**Returns:** [addSelectionChangedListener](assistantapiclient.md#addselectionchangedlistener)
 
 ___
 
 ### clearState
 
-▸ **clearState**(): void
+▸ **clearState**(): [clearState](assistantapiclient.md#clearstate)
 
-*Defined in [AssistantAPIClient.ts:168](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L168)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:169*
 
 Removes all event listeners for all events.
 
-**Returns:** void
+**Returns:** [clearState](assistantapiclient.md#clearstate)
 
 ___
 
@@ -255,7 +255,7 @@ ___
 
 ▸ **createFunction**(`input`: [CreateFunctionInput](../interfaces/createfunctioninput.md)): Promise\<[Function](../interfaces/function.md)>
 
-*Defined in [AssistantAPIClient.ts:465](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L465)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:466*
 
 Creates a new function with the supplied information.  At minimum a name
 needs to be supplied.
@@ -279,7 +279,7 @@ ___
 
 ▸ **createKind**(`input`: [CreateTypeInput](../interfaces/createtypeinput.md)): Promise\<[Kind](../interfaces/kind.md)>
 
-*Defined in [AssistantAPIClient.ts:624](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L624)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:625*
 
 Creates a new Kind with the supplied information.  At minimum a name needs
 to be supplied.
@@ -303,7 +303,7 @@ ___
 
 ▸ **createService**(`input`: [CreateServiceInput](../interfaces/createserviceinput.md)): Promise\<string>
 
-*Defined in [AssistantAPIClient.ts:294](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L294)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:295*
 
 Creates a new Service in the platform.
 
@@ -335,9 +335,9 @@ ___
 
 ### createWorkspace
 
-▸ **createWorkspace**(`workspace`: [CreateWorkspaceInput](../interfaces/createworkspaceinput.md)): Promise\<[Workspace](../interfaces/workspace.md)>
+▸ **createWorkspace**(`workspace`: [CreateWorkspaceInput](../interfaces/createworkspaceinput.md)): Promise\<[ILocalWorkspace](../interfaces/ilocalworkspace.md)>
 
-*Defined in [AssistantAPIClient.ts:412](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L412)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:413*
 
 Creates a new Workspace.  The id, name, and serviceId can optionally be
 set, or they can be left undefined to use the defaults.
@@ -348,7 +348,7 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `workspace` | [CreateWorkspaceInput](../interfaces/createworkspaceinput.md) | The Workspace information, can contain {id, name, serviceId}  |
 
-**Returns:** Promise\<[Workspace](../interfaces/workspace.md)>
+**Returns:** Promise\<[ILocalWorkspace](../interfaces/ilocalworkspace.md)>
 
 The new Workspace.
 
@@ -358,7 +358,7 @@ ___
 
 ▸ **deleteFunction**(`input`: string): Promise\<void>
 
-*Defined in [AssistantAPIClient.ts:495](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L495)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:496*
 
 Deletes a function in the active workspace by the given name.
 
@@ -379,7 +379,7 @@ ___
 
 ▸ **deleteKind**(`input`: string): Promise\<void>
 
-*Defined in [AssistantAPIClient.ts:650](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L650)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:651*
 
 Deletes a Kind in the active workspace by the given name.
 
@@ -400,7 +400,7 @@ ___
 
 ▸ **deleteService**(`id`: string): Promise\<void>
 
-*Defined in [AssistantAPIClient.ts:343](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L343)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:344*
 
 Deletes the given Service from the platform.
 
@@ -423,7 +423,7 @@ ___
 
 ▸ **executeFunction**(`input`: { entityIdentifier: [EntityIdentifier](../interfaces/entityidentifier.md) ; resolve: string ; variables?: Record\<string, any>  }): Promise\<any>
 
-*Defined in [AssistantAPIClient.ts:446](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L446)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:447*
 
 Runs a query against a given function with the supplied variables and
 resolve string.
@@ -457,7 +457,7 @@ ___
 
 ▸ **executeGraphql**(`input`: { query: string ; serviceId: string ; variables?: Record\<string, any>  }): Promise\<any>
 
-*Defined in [AssistantAPIClient.ts:357](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L357)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:358*
 
 Runs an arbitrary GraphQL query against a service in the platform.
 
@@ -477,7 +477,7 @@ ___
 
 ▸ **getAllReferencedKinds**(`data`: { entities: [EntityIdentifier](../interfaces/entityidentifier.md)[] ; entitiesToSkip: [EntityIdentifier](../interfaces/entityidentifier.md) ; maxDepth?: number  }): Promise\<[Kind](../interfaces/kind.md)[]>
 
-*Defined in [AssistantAPIClient.ts:738](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L738)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:739*
 
 Recursively collects all kinds that are referenced in the entities signature,
 starting with the entity identifiers. For example if Kind A is supplied as
@@ -511,7 +511,7 @@ ___
 
 ▸ **getCurrentSelection**(): Promise\<[Selected](../interfaces/selected.md)>
 
-*Defined in [AssistantAPIClient.ts:249](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L249)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:250*
 
 Gets the current selection from the UI.
 
@@ -530,7 +530,7 @@ ___
 
 ▸ **getFunctionById**(`id`: string): Promise\<[Maybe](../README.md#maybe)\<[Function](../interfaces/function.md)>>
 
-*Defined in [AssistantAPIClient.ts:510](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L510)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:511*
 
 Loads a function by ID.  This can only return information about functions
 that the UI already has loaded into memory.
@@ -554,7 +554,7 @@ ___
 
 ▸ **getFunctionGraph**(`id`: string): Promise\<[Maybe](../README.md#maybe)\<[Function](../interfaces/function.md)>>
 
-*Defined in [AssistantAPIClient.ts:843](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L843)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:844*
 
 Loads the function with its graph information attached.
 
@@ -578,7 +578,7 @@ ___
 
 ▸ **getFunctionOfServiceByName**(`serviceId`: string, `name`: string): Promise\<[Maybe](../README.md#maybe)\<[Function](../interfaces/function.md)>>
 
-*Defined in [AssistantAPIClient.ts:537](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L537)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:538*
 
 Returns a function with the given name from a specific service.
 
@@ -599,7 +599,7 @@ ___
 
 ▸ **getFunctionsById**(`ids`: string[]): Promise\<[Function](../interfaces/function.md)[]>
 
-*Defined in [AssistantAPIClient.ts:525](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L525)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:526*
 
 Loads a list of functions by ID.  This can only return information about
 functions that the UI already has loaded into memory.
@@ -623,7 +623,7 @@ ___
 
 ▸ **getFunctionsOfServiceByName**(`serviceId`: string, `names`: string[]): Promise\<[Function](../interfaces/function.md)[]>
 
-*Defined in [AssistantAPIClient.ts:552](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L552)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:553*
 
 Returns a list of functions with the given names from a specific service.
 
@@ -644,7 +644,7 @@ ___
 
 ▸ **getKindById**(`id`: string): Promise\<[Maybe](../README.md#maybe)\<[Kind](../interfaces/kind.md)>>
 
-*Defined in [AssistantAPIClient.ts:665](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L665)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:666*
 
 Loads a Kind by ID.  This can only return information about Kinds that the
 UI already has loaded into memory.
@@ -668,7 +668,7 @@ ___
 
 ▸ **getKindOfServiceByName**(`serviceId`: string, `name`: string): Promise\<[Maybe](../README.md#maybe)\<[Kind](../interfaces/kind.md)>>
 
-*Defined in [AssistantAPIClient.ts:692](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L692)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:693*
 
 Returns a Kind with the given name from a specific service.
 
@@ -689,7 +689,7 @@ ___
 
 ▸ **getKindsById**(`ids`: string[]): Promise\<[Kind](../interfaces/kind.md)[]>
 
-*Defined in [AssistantAPIClient.ts:680](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L680)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:681*
 
 Loads a list of Kinds by ID.  This can only return information about Kinds
 that the UI already has loaded into memory.
@@ -713,7 +713,7 @@ ___
 
 ▸ **getKindsOfServiceByName**(`serviceId`: string, `names`: string[]): Promise\<[Kind](../interfaces/kind.md)[]>
 
-*Defined in [AssistantAPIClient.ts:707](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L707)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:708*
 
 Returns a list of Kinds with the given names from a specific service.
 
@@ -734,7 +734,7 @@ ___
 
 ▸ **getRenderMode**(): Promise\<[RenderMode](../enums/rendermode.md)>
 
-*Defined in [AssistantAPIClient.ts:912](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L912)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:913*
 
 Gets the current render mode for the assistant.
 
@@ -759,7 +759,7 @@ ___
 
 ▸ **getServiceById**(`id`: string): Promise\<[Maybe](../README.md#maybe)\<[Service](../interfaces/service.md)>>
 
-*Defined in [AssistantAPIClient.ts:269](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L269)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:270*
 
 Loads a service by its ID.
 
@@ -782,9 +782,9 @@ ___
 
 ### getUserAccessibleWorkspaces
 
-▸ **getUserAccessibleWorkspaces**(`includePublic?`: boolean): Promise\<[Workspace](../interfaces/workspace.md)[]>
+▸ **getUserAccessibleWorkspaces**(`includePublic?`: boolean): Promise\<[ILocalWorkspace](../interfaces/ilocalworkspace.md)[]>
 
-*Defined in [AssistantAPIClient.ts:398](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L398)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:399*
 
 Returns a list of user accessible Workspaces.  By default it will just be
 the user owned Workspaces, but can be configured to also return all the
@@ -796,7 +796,7 @@ Name | Type | Default value | Description |
 ------ | ------ | ------ | ------ |
 `includePublic` | boolean | false | When true the returned list includes public Workspaces.  |
 
-**Returns:** Promise\<[Workspace](../interfaces/workspace.md)[]>
+**Returns:** Promise\<[ILocalWorkspace](../interfaces/ilocalworkspace.md)[]>
 
 The list of Workspaces.
 
@@ -806,7 +806,7 @@ ___
 
 ▸ **getUserInfo**(): Promise\<[User](../interfaces/user.md)>
 
-*Defined in [AssistantAPIClient.ts:186](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L186)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:187*
 
 Gets the information about the current user.
 
@@ -823,9 +823,9 @@ ___
 
 ### getWorkspace
 
-▸ **getWorkspace**(`id?`: string): Promise\<[Maybe](../README.md#maybe)\<[Workspace](../interfaces/workspace.md)>>
+▸ **getWorkspace**(`id?`: string): Promise\<[Maybe](../README.md#maybe)\<[ILocalWorkspace](../interfaces/ilocalworkspace.md)>>
 
-*Defined in [AssistantAPIClient.ts:385](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L385)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:386*
 
 Returns the requested Workspace, if no Workspace ID is specified it returns
 the Workspace that the user is currently using.
@@ -844,7 +844,7 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `id?` | string | The ID of the Workspace to load.  |
 
-**Returns:** Promise\<[Maybe](../README.md#maybe)\<[Workspace](../interfaces/workspace.md)>>
+**Returns:** Promise\<[Maybe](../README.md#maybe)\<[ILocalWorkspace](../interfaces/ilocalworkspace.md)>>
 
 The requested Workspace.
 
@@ -854,7 +854,7 @@ ___
 
 ▸ **moveKindsAndFunctions**(`originId`: string, `targetId`: string, `kindIds`: string[], `functionIds`: string[]): Promise\<void>
 
-*Defined in [AssistantAPIClient.ts:814](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L814)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:815*
 
 Moves a collection of Kinds and Functions from the origin Workspace to the
 target Workspace.
@@ -884,7 +884,7 @@ ___
 
 ▸ **refreshServiceSchema**(`input`: string): Promise\<[Maybe](../README.md#maybe)\<[Service](../interfaces/service.md)>>
 
-*Defined in [AssistantAPIClient.ts:312](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L312)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:313*
 
 Refreshed the service information in the backend.  This is useful for
 making sure that the platform is working on the latest schema of an
@@ -911,7 +911,7 @@ ___
 
 ▸ **reloadServiceSchema**(`id`: string): Promise\<[Maybe](../README.md#maybe)\<[Service](../interfaces/service.md)>>
 
-*Defined in [AssistantAPIClient.ts:329](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L329)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:330*
 
 Has the UI reload the information about the service from the backend to
 make sure that it has fresh information.
@@ -937,7 +937,7 @@ ___
 
 ▸ **removeFunctionExecutionListener**(`id`: string, `cb`: [EventListenerCallback](../README.md#eventlistenercallback)): void
 
-*Defined in [AssistantAPIClient.ts:597](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L597)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:598*
 
 Removes a Function execution listener based on the function ID and a
 reference to the callback function. If no callback is supplied, all
@@ -963,7 +963,7 @@ ___
 
 ▸ **removeInventoryChangedListener**(`cb?`: (changes: [InventoryChanged](../interfaces/inventorychanged.md)) => void): void
 
-*Defined in [AssistantAPIClient.ts:786](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L786)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:787*
 
 Removes an inventory changed listener given the referenced callback. If no
 callback is specified, all listeners will be removed.
@@ -987,7 +987,7 @@ ___
 
 ▸ **removeLockingChangedListener**(`cb?`: (changes: [LockingChanged](../interfaces/lockingchanged.md)) => void): void
 
-*Defined in [AssistantAPIClient.ts:1028](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L1028)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:1029*
 
 Removes an locking changed listener given the referenced callback. If no
 callback is specified, all listeners will be removed.
@@ -1011,7 +1011,7 @@ ___
 
 ▸ **removeRenderModeChangedListener**(`cb`: (renderMode: [RenderMode](../enums/rendermode.md)) => void): void
 
-*Defined in [AssistantAPIClient.ts:885](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L885)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:886*
 
 Removed a listener from the render mode changed event, or all of them if
 one is not specified.
@@ -1035,7 +1035,7 @@ ___
 
 ▸ **removeRepairListener**(`cb?`: (workspaceId: string) => void): void
 
-*Defined in [AssistantAPIClient.ts:948](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L948)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:949*
 
 Removed a listener from the repair changed event, or all of them if one is
 not specified.
@@ -1057,9 +1057,9 @@ ___
 
 ### removeSelectionChangedListener
 
-▸ **removeSelectionChangedListener**(`cb?`: [EventListenerCallback](../README.md#eventlistenercallback)): void
+▸ **removeSelectionChangedListener**(`cb?`: [EventListenerCallback](../README.md#eventlistenercallback)): [removeSelectionChangedListener](assistantapiclient.md#removeselectionchangedlistener)
 
-*Defined in [AssistantAPIClient.ts:230](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L230)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:231*
 
 Removes a listener from the selection changed event, or all of them if no
 callback is defined.
@@ -1075,7 +1075,7 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `cb?` | [EventListenerCallback](../README.md#eventlistenercallback) | Callback function.  |
 
-**Returns:** void
+**Returns:** [removeSelectionChangedListener](assistantapiclient.md#removeselectionchangedlistener)
 
 ___
 
@@ -1083,7 +1083,7 @@ ___
 
 ▸ **reportError**(`error`: Error \| string): Promise\<void>
 
-*Defined in [AssistantAPIClient.ts:985](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L985)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:986*
 
 Reports an error to the UI to be displayed in the assistant's error log in
 the inventory panel. This call is not disruptive and designed to operated
@@ -1116,9 +1116,9 @@ ___
 
 ### setAssistantState
 
-▸ **setAssistantState**(`state`: [AssistantState](../enums/assistantstate.md)): Promise\<void>
+▸ **setAssistantState**(`state`: [AssistantState](../README.md#assistantstate)): Promise\<void>
 
-*Defined in [AssistantAPIClient.ts:157](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L157)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:158*
 
 This sets the current state of the assistant using the `AssistantState`
 enum. Setting a state of `WORKING` will create the 'working' status spinner
@@ -1152,7 +1152,7 @@ try {
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`state` | [AssistantState](../enums/assistantstate.md) | The new state of the assistant.  |
+`state` | [AssistantState](../README.md#assistantstate) | The new state of the assistant.  |
 
 **Returns:** Promise\<void>
 
@@ -1162,7 +1162,7 @@ ___
 
 ▸ **updateFunction**(`input`: [UpdateFunctionInput](../interfaces/updatefunctioninput.md)): Promise\<[Function](../interfaces/function.md)>
 
-*Defined in [AssistantAPIClient.ts:481](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L481)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:482*
 
 Updates a Function in the active workspace with the given information.
 
@@ -1185,7 +1185,7 @@ ___
 
 ▸ **updateKind**(`input`: [UpdateTypeInput](../interfaces/updatetypeinput.md)): Promise\<[Kind](../interfaces/kind.md)>
 
-*Defined in [AssistantAPIClient.ts:638](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L638)*
+*Defined in Clients/AssistantAPIClient/AssistantAPIClient.ts:639*
 
 Updates a Kind in the active workspace with the given information.
 

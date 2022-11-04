@@ -35,7 +35,7 @@
 
 • `Optional` **description**: string
 
-*Defined in [models.ts:82](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L82)*
+*Defined in Clients/AssistantAPIClient/models.ts:83*
 
 Human readable description of the entity.
 
@@ -45,7 +45,7 @@ ___
 
 •  **id**: string
 
-*Defined in [models.ts:73](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L73)*
+*Defined in Clients/AssistantAPIClient/models.ts:74*
 
 The ID of the entity.
 
@@ -55,7 +55,7 @@ ___
 
 •  **name**: string
 
-*Defined in [models.ts:76](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L76)*
+*Defined in Clients/AssistantAPIClient/models.ts:77*
 
 The name of the entity.
 
@@ -65,6 +65,6 @@ ___
 
 • `Optional` **nameDescriptor**: string
 
-*Defined in [models.ts:79](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L79)*
+*Defined in Clients/AssistantAPIClient/models.ts:80*
 
 Name of where the entity comes from (Service/Workspace).

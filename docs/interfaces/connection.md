@@ -4,6 +4,8 @@
 
 # Interface: Connection
 
+Connection type - the connection between two items on a graph.
+
 ## Hierarchy
 
 * **Connection**
@@ -22,7 +24,7 @@
 
 •  **from**: [GraphRef](../README.md#graphref)
 
-*Defined in [models.ts:131](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L131)*
+*Defined in Clients/AssistantAPIClient/models.ts:132*
 
 End point for the outgoing connection point
 
@@ -32,7 +34,7 @@ ___
 
 •  **id**: string
 
-*Defined in [models.ts:128](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L128)*
+*Defined in Clients/AssistantAPIClient/models.ts:129*
 
 ___
 
@@ -40,6 +42,6 @@ ___
 
 •  **to**: [GraphRef](../README.md#graphref)
 
-*Defined in [models.ts:134](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L134)*
+*Defined in Clients/AssistantAPIClient/models.ts:135*
 
 End point for the incoming connection point

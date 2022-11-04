@@ -4,6 +4,8 @@
 
 # Interface: CreateNodeInput
 
+CreateNode input - info needed for creating a new graph node
+
 ## Hierarchy
 
 * **CreateNodeInput**
@@ -26,7 +28,7 @@
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:688](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L688)*
+*Defined in Clients/AssistantAPIClient/models.ts:689*
 
 ___
 
@@ -34,7 +36,7 @@ ___
 
 • `Optional` **entity**: [Maybe](../README.md#maybe)\<[EntityIdentifier](entityidentifier.md)>
 
-*Defined in [models.ts:690](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L690)*
+*Defined in Clients/AssistantAPIClient/models.ts:691*
 
 ___
 
@@ -42,7 +44,7 @@ ___
 
 • `Optional` **id**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:685](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L685)*
+*Defined in Clients/AssistantAPIClient/models.ts:686*
 
 ___
 
@@ -50,7 +52,7 @@ ___
 
 • `Optional` **isCollapsed**: [Maybe](../README.md#maybe)\<string[]>
 
-*Defined in [models.ts:687](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L687)*
+*Defined in Clients/AssistantAPIClient/models.ts:688*
 
 ___
 
@@ -58,7 +60,7 @@ ___
 
 • `Optional` **location**: [Maybe](../README.md#maybe)\<[PositionInput](positioninput.md)>
 
-*Defined in [models.ts:686](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L686)*
+*Defined in Clients/AssistantAPIClient/models.ts:687*
 
 ___
 
@@ -66,7 +68,7 @@ ___
 
 • `Optional` **operation**: [Maybe](../README.md#maybe)\<[EntityIdentifier](entityidentifier.md)>
 
-*Defined in [models.ts:691](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L691)*
+*Defined in Clients/AssistantAPIClient/models.ts:692*
 
 ___
 
@@ -74,4 +76,4 @@ ___
 
 •  **type**: [NodeType](../enums/nodetype.md)
 
-*Defined in [models.ts:689](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L689)*
+*Defined in Clients/AssistantAPIClient/models.ts:690*

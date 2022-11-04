@@ -21,6 +21,7 @@ import {
 
 import { EventEmitter } from 'events';
 import postRobot from 'post-robot';
+import { ILocalWorkspace } from '../WorkspaceClient';
 
 /** @private */
 const eventEmitter = new EventEmitter();
@@ -382,7 +383,7 @@ export namespace AssistantAPIClient {
    *
    * @return The requested Workspace.
    */
-  export function getWorkspace(id?: string): Promise<Maybe<Workspace>> {
+  export function getWorkspace(id?: string): Promise<Maybe<ILocalWorkspace>> {
     return APICall('getWorkspace', id);
   }
 
@@ -397,7 +398,7 @@ export namespace AssistantAPIClient {
    */
   export function getUserAccessibleWorkspaces(
     includePublic = false
-  ): Promise<Workspace[]> {
+  ): Promise<ILocalWorkspace[]> {
     return APICall('getUserAccessibleWorkspaces', includePublic);
   }
 
@@ -411,7 +412,7 @@ export namespace AssistantAPIClient {
    */
   export function createWorkspace(
     workspace: CreateWorkspaceInput
-  ): Promise<Workspace> {
+  ): Promise<ILocalWorkspace> {
     return APICall('createWorkspace', workspace);
   }
 

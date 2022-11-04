@@ -21,7 +21,7 @@
 
 •  **platformUrl**: string
 
-*Defined in [models.ts:383](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L383)*
+*Defined in Clients/AssistantAPIClient/models.ts:384*
 
 A form of the URL that uses the Maana Q platform to proxy a request to the
 service. This is useful if the client cannot directly access the service.
@@ -30,8 +30,10 @@ ___
 
 ### url
 
-•  **url**: string
+•  **url**: Scalars[\"String\"]
 
-*Defined in [models.ts:377](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L377)*
+*Defined in Clients/AssistantAPIClient/models.ts:378*
+
+*Defined in types/all-types.ts:1909*
 
 The URL that the locator references.

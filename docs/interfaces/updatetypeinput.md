@@ -4,6 +4,9 @@
 
 # Interface: UpdateTypeInput
 
+UpdateType input - Used to update the information about a type.  Allows for a
+partial update of the Type based on the fields defined in the input.
+
 ## Hierarchy
 
 * **UpdateTypeInput**
@@ -24,7 +27,7 @@
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:822](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L822)*
+*Defined in Clients/AssistantAPIClient/models.ts:823*
 
 ___
 
@@ -32,7 +35,7 @@ ___
 
 •  **id**: string
 
-*Defined in [models.ts:820](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L820)*
+*Defined in Clients/AssistantAPIClient/models.ts:821*
 
 ___
 
@@ -40,7 +43,7 @@ ___
 
 • `Optional` **isManaged**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:824](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L824)*
+*Defined in Clients/AssistantAPIClient/models.ts:825*
 
 ___
 
@@ -48,7 +51,7 @@ ___
 
 • `Optional` **name**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:821](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L821)*
+*Defined in Clients/AssistantAPIClient/models.ts:822*
 
 ___
 
@@ -56,4 +59,4 @@ ___
 
 • `Optional` **signature**: [Maybe](../README.md#maybe)\<[TypeExpressionObject](../README.md#typeexpressionobject)>
 
-*Defined in [models.ts:823](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L823)*
+*Defined in Clients/AssistantAPIClient/models.ts:824*

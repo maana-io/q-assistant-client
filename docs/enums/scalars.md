@@ -5,6 +5,7 @@
 # Enumeration: Scalars
 
 Names of the default Scalars
+All built-in and custom scalars, mapped to their actual values
 
 ## Index
 
@@ -26,7 +27,7 @@ Names of the default Scalars
 
 •  **BOOLEAN**:  = "Boolean"
 
-*Defined in [constants.ts:28](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L28)*
+*Defined in Clients/AssistantAPIClient/constants.ts:25*
 
 ___
 
@@ -34,7 +35,7 @@ ___
 
 •  **DATE**:  = "Date"
 
-*Defined in [constants.ts:29](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L29)*
+*Defined in Clients/AssistantAPIClient/constants.ts:26*
 
 ___
 
@@ -42,7 +43,7 @@ ___
 
 •  **DATETIME**:  = "DateTime"
 
-*Defined in [constants.ts:31](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L31)*
+*Defined in Clients/AssistantAPIClient/constants.ts:28*
 
 ___
 
@@ -50,7 +51,7 @@ ___
 
 •  **FLOAT**:  = "Float"
 
-*Defined in [constants.ts:27](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L27)*
+*Defined in Clients/AssistantAPIClient/constants.ts:24*
 
 ___
 
@@ -58,7 +59,7 @@ ___
 
 •  **ID**:  = "ID"
 
-*Defined in [constants.ts:33](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L33)*
+*Defined in Clients/AssistantAPIClient/constants.ts:30*
 
 ___
 
@@ -66,7 +67,7 @@ ___
 
 •  **INT**:  = "Int"
 
-*Defined in [constants.ts:26](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L26)*
+*Defined in Clients/AssistantAPIClient/constants.ts:23*
 
 ___
 
@@ -74,7 +75,7 @@ ___
 
 •  **JSON**:  = "JSON"
 
-*Defined in [constants.ts:32](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L32)*
+*Defined in Clients/AssistantAPIClient/constants.ts:29*
 
 ___
 
@@ -82,7 +83,7 @@ ___
 
 •  **STRING**:  = "String"
 
-*Defined in [constants.ts:34](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L34)*
+*Defined in Clients/AssistantAPIClient/constants.ts:31*
 
 ___
 
@@ -90,4 +91,4 @@ ___
 
 •  **TIME**:  = "Time"
 
-*Defined in [constants.ts:30](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L30)*
+*Defined in Clients/AssistantAPIClient/constants.ts:27*

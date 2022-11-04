@@ -4,6 +4,8 @@
 
 # Interface: UpdateEntityInput
 
+UpdateEntity input - A generic input for updating an entity.
+
 ## Hierarchy
 
 * **UpdateEntityInput**
@@ -25,7 +27,7 @@
 
 • `Optional` **annotation**: [Maybe](../README.md#maybe)\<[UpdateAnnotationInput](updateannotationinput.md)>
 
-*Defined in [models.ts:865](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L865)*
+*Defined in Clients/AssistantAPIClient/models.ts:866*
 
 ___
 
@@ -33,7 +35,7 @@ ___
 
 •  **entityType**: [EntityType](../enums/entitytype.md)
 
-*Defined in [models.ts:860](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L860)*
+*Defined in Clients/AssistantAPIClient/models.ts:861*
 
 ___
 
@@ -41,7 +43,7 @@ ___
 
 • `Optional` **file**: [Maybe](../README.md#maybe)\<[UpdateFileInput](updatefileinput.md)>
 
-*Defined in [models.ts:864](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L864)*
+*Defined in Clients/AssistantAPIClient/models.ts:865*
 
 ___
 
@@ -49,7 +51,7 @@ ___
 
 • `Optional` **function**: [Maybe](../README.md#maybe)\<[UpdateFunctionInput](updatefunctioninput.md)>
 
-*Defined in [models.ts:863](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L863)*
+*Defined in Clients/AssistantAPIClient/models.ts:864*
 
 ___
 
@@ -57,7 +59,7 @@ ___
 
 • `Optional` **knowledgeGraph**: [Maybe](../README.md#maybe)\<[UpdateKnowledgeGraphInput](updateknowledgegraphinput.md)>
 
-*Defined in [models.ts:861](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L861)*
+*Defined in Clients/AssistantAPIClient/models.ts:862*
 
 ___
 
@@ -65,4 +67,4 @@ ___
 
 • `Optional` **type**: [Maybe](../README.md#maybe)\<[UpdateTypeInput](updatetypeinput.md)>
 
-*Defined in [models.ts:862](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L862)*
+*Defined in Clients/AssistantAPIClient/models.ts:863*

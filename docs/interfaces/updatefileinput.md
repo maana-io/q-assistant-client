@@ -4,6 +4,9 @@
 
 # Interface: UpdateFileInput
 
+UpdateFile input - used to update existing files. Only the fields with
+information added to them in the input are updated.
+
 ## Hierarchy
 
 * **UpdateFileInput**
@@ -29,7 +32,7 @@
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:849](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L849)*
+*Defined in Clients/AssistantAPIClient/models.ts:850*
 
 ___
 
@@ -37,7 +40,7 @@ ___
 
 •  **id**: string
 
-*Defined in [models.ts:847](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L847)*
+*Defined in Clients/AssistantAPIClient/models.ts:848*
 
 ___
 
@@ -45,7 +48,7 @@ ___
 
 • `Optional` **mimeType**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:853](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L853)*
+*Defined in Clients/AssistantAPIClient/models.ts:854*
 
 ___
 
@@ -53,7 +56,7 @@ ___
 
 • `Optional` **name**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:848](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L848)*
+*Defined in Clients/AssistantAPIClient/models.ts:849*
 
 ___
 
@@ -61,7 +64,7 @@ ___
 
 • `Optional` **progress**: [Maybe](../README.md#maybe)\<number>
 
-*Defined in [models.ts:855](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L855)*
+*Defined in Clients/AssistantAPIClient/models.ts:856*
 
 ___
 
@@ -69,7 +72,7 @@ ___
 
 • `Optional` **serviceId**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:850](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L850)*
+*Defined in Clients/AssistantAPIClient/models.ts:851*
 
 ___
 
@@ -77,7 +80,7 @@ ___
 
 • `Optional` **size**: [Maybe](../README.md#maybe)\<number>
 
-*Defined in [models.ts:854](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L854)*
+*Defined in Clients/AssistantAPIClient/models.ts:855*
 
 ___
 
@@ -85,7 +88,7 @@ ___
 
 • `Optional` **status**: [Maybe](../README.md#maybe)\<number>
 
-*Defined in [models.ts:856](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L856)*
+*Defined in Clients/AssistantAPIClient/models.ts:857*
 
 ___
 
@@ -93,7 +96,7 @@ ___
 
 • `Optional` **thumbnailUrl**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:852](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L852)*
+*Defined in Clients/AssistantAPIClient/models.ts:853*
 
 ___
 
@@ -101,4 +104,4 @@ ___
 
 • `Optional` **url**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:851](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L851)*
+*Defined in Clients/AssistantAPIClient/models.ts:852*

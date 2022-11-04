@@ -5,6 +5,8 @@
 # Enumeration: FunctionType
 
 The types of a functions.
+FunctionType enum - The different types of functions that a function can
+represent.
 
 ## Index
 
@@ -19,7 +21,9 @@ The types of a functions.
 
 •  **CKG**:  = "CKG"
 
-*Defined in [constants.ts:74](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L74)*
+*Defined in Clients/AssistantAPIClient/constants.ts:71*
+
+*Defined in types/all-types.ts:854*
 
 ___
 
@@ -27,4 +31,6 @@ ___
 
 •  **EXTERNAL**:  = "EXTERNAL"
 
-*Defined in [constants.ts:73](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L73)*
+*Defined in Clients/AssistantAPIClient/constants.ts:70*
+
+*Defined in types/all-types.ts:853*

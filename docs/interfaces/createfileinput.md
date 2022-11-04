@@ -4,6 +4,8 @@
 
 # Interface: CreateFileInput
 
+CreateFile input - used to create new files
+
 ## Hierarchy
 
 * **CreateFileInput**
@@ -30,7 +32,7 @@
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:766](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L766)*
+*Defined in Clients/AssistantAPIClient/models.ts:767*
 
 ___
 
@@ -38,7 +40,7 @@ ___
 
 • `Optional` **id**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:764](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L764)*
+*Defined in Clients/AssistantAPIClient/models.ts:765*
 
 ___
 
@@ -46,7 +48,7 @@ ___
 
 • `Optional` **loadExternalMetadata**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:774](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L774)*
+*Defined in Clients/AssistantAPIClient/models.ts:775*
 
 ___
 
@@ -54,7 +56,7 @@ ___
 
 • `Optional` **mimeType**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:770](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L770)*
+*Defined in Clients/AssistantAPIClient/models.ts:771*
 
 ___
 
@@ -62,7 +64,7 @@ ___
 
 • `Optional` **name**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:765](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L765)*
+*Defined in Clients/AssistantAPIClient/models.ts:766*
 
 ___
 
@@ -70,7 +72,7 @@ ___
 
 • `Optional` **progress**: [Maybe](../README.md#maybe)\<number>
 
-*Defined in [models.ts:772](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L772)*
+*Defined in Clients/AssistantAPIClient/models.ts:773*
 
 ___
 
@@ -78,7 +80,7 @@ ___
 
 •  **serviceId**: string
 
-*Defined in [models.ts:767](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L767)*
+*Defined in Clients/AssistantAPIClient/models.ts:768*
 
 ___
 
@@ -86,7 +88,7 @@ ___
 
 • `Optional` **size**: [Maybe](../README.md#maybe)\<number>
 
-*Defined in [models.ts:771](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L771)*
+*Defined in Clients/AssistantAPIClient/models.ts:772*
 
 ___
 
@@ -94,7 +96,7 @@ ___
 
 • `Optional` **status**: [Maybe](../README.md#maybe)\<number>
 
-*Defined in [models.ts:773](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L773)*
+*Defined in Clients/AssistantAPIClient/models.ts:774*
 
 ___
 
@@ -102,7 +104,7 @@ ___
 
 • `Optional` **thumbnailUrl**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:769](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L769)*
+*Defined in Clients/AssistantAPIClient/models.ts:770*
 
 ___
 
@@ -110,4 +112,4 @@ ___
 
 •  **url**: string
 
-*Defined in [models.ts:768](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L768)*
+*Defined in Clients/AssistantAPIClient/models.ts:769*

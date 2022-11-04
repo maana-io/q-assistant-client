@@ -33,7 +33,7 @@
 
 *Inherited from [Entity](entity.md).[description](entity.md#description)*
 
-*Defined in [models.ts:82](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L82)*
+*Defined in Clients/AssistantAPIClient/models.ts:83*
 
 Human readable description of the entity.
 
@@ -45,7 +45,7 @@ ___
 
 *Inherited from [Entity](entity.md).[id](entity.md#id)*
 
-*Defined in [models.ts:73](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L73)*
+*Defined in Clients/AssistantAPIClient/models.ts:74*
 
 The ID of the entity.
 
@@ -55,7 +55,7 @@ ___
 
 •  **location**: [ServiceLocation](servicelocation.md)
 
-*Defined in [models.ts:421](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L421)*
+*Defined in Clients/AssistantAPIClient/models.ts:422*
 
 The location that the Assistant can be reached at.
 
@@ -67,7 +67,7 @@ ___
 
 *Inherited from [Entity](entity.md).[name](entity.md#name)*
 
-*Defined in [models.ts:76](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L76)*
+*Defined in Clients/AssistantAPIClient/models.ts:77*
 
 The name of the entity.
 
@@ -79,7 +79,7 @@ ___
 
 *Inherited from [Entity](entity.md).[nameDescriptor](entity.md#namedescriptor)*
 
-*Defined in [models.ts:79](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L79)*
+*Defined in Clients/AssistantAPIClient/models.ts:80*
 
 Name of where the entity comes from (Service/Workspace).
 
@@ -89,7 +89,7 @@ ___
 
 •  **version**: number
 
-*Defined in [models.ts:427](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L427)*
+*Defined in Clients/AssistantAPIClient/models.ts:428*
 
 The current version of the Assistant.  This is incremented by catalog each
 time the Assistant is updated.
@@ -100,7 +100,7 @@ time the Assistant is updated.
 
 ▸ **update**(`changes`: [UpdateAssistantInput](updateassistantinput.md)): Promise\<void>
 
-*Defined in [models.ts:433](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L433)*
+*Defined in Clients/AssistantAPIClient/models.ts:434*
 
 Updates information about the Assistant.
 

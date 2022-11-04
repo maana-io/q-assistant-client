@@ -1,15 +1,18 @@
-import AssistantAPIClient, {
-  IService,
-  IUpdateFunctionInput,
-} from '@io-maana/q-assistant-client';
 import { v4 as uuid } from 'uuid';
 import { SearchCriteria, CKGClient, ServiceClient } from '.';
+import {
+  CreateServiceInput,
+  UpdateFunctionInput
+} from './AssistantAPIClient/models';
 import {
   QFunction,
   QUpdateFunctionInput,
   CreateFunctionInput,
-  QKind,
+  QKind
 } from '../types';
+import { AssistantAPIClient } from './AssistantAPIClient/AssistantAPIClient';
+import { KindClient } from './KindClient';
+import { FunctionClient } from './FunctionClient';
 
 export interface ILocalWorkspace {
   id: string;
@@ -20,11 +23,13 @@ export interface ILocalWorkspace {
   endpointServiceId: string;
   currentSelection: any;
   knowledgeGraphs: any[];
-  updateFunction?: (input: QUpdateFunctionInput) => Promise<any>;
-  updateFunctions?: (input: QUpdateFunctionInput[]) => Promise<any>;
+  updateFunction?: (input: UpdateFunctionInput) => Promise<any>;
+  updateFunctions?: (input: UpdateFunctionInput[]) => Promise<any>;
   importService?: (id: string) => Promise<any>;
   createFunction?: (input: CreateFunctionInput) => Promise<any>;
   createKind?: (input: any) => Promise<any>;
+  getKinds?: () => Promise<KindClient[]>;
+  getFunctions?: () => Promise<FunctionClient[]>;
 }
 
 export class WorkspaceClient {
@@ -44,51 +49,52 @@ export class WorkspaceClient {
     return this._self.id;
   }
 
+  /**
+   * @deprecated Not found to be used by any assistant.
+   */
   async addFunctionToGraph(
-    kgFunction: IUpdateFunctionInput,
-    implementationFunction: IUpdateFunctionInput,
+    kgFunction: UpdateFunctionInput,
+    implementationFunction: UpdateFunctionInput
   ) {
-    if (!implementationFunction.arguments) {
-      throw new Error('implementationFunction.arguments must be defined');
-    }
-
-    if (!kgFunction || !kgFunction.arguments) {
-      throw new Error('kgFunction.arguments must be defined');
-    }
-
-    const operationId = uuid();
-    const argumentValues = implementationFunction.arguments.map(
-      (argument, key) => {
-        return {
-          argument: argument.id,
-          operation: null,
-          // @ts-ignore
-          argumentRef: kgFunction.arguments[key].id,
-        };
-      },
-    );
-
-    const updatedFunction: IUpdateFunctionInput = {
-      id: kgFunction.id,
-      name: kgFunction.name,
-      implementation: {
-        entrypoint: operationId,
-        operations: [
-          {
-            id: operationId,
-            function: implementationFunction.id,
-            type: 'APPLY',
-            argumentValues,
-          },
-        ],
-      },
-    };
-
-    const node = await AssistantAPIClient.updateFunction(updatedFunction);
-    return node;
+    // ! no idea where this came from or where the types are from - Eric
+    // ! Darrell made this but apparently nothing uses it? - Eric
+    // if (!implementationFunction.arguments) {
+    //   throw new Error('implementationFunction.arguments must be defined');
+    // }
+    // if (!kgFunction || !kgFunction.arguments) {
+    //   throw new Error('kgFunction.arguments must be defined');
+    // }
+    // const operationId = uuid();
+    // const argumentValues = implementationFunction.arguments.map(
+    //   (argument, key) => {
+    //     return {
+    //       argument: argument.id,
+    //       operation: null,
+    //       // @ts-ignore
+    //       argumentRef: kgFunction.arguments[key].id
+    //     };
+    //   }
+    // );
+    // const updatedFunction: UpdateFunctionInput = {
+    //   id: kgFunction.id,
+    //   name: kgFunction.name,
+    //   implementation: {
+    //     entrypoint: operationId,
+    //     operations: [
+    //       {
+    //         id: operationId,
+    //         function: implementationFunction.id,
+    //         type: 'APPLY',
+    //         argumentValues
+    //       }
+    //     ]
+    //   }
+    // };
+    // const node = await this._self.updateFunction(updatedFunction);
+    // return node;
   }
 
-  async addServiceToWorkspace(service: IService) {
+  async addServiceToWorkspace(service: CreateServiceInput) {
     try {
       const createdService = await AssistantAPIClient.createService(service);
       console.log('CREATED SERVICE', createdService);
@@ -96,7 +102,7 @@ export class WorkspaceClient {
       console.log('didnt create service', e);
     }
 
-    await AssistantAPIClient.importService(service.id);
+    await this._self.importService(service.id);
     const updatedWorkspace = await AssistantAPIClient.getWorkspace();
     console.log(updatedWorkspace);
     return service;
@@ -114,7 +120,7 @@ export class WorkspaceClient {
       await AssistantAPIClient.executeGraphql({
         serviceId,
         query: 'mutation { clearCache } ',
-        variables: {},
+        variables: {}
       });
     } catch (e) {
       console.error('Failed clearing cache', e);
@@ -136,30 +142,30 @@ export class WorkspaceClient {
     return found != null;
   }
 
-  async updateFunction(input: QUpdateFunctionInput): Promise<void> {
+  async updateFunction(input: UpdateFunctionInput): Promise<void> {
     if (this._self.updateFunction)
       return await this._self.updateFunction(input);
     return;
   }
 
-  async updateFunctions(inputs: QUpdateFunctionInput[]): Promise<void> {
+  async updateFunctions(inputs: UpdateFunctionInput[]): Promise<void> {
     if (this._self.updateFunctions)
       return await this._self.updateFunctions(inputs);
     return;
   }
 
   async getService(
-    searchCriteria: SearchCriteria,
+    searchCriteria: SearchCriteria
   ): Promise<null | ServiceClient> {
-    const throwErr = reason => {
+    const throwErr = (reason: string) => {
       throw new Error(`Can't find service. ${reason}`);
     };
-    const nonNulls = [Object.values(searchCriteria)].filter(x => x != null);
+    const nonNulls = [Object.values(searchCriteria)].filter((x) => x != null);
     if (nonNulls.length < 1) throwErr('No search criteria provided');
     if (nonNulls.length > 1) throwErr('Too many search criteria provided');
     const found = this._self.services?.find(
-      func =>
-        func.id === searchCriteria.id || func.name === searchCriteria.name,
+      (func) =>
+        func.id === searchCriteria.id || func.name === searchCriteria.name
     );
     return found ?? null;
   }
@@ -170,20 +176,20 @@ export class WorkspaceClient {
   }
 
   async getKind(searchCriteria: SearchCriteria): Promise<null | QKind> {
-    const throwErr = reason => {
+    const throwErr = (reason: string) => {
       throw new Error(`Can't find kind. ${reason}`);
     };
-    const nonNulls = [Object.values(searchCriteria)].filter(x => x != null);
+    const nonNulls = [Object.values(searchCriteria)].filter((x) => x != null);
     if (nonNulls.length < 1) throwErr('No search criteria provided');
     if (nonNulls.length > 1) throwErr('Too many search criteria provided');
     const found = this._self.kinds?.find(
-      k => k.id === searchCriteria.id || k.name === searchCriteria.name,
+      (k) => k.id === searchCriteria.id || k.name === searchCriteria.name
     );
     return found;
   }
 
   async getServices(): Promise<ServiceClient[]> {
-    return this._self.services.map(x => new ServiceClient(x, this._client));
+    return this._self.services.map((x) => new ServiceClient(x, this._client));
   }
 
   async createFunction(input: CreateFunctionInput): Promise<any> {
@@ -197,15 +203,15 @@ export class WorkspaceClient {
   }
 
   async getFunction(searchCriteria: SearchCriteria): Promise<null | QFunction> {
-    const throwErr = reason => {
+    const throwErr = (reason: string) => {
       throw new Error(`Can't find function. ${reason}`);
     };
-    const nonNulls = [Object.values(searchCriteria)].filter(x => x != null);
+    const nonNulls = [Object.values(searchCriteria)].filter((x) => x != null);
     if (nonNulls.length < 1) throwErr('No search criteria provided');
     if (nonNulls.length > 1) throwErr('Too many search criteria provided');
     const found = this._self.functions?.find(
-      func =>
-        func.id === searchCriteria.id || func.name === searchCriteria.name,
+      (func) =>
+        func.id === searchCriteria.id || func.name === searchCriteria.name
     );
     return found;
   }
@@ -219,7 +225,7 @@ export class WorkspaceClient {
     await this._client.executeGraphQL(
       this.serviceId,
       'mutation { clearCache } ',
-      {},
+      {}
     );
   };
 

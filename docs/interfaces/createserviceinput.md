@@ -28,7 +28,7 @@
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:667](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L667)*
+*Defined in Clients/AssistantAPIClient/models.ts:668*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 •  **endpointUrl**: string
 
-*Defined in [models.ts:668](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L668)*
+*Defined in Clients/AssistantAPIClient/models.ts:669*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • `Optional` **id**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:664](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L664)*
+*Defined in Clients/AssistantAPIClient/models.ts:665*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • `Optional` **isReadOnly**: boolean
 
-*Defined in [models.ts:671](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L671)*
+*Defined in Clients/AssistantAPIClient/models.ts:672*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • `Optional` **isSystem**: boolean
 
-*Defined in [models.ts:670](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L670)*
+*Defined in Clients/AssistantAPIClient/models.ts:671*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 •  **name**: string
 
-*Defined in [models.ts:666](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L666)*
+*Defined in Clients/AssistantAPIClient/models.ts:667*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 •  **serviceType**: [ServiceType](../enums/servicetype.md)
 
-*Defined in [models.ts:665](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L665)*
+*Defined in Clients/AssistantAPIClient/models.ts:666*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 • `Optional` **tags**: Array\<string>
 
-*Defined in [models.ts:672](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L672)*
+*Defined in Clients/AssistantAPIClient/models.ts:673*
 
 ___
 
@@ -92,4 +92,4 @@ ___
 
 • `Optional` **thumbnailUrl**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:669](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L669)*
+*Defined in Clients/AssistantAPIClient/models.ts:670*

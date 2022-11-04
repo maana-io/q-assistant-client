@@ -4,6 +4,8 @@
 
 # Interface: PositionInput
 
+Position input - used to define location or offset on a graph
+
 ## Hierarchy
 
 * **PositionInput**
@@ -21,7 +23,7 @@
 
 • `Optional` **x**: [Maybe](../README.md#maybe)\<number>
 
-*Defined in [models.ts:680](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L680)*
+*Defined in Clients/AssistantAPIClient/models.ts:681*
 
 ___
 
@@ -29,4 +31,4 @@ ___
 
 • `Optional` **y**: [Maybe](../README.md#maybe)\<number>
 
-*Defined in [models.ts:681](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L681)*
+*Defined in Clients/AssistantAPIClient/models.ts:682*

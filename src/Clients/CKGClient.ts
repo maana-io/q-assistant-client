@@ -1,8 +1,6 @@
-import AssistantAPIClient, {
-  IService,
-  IUpdateFunctionInput,
-  IFunction,
-} from '@io-maana/q-assistant-client';
+// todo: fix
+// @ts-nocheck
+import AssistantAPIClient from './AssistantAPIClient';
 import { WorkspaceClient, ILocalWorkspace, LambdaClient } from '.';
 import { flatten } from 'lodash';
 import { recursivelyRemoveKeys } from './helpers';
@@ -21,13 +19,13 @@ export class CKGClient {
     const kinds = await workspace.getKinds();
     // console.log('Kinds:', kinds)
     const functions = await workspace.getFunctions();
-    const fids = functions.map((f: IFunction) => f.id);
+    const fids = functions.map((f) => f.id);
 
     const functionsWithEverything = await Promise.all(
       fids.map(async (fid: string) => {
         const res = await AssistantAPIClient.getFunctionById(fid);
         return JSON.parse(JSON.stringify(res));
-      }),
+      })
     );
 
     const importedServices = await workspace.getImportedServices();
@@ -42,19 +40,25 @@ export class CKGClient {
           id,
           name,
           kinds,
-          functions,
+          functions
         };
-      }),
+      })
     );
 
-    const servicesKinds = flatten(services.map(service => service.kinds));
+    const servicesKinds = flatten(services.map((service) => service.kinds));
     const allKinds = [...kinds, ...servicesKinds];
+    // todo: fix
+    // @ts-ignore
     const graphPromises = await workspace.getKnowledgeGraphs();
 
     const knowledgeGraphs = await Promise.all(
-      graphPromises.map(async (graphPromise: any) => {
+      // todo: fix
+      // @ts-ignore
+      graphPromises.map(async (graphPromise: Promise<unknown>) => {
         const graph = await graphPromise;
         // console.log('graph', graph)
+        // todo: fix
+        // @ts-ignore
         const nodes = graph ? await graph.getNodes() : null;
         // console.log('nodes', JSON.stringify(nodes))
 
@@ -73,11 +77,11 @@ export class CKGClient {
                         );
                       })
                     : null;
-                },
-              ),
+                }
+              )
             )
           : [];
-      }),
+      })
     );
 
     let localWorkspace: ILocalWorkspace = {
@@ -90,7 +94,7 @@ export class CKGClient {
         .split('/service/')[1]
         .split('/graphql')[0],
       currentSelection: currentSelection.selection[0],
-      knowledgeGraphs,
+      knowledgeGraphs
     };
 
     localWorkspace = recursivelyRemoveKeys(localWorkspace, ['__typename']);
@@ -102,15 +106,16 @@ export class CKGClient {
     const LAMBDA_SERIVCE_ID = 'io.maana.lambda-server';
     async function getLambdaServiceBaseUrl(): Promise<string> {
       try {
-        const lambdaServiceQueryResult =
-          await AssistantAPIClient.executeGraphql({
+        const lambdaServiceQueryResult = await AssistantAPIClient.executeGraphql(
+          {
             serviceId: 'io.maana.catalog',
             query:
               'query getLambda($lambdaServiceId: ID!){ service(id: $lambdaServiceId) { endpointUrl } }',
             variables: {
-              lambdaServiceId: LAMBDA_SERIVCE_ID,
-            },
-          });
+              lambdaServiceId: LAMBDA_SERIVCE_ID
+            }
+          }
+        );
 
         const { data } = lambdaServiceQueryResult;
         const { service } = data;
@@ -131,13 +136,13 @@ export class CKGClient {
   async executeGraphQL(
     serviceId: string,
     query: string,
-    variables?: Record<string, any>,
+    variables?: Record<string, any>
   ) {
     try {
       const result = await AssistantAPIClient.executeGraphql({
         serviceId,
         query,
-        variables,
+        variables
       });
       return result;
     } catch (e) {

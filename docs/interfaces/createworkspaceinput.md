@@ -4,6 +4,8 @@
 
 # Interface: CreateWorkspaceInput
 
+CreateWorkspace input - used to create new workspaces
+
 ## Hierarchy
 
 * **CreateWorkspaceInput**
@@ -31,7 +33,7 @@
 
 • `Optional` **addServices**: [Maybe](../README.md#maybe)\<Array\<string>>
 
-*Defined in [models.ts:879](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L879)*
+*Defined in Clients/AssistantAPIClient/models.ts:880*
 
 ___
 
@@ -39,7 +41,7 @@ ___
 
 • `Optional` **createEntities**: [Maybe](../README.md#maybe)\<Array\<[CreateEntityInput](createentityinput.md)>>
 
-*Defined in [models.ts:878](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L878)*
+*Defined in Clients/AssistantAPIClient/models.ts:879*
 
 ___
 
@@ -47,7 +49,7 @@ ___
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:872](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L872)*
+*Defined in Clients/AssistantAPIClient/models.ts:873*
 
 ___
 
@@ -55,7 +57,7 @@ ___
 
 • `Optional` **id**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:869](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L869)*
+*Defined in Clients/AssistantAPIClient/models.ts:870*
 
 ___
 
@@ -63,7 +65,7 @@ ___
 
 • `Optional` **isPublic**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:876](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L876)*
+*Defined in Clients/AssistantAPIClient/models.ts:877*
 
 ___
 
@@ -71,7 +73,7 @@ ___
 
 • `Optional` **isTemplate**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:877](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L877)*
+*Defined in Clients/AssistantAPIClient/models.ts:878*
 
 ___
 
@@ -79,7 +81,7 @@ ___
 
 • `Optional` **moveEntities**: [Maybe](../README.md#maybe)\<Array\<[EntityIdentifier](entityidentifier.md)>>
 
-*Defined in [models.ts:885](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L885)*
+*Defined in Clients/AssistantAPIClient/models.ts:886*
 
 Moves the given entities from their current Workspace to this one.
 Currently only Types and Functions support being moved between Workspaces.
@@ -90,7 +92,7 @@ ___
 
 •  **name**: string
 
-*Defined in [models.ts:871](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L871)*
+*Defined in Clients/AssistantAPIClient/models.ts:872*
 
 ___
 
@@ -98,7 +100,7 @@ ___
 
 •  **owner**: string
 
-*Defined in [models.ts:875](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L875)*
+*Defined in Clients/AssistantAPIClient/models.ts:876*
 
 ___
 
@@ -106,7 +108,7 @@ ___
 
 • `Optional` **serviceId**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:870](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L870)*
+*Defined in Clients/AssistantAPIClient/models.ts:871*
 
 ___
 
@@ -114,7 +116,7 @@ ___
 
 • `Optional` **tags**: [Maybe](../README.md#maybe)\<Array\<string>>
 
-*Defined in [models.ts:874](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L874)*
+*Defined in Clients/AssistantAPIClient/models.ts:875*
 
 ___
 
@@ -122,4 +124,4 @@ ___
 
 • `Optional` **thumbnailUrl**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:873](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L873)*
+*Defined in Clients/AssistantAPIClient/models.ts:874*

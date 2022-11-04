@@ -25,7 +25,7 @@ errors that caused the this error to be returned.
 
 • `Optional` **cause**: [Maybe](../README.md#maybe)\<[ErrorLike](errorlike.md)[]>
 
-*Defined in [models.ts:32](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L32)*
+*Defined in Clients/AssistantAPIClient/models.ts:33*
 
 A list of errors like objects that were the cause of this error.
 
@@ -35,6 +35,6 @@ ___
 
 •  **message**: string
 
-*Defined in [models.ts:29](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L29)*
+*Defined in Clients/AssistantAPIClient/models.ts:30*
 
 The top level message for the error.

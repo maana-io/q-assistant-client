@@ -6,6 +6,7 @@
 
 The different entity types used in entity identifiers, like the ones returned
 from selection or used in graph nodes.
+EntityType enum - known entity types
 
 ## Index
 
@@ -31,7 +32,7 @@ from selection or used in graph nodes.
 
 •  **ACTIVITY**:  = "ACTIVITY"
 
-*Defined in [constants.ts:56](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L56)*
+*Defined in Clients/AssistantAPIClient/constants.ts:53*
 
 ___
 
@@ -39,7 +40,9 @@ ___
 
 •  **ANNOTATION**:  = "ANNOTATION"
 
-*Defined in [constants.ts:42](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L42)*
+*Defined in Clients/AssistantAPIClient/constants.ts:39*
+
+*Defined in types/all-types.ts:657*
 
 ___
 
@@ -47,7 +50,7 @@ ___
 
 •  **CONNECTION**:  = "CONNECTION"
 
-*Defined in [constants.ts:52](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L52)*
+*Defined in Clients/AssistantAPIClient/constants.ts:49*
 
 ___
 
@@ -55,7 +58,9 @@ ___
 
 •  **FILE**:  = "FILE"
 
-*Defined in [constants.ts:43](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L43)*
+*Defined in Clients/AssistantAPIClient/constants.ts:40*
+
+*Defined in types/all-types.ts:656*
 
 ___
 
@@ -63,7 +68,9 @@ ___
 
 •  **FUNCTION**:  = "FUNCTION"
 
-*Defined in [constants.ts:44](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L44)*
+*Defined in Clients/AssistantAPIClient/constants.ts:41*
+
+*Defined in types/all-types.ts:655*
 
 ___
 
@@ -71,7 +78,7 @@ ___
 
 •  **FUNCTION\_ARGUMENTS**:  = "FUNCTION\_ARGUMENTS"
 
-*Defined in [constants.ts:53](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L53)*
+*Defined in Clients/AssistantAPIClient/constants.ts:50*
 
 ___
 
@@ -79,7 +86,7 @@ ___
 
 •  **FUNCTION\_OUTPUT**:  = "FUNCTION\_OUTPUT"
 
-*Defined in [constants.ts:54](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L54)*
+*Defined in Clients/AssistantAPIClient/constants.ts:51*
 
 ___
 
@@ -87,7 +94,7 @@ ___
 
 •  **GRAPH\_NODE**:  = "GRAPH\_NODE"
 
-*Defined in [constants.ts:55](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L55)*
+*Defined in Clients/AssistantAPIClient/constants.ts:52*
 
 ___
 
@@ -95,7 +102,9 @@ ___
 
 •  **KNOWLEDGE\_GRAPH**:  = "KNOWLEDGE\_GRAPH"
 
-*Defined in [constants.ts:45](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L45)*
+*Defined in Clients/AssistantAPIClient/constants.ts:42*
+
+*Defined in types/all-types.ts:653*
 
 ___
 
@@ -103,7 +112,9 @@ ___
 
 •  **SERVICE**:  = "SERVICE"
 
-*Defined in [constants.ts:46](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L46)*
+*Defined in Clients/AssistantAPIClient/constants.ts:43*
+
+*Defined in types/all-types.ts:652*
 
 ___
 
@@ -111,7 +122,9 @@ ___
 
 •  **TYPE**:  = "TYPE"
 
-*Defined in [constants.ts:47](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L47)*
+*Defined in Clients/AssistantAPIClient/constants.ts:44*
+
+*Defined in types/all-types.ts:654*
 
 ___
 
@@ -119,7 +132,7 @@ ___
 
 •  **VALUE**:  = "VALUE"
 
-*Defined in [constants.ts:48](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L48)*
+*Defined in Clients/AssistantAPIClient/constants.ts:45*
 
 ___
 
@@ -127,4 +140,6 @@ ___
 
 •  **WORKSPACE**:  = "WORKSPACE"
 
-*Defined in [constants.ts:49](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L49)*
+*Defined in Clients/AssistantAPIClient/constants.ts:46*
+
+*Defined in types/all-types.ts:651*

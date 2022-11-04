@@ -1,21 +1,26 @@
 import {
-  Schema,
-  QCreateImplementation,
-  GraphqlOperationType,
-  Modifier,
-  QKind,
-} from '.';
+  ArgumentFieldSelectionInput,
+  CreateGraphInput,
+  Function,
+  GraphQLFunctionType,
+  ImplementationTypeInput,
+  Maybe
+} from './all-types';
+import { FunctionType } from '@io-maana/typesystem-utils';
 
-export interface CreateFunctionInput {
+/** CreateFunction input - info needed to create a new Function */
+export type CreateFunctionInput = {
   id?: string;
   name: string;
-  description?: string | null;
-  arguments?: Partial<Schema>[];
-  implementation?: QCreateImplementation;
-  graphqlOperationType: GraphqlOperationType;
-  outputType: string;
-  outputKindId?: string;
-  outputModifiers?: Modifier[];
-  kind?: QKind;
-  functionType: string;
-}
+  description?: string;
+  signature: FunctionType;
+  isPure?: boolean;
+  graphqlFunctionType: GraphQLFunctionType;
+  implementation: ImplementationTypeInput;
+  /**
+   * Setup the implementation for CKG functions at the same time as creating the
+   * function
+   */
+  graphImplementation?: Maybe<CreateGraphInput>;
+  inputMask?: Maybe<Array<ArgumentFieldSelectionInput>>;
+};

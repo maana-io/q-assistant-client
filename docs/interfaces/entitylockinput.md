@@ -4,6 +4,8 @@
 
 # Interface: EntityLockInput
 
+EntityLock input - Defines the information an entity lock that is being created.
+
 ## Hierarchy
 
 * **EntityLockInput**
@@ -20,4 +22,4 @@
 
 •  **lockedBy**: string
 
-*Defined in [models.ts:676](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L676)*
+*Defined in Clients/AssistantAPIClient/models.ts:677*

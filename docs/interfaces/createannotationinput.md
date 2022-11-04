@@ -4,6 +4,8 @@
 
 # Interface: CreateAnnotationInput
 
+CreateAnnotation input - used to create new annotations
+
 ## Hierarchy
 
 * **CreateAnnotationInput**
@@ -22,7 +24,7 @@
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:743](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L743)*
+*Defined in Clients/AssistantAPIClient/models.ts:744*
 
 ___
 
@@ -30,7 +32,7 @@ ___
 
 • `Optional` **id**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:741](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L741)*
+*Defined in Clients/AssistantAPIClient/models.ts:742*
 
 ___
 
@@ -38,4 +40,4 @@ ___
 
 •  **name**: string
 
-*Defined in [models.ts:742](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L742)*
+*Defined in Clients/AssistantAPIClient/models.ts:743*

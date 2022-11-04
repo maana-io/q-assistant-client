@@ -4,6 +4,9 @@
 
 # Interface: UpdateFunctionInput
 
+UpdateFunction input - info needed to update a Function (not its graph). Allows
+for a partial update of the Function based on the fields defined in the input.
+
 ## Hierarchy
 
 * **UpdateFunctionInput**
@@ -29,7 +32,7 @@
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:836](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L836)*
+*Defined in Clients/AssistantAPIClient/models.ts:837*
 
 ___
 
@@ -37,7 +40,7 @@ ___
 
 • `Optional` **graphImplementation**: [Maybe](../README.md#maybe)\<[UpdateGraphInput](updategraphinput.md)>
 
-*Defined in [models.ts:842](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L842)*
+*Defined in Clients/AssistantAPIClient/models.ts:843*
 
 ___
 
@@ -45,7 +48,7 @@ ___
 
 • `Optional` **graphqlFunctionType**: [Maybe](../README.md#maybe)\<[GraphQLFunctionType](../enums/graphqlfunctiontype.md)>
 
-*Defined in [models.ts:839](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L839)*
+*Defined in Clients/AssistantAPIClient/models.ts:840*
 
 ___
 
@@ -53,7 +56,7 @@ ___
 
 •  **id**: string
 
-*Defined in [models.ts:834](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L834)*
+*Defined in Clients/AssistantAPIClient/models.ts:835*
 
 ___
 
@@ -61,7 +64,7 @@ ___
 
 • `Optional` **implementation**: [Maybe](../README.md#maybe)\<[ImplementationType](../enums/implementationtype.md)>
 
-*Defined in [models.ts:841](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L841)*
+*Defined in Clients/AssistantAPIClient/models.ts:842*
 
 ___
 
@@ -69,7 +72,7 @@ ___
 
 • `Optional` **inputMask**: [Maybe](../README.md#maybe)\<Array\<[ArgumentFieldSelectionInput](argumentfieldselectioninput.md)>>
 
-*Defined in [models.ts:843](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L843)*
+*Defined in Clients/AssistantAPIClient/models.ts:844*
 
 ___
 
@@ -77,7 +80,7 @@ ___
 
 • `Optional` **isPure**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:838](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L838)*
+*Defined in Clients/AssistantAPIClient/models.ts:839*
 
 ___
 
@@ -85,7 +88,7 @@ ___
 
 • `Optional` **lock**: [Maybe](../README.md#maybe)\<[EntityLockInput](entitylockinput.md)>
 
-*Defined in [models.ts:840](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L840)*
+*Defined in Clients/AssistantAPIClient/models.ts:841*
 
 ___
 
@@ -93,7 +96,7 @@ ___
 
 • `Optional` **name**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:835](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L835)*
+*Defined in Clients/AssistantAPIClient/models.ts:836*
 
 ___
 
@@ -101,4 +104,4 @@ ___
 
 • `Optional` **signature**: [Maybe](../README.md#maybe)\<[TypeExpressionObject](../README.md#typeexpressionobject)>
 
-*Defined in [models.ts:837](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L837)*
+*Defined in Clients/AssistantAPIClient/models.ts:838*

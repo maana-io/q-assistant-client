@@ -4,6 +4,9 @@
 
 # Interface: CreateFunctionInput
 
+CreateFunction input - info needed to create a new Function
+CreateFunction input - info needed to create a new Function
+
 ## Hierarchy
 
 * **CreateFunctionInput**
@@ -28,7 +31,7 @@
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:754](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L754)*
+*Defined in Clients/AssistantAPIClient/models.ts:755*
 
 ___
 
@@ -36,7 +39,7 @@ ___
 
 • `Optional` **graphImplementation**: [Maybe](../README.md#maybe)\<[CreateGraphInput](creategraphinput.md)>
 
-*Defined in [models.ts:759](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L759)*
+*Defined in Clients/AssistantAPIClient/models.ts:760*
 
 ___
 
@@ -44,7 +47,7 @@ ___
 
 •  **graphqlFunctionType**: [GraphQLFunctionType](../enums/graphqlfunctiontype.md)
 
-*Defined in [models.ts:757](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L757)*
+*Defined in Clients/AssistantAPIClient/models.ts:758*
 
 ___
 
@@ -52,7 +55,7 @@ ___
 
 • `Optional` **id**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:752](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L752)*
+*Defined in Clients/AssistantAPIClient/models.ts:753*
 
 ___
 
@@ -60,7 +63,7 @@ ___
 
 •  **implementation**: [ImplementationType](../enums/implementationtype.md)
 
-*Defined in [models.ts:758](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L758)*
+*Defined in Clients/AssistantAPIClient/models.ts:759*
 
 ___
 
@@ -68,7 +71,7 @@ ___
 
 • `Optional` **inputMask**: [Maybe](../README.md#maybe)\<Array\<[ArgumentFieldSelectionInput](argumentfieldselectioninput.md)>>
 
-*Defined in [models.ts:760](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L760)*
+*Defined in Clients/AssistantAPIClient/models.ts:761*
 
 ___
 
@@ -76,7 +79,7 @@ ___
 
 • `Optional` **isPure**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:756](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L756)*
+*Defined in Clients/AssistantAPIClient/models.ts:757*
 
 ___
 
@@ -84,7 +87,7 @@ ___
 
 •  **name**: string
 
-*Defined in [models.ts:753](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L753)*
+*Defined in Clients/AssistantAPIClient/models.ts:754*
 
 ___
 
@@ -92,4 +95,4 @@ ___
 
 •  **signature**: [TypeExpressionObject](../README.md#typeexpressionobject)
 
-*Defined in [models.ts:755](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L755)*
+*Defined in Clients/AssistantAPIClient/models.ts:756*

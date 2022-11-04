@@ -4,6 +4,10 @@
 
 # Interface: UpdateGraphInput
 
+UpdateGraph input - allows for updating the graph (move, zoom, etc) as well add
+creating/removing nodes and connections in a single mutation.  Allows for a
+partial update of the Graph based on the fields defined in the input.
+
 ## Hierarchy
 
 * **UpdateGraphInput**
@@ -26,7 +30,7 @@
 
 • `Optional` **createConnections**: [Maybe](../README.md#maybe)\<Array\<[CreateConnectionInput](createconnectioninput.md)>>
 
-*Defined in [models.ts:807](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L807)*
+*Defined in Clients/AssistantAPIClient/models.ts:808*
 
 ___
 
@@ -34,7 +38,7 @@ ___
 
 • `Optional` **createNodes**: [Maybe](../README.md#maybe)\<Array\<[CreateNodeInput](createnodeinput.md)>>
 
-*Defined in [models.ts:804](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L804)*
+*Defined in Clients/AssistantAPIClient/models.ts:805*
 
 ___
 
@@ -42,7 +46,7 @@ ___
 
 • `Optional` **deleteConnections**: [Maybe](../README.md#maybe)\<Array\<string>>
 
-*Defined in [models.ts:808](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L808)*
+*Defined in Clients/AssistantAPIClient/models.ts:809*
 
 ___
 
@@ -50,7 +54,7 @@ ___
 
 • `Optional` **deleteNodes**: [Maybe](../README.md#maybe)\<Array\<string>>
 
-*Defined in [models.ts:806](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L806)*
+*Defined in Clients/AssistantAPIClient/models.ts:807*
 
 ___
 
@@ -58,7 +62,7 @@ ___
 
 • `Optional` **offset**: [Maybe](../README.md#maybe)\<[PositionInput](positioninput.md)>
 
-*Defined in [models.ts:802](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L802)*
+*Defined in Clients/AssistantAPIClient/models.ts:803*
 
 ___
 
@@ -66,7 +70,7 @@ ___
 
 • `Optional` **updateNodes**: [Maybe](../README.md#maybe)\<Array\<[UpdateNodeInput](updatenodeinput.md)>>
 
-*Defined in [models.ts:805](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L805)*
+*Defined in Clients/AssistantAPIClient/models.ts:806*
 
 ___
 
@@ -74,4 +78,4 @@ ___
 
 • `Optional` **zoom**: [Maybe](../README.md#maybe)\<number>
 
-*Defined in [models.ts:803](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L803)*
+*Defined in Clients/AssistantAPIClient/models.ts:804*

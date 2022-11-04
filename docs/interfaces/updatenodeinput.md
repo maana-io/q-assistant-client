@@ -4,6 +4,10 @@
 
 # Interface: UpdateNodeInput
 
+UpdateNode input - info needed to move position or expand/collapse a node.
+Allows for a partial update of the Node based on the fields defined in the
+input.
+
 ## Hierarchy
 
 * **UpdateNodeInput**
@@ -24,7 +28,7 @@
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:797](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L797)*
+*Defined in Clients/AssistantAPIClient/models.ts:798*
 
 ___
 
@@ -32,7 +36,7 @@ ___
 
 •  **id**: string
 
-*Defined in [models.ts:794](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L794)*
+*Defined in Clients/AssistantAPIClient/models.ts:795*
 
 ___
 
@@ -40,7 +44,7 @@ ___
 
 • `Optional` **isCollapsed**: [Maybe](../README.md#maybe)\<string[]>
 
-*Defined in [models.ts:796](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L796)*
+*Defined in Clients/AssistantAPIClient/models.ts:797*
 
 ___
 
@@ -48,7 +52,7 @@ ___
 
 • `Optional` **location**: [Maybe](../README.md#maybe)\<[PositionInput](positioninput.md)>
 
-*Defined in [models.ts:795](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L795)*
+*Defined in Clients/AssistantAPIClient/models.ts:796*
 
 ___
 
@@ -56,4 +60,4 @@ ___
 
 •  **type**: [NodeType](../enums/nodetype.md)
 
-*Defined in [models.ts:798](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L798)*
+*Defined in Clients/AssistantAPIClient/models.ts:799*

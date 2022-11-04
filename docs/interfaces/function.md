@@ -4,6 +4,8 @@
 
 # Interface: Function
 
+Function type - represents a Function in a service
+
 **`prop`** {string} graphqlFunctionType The GraphQL type for the Function.
 
 **`prop`** {boolean} [isPure] States the purity of a Function.
@@ -52,7 +54,7 @@
 
 *Inherited from [Entity](entity.md).[description](entity.md#description)*
 
-*Defined in [models.ts:82](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L82)*
+*Defined in Clients/AssistantAPIClient/models.ts:83*
 
 Human readable description of the entity.
 
@@ -62,7 +64,7 @@ ___
 
 •  **graphqlFunctionType**: [GraphQLFunctionType](../enums/graphqlfunctiontype.md)
 
-*Defined in [models.ts:309](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L309)*
+*Defined in Clients/AssistantAPIClient/models.ts:310*
 
 How the function is run (like query or mutation)
 
@@ -74,7 +76,7 @@ ___
 
 *Inherited from [Entity](entity.md).[id](entity.md#id)*
 
-*Defined in [models.ts:73](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L73)*
+*Defined in Clients/AssistantAPIClient/models.ts:74*
 
 The ID of the entity.
 
@@ -84,7 +86,7 @@ ___
 
 •  **implementation**: [Implementation](../README.md#implementation)
 
-*Defined in [models.ts:320](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L320)*
+*Defined in Clients/AssistantAPIClient/models.ts:321*
 
 The implementation representing what the Function does.  This is only used
 by Functions on Logic services.
@@ -95,7 +97,7 @@ ___
 
 • `Optional` **inputMask**: [ArgumentFieldSelection](argumentfieldselection.md)[]
 
-*Defined in [models.ts:322](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L322)*
+*Defined in Clients/AssistantAPIClient/models.ts:323*
 
 ___
 
@@ -103,7 +105,7 @@ ___
 
 •  **isPure**: boolean
 
-*Defined in [models.ts:314](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L314)*
+*Defined in Clients/AssistantAPIClient/models.ts:315*
 
 Defines if this is a pure or impure Function, or if its purity is unknown.
 
@@ -115,7 +117,7 @@ ___
 
 *Inherited from [Entity](entity.md).[name](entity.md#name)*
 
-*Defined in [models.ts:76](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L76)*
+*Defined in Clients/AssistantAPIClient/models.ts:77*
 
 The name of the entity.
 
@@ -127,7 +129,7 @@ ___
 
 *Inherited from [Entity](entity.md).[nameDescriptor](entity.md#namedescriptor)*
 
-*Defined in [models.ts:79](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L79)*
+*Defined in Clients/AssistantAPIClient/models.ts:80*
 
 Name of where the entity comes from (Service/Workspace).
 
@@ -137,7 +139,7 @@ ___
 
 •  **service**: [IDObject](idobject.md)
 
-*Defined in [models.ts:303](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L303)*
+*Defined in Clients/AssistantAPIClient/models.ts:304*
 
 The service that the Kind comes from.
 
@@ -147,7 +149,7 @@ ___
 
 •  **signature**: [TypeExpressionObject](../README.md#typeexpressionobject)
 
-*Defined in [models.ts:300](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L300)*
+*Defined in Clients/AssistantAPIClient/models.ts:301*
 
 The signature of the Function.
 
@@ -157,7 +159,7 @@ ___
 
 •  **typeParameters**: string[]
 
-*Defined in [models.ts:306](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L306)*
+*Defined in Clients/AssistantAPIClient/models.ts:307*
 
 Type Parameters are placeholders for types and are used as generics.
 
@@ -167,7 +169,7 @@ Type Parameters are placeholders for types and are used as generics.
 
 ▸ **canEdit**(): Promise\<boolean>
 
-*Defined in [models.ts:327](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L327)*
+*Defined in Clients/AssistantAPIClient/models.ts:328*
 
 Returns boolean stating if the Function is editable.
 
@@ -179,7 +181,7 @@ ___
 
 ▸ **execute**(`variables?`: [Maybe](../README.md#maybe)\<Record\<string, any>>, `resolve?`: string): Promise\<any>
 
-*Defined in [models.ts:369](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L369)*
+*Defined in Clients/AssistantAPIClient/models.ts:370*
 
 Executes a GraphQL request against the Function.
 
@@ -200,7 +202,7 @@ ___
 
 ▸ **lockedBy**(): Promise\<[Maybe](../README.md#maybe)\<string>>
 
-*Defined in [models.ts:332](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L332)*
+*Defined in Clients/AssistantAPIClient/models.ts:333*
 
 Returns the e-mail of the user who locked the Function.
 
@@ -212,7 +214,7 @@ ___
 
 ▸ **setLocked**(`isLocked?`: boolean): Promise\<void>
 
-*Defined in [models.ts:339](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L339)*
+*Defined in Clients/AssistantAPIClient/models.ts:340*
 
 Updates the locked state of the Function.
 
@@ -230,7 +232,7 @@ ___
 
 ▸ **update**(`changes`: [UpdateFunctionInput](updatefunctioninput.md)): Promise\<void>
 
-*Defined in [models.ts:345](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L345)*
+*Defined in Clients/AssistantAPIClient/models.ts:346*
 
 Updates information about the Function.
 
@@ -248,7 +250,7 @@ ___
 
 ▸ **updateGraphLayout**(`changes`: [UpdateGraphLayoutInput](updategraphlayoutinput.md)): Promise\<void>
 
-*Defined in [models.ts:361](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L361)*
+*Defined in Clients/AssistantAPIClient/models.ts:362*
 
 Updates the layout information for the graph of the Function.
 
@@ -266,7 +268,7 @@ ___
 
 ▸ **updateNodeLayout**(`nodeId`: string, `changes`: [UpdateNodeLayoutInput](updatenodelayoutinput.md)): Promise\<void>
 
-*Defined in [models.ts:352](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L352)*
+*Defined in Clients/AssistantAPIClient/models.ts:353*
 
 Updates the layout information for a node in the Function.
 

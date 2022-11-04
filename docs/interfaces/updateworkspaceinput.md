@@ -4,6 +4,16 @@
 
 # Interface: UpdateWorkspaceInput
 
+UpdateWorkspace input - used to update existing workspaces.  Allows for a
+partial update of the Workspace based on the fields defined in the input.
+
+Operations happen in this order: create, clone, add, update, remove, delete.
+Order within each input list matters. This will enable creating multiple things
+in one call to the backend. For example, if server writes were delayed in the UI
+for performance reasons, you could create several types and a function that
+uses them... and update the names of those types and functions in a single
+request.
+
 ## Hierarchy
 
 * **UpdateWorkspaceInput**
@@ -34,7 +44,7 @@
 
 • `Optional` **addServices**: [Maybe](../README.md#maybe)\<Array\<string>>
 
-*Defined in [models.ts:908](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L908)*
+*Defined in Clients/AssistantAPIClient/models.ts:909*
 
 ___
 
@@ -42,7 +52,7 @@ ___
 
 • `Optional` **cloneEntities**: [Maybe](../README.md#maybe)\<Array\<[CloneEntityInput](cloneentityinput.md)>>
 
-*Defined in [models.ts:898](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L898)*
+*Defined in Clients/AssistantAPIClient/models.ts:899*
 
 ___
 
@@ -50,7 +60,7 @@ ___
 
 • `Optional` **createEntities**: [Maybe](../README.md#maybe)\<Array\<[CreateEntityInput](createentityinput.md)>>
 
-*Defined in [models.ts:897](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L897)*
+*Defined in Clients/AssistantAPIClient/models.ts:898*
 
 ___
 
@@ -58,7 +68,7 @@ ___
 
 • `Optional` **deleteEntities**: [Maybe](../README.md#maybe)\<Array\<[EntityIdentifier](entityidentifier.md)>>
 
-*Defined in [models.ts:907](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L907)*
+*Defined in Clients/AssistantAPIClient/models.ts:908*
 
 ___
 
@@ -66,7 +76,7 @@ ___
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:891](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L891)*
+*Defined in Clients/AssistantAPIClient/models.ts:892*
 
 ___
 
@@ -74,7 +84,7 @@ ___
 
 •  **id**: string
 
-*Defined in [models.ts:889](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L889)*
+*Defined in Clients/AssistantAPIClient/models.ts:890*
 
 ___
 
@@ -82,7 +92,7 @@ ___
 
 • `Optional` **isPublic**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:894](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L894)*
+*Defined in Clients/AssistantAPIClient/models.ts:895*
 
 ___
 
@@ -90,7 +100,7 @@ ___
 
 • `Optional` **isTemplate**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:895](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L895)*
+*Defined in Clients/AssistantAPIClient/models.ts:896*
 
 ___
 
@@ -98,7 +108,7 @@ ___
 
 • `Optional` **lock**: [Maybe](../README.md#maybe)\<[EntityLockInput](entitylockinput.md)>
 
-*Defined in [models.ts:896](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L896)*
+*Defined in Clients/AssistantAPIClient/models.ts:897*
 
 ___
 
@@ -106,7 +116,7 @@ ___
 
 • `Optional` **moveEntities**: [Maybe](../README.md#maybe)\<Array\<[EntityIdentifier](entityidentifier.md)>>
 
-*Defined in [models.ts:905](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L905)*
+*Defined in Clients/AssistantAPIClient/models.ts:906*
 
 Moves the given entities from their current Workspace to this one.
 Currently only Types and Functions support being moved between Workspaces.
@@ -117,7 +127,7 @@ ___
 
 • `Optional` **name**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:890](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L890)*
+*Defined in Clients/AssistantAPIClient/models.ts:891*
 
 ___
 
@@ -125,7 +135,7 @@ ___
 
 • `Optional` **removeServices**: [Maybe](../README.md#maybe)\<Array\<string>>
 
-*Defined in [models.ts:909](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L909)*
+*Defined in Clients/AssistantAPIClient/models.ts:910*
 
 ___
 
@@ -133,7 +143,7 @@ ___
 
 • `Optional` **tags**: [Maybe](../README.md#maybe)\<Array\<string>>
 
-*Defined in [models.ts:893](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L893)*
+*Defined in Clients/AssistantAPIClient/models.ts:894*
 
 ___
 
@@ -141,7 +151,7 @@ ___
 
 • `Optional` **thumbnailUrl**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:892](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L892)*
+*Defined in Clients/AssistantAPIClient/models.ts:893*
 
 ___
 
@@ -149,4 +159,4 @@ ___
 
 • `Optional` **updateEntities**: [Maybe](../README.md#maybe)\<Array\<[UpdateEntityInput](updateentityinput.md)>>
 
-*Defined in [models.ts:899](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L899)*
+*Defined in Clients/AssistantAPIClient/models.ts:900*

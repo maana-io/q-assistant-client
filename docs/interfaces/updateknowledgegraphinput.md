@@ -4,6 +4,10 @@
 
 # Interface: UpdateKnowledgeGraphInput
 
+UpdateKnowledgeGraph input - used to update existing knowledge graphs.  Allows
+for a partial update of the Knowledge Graph based on the fields defined in the
+input.
+
 ## Hierarchy
 
 * **UpdateKnowledgeGraphInput**
@@ -24,7 +28,7 @@
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:814](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L814)*
+*Defined in Clients/AssistantAPIClient/models.ts:815*
 
 ___
 
@@ -32,7 +36,7 @@ ___
 
 • `Optional` **graph**: [Maybe](../README.md#maybe)\<[UpdateGraphInput](updategraphinput.md)>
 
-*Defined in [models.ts:816](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L816)*
+*Defined in Clients/AssistantAPIClient/models.ts:817*
 
 ___
 
@@ -40,7 +44,7 @@ ___
 
 •  **id**: string
 
-*Defined in [models.ts:812](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L812)*
+*Defined in Clients/AssistantAPIClient/models.ts:813*
 
 ___
 
@@ -48,7 +52,7 @@ ___
 
 • `Optional` **lock**: [Maybe](../README.md#maybe)\<[EntityLockInput](entitylockinput.md)>
 
-*Defined in [models.ts:815](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L815)*
+*Defined in Clients/AssistantAPIClient/models.ts:816*
 
 ___
 
@@ -56,4 +60,4 @@ ___
 
 • `Optional` **name**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:813](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L813)*
+*Defined in Clients/AssistantAPIClient/models.ts:814*

@@ -24,7 +24,7 @@
 
 • `Optional` **description**: string
 
-*Defined in [models.ts:89](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L89)*
+*Defined in Clients/AssistantAPIClient/models.ts:90*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 •  **id**: string
 
-*Defined in [models.ts:86](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L86)*
+*Defined in Clients/AssistantAPIClient/models.ts:87*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 •  **name**: string
 
-*Defined in [models.ts:87](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L87)*
+*Defined in Clients/AssistantAPIClient/models.ts:88*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **nameDescriptor**: string
 
-*Defined in [models.ts:88](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L88)*
+*Defined in Clients/AssistantAPIClient/models.ts:89*
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 • `Optional` **workspaceId**: string
 
-*Defined in [models.ts:90](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L90)*
+*Defined in Clients/AssistantAPIClient/models.ts:91*

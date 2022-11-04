@@ -4,6 +4,9 @@
 
 # Interface: CreateGraphInput
 
+CreateGraph input = allows for creating the graph when the knowledge graph or
+function are created.
+
 ## Hierarchy
 
 * **CreateGraphInput**
@@ -23,7 +26,7 @@
 
 • `Optional` **connections**: [Maybe](../README.md#maybe)\<Array\<[CreateConnectionInput](createconnectioninput.md)>>
 
-*Defined in [models.ts:722](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L722)*
+*Defined in Clients/AssistantAPIClient/models.ts:723*
 
 ___
 
@@ -31,7 +34,7 @@ ___
 
 • `Optional` **nodes**: [Maybe](../README.md#maybe)\<Array\<[CreateNodeInput](createnodeinput.md)>>
 
-*Defined in [models.ts:721](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L721)*
+*Defined in Clients/AssistantAPIClient/models.ts:722*
 
 ___
 
@@ -39,7 +42,7 @@ ___
 
 • `Optional` **offset**: [Maybe](../README.md#maybe)\<[PositionInput](positioninput.md)>
 
-*Defined in [models.ts:719](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L719)*
+*Defined in Clients/AssistantAPIClient/models.ts:720*
 
 ___
 
@@ -47,4 +50,4 @@ ___
 
 • `Optional` **zoom**: [Maybe](../README.md#maybe)\<number>
 
-*Defined in [models.ts:720](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L720)*
+*Defined in Clients/AssistantAPIClient/models.ts:721*

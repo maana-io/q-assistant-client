@@ -20,20 +20,20 @@ export class ServiceClient {
   }
 
   async getFunction(searchCriteria: SearchCriteria): Promise<QFunction | null> {
-    const throwErr = reason => {
+    const throwErr = (reason: string) => {
       throw new Error(`Can't find function. ${reason}`);
     };
-    const nonNulls = [Object.values(searchCriteria)].filter(x => x != null);
+    const nonNulls = [Object.values(searchCriteria)].filter((x) => x != null);
     if (nonNulls.length < 1) throwErr('No search criteria provided');
     if (nonNulls.length > 1) throwErr('Too many search criteria provided');
     const found = this._self.functions?.find(
-      func =>
-        func.id === searchCriteria.id || func.name === searchCriteria.name,
+      (func: { id: string; name: string }) =>
+        func.id === searchCriteria.id || func.name === searchCriteria.name
     );
     return found;
   }
 
-  async hasFunction(searchCriteria): Promise<boolean> {
+  async hasFunction(searchCriteria: unknown): Promise<boolean> {
     const found = await this.getFunction(searchCriteria);
     return found != null;
   }

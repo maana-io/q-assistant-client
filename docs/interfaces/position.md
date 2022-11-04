@@ -4,6 +4,8 @@
 
 # Interface: Position
 
+Position type - use to define location or offset on a graph
+
 ## Hierarchy
 
 * **Position**
@@ -21,7 +23,7 @@
 
 •  **x**: number
 
-*Defined in [models.ts:40](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L40)*
+*Defined in Clients/AssistantAPIClient/models.ts:41*
 
 ___
 
@@ -29,4 +31,4 @@ ___
 
 •  **y**: number
 
-*Defined in [models.ts:41](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L41)*
+*Defined in Clients/AssistantAPIClient/models.ts:42*

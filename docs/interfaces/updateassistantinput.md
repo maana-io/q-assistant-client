@@ -4,6 +4,9 @@
 
 # Interface: UpdateAssistantInput
 
+UpdateAssistantInput input - Based on the one from Catalog.  Allows for a
+partial update of the Assistant based on the fields defined in the input.
+
 ## Hierarchy
 
 * **UpdateAssistantInput**
@@ -26,7 +29,7 @@
 
 • `Optional` **endpointUrl**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:656](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L656)*
+*Defined in Clients/AssistantAPIClient/models.ts:657*
 
 ___
 
@@ -34,7 +37,7 @@ ___
 
 •  **id**: string
 
-*Defined in [models.ts:654](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L654)*
+*Defined in Clients/AssistantAPIClient/models.ts:655*
 
 ___
 
@@ -42,7 +45,7 @@ ___
 
 • `Optional` **isReadOnly**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:658](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L658)*
+*Defined in Clients/AssistantAPIClient/models.ts:659*
 
 ___
 
@@ -50,7 +53,7 @@ ___
 
 • `Optional` **isSystem**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:657](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L657)*
+*Defined in Clients/AssistantAPIClient/models.ts:658*
 
 ___
 
@@ -58,7 +61,7 @@ ___
 
 • `Optional` **name**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:655](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L655)*
+*Defined in Clients/AssistantAPIClient/models.ts:656*
 
 ___
 
@@ -66,7 +69,7 @@ ___
 
 • `Optional` **tags**: [Maybe](../README.md#maybe)\<Array\<string>>
 
-*Defined in [models.ts:659](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L659)*
+*Defined in Clients/AssistantAPIClient/models.ts:660*
 
 ___
 
@@ -74,4 +77,4 @@ ___
 
 •  **version**: number
 
-*Defined in [models.ts:660](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L660)*
+*Defined in Clients/AssistantAPIClient/models.ts:661*

@@ -5,6 +5,7 @@
 # Enumeration: GraphQLFunctionType
 
 The different GraphQL operations that the function can be used for.
+FunctionType enum - the operation type for a Function (like query or mutation)
 
 ## Index
 
@@ -21,7 +22,9 @@ The different GraphQL operations that the function can be used for.
 
 •  **MUTATION**:  = "MUTATION"
 
-*Defined in [constants.ts:82](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L82)*
+*Defined in Clients/AssistantAPIClient/constants.ts:79*
+
+*Defined in types/all-types.ts:873*
 
 ___
 
@@ -29,7 +32,9 @@ ___
 
 •  **NONE**:  = "NONE"
 
-*Defined in [constants.ts:84](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L84)*
+*Defined in Clients/AssistantAPIClient/constants.ts:81*
+
+*Defined in types/all-types.ts:875*
 
 ___
 
@@ -37,7 +42,9 @@ ___
 
 •  **QUERY**:  = "QUERY"
 
-*Defined in [constants.ts:81](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L81)*
+*Defined in Clients/AssistantAPIClient/constants.ts:78*
+
+*Defined in types/all-types.ts:872*
 
 ___
 
@@ -45,4 +52,6 @@ ___
 
 •  **SUBSCRIPTION**:  = "SUBSCRIPTION"
 
-*Defined in [constants.ts:83](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L83)*
+*Defined in Clients/AssistantAPIClient/constants.ts:80*
+
+*Defined in types/all-types.ts:874*

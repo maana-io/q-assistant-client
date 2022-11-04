@@ -4,6 +4,8 @@
 
 # Interface: CreateConnectionInput
 
+CreateConnection input - info needed to create a connection.
+
 ## Hierarchy
 
 * **CreateConnectionInput**
@@ -21,7 +23,7 @@
 
 •  **from**: [GraphRefInput](graphrefinput.md)
 
-*Defined in [models.ts:714](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L714)*
+*Defined in Clients/AssistantAPIClient/models.ts:715*
 
 ___
 
@@ -29,4 +31,4 @@ ___
 
 •  **to**: [GraphRefInput](graphrefinput.md)
 
-*Defined in [models.ts:715](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L715)*
+*Defined in Clients/AssistantAPIClient/models.ts:716*

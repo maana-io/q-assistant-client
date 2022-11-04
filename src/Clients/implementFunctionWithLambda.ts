@@ -5,19 +5,19 @@ import { v4 as uuid } from 'uuid';
 // * Helper function to format QFunction argument values
 const getLambdaArgumentValues: (
   lambda: QFunction,
-  wsFunction: QFunction,
+  wsFunction: QFunction
 ) => QOperationArgumentValue[] = (lambda: QFunction, wsFunction: QFunction) =>
   lambda.arguments.map((arg, key) => ({
     argument: arg.id,
     operation: null,
-    argumentRef: wsFunction.arguments[key].id,
+    argumentRef: wsFunction.arguments[key].id
   }));
 
 export const implementFunctionWithLambda = async (
   parentFunctionId: string,
   lambda: any,
   wksClient: WorkspaceClient,
-  lambdaClient: LambdaClient,
+  lambdaClient: LambdaClient
 ) => {
   const lambdaEndpointBaseUrl = lambdaClient.baseUrl;
 
@@ -25,22 +25,22 @@ export const implementFunctionWithLambda = async (
     id: lambda.serviceId + '_lambda',
     name: wksClient.id + '_lambda',
     endpointUrl: lambdaEndpointBaseUrl + lambda.serviceId + '/graphql',
-    serviceType: 'EXTERNAL',
+    serviceType: 'EXTERNAL'
   };
 
   // * Makes sure the imported service has the latest schema
   await wksClient.reloadService(serviceToImport.id);
   const lambdaService = await wksClient.getService({
-    id: lambda.serviceId + '_lambda',
+    id: lambda.serviceId + '_lambda'
   });
 
   // * The lambda service function:
   // @ts-ignore
   const lambdaFunction: QFunction | null = lambdaService?.getFunction({
-    name: lambda.name,
+    name: lambda.name
   });
   const workspaceFunction: QFunction | null = await wksClient.getFunction({
-    id: parentFunctionId,
+    id: parentFunctionId
   });
 
   // * Update the workspace function to include the lambda implementation:
@@ -48,13 +48,14 @@ export const implementFunctionWithLambda = async (
     // * Assemble array of argument values the function takes:
     const argumentValues = getLambdaArgumentValues(
       lambdaFunction,
-      workspaceFunction,
+      workspaceFunction
     );
 
     const operationId = uuid();
     await wksClient.updateFunction({
       id: workspaceFunction.id,
       name: workspaceFunction.name,
+      // @ts-ignore
       implementation: {
         entrypoint: operationId,
         operations: [
@@ -62,14 +63,14 @@ export const implementFunctionWithLambda = async (
             id: operationId,
             function: lambdaFunction.id,
             type: 'APPLY',
-            argumentValues,
-          },
-        ],
-      },
+            argumentValues
+          }
+        ]
+      }
     });
   } else {
     throw new Error(
-      `Could not create function implementation for ${lambda.name}`,
+      `Could not create function implementation for ${lambda.name}`
     );
   }
 };

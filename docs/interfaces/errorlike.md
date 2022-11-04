@@ -22,7 +22,7 @@
 
 • `Optional` **maanaErrorCode**: [MaanaErrorCode](../enums/maanaerrorcode.md)
 
-*Defined in [models.ts:19](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L19)*
+*Defined in Clients/AssistantAPIClient/models.ts:20*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 •  **message**: string
 
-*Defined in [models.ts:17](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L17)*
+*Defined in Clients/AssistantAPIClient/models.ts:18*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • `Optional` **statusCode**: number
 
-*Defined in [models.ts:18](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L18)*
+*Defined in Clients/AssistantAPIClient/models.ts:19*

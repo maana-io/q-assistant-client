@@ -1,10 +1,7 @@
 /**
  * The different states that the assistant can be in.
  */
-export enum AssistantState {
-  WORKING = 'WORKING',
-  IDLE = 'IDLE'
-}
+export type AssistantState = 'WORKING' | 'IDLE';
 
 /**
  * The mode in which a custom Assistant should be rendering in.

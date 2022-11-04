@@ -4,6 +4,9 @@
 
 # Interface: CloneEntityInput
 
+Clone Entity input - A generic input for cloning an entity.  Only works for
+Types and Functions currently.
+
 ## Hierarchy
 
 * **CloneEntityInput**
@@ -23,7 +26,7 @@
 
 •  **entityType**: [EntityType](../enums/entitytype.md)
 
-*Defined in [models.ts:787](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L787)*
+*Defined in Clients/AssistantAPIClient/models.ts:788*
 
 ___
 
@@ -31,7 +34,7 @@ ___
 
 •  **newName**: string
 
-*Defined in [models.ts:790](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L790)*
+*Defined in Clients/AssistantAPIClient/models.ts:791*
 
 ___
 
@@ -39,7 +42,7 @@ ___
 
 •  **oldName**: string
 
-*Defined in [models.ts:788](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L788)*
+*Defined in Clients/AssistantAPIClient/models.ts:789*
 
 ___
 
@@ -47,4 +50,4 @@ ___
 
 •  **oldServiceId**: string
 
-*Defined in [models.ts:789](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L789)*
+*Defined in Clients/AssistantAPIClient/models.ts:790*

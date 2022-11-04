@@ -4,6 +4,9 @@
 
 # Interface: UpdateExternalGraphQLServiceInput
 
+UpdateExternalGraphQLServiceInput input - Based on the one from Catalog.  Allows
+for a partial update of the Service based on the fields defined in the input.
+
 ## Hierarchy
 
 * **UpdateExternalGraphQLServiceInput**
@@ -26,7 +29,7 @@
 
 • `Optional` **endpointUrl**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:646](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L646)*
+*Defined in Clients/AssistantAPIClient/models.ts:647*
 
 ___
 
@@ -34,7 +37,7 @@ ___
 
 •  **id**: string
 
-*Defined in [models.ts:644](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L644)*
+*Defined in Clients/AssistantAPIClient/models.ts:645*
 
 ___
 
@@ -42,7 +45,7 @@ ___
 
 • `Optional` **isReadOnly**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:648](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L648)*
+*Defined in Clients/AssistantAPIClient/models.ts:649*
 
 ___
 
@@ -50,7 +53,7 @@ ___
 
 • `Optional` **isSystem**: [Maybe](../README.md#maybe)\<boolean>
 
-*Defined in [models.ts:647](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L647)*
+*Defined in Clients/AssistantAPIClient/models.ts:648*
 
 ___
 
@@ -58,7 +61,7 @@ ___
 
 • `Optional` **name**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:645](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L645)*
+*Defined in Clients/AssistantAPIClient/models.ts:646*
 
 ___
 
@@ -66,7 +69,7 @@ ___
 
 • `Optional` **tags**: [Maybe](../README.md#maybe)\<Array\<string>>
 
-*Defined in [models.ts:649](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L649)*
+*Defined in Clients/AssistantAPIClient/models.ts:650*
 
 ___
 
@@ -74,4 +77,4 @@ ___
 
 •  **version**: number
 
-*Defined in [models.ts:650](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L650)*
+*Defined in Clients/AssistantAPIClient/models.ts:651*

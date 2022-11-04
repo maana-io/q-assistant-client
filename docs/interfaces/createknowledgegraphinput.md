@@ -4,6 +4,8 @@
 
 # Interface: CreateKnowledgeGraphInput
 
+CreateKnowledgeGraph input - used to create new knowledge graphs
+
 ## Hierarchy
 
 * **CreateKnowledgeGraphInput**
@@ -23,7 +25,7 @@
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:728](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L728)*
+*Defined in Clients/AssistantAPIClient/models.ts:729*
 
 ___
 
@@ -31,7 +33,7 @@ ___
 
 • `Optional` **graph**: [Maybe](../README.md#maybe)\<[CreateGraphInput](creategraphinput.md)>
 
-*Defined in [models.ts:729](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L729)*
+*Defined in Clients/AssistantAPIClient/models.ts:730*
 
 ___
 
@@ -39,7 +41,7 @@ ___
 
 • `Optional` **id**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:726](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L726)*
+*Defined in Clients/AssistantAPIClient/models.ts:727*
 
 ___
 
@@ -47,4 +49,4 @@ ___
 
 •  **name**: string
 
-*Defined in [models.ts:727](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L727)*
+*Defined in Clients/AssistantAPIClient/models.ts:728*

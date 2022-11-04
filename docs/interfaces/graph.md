@@ -4,6 +4,8 @@
 
 # Interface: Graph
 
+Graph type - properties for all types of graphs (knowledge, function, etc)
+
 ## Hierarchy
 
 * **Graph**
@@ -23,7 +25,7 @@
 
 •  **connections**: [Connection](connection.md)[]
 
-*Defined in [models.ts:173](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L173)*
+*Defined in Clients/AssistantAPIClient/models.ts:174*
 
 The connections in the Graph.
 
@@ -33,7 +35,7 @@ ___
 
 •  **nodes**: [Node](node.md)[]
 
-*Defined in [models.ts:170](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L170)*
+*Defined in Clients/AssistantAPIClient/models.ts:171*
 
 The nodes in the Graph.
 
@@ -43,7 +45,7 @@ ___
 
 •  **offset**: [Position](position.md)
 
-*Defined in [models.ts:164](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L164)*
+*Defined in Clients/AssistantAPIClient/models.ts:165*
 
 The offset of the Graph.
 
@@ -53,6 +55,6 @@ ___
 
 •  **zoom**: number
 
-*Defined in [models.ts:167](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L167)*
+*Defined in Clients/AssistantAPIClient/models.ts:168*
 
 The zoom of the Graph.

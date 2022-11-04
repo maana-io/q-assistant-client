@@ -1,3 +1,4 @@
+import { TypeExpression } from '@io-maana/typesystem-utils';
 import {
   EntityType,
   GraphQLFunctionType,
@@ -11,7 +12,7 @@ import {
 export type Maybe<T> = T | null | undefined;
 
 /** Represents a JSON object used to express a type expression. */
-export type TypeExpressionObject = any;
+export type TypeExpressionObject = TypeExpression;
 
 interface ErrorLike {
   message: string;

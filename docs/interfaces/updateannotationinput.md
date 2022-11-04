@@ -4,6 +4,10 @@
 
 # Interface: UpdateAnnotationInput
 
+UpdateAnnotation input - used to update existing annotations.  Allows
+for a partial update of the annotation based on the fields defined in the
+input.
+
 ## Hierarchy
 
 * **UpdateAnnotationInput**
@@ -22,7 +26,7 @@
 
 • `Optional` **description**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:830](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L830)*
+*Defined in Clients/AssistantAPIClient/models.ts:831*
 
 ___
 
@@ -30,7 +34,7 @@ ___
 
 •  **id**: string
 
-*Defined in [models.ts:828](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L828)*
+*Defined in Clients/AssistantAPIClient/models.ts:829*
 
 ___
 
@@ -38,4 +42,4 @@ ___
 
 • `Optional` **name**: [Maybe](../README.md#maybe)\<string>
 
-*Defined in [models.ts:829](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L829)*
+*Defined in Clients/AssistantAPIClient/models.ts:830*
