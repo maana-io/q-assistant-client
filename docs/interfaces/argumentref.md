@@ -1,32 +1,30 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / ArgumentRef
+[Maana Q Assistant API Client](../README.md) / ArgumentRef
 
 # Interface: ArgumentRef
 
-## Hierarchy
-
-* **ArgumentRef**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [argumentId](argumentref.md#argumentid)
-* [argumentName](argumentref.md#argumentname)
+- [argumentId](ArgumentRef.md#argumentid)
+- [argumentName](ArgumentRef.md#argumentname)
 
 ## Properties
 
 ### argumentId
 
-•  **argumentId**: string
+• **argumentId**: `string`
 
-*Defined in [models.ts:95](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L95)*
+#### Defined in
+
+[models.ts:94](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L94)
 
 ___
 
 ### argumentName
 
-•  **argumentName**: string
+• **argumentName**: `string`
 
-*Defined in [models.ts:94](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L94)*
+#### Defined in
+
+[models.ts:93](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L93)

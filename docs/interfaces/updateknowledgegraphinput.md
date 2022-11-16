@@ -1,59 +1,63 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / UpdateKnowledgeGraphInput
+[Maana Q Assistant API Client](../README.md) / UpdateKnowledgeGraphInput
 
 # Interface: UpdateKnowledgeGraphInput
 
-## Hierarchy
-
-* **UpdateKnowledgeGraphInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [description](updateknowledgegraphinput.md#description)
-* [graph](updateknowledgegraphinput.md#graph)
-* [id](updateknowledgegraphinput.md#id)
-* [lock](updateknowledgegraphinput.md#lock)
-* [name](updateknowledgegraphinput.md#name)
+- [description](UpdateKnowledgeGraphInput.md#description)
+- [graph](UpdateKnowledgeGraphInput.md#graph)
+- [id](UpdateKnowledgeGraphInput.md#id)
+- [lock](UpdateKnowledgeGraphInput.md#lock)
+- [name](UpdateKnowledgeGraphInput.md#name)
 
 ## Properties
 
 ### description
 
-• `Optional` **description**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **description**: `string`
 
-*Defined in [models.ts:814](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L814)*
+#### Defined in
+
+[models.ts:816](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L816)
 
 ___
 
 ### graph
 
-• `Optional` **graph**: [Maybe](../README.md#maybe)\<[UpdateGraphInput](updategraphinput.md)>
+• `Optional` **graph**: [`UpdateGraphInput`](UpdateGraphInput.md)
 
-*Defined in [models.ts:816](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L816)*
+#### Defined in
+
+[models.ts:818](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L818)
 
 ___
 
 ### id
 
-•  **id**: string
+• **id**: `string`
 
-*Defined in [models.ts:812](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L812)*
+#### Defined in
+
+[models.ts:814](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L814)
 
 ___
 
 ### lock
 
-• `Optional` **lock**: [Maybe](../README.md#maybe)\<[EntityLockInput](entitylockinput.md)>
+• `Optional` **lock**: [`EntityLockInput`](EntityLockInput.md)
 
-*Defined in [models.ts:815](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L815)*
+#### Defined in
+
+[models.ts:817](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L817)
 
 ___
 
 ### name
 
-• `Optional` **name**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **name**: `string`
 
-*Defined in [models.ts:813](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L813)*
+#### Defined in
+
+[models.ts:815](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L815)

@@ -1,32 +1,30 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / PositionInput
+[Maana Q Assistant API Client](../README.md) / PositionInput
 
 # Interface: PositionInput
 
-## Hierarchy
-
-* **PositionInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [x](positioninput.md#x)
-* [y](positioninput.md#y)
+- [x](PositionInput.md#x)
+- [y](PositionInput.md#y)
 
 ## Properties
 
 ### x
 
-• `Optional` **x**: [Maybe](../README.md#maybe)\<number>
+• `Optional` **x**: `number`
 
-*Defined in [models.ts:680](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L680)*
+#### Defined in
+
+[models.ts:682](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L682)
 
 ___
 
 ### y
 
-• `Optional` **y**: [Maybe](../README.md#maybe)\<number>
+• `Optional` **y**: `number`
 
-*Defined in [models.ts:681](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L681)*
+#### Defined in
+
+[models.ts:683](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L683)

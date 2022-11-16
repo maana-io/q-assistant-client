@@ -1,58 +1,60 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / Graph
+[Maana Q Assistant API Client](../README.md) / Graph
 
 # Interface: Graph
 
-## Hierarchy
-
-* **Graph**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [connections](graph.md#connections)
-* [nodes](graph.md#nodes)
-* [offset](graph.md#offset)
-* [zoom](graph.md#zoom)
+- [connections](Graph.md#connections)
+- [nodes](Graph.md#nodes)
+- [offset](Graph.md#offset)
+- [zoom](Graph.md#zoom)
 
 ## Properties
 
 ### connections
 
-•  **connections**: [Connection](connection.md)[]
-
-*Defined in [models.ts:173](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L173)*
+• **connections**: [`Connection`](Connection.md)[]
 
 The connections in the Graph.
+
+#### Defined in
+
+[models.ts:172](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L172)
 
 ___
 
 ### nodes
 
-•  **nodes**: [Node](node.md)[]
-
-*Defined in [models.ts:170](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L170)*
+• **nodes**: [`Node`](Node.md)[]
 
 The nodes in the Graph.
+
+#### Defined in
+
+[models.ts:169](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L169)
 
 ___
 
 ### offset
 
-•  **offset**: [Position](position.md)
-
-*Defined in [models.ts:164](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L164)*
+• **offset**: [`Position`](Position.md)
 
 The offset of the Graph.
+
+#### Defined in
+
+[models.ts:163](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L163)
 
 ___
 
 ### zoom
 
-•  **zoom**: number
-
-*Defined in [models.ts:167](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L167)*
+• **zoom**: `number`
 
 The zoom of the Graph.
+
+#### Defined in
+
+[models.ts:166](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L166)

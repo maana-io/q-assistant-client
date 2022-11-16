@@ -37,24 +37,26 @@ export enum Scalars {
 /**
  * The different entity types used in entity identifiers, like the ones returned
  * from selection or used in graph nodes.
+ *
+ * @note Documentation is missing for EntityType after change to string union
  */
-export enum EntityType {
-  ANNOTATION = 'ANNOTATION',
-  FILE = 'FILE',
-  FUNCTION = 'FUNCTION',
-  KNOWLEDGE_GRAPH = 'KNOWLEDGE_GRAPH',
-  SERVICE = 'SERVICE',
-  TYPE = 'TYPE',
-  VALUE = 'VALUE',
-  WORKSPACE = 'WORKSPACE',
+export type EntityType =
+  // From maana-portal
+  | 'ANNOTATION'
+  | 'FILE'
+  | 'FUNCTION'
+  | 'KNOWLEDGE_GRAPH'
+  | 'SERVICE'
+  | 'TYPE'
+  | 'VALUE'
+  | 'WORKSPACE'
 
-  // UI only Entities
-  CONNECTION = 'CONNECTION',
-  FUNCTION_ARGUMENTS = 'FUNCTION_ARGUMENTS',
-  FUNCTION_OUTPUT = 'FUNCTION_OUTPUT',
-  GRAPH_NODE = 'GRAPH_NODE',
-  ACTIVITY = 'ACTIVITY'
-}
+  // UI Specific Entities
+  | 'CONNECTION'
+  | 'FUNCTION_ARGUMENTS'
+  | 'FUNCTION_OUTPUT'
+  | 'GRAPH_NODE'
+  | 'ACTIVITY';
 
 /**
  * The different types of possible services

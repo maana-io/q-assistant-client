@@ -1,37 +1,35 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / ServiceLocation
+[Maana Q Assistant API Client](../README.md) / ServiceLocation
 
 # Interface: ServiceLocation
 
-## Hierarchy
-
-* **ServiceLocation**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [platformUrl](servicelocation.md#platformurl)
-* [url](servicelocation.md#url)
+- [platformUrl](ServiceLocation.md#platformurl)
+- [url](ServiceLocation.md#url)
 
 ## Properties
 
 ### platformUrl
 
-•  **platformUrl**: string
-
-*Defined in [models.ts:383](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L383)*
+• **platformUrl**: `string`
 
 A form of the URL that uses the Maana Q platform to proxy a request to the
 service. This is useful if the client cannot directly access the service.
+
+#### Defined in
+
+[models.ts:382](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L382)
 
 ___
 
 ### url
 
-•  **url**: string
-
-*Defined in [models.ts:377](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L377)*
+• **url**: `string`
 
 The URL that the locator references.
+
+#### Defined in
+
+[models.ts:376](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L376)

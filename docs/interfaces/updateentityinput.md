@@ -1,68 +1,74 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / UpdateEntityInput
+[Maana Q Assistant API Client](../README.md) / UpdateEntityInput
 
 # Interface: UpdateEntityInput
 
-## Hierarchy
-
-* **UpdateEntityInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [annotation](updateentityinput.md#annotation)
-* [entityType](updateentityinput.md#entitytype)
-* [file](updateentityinput.md#file)
-* [function](updateentityinput.md#function)
-* [knowledgeGraph](updateentityinput.md#knowledgegraph)
-* [type](updateentityinput.md#type)
+- [annotation](UpdateEntityInput.md#annotation)
+- [entityType](UpdateEntityInput.md#entitytype)
+- [file](UpdateEntityInput.md#file)
+- [function](UpdateEntityInput.md#function)
+- [knowledgeGraph](UpdateEntityInput.md#knowledgegraph)
+- [type](UpdateEntityInput.md#type)
 
 ## Properties
 
 ### annotation
 
-• `Optional` **annotation**: [Maybe](../README.md#maybe)\<[UpdateAnnotationInput](updateannotationinput.md)>
+• `Optional` **annotation**: [`UpdateAnnotationInput`](UpdateAnnotationInput.md)
 
-*Defined in [models.ts:865](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L865)*
+#### Defined in
+
+[models.ts:867](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L867)
 
 ___
 
 ### entityType
 
-•  **entityType**: [EntityType](../enums/entitytype.md)
+• **entityType**: [`EntityType`](../README.md#entitytype)
 
-*Defined in [models.ts:860](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L860)*
+#### Defined in
+
+[models.ts:862](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L862)
 
 ___
 
 ### file
 
-• `Optional` **file**: [Maybe](../README.md#maybe)\<[UpdateFileInput](updatefileinput.md)>
+• `Optional` **file**: [`UpdateFileInput`](UpdateFileInput.md)
 
-*Defined in [models.ts:864](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L864)*
+#### Defined in
+
+[models.ts:866](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L866)
 
 ___
 
 ### function
 
-• `Optional` **function**: [Maybe](../README.md#maybe)\<[UpdateFunctionInput](updatefunctioninput.md)>
+• `Optional` **function**: [`UpdateFunctionInput`](UpdateFunctionInput.md)
 
-*Defined in [models.ts:863](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L863)*
+#### Defined in
+
+[models.ts:865](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L865)
 
 ___
 
 ### knowledgeGraph
 
-• `Optional` **knowledgeGraph**: [Maybe](../README.md#maybe)\<[UpdateKnowledgeGraphInput](updateknowledgegraphinput.md)>
+• `Optional` **knowledgeGraph**: [`UpdateKnowledgeGraphInput`](UpdateKnowledgeGraphInput.md)
 
-*Defined in [models.ts:861](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L861)*
+#### Defined in
+
+[models.ts:863](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L863)
 
 ___
 
 ### type
 
-• `Optional` **type**: [Maybe](../README.md#maybe)\<[UpdateTypeInput](updatetypeinput.md)>
+• `Optional` **type**: [`UpdateTypeInput`](UpdateTypeInput.md)
 
-*Defined in [models.ts:862](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L862)*
+#### Defined in
+
+[models.ts:864](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L864)

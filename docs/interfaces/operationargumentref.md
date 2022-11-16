@@ -1,41 +1,41 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / OperationArgumentRef
+[Maana Q Assistant API Client](../README.md) / OperationArgumentRef
 
 # Interface: OperationArgumentRef
 
-## Hierarchy
-
-* **OperationArgumentRef**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [argumentId](operationargumentref.md#argumentid)
-* [argumentName](operationargumentref.md#argumentname)
-* [operationId](operationargumentref.md#operationid)
+- [argumentId](OperationArgumentRef.md#argumentid)
+- [argumentName](OperationArgumentRef.md#argumentname)
+- [operationId](OperationArgumentRef.md#operationid)
 
 ## Properties
 
 ### argumentId
 
-•  **argumentId**: string
+• **argumentId**: `string`
 
-*Defined in [models.ts:101](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L101)*
+#### Defined in
+
+[models.ts:100](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L100)
 
 ___
 
 ### argumentName
 
-•  **argumentName**: string
+• **argumentName**: `string`
 
-*Defined in [models.ts:100](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L100)*
+#### Defined in
+
+[models.ts:99](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L99)
 
 ___
 
 ### operationId
 
-•  **operationId**: string
+• **operationId**: `string`
 
-*Defined in [models.ts:99](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L99)*
+#### Defined in
+
+[models.ts:98](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L98)

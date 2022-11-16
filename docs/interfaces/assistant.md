@@ -1,113 +1,135 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / Assistant
+[Maana Q Assistant API Client](../README.md) / Assistant
 
 # Interface: Assistant
 
 ## Hierarchy
 
-* [Entity](entity.md)
+- [`Entity`](Entity.md)
 
-  ↳ **Assistant**
+  ↳ **`Assistant`**
 
-## Index
+## Table of contents
 
 ### Properties
 
-* [description](assistant.md#description)
-* [id](assistant.md#id)
-* [location](assistant.md#location)
-* [name](assistant.md#name)
-* [nameDescriptor](assistant.md#namedescriptor)
-* [version](assistant.md#version)
+- [description](Assistant.md#description)
+- [id](Assistant.md#id)
+- [location](Assistant.md#location)
+- [name](Assistant.md#name)
+- [nameDescriptor](Assistant.md#namedescriptor)
+- [version](Assistant.md#version)
 
 ### Methods
 
-* [update](assistant.md#update)
+- [update](Assistant.md#update)
 
 ## Properties
 
 ### description
 
-• `Optional` **description**: string
-
-*Inherited from [Entity](entity.md).[description](entity.md#description)*
-
-*Defined in [models.ts:82](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L82)*
+• `Optional` **description**: `string`
 
 Human readable description of the entity.
+
+#### Inherited from
+
+[Entity](Entity.md).[description](Entity.md#description)
+
+#### Defined in
+
+[models.ts:81](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L81)
 
 ___
 
 ### id
 
-•  **id**: string
-
-*Inherited from [Entity](entity.md).[id](entity.md#id)*
-
-*Defined in [models.ts:73](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L73)*
+• **id**: `string`
 
 The ID of the entity.
+
+#### Inherited from
+
+[Entity](Entity.md).[id](Entity.md#id)
+
+#### Defined in
+
+[models.ts:72](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L72)
 
 ___
 
 ### location
 
-•  **location**: [ServiceLocation](servicelocation.md)
-
-*Defined in [models.ts:421](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L421)*
+• **location**: [`ServiceLocation`](ServiceLocation.md)
 
 The location that the Assistant can be reached at.
+
+#### Defined in
+
+[models.ts:420](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L420)
 
 ___
 
 ### name
 
-•  **name**: string
-
-*Inherited from [Entity](entity.md).[name](entity.md#name)*
-
-*Defined in [models.ts:76](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L76)*
+• **name**: `string`
 
 The name of the entity.
+
+#### Inherited from
+
+[Entity](Entity.md).[name](Entity.md#name)
+
+#### Defined in
+
+[models.ts:75](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L75)
 
 ___
 
 ### nameDescriptor
 
-• `Optional` **nameDescriptor**: string
-
-*Inherited from [Entity](entity.md).[nameDescriptor](entity.md#namedescriptor)*
-
-*Defined in [models.ts:79](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L79)*
+• `Optional` **nameDescriptor**: `string`
 
 Name of where the entity comes from (Service/Workspace).
+
+#### Inherited from
+
+[Entity](Entity.md).[nameDescriptor](Entity.md#namedescriptor)
+
+#### Defined in
+
+[models.ts:78](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L78)
 
 ___
 
 ### version
 
-•  **version**: number
-
-*Defined in [models.ts:427](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L427)*
+• **version**: `number`
 
 The current version of the Assistant.  This is incremented by catalog each
 time the Assistant is updated.
+
+#### Defined in
+
+[models.ts:426](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L426)
 
 ## Methods
 
 ### update
 
-▸ **update**(`changes`: [UpdateAssistantInput](updateassistantinput.md)): Promise\<void>
-
-*Defined in [models.ts:433](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L433)*
+▸ **update**(`changes`): `Promise`<`void`\>
 
 Updates information about the Assistant.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
------- | ------ | ------ |
-`changes` | [UpdateAssistantInput](updateassistantinput.md) | Information to update the Assistant with.  |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `changes` | [`UpdateAssistantInput`](UpdateAssistantInput.md) | Information to update the Assistant with. |
 
-**Returns:** Promise\<void>
+#### Returns
+
+`Promise`<`void`\>
+
+#### Defined in
+
+[models.ts:432](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L432)

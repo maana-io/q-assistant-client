@@ -1,77 +1,85 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / UpdateGraphInput
+[Maana Q Assistant API Client](../README.md) / UpdateGraphInput
 
 # Interface: UpdateGraphInput
 
-## Hierarchy
-
-* **UpdateGraphInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [createConnections](updategraphinput.md#createconnections)
-* [createNodes](updategraphinput.md#createnodes)
-* [deleteConnections](updategraphinput.md#deleteconnections)
-* [deleteNodes](updategraphinput.md#deletenodes)
-* [offset](updategraphinput.md#offset)
-* [updateNodes](updategraphinput.md#updatenodes)
-* [zoom](updategraphinput.md#zoom)
+- [createConnections](UpdateGraphInput.md#createconnections)
+- [createNodes](UpdateGraphInput.md#createnodes)
+- [deleteConnections](UpdateGraphInput.md#deleteconnections)
+- [deleteNodes](UpdateGraphInput.md#deletenodes)
+- [offset](UpdateGraphInput.md#offset)
+- [updateNodes](UpdateGraphInput.md#updatenodes)
+- [zoom](UpdateGraphInput.md#zoom)
 
 ## Properties
 
 ### createConnections
 
-• `Optional` **createConnections**: [Maybe](../README.md#maybe)\<Array\<[CreateConnectionInput](createconnectioninput.md)>>
+• `Optional` **createConnections**: [`CreateConnectionInput`](CreateConnectionInput.md)[]
 
-*Defined in [models.ts:807](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L807)*
+#### Defined in
+
+[models.ts:809](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L809)
 
 ___
 
 ### createNodes
 
-• `Optional` **createNodes**: [Maybe](../README.md#maybe)\<Array\<[CreateNodeInput](createnodeinput.md)>>
+• `Optional` **createNodes**: [`CreateNodeInput`](CreateNodeInput.md)[]
 
-*Defined in [models.ts:804](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L804)*
+#### Defined in
+
+[models.ts:806](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L806)
 
 ___
 
 ### deleteConnections
 
-• `Optional` **deleteConnections**: [Maybe](../README.md#maybe)\<Array\<string>>
+• `Optional` **deleteConnections**: `string`[]
 
-*Defined in [models.ts:808](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L808)*
+#### Defined in
+
+[models.ts:810](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L810)
 
 ___
 
 ### deleteNodes
 
-• `Optional` **deleteNodes**: [Maybe](../README.md#maybe)\<Array\<string>>
+• `Optional` **deleteNodes**: `string`[]
 
-*Defined in [models.ts:806](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L806)*
+#### Defined in
+
+[models.ts:808](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L808)
 
 ___
 
 ### offset
 
-• `Optional` **offset**: [Maybe](../README.md#maybe)\<[PositionInput](positioninput.md)>
+• `Optional` **offset**: [`PositionInput`](PositionInput.md)
 
-*Defined in [models.ts:802](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L802)*
+#### Defined in
+
+[models.ts:804](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L804)
 
 ___
 
 ### updateNodes
 
-• `Optional` **updateNodes**: [Maybe](../README.md#maybe)\<Array\<[UpdateNodeInput](updatenodeinput.md)>>
+• `Optional` **updateNodes**: [`UpdateNodeInput`](UpdateNodeInput.md)[]
 
-*Defined in [models.ts:805](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L805)*
+#### Defined in
+
+[models.ts:807](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L807)
 
 ___
 
 ### zoom
 
-• `Optional` **zoom**: [Maybe](../README.md#maybe)\<number>
+• `Optional` **zoom**: `number`
 
-*Defined in [models.ts:803](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L803)*
+#### Defined in
+
+[models.ts:805](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L805)

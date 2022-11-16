@@ -1,23 +1,19 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / IDObject
+[Maana Q Assistant API Client](../README.md) / IDObject
 
 # Interface: IDObject
 
-## Hierarchy
-
-* **IDObject**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [id](idobject.md#id)
+- [id](IDObject.md#id)
 
 ## Properties
 
 ### id
 
-•  **id**: string
+• **id**: `string`
 
-*Defined in [models.ts:36](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L36)*
+#### Defined in
+
+[models.ts:35](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L35)

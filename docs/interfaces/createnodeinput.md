@@ -1,77 +1,85 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / CreateNodeInput
+[Maana Q Assistant API Client](../README.md) / CreateNodeInput
 
 # Interface: CreateNodeInput
 
-## Hierarchy
-
-* **CreateNodeInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [description](createnodeinput.md#description)
-* [entity](createnodeinput.md#entity)
-* [id](createnodeinput.md#id)
-* [isCollapsed](createnodeinput.md#iscollapsed)
-* [location](createnodeinput.md#location)
-* [operation](createnodeinput.md#operation)
-* [type](createnodeinput.md#type)
+- [description](CreateNodeInput.md#description)
+- [entity](CreateNodeInput.md#entity)
+- [id](CreateNodeInput.md#id)
+- [isCollapsed](CreateNodeInput.md#iscollapsed)
+- [location](CreateNodeInput.md#location)
+- [operation](CreateNodeInput.md#operation)
+- [type](CreateNodeInput.md#type)
 
 ## Properties
 
 ### description
 
-• `Optional` **description**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **description**: `string`
 
-*Defined in [models.ts:688](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L688)*
+#### Defined in
+
+[models.ts:690](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L690)
 
 ___
 
 ### entity
 
-• `Optional` **entity**: [Maybe](../README.md#maybe)\<[EntityIdentifier](entityidentifier.md)>
+• `Optional` **entity**: [`EntityIdentifier`](EntityIdentifier.md)
 
-*Defined in [models.ts:690](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L690)*
+#### Defined in
+
+[models.ts:692](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L692)
 
 ___
 
 ### id
 
-• `Optional` **id**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **id**: `string`
 
-*Defined in [models.ts:685](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L685)*
+#### Defined in
+
+[models.ts:687](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L687)
 
 ___
 
 ### isCollapsed
 
-• `Optional` **isCollapsed**: [Maybe](../README.md#maybe)\<string[]>
+• `Optional` **isCollapsed**: `string`[]
 
-*Defined in [models.ts:687](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L687)*
+#### Defined in
+
+[models.ts:689](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L689)
 
 ___
 
 ### location
 
-• `Optional` **location**: [Maybe](../README.md#maybe)\<[PositionInput](positioninput.md)>
+• `Optional` **location**: [`PositionInput`](PositionInput.md)
 
-*Defined in [models.ts:686](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L686)*
+#### Defined in
+
+[models.ts:688](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L688)
 
 ___
 
 ### operation
 
-• `Optional` **operation**: [Maybe](../README.md#maybe)\<[EntityIdentifier](entityidentifier.md)>
+• `Optional` **operation**: [`EntityIdentifier`](EntityIdentifier.md)
 
-*Defined in [models.ts:691](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L691)*
+#### Defined in
+
+[models.ts:693](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L693)
 
 ___
 
 ### type
 
-•  **type**: [NodeType](../enums/nodetype.md)
+• **type**: [`NodeType`](../enums/NodeType.md)
 
-*Defined in [models.ts:689](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L689)*
+#### Defined in
+
+[models.ts:691](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L691)

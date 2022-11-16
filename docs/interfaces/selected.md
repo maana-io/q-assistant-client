@@ -1,25 +1,21 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / Selected
+[Maana Q Assistant API Client](../README.md) / Selected
 
 # Interface: Selected
 
-## Hierarchy
-
-* **Selected**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [selection](selected.md#selection)
+- [selection](Selected.md#selection)
 
 ## Properties
 
 ### selection
 
-•  **selection**: [EntityIdentifier](entityidentifier.md)[]
-
-*Defined in [models.ts:68](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L68)*
+• **selection**: [`EntityIdentifier`](EntityIdentifier.md)[]
 
 The list of selected entities.
+
+#### Defined in
+
+[models.ts:67](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L67)

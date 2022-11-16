@@ -1,23 +1,19 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / FunctionResultRef
+[Maana Q Assistant API Client](../README.md) / FunctionResultRef
 
 # Interface: FunctionResultRef
 
-## Hierarchy
-
-* **FunctionResultRef**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [result](functionresultref.md#result)
+- [result](FunctionResultRef.md#result)
 
 ## Properties
 
 ### result
 
-• `Optional` **result**: [Maybe](../README.md#maybe)\<boolean>
+• `Optional` **result**: `boolean`
 
-*Defined in [models.ts:105](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L105)*
+#### Defined in
+
+[models.ts:104](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L104)

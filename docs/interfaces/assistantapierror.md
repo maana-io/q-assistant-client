@@ -1,6 +1,4 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / AssistantAPIError
+[Maana Q Assistant API Client](../README.md) / AssistantAPIError
 
 # Interface: AssistantAPIError
 
@@ -8,33 +6,33 @@ The top level error object returned by the Assistant API that wraps and
 returns any errors that occurred during a API call. Contains an array of
 errors that caused the this error to be returned.
 
-## Hierarchy
-
-* **AssistantAPIError**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [cause](assistantapierror.md#cause)
-* [message](assistantapierror.md#message)
+- [cause](AssistantAPIError.md#cause)
+- [message](AssistantAPIError.md#message)
 
 ## Properties
 
 ### cause
 
-• `Optional` **cause**: [Maybe](../README.md#maybe)\<[ErrorLike](errorlike.md)[]>
-
-*Defined in [models.ts:32](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L32)*
+• `Optional` **cause**: `ErrorLike`[]
 
 A list of errors like objects that were the cause of this error.
+
+#### Defined in
+
+[models.ts:31](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L31)
 
 ___
 
 ### message
 
-•  **message**: string
-
-*Defined in [models.ts:29](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L29)*
+• **message**: `string`
 
 The top level message for the error.
+
+#### Defined in
+
+[models.ts:28](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L28)

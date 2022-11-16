@@ -1,59 +1,63 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / UpdateTypeInput
+[Maana Q Assistant API Client](../README.md) / UpdateTypeInput
 
 # Interface: UpdateTypeInput
 
-## Hierarchy
-
-* **UpdateTypeInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [description](updatetypeinput.md#description)
-* [id](updatetypeinput.md#id)
-* [isManaged](updatetypeinput.md#ismanaged)
-* [name](updatetypeinput.md#name)
-* [signature](updatetypeinput.md#signature)
+- [description](UpdateTypeInput.md#description)
+- [id](UpdateTypeInput.md#id)
+- [isManaged](UpdateTypeInput.md#ismanaged)
+- [name](UpdateTypeInput.md#name)
+- [signature](UpdateTypeInput.md#signature)
 
 ## Properties
 
 ### description
 
-• `Optional` **description**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **description**: `string`
 
-*Defined in [models.ts:822](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L822)*
+#### Defined in
+
+[models.ts:824](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L824)
 
 ___
 
 ### id
 
-•  **id**: string
+• **id**: `string`
 
-*Defined in [models.ts:820](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L820)*
+#### Defined in
+
+[models.ts:822](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L822)
 
 ___
 
 ### isManaged
 
-• `Optional` **isManaged**: [Maybe](../README.md#maybe)\<boolean>
+• `Optional` **isManaged**: `boolean`
 
-*Defined in [models.ts:824](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L824)*
+#### Defined in
+
+[models.ts:826](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L826)
 
 ___
 
 ### name
 
-• `Optional` **name**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **name**: `string`
 
-*Defined in [models.ts:821](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L821)*
+#### Defined in
+
+[models.ts:823](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L823)
 
 ___
 
 ### signature
 
-• `Optional` **signature**: [Maybe](../README.md#maybe)\<[TypeExpressionObject](../README.md#typeexpressionobject)>
+• `Optional` **signature**: `TypeExpression`
 
-*Defined in [models.ts:823](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L823)*
+#### Defined in
+
+[models.ts:825](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L825)

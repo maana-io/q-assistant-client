@@ -1,58 +1,66 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / GraphRefInputType
+[Maana Q Assistant API Client](../README.md) / GraphRefInputType
 
 # Enumeration: GraphRefInputType
 
 The different types of graph references used for the connections on a
 function graph implementation.
 
-## Index
+## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
-* [ARGUMENT](graphrefinputtype.md#argument)
-* [FUNCTION\_RESULT](graphrefinputtype.md#function_result)
-* [OPERATION\_ARGUMENT](graphrefinputtype.md#operation_argument)
-* [OPERATION\_RESULT](graphrefinputtype.md#operation_result)
-* [OUTPUT\_ARGUMENT\_REF](graphrefinputtype.md#output_argument_ref)
+- [ARGUMENT](GraphRefInputType.md#argument)
+- [FUNCTION\_RESULT](GraphRefInputType.md#function_result)
+- [OPERATION\_ARGUMENT](GraphRefInputType.md#operation_argument)
+- [OPERATION\_RESULT](GraphRefInputType.md#operation_result)
+- [OUTPUT\_ARGUMENT\_REF](GraphRefInputType.md#output_argument_ref)
 
-## Enumeration members
+## Enumeration Members
 
 ### ARGUMENT
 
-•  **ARGUMENT**:  = "ARGUMENT"
+• **ARGUMENT** = ``"ARGUMENT"``
 
-*Defined in [constants.ts:113](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L113)*
+#### Defined in
+
+[constants.ts:113](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L113)
 
 ___
 
 ### FUNCTION\_RESULT
 
-•  **FUNCTION\_RESULT**:  = "FUNCTION\_RESULT"
+• **FUNCTION\_RESULT** = ``"FUNCTION_RESULT"``
 
-*Defined in [constants.ts:114](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L114)*
+#### Defined in
+
+[constants.ts:114](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L114)
 
 ___
 
 ### OPERATION\_ARGUMENT
 
-•  **OPERATION\_ARGUMENT**:  = "OPERATION\_ARGUMENT"
+• **OPERATION\_ARGUMENT** = ``"OPERATION_ARGUMENT"``
 
-*Defined in [constants.ts:115](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L115)*
+#### Defined in
+
+[constants.ts:115](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L115)
 
 ___
 
 ### OPERATION\_RESULT
 
-•  **OPERATION\_RESULT**:  = "OPERATION\_RESULT"
+• **OPERATION\_RESULT** = ``"OPERATION_RESULT"``
 
-*Defined in [constants.ts:116](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L116)*
+#### Defined in
+
+[constants.ts:116](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L116)
 
 ___
 
 ### OUTPUT\_ARGUMENT\_REF
 
-•  **OUTPUT\_ARGUMENT\_REF**:  = "OUTPUT\_ARGUMENT\_REF"
+• **OUTPUT\_ARGUMENT\_REF** = ``"OUTPUT_ARGUMENT_REF"``
 
-*Defined in [constants.ts:117](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L117)*
+#### Defined in
+
+[constants.ts:117](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L117)

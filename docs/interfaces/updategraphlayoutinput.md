@@ -1,50 +1,52 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / UpdateGraphLayoutInput
+[Maana Q Assistant API Client](../README.md) / UpdateGraphLayoutInput
 
 # Interface: UpdateGraphLayoutInput
 
-## Hierarchy
-
-* **UpdateGraphLayoutInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [nodes](updategraphlayoutinput.md#nodes)
-* [offsetX](updategraphlayoutinput.md#offsetx)
-* [offsetY](updategraphlayoutinput.md#offsety)
-* [zoom](updategraphlayoutinput.md#zoom)
+- [nodes](UpdateGraphLayoutInput.md#nodes)
+- [offsetX](UpdateGraphLayoutInput.md#offsetx)
+- [offsetY](UpdateGraphLayoutInput.md#offsety)
+- [zoom](UpdateGraphLayoutInput.md#zoom)
 
 ## Properties
 
 ### nodes
 
-• `Optional` **nodes**: [UpdateNodeLayoutInput](updatenodelayoutinput.md) & { id: string  }[]
+• `Optional` **nodes**: [`UpdateNodeLayoutInput`](UpdateNodeLayoutInput.md) & { `id`: `string`  }[]
 
-*Defined in [models.ts:640](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L640)*
+#### Defined in
+
+[models.ts:642](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L642)
 
 ___
 
 ### offsetX
 
-• `Optional` **offsetX**: number
+• `Optional` **offsetX**: `number`
 
-*Defined in [models.ts:638](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L638)*
+#### Defined in
+
+[models.ts:640](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L640)
 
 ___
 
 ### offsetY
 
-• `Optional` **offsetY**: number
+• `Optional` **offsetY**: `number`
 
-*Defined in [models.ts:639](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L639)*
+#### Defined in
+
+[models.ts:641](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L641)
 
 ___
 
 ### zoom
 
-• `Optional` **zoom**: number
+• `Optional` **zoom**: `number`
 
-*Defined in [models.ts:637](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L637)*
+#### Defined in
+
+[models.ts:639](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L639)

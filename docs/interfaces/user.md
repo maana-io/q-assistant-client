@@ -1,36 +1,34 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / User
+[Maana Q Assistant API Client](../README.md) / User
 
 # Interface: User
 
-## Hierarchy
-
-* **User**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [email](user.md#email)
-* [name](user.md#name)
+- [email](User.md#email)
+- [name](User.md#name)
 
 ## Properties
 
 ### email
 
-•  **email**: string
-
-*Defined in [models.ts:46](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L46)*
+• **email**: `string`
 
 The users email address.
+
+#### Defined in
+
+[models.ts:45](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L45)
 
 ___
 
 ### name
 
-•  **name**: string
-
-*Defined in [models.ts:49](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L49)*
+• **name**: `string`
 
 The users name.
+
+#### Defined in
+
+[models.ts:48](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L48)

@@ -1,32 +1,30 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / CreateConnectionInput
+[Maana Q Assistant API Client](../README.md) / CreateConnectionInput
 
 # Interface: CreateConnectionInput
 
-## Hierarchy
-
-* **CreateConnectionInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [from](createconnectioninput.md#from)
-* [to](createconnectioninput.md#to)
+- [from](CreateConnectionInput.md#from)
+- [to](CreateConnectionInput.md#to)
 
 ## Properties
 
 ### from
 
-•  **from**: [GraphRefInput](graphrefinput.md)
+• **from**: [`GraphRefInput`](GraphRefInput.md)
 
-*Defined in [models.ts:714](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L714)*
+#### Defined in
+
+[models.ts:716](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L716)
 
 ___
 
 ### to
 
-•  **to**: [GraphRefInput](graphrefinput.md)
+• **to**: [`GraphRefInput`](GraphRefInput.md)
 
-*Defined in [models.ts:715](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L715)*
+#### Defined in
+
+[models.ts:717](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L717)

@@ -471,7 +471,7 @@ export namespace AssistantAPIClient {
   /**
    * Updates a Function in the active workspace with the given information.
    *
-   * @deprecated This has been deprecated in favor of calling it direction off of
+   * @deprecated This has been deprecated in favor of calling it directly off of
    * the workspace the function lives in.
    *
    * @param input Updates for the function.
@@ -487,7 +487,7 @@ export namespace AssistantAPIClient {
   /**
    * Deletes a function in the active workspace by the given name.
    *
-   * @deprecated This has been deprecated in favor of calling it direction off of
+   * @deprecated This has been deprecated in favor of calling it directly off of
    * the workspace the function lives in.
    *
    * @param input The name of the function

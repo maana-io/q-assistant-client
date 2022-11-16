@@ -1,32 +1,30 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / ArgumentFieldSelectionInput
+[Maana Q Assistant API Client](../README.md) / ArgumentFieldSelectionInput
 
 # Interface: ArgumentFieldSelectionInput
 
-## Hierarchy
-
-* **ArgumentFieldSelectionInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [argument](argumentfieldselectioninput.md#argument)
-* [fieldSelection](argumentfieldselectioninput.md#fieldselection)
+- [argument](ArgumentFieldSelectionInput.md#argument)
+- [fieldSelection](ArgumentFieldSelectionInput.md#fieldselection)
 
 ## Properties
 
 ### argument
 
-•  **argument**: string
+• **argument**: `string`
 
-*Defined in [models.ts:747](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L747)*
+#### Defined in
+
+[models.ts:749](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L749)
 
 ___
 
 ### fieldSelection
 
-• `Optional` **fieldSelection**: [Maybe](../README.md#maybe)\<Array\<Array\<string>>>
+• `Optional` **fieldSelection**: `string`[][]
 
-*Defined in [models.ts:748](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L748)*
+#### Defined in
+
+[models.ts:750](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L750)

@@ -1,94 +1,110 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / MaanaErrorCode
+[Maana Q Assistant API Client](../README.md) / MaanaErrorCode
 
 # Enumeration: MaanaErrorCode
 
 The different Maana specific error codes that can show up in the errors
 coming through the Assistant API.
 
-## Index
+## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
-* [DATA\_NOT\_FOUND](maanaerrorcode.md#data_not_found)
-* [GRAPHQL](maanaerrorcode.md#graphql)
-* [INVALID\_PARAMS](maanaerrorcode.md#invalid_params)
-* [MISSING\_PARAMS](maanaerrorcode.md#missing_params)
-* [NOT\_IMPLEMENTED](maanaerrorcode.md#not_implemented)
-* [PERMISSION](maanaerrorcode.md#permission)
-* [UNKNOWN\_ERROR](maanaerrorcode.md#unknown_error)
-* [UNKNOWN\_GRAPHQL\_ERROR](maanaerrorcode.md#unknown_graphql_error)
-* [VERSION](maanaerrorcode.md#version)
+- [DATA\_NOT\_FOUND](MaanaErrorCode.md#data_not_found)
+- [GRAPHQL](MaanaErrorCode.md#graphql)
+- [INVALID\_PARAMS](MaanaErrorCode.md#invalid_params)
+- [MISSING\_PARAMS](MaanaErrorCode.md#missing_params)
+- [NOT\_IMPLEMENTED](MaanaErrorCode.md#not_implemented)
+- [PERMISSION](MaanaErrorCode.md#permission)
+- [UNKNOWN\_ERROR](MaanaErrorCode.md#unknown_error)
+- [UNKNOWN\_GRAPHQL\_ERROR](MaanaErrorCode.md#unknown_graphql_error)
+- [VERSION](MaanaErrorCode.md#version)
 
-## Enumeration members
+## Enumeration Members
 
 ### DATA\_NOT\_FOUND
 
-•  **DATA\_NOT\_FOUND**:  = 102
+• **DATA\_NOT\_FOUND** = ``102``
 
-*Defined in [constants.ts:129](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L129)*
+#### Defined in
+
+[constants.ts:129](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L129)
 
 ___
 
 ### GRAPHQL
 
-•  **GRAPHQL**:  = 103
+• **GRAPHQL** = ``103``
 
-*Defined in [constants.ts:130](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L130)*
+#### Defined in
+
+[constants.ts:130](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L130)
 
 ___
 
 ### INVALID\_PARAMS
 
-•  **INVALID\_PARAMS**:  = 101
+• **INVALID\_PARAMS** = ``101``
 
-*Defined in [constants.ts:128](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L128)*
+#### Defined in
+
+[constants.ts:128](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L128)
 
 ___
 
 ### MISSING\_PARAMS
 
-•  **MISSING\_PARAMS**:  = 100
+• **MISSING\_PARAMS** = ``100``
 
-*Defined in [constants.ts:127](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L127)*
+#### Defined in
+
+[constants.ts:127](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L127)
 
 ___
 
 ### NOT\_IMPLEMENTED
 
-•  **NOT\_IMPLEMENTED**:  = 104
+• **NOT\_IMPLEMENTED** = ``104``
 
-*Defined in [constants.ts:131](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L131)*
+#### Defined in
+
+[constants.ts:131](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L131)
 
 ___
 
 ### PERMISSION
 
-•  **PERMISSION**:  = 105
+• **PERMISSION** = ``105``
 
-*Defined in [constants.ts:132](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L132)*
+#### Defined in
+
+[constants.ts:132](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L132)
 
 ___
 
 ### UNKNOWN\_ERROR
 
-•  **UNKNOWN\_ERROR**:  = 0
+• **UNKNOWN\_ERROR** = ``0``
 
-*Defined in [constants.ts:125](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L125)*
+#### Defined in
+
+[constants.ts:125](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L125)
 
 ___
 
 ### UNKNOWN\_GRAPHQL\_ERROR
 
-•  **UNKNOWN\_GRAPHQL\_ERROR**:  = 1
+• **UNKNOWN\_GRAPHQL\_ERROR** = ``1``
 
-*Defined in [constants.ts:126](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L126)*
+#### Defined in
+
+[constants.ts:126](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L126)
 
 ___
 
 ### VERSION
 
-•  **VERSION**:  = 106
+• **VERSION** = ``106``
 
-*Defined in [constants.ts:133](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L133)*
+#### Defined in
+
+[constants.ts:133](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L133)

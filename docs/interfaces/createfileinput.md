@@ -1,113 +1,129 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / CreateFileInput
+[Maana Q Assistant API Client](../README.md) / CreateFileInput
 
 # Interface: CreateFileInput
 
-## Hierarchy
-
-* **CreateFileInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [description](createfileinput.md#description)
-* [id](createfileinput.md#id)
-* [loadExternalMetadata](createfileinput.md#loadexternalmetadata)
-* [mimeType](createfileinput.md#mimetype)
-* [name](createfileinput.md#name)
-* [progress](createfileinput.md#progress)
-* [serviceId](createfileinput.md#serviceid)
-* [size](createfileinput.md#size)
-* [status](createfileinput.md#status)
-* [thumbnailUrl](createfileinput.md#thumbnailurl)
-* [url](createfileinput.md#url)
+- [description](CreateFileInput.md#description)
+- [id](CreateFileInput.md#id)
+- [loadExternalMetadata](CreateFileInput.md#loadexternalmetadata)
+- [mimeType](CreateFileInput.md#mimetype)
+- [name](CreateFileInput.md#name)
+- [progress](CreateFileInput.md#progress)
+- [serviceId](CreateFileInput.md#serviceid)
+- [size](CreateFileInput.md#size)
+- [status](CreateFileInput.md#status)
+- [thumbnailUrl](CreateFileInput.md#thumbnailurl)
+- [url](CreateFileInput.md#url)
 
 ## Properties
 
 ### description
 
-• `Optional` **description**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **description**: `string`
 
-*Defined in [models.ts:766](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L766)*
+#### Defined in
+
+[models.ts:768](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L768)
 
 ___
 
 ### id
 
-• `Optional` **id**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **id**: `string`
 
-*Defined in [models.ts:764](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L764)*
+#### Defined in
+
+[models.ts:766](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L766)
 
 ___
 
 ### loadExternalMetadata
 
-• `Optional` **loadExternalMetadata**: [Maybe](../README.md#maybe)\<boolean>
+• `Optional` **loadExternalMetadata**: `boolean`
 
-*Defined in [models.ts:774](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L774)*
+#### Defined in
+
+[models.ts:776](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L776)
 
 ___
 
 ### mimeType
 
-• `Optional` **mimeType**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **mimeType**: `string`
 
-*Defined in [models.ts:770](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L770)*
+#### Defined in
+
+[models.ts:772](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L772)
 
 ___
 
 ### name
 
-• `Optional` **name**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **name**: `string`
 
-*Defined in [models.ts:765](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L765)*
+#### Defined in
+
+[models.ts:767](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L767)
 
 ___
 
 ### progress
 
-• `Optional` **progress**: [Maybe](../README.md#maybe)\<number>
+• `Optional` **progress**: `number`
 
-*Defined in [models.ts:772](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L772)*
+#### Defined in
+
+[models.ts:774](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L774)
 
 ___
 
 ### serviceId
 
-•  **serviceId**: string
+• **serviceId**: `string`
 
-*Defined in [models.ts:767](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L767)*
+#### Defined in
+
+[models.ts:769](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L769)
 
 ___
 
 ### size
 
-• `Optional` **size**: [Maybe](../README.md#maybe)\<number>
+• `Optional` **size**: `number`
 
-*Defined in [models.ts:771](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L771)*
+#### Defined in
+
+[models.ts:773](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L773)
 
 ___
 
 ### status
 
-• `Optional` **status**: [Maybe](../README.md#maybe)\<number>
+• `Optional` **status**: `number`
 
-*Defined in [models.ts:773](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L773)*
+#### Defined in
+
+[models.ts:775](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L775)
 
 ___
 
 ### thumbnailUrl
 
-• `Optional` **thumbnailUrl**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **thumbnailUrl**: `string`
 
-*Defined in [models.ts:769](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L769)*
+#### Defined in
+
+[models.ts:771](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L771)
 
 ___
 
 ### url
 
-•  **url**: string
+• **url**: `string`
 
-*Defined in [models.ts:768](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L768)*
+#### Defined in
+
+[models.ts:770](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L770)
