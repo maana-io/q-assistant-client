@@ -21,7 +21,7 @@ The different GraphQL operations that the function can be used for.
 
 #### Defined in
 
-[constants.ts:82](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L82)
+[constants.ts:84](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L84)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 #### Defined in
 
-[constants.ts:84](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L84)
+[constants.ts:86](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L86)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 #### Defined in
 
-[constants.ts:81](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L81)
+[constants.ts:83](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L83)
 
 ___
 
@@ -51,4 +51,4 @@ ___
 
 #### Defined in
 
-[constants.ts:83](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L83)
+[constants.ts:85](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L85)

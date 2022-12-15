@@ -63,7 +63,7 @@ Human readable description of the entity.
 
 #### Defined in
 
-[models.ts:81](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L81)
+[models.ts:84](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L84)
 
 ___
 
@@ -75,7 +75,7 @@ The graph information for the Knowledge Graph.
 
 #### Defined in
 
-[models.ts:222](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L222)
+[models.ts:225](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L225)
 
 ___
 
@@ -91,7 +91,7 @@ The ID of the entity.
 
 #### Defined in
 
-[models.ts:72](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L72)
+[models.ts:75](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L75)
 
 ___
 
@@ -107,7 +107,7 @@ The name of the entity.
 
 #### Defined in
 
-[models.ts:75](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L75)
+[models.ts:78](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L78)
 
 ___
 
@@ -123,7 +123,7 @@ Name of where the entity comes from (Service/Workspace).
 
 #### Defined in
 
-[models.ts:78](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L78)
+[models.ts:81](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L81)
 
 ___
 
@@ -139,7 +139,7 @@ Use graph.offset.x instead.
 
 #### Defined in
 
-[models.ts:207](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L207)
+[models.ts:210](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L210)
 
 ___
 
@@ -155,7 +155,7 @@ use graph.offset.y instead.
 
 #### Defined in
 
-[models.ts:213](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L213)
+[models.ts:216](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L216)
 
 ___
 
@@ -171,7 +171,7 @@ use graph.zoom instead.
 
 #### Defined in
 
-[models.ts:219](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L219)
+[models.ts:222](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L222)
 
 ## Methods
 
@@ -197,7 +197,7 @@ use update instead.
 
 #### Defined in
 
-[models.ts:253](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L253)
+[models.ts:256](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L256)
 
 ___
 
@@ -213,7 +213,7 @@ Returns boolean stating if the Knowledge Graph is editable.
 
 #### Defined in
 
-[models.ts:225](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L225)
+[models.ts:228](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L228)
 
 ___
 
@@ -233,7 +233,7 @@ use graph.nodes instead.
 
 #### Defined in
 
-[models.ts:247](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L247)
+[models.ts:250](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L250)
 
 ___
 
@@ -249,7 +249,7 @@ Returns the e-mail of the user who locked the Knowledge Graph.
 
 #### Defined in
 
-[models.ts:228](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L228)
+[models.ts:231](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L231)
 
 ___
 
@@ -275,7 +275,7 @@ use update instead.
 
 #### Defined in
 
-[models.ts:260](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L260)
+[models.ts:263](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L263)
 
 ___
 
@@ -297,7 +297,7 @@ Updates the locked state of the Knowledge Graph.
 
 #### Defined in
 
-[models.ts:235](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L235)
+[models.ts:238](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L238)
 
 ___
 
@@ -319,7 +319,7 @@ Updates information about the Knowledge Graph.
 
 #### Defined in
 
-[models.ts:241](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L241)
+[models.ts:244](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L244)
 
 ___
 
@@ -341,7 +341,7 @@ Updates the layout information for the graph of the Knowledge Graph.
 
 #### Defined in
 
-[models.ts:276](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L276)
+[models.ts:279](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L279)
 
 ___
 
@@ -364,4 +364,4 @@ Updates the layout information for a node in the Knowledge Graph.
 
 #### Defined in
 
-[models.ts:267](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L267)
+[models.ts:270](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L270)

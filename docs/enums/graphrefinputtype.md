@@ -23,7 +23,7 @@ function graph implementation.
 
 #### Defined in
 
-[constants.ts:113](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L113)
+[constants.ts:115](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L115)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[constants.ts:114](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L114)
+[constants.ts:116](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L116)
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 #### Defined in
 
-[constants.ts:115](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L115)
+[constants.ts:117](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L117)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-[constants.ts:116](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L116)
+[constants.ts:118](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L118)
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 #### Defined in
 
-[constants.ts:117](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L117)
+[constants.ts:119](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L119)

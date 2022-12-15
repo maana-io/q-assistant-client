@@ -21,7 +21,7 @@ The type of entity being referenced.
 
 #### Defined in
 
-[models.ts:53](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L53)
+[models.ts:56](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L56)
 
 ___
 
@@ -33,7 +33,7 @@ The ID of the entity. Used for all but Types and Functions.
 
 #### Defined in
 
-[models.ts:56](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L56)
+[models.ts:59](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L59)
 
 ___
 
@@ -45,7 +45,7 @@ The name of the entity. Used by Types and Functions.
 
 #### Defined in
 
-[models.ts:59](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L59)
+[models.ts:62](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L62)
 
 ___
 
@@ -57,4 +57,4 @@ The ID of the service that the entity lives in.  Used by Types and Functions.
 
 #### Defined in
 
-[models.ts:62](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L62)
+[models.ts:65](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L65)

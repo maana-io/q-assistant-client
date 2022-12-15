@@ -21,7 +21,7 @@ The connections in the Graph.
 
 #### Defined in
 
-[models.ts:172](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L172)
+[models.ts:175](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L175)
 
 ___
 
@@ -33,7 +33,7 @@ The nodes in the Graph.
 
 #### Defined in
 
-[models.ts:169](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L169)
+[models.ts:172](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L172)
 
 ___
 
@@ -45,7 +45,7 @@ The offset of the Graph.
 
 #### Defined in
 
-[models.ts:163](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L163)
+[models.ts:166](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L166)
 
 ___
 
@@ -57,4 +57,4 @@ The zoom of the Graph.
 
 #### Defined in
 
-[models.ts:166](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L166)
+[models.ts:169](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L169)

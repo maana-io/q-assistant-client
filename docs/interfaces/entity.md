@@ -37,7 +37,7 @@ Human readable description of the entity.
 
 #### Defined in
 
-[models.ts:81](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L81)
+[models.ts:84](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L84)
 
 ___
 
@@ -49,7 +49,7 @@ The ID of the entity.
 
 #### Defined in
 
-[models.ts:72](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L72)
+[models.ts:75](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L75)
 
 ___
 
@@ -61,7 +61,7 @@ The name of the entity.
 
 #### Defined in
 
-[models.ts:75](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L75)
+[models.ts:78](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L78)
 
 ___
 
@@ -73,4 +73,4 @@ Name of where the entity comes from (Service/Workspace).
 
 #### Defined in
 
-[models.ts:78](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L78)
+[models.ts:81](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L81)

@@ -18,4 +18,4 @@ The different types implementations that can be used on a CKG function.
 
 #### Defined in
 
-[constants.ts:91](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L91)
+[constants.ts:93](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L93)

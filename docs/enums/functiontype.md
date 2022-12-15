@@ -19,7 +19,7 @@ The types of a functions.
 
 #### Defined in
 
-[constants.ts:74](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L74)
+[constants.ts:76](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L76)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 #### Defined in
 
-[constants.ts:73](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L73)
+[constants.ts:75](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L75)

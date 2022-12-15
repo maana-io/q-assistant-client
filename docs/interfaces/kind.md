@@ -38,7 +38,7 @@ Human readable description of the entity.
 
 #### Defined in
 
-[models.ts:81](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L81)
+[models.ts:84](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L84)
 
 ___
 
@@ -54,7 +54,7 @@ The ID of the entity.
 
 #### Defined in
 
-[models.ts:72](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L72)
+[models.ts:75](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L75)
 
 ___
 
@@ -66,7 +66,7 @@ Used to signify if this type has data that is managed by the platform
 
 #### Defined in
 
-[models.ts:183](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L183)
+[models.ts:186](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L186)
 
 ___
 
@@ -82,7 +82,7 @@ The name of the entity.
 
 #### Defined in
 
-[models.ts:75](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L75)
+[models.ts:78](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L78)
 
 ___
 
@@ -98,7 +98,7 @@ Name of where the entity comes from (Service/Workspace).
 
 #### Defined in
 
-[models.ts:78](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L78)
+[models.ts:81](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L81)
 
 ___
 
@@ -110,7 +110,7 @@ The service that the Kind comes from.
 
 #### Defined in
 
-[models.ts:180](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L180)
+[models.ts:183](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L183)
 
 ___
 
@@ -122,7 +122,7 @@ The signature of the Kind.
 
 #### Defined in
 
-[models.ts:177](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L177)
+[models.ts:180](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L180)
 
 ## Methods
 
@@ -144,4 +144,4 @@ Updates information about the Kind.
 
 #### Defined in
 
-[models.ts:189](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L189)
+[models.ts:192](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L192)

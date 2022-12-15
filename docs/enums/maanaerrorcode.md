@@ -27,7 +27,7 @@ coming through the Assistant API.
 
 #### Defined in
 
-[constants.ts:129](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L129)
+[constants.ts:131](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L131)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 #### Defined in
 
-[constants.ts:130](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L130)
+[constants.ts:132](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L132)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 #### Defined in
 
-[constants.ts:128](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L128)
+[constants.ts:130](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L130)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 #### Defined in
 
-[constants.ts:127](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L127)
+[constants.ts:129](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L129)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 #### Defined in
 
-[constants.ts:131](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L131)
+[constants.ts:133](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L133)
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 #### Defined in
 
-[constants.ts:132](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L132)
+[constants.ts:134](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L134)
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 #### Defined in
 
-[constants.ts:125](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L125)
+[constants.ts:127](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L127)
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 #### Defined in
 
-[constants.ts:126](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L126)
+[constants.ts:128](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L128)
 
 ___
 
@@ -107,4 +107,4 @@ ___
 
 #### Defined in
 
-[constants.ts:133](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L133)
+[constants.ts:135](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L135)

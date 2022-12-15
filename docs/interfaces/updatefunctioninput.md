@@ -25,7 +25,7 @@
 
 #### Defined in
 
-[models.ts:838](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L838)
+[models.ts:841](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L841)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[models.ts:844](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L844)
+[models.ts:847](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L847)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-[models.ts:841](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L841)
+[models.ts:844](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L844)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-[models.ts:836](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L836)
+[models.ts:839](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L839)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[models.ts:843](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L843)
+[models.ts:846](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L846)
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[models.ts:845](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L845)
+[models.ts:848](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L848)
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 #### Defined in
 
-[models.ts:840](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L840)
+[models.ts:843](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L843)
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 #### Defined in
 
-[models.ts:842](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L842)
+[models.ts:845](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L845)
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 #### Defined in
 
-[models.ts:837](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L837)
+[models.ts:840](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L840)
 
 ___
 
@@ -115,4 +115,4 @@ ___
 
 #### Defined in
 
-[models.ts:839](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L839)
+[models.ts:842](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L842)

@@ -64,7 +64,7 @@ Human readable description of the entity.
 
 #### Defined in
 
-[models.ts:81](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L81)
+[models.ts:84](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L84)
 
 ___
 
@@ -76,7 +76,7 @@ How the function is run (like query or mutation)
 
 #### Defined in
 
-[models.ts:308](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L308)
+[models.ts:311](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L311)
 
 ___
 
@@ -92,7 +92,7 @@ The ID of the entity.
 
 #### Defined in
 
-[models.ts:72](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L72)
+[models.ts:75](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L75)
 
 ___
 
@@ -105,7 +105,7 @@ by Functions on Logic services.
 
 #### Defined in
 
-[models.ts:319](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L319)
+[models.ts:322](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L322)
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 #### Defined in
 
-[models.ts:321](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L321)
+[models.ts:324](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L324)
 
 ___
 
@@ -127,7 +127,7 @@ Defines if this is a pure or impure Function, or if its purity is unknown.
 
 #### Defined in
 
-[models.ts:313](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L313)
+[models.ts:316](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L316)
 
 ___
 
@@ -143,7 +143,7 @@ The name of the entity.
 
 #### Defined in
 
-[models.ts:75](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L75)
+[models.ts:78](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L78)
 
 ___
 
@@ -159,7 +159,7 @@ Name of where the entity comes from (Service/Workspace).
 
 #### Defined in
 
-[models.ts:78](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L78)
+[models.ts:81](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L81)
 
 ___
 
@@ -171,7 +171,7 @@ The service that the Kind comes from.
 
 #### Defined in
 
-[models.ts:302](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L302)
+[models.ts:305](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L305)
 
 ___
 
@@ -183,7 +183,7 @@ The signature of the Function.
 
 #### Defined in
 
-[models.ts:299](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L299)
+[models.ts:302](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L302)
 
 ___
 
@@ -195,7 +195,7 @@ Type Parameters are placeholders for types and are used as generics.
 
 #### Defined in
 
-[models.ts:305](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L305)
+[models.ts:308](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L308)
 
 ## Methods
 
@@ -211,13 +211,13 @@ Returns boolean stating if the Function is editable.
 
 #### Defined in
 
-[models.ts:326](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L326)
+[models.ts:329](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L329)
 
 ___
 
 ### execute
 
-▸ **execute**(`variables?`, `resolve?`): `Promise`<`any`\>
+▸ **execute**(`variables?`, `resolve?`): `Promise`<`unknown`\>
 
 Executes a GraphQL request against the Function.
 
@@ -225,18 +225,18 @@ Executes a GraphQL request against the Function.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `variables?` | `Record`<`string`, `any`\> | The variables to send with the request. |
+| `variables?` | `Record`<`string`, `unknown`\> | The variables to send with the request. |
 | `resolve?` | `string` | A string with the fields to resolve on the Function. |
 
 #### Returns
 
-`Promise`<`any`\>
+`Promise`<`unknown`\>
 
 The results of running the Function.
 
 #### Defined in
 
-[models.ts:368](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L368)
+[models.ts:371](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L371)
 
 ___
 
@@ -252,7 +252,7 @@ Returns the e-mail of the user who locked the Function.
 
 #### Defined in
 
-[models.ts:331](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L331)
+[models.ts:334](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L334)
 
 ___
 
@@ -274,7 +274,7 @@ Updates the locked state of the Function.
 
 #### Defined in
 
-[models.ts:338](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L338)
+[models.ts:341](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L341)
 
 ___
 
@@ -296,7 +296,7 @@ Updates information about the Function.
 
 #### Defined in
 
-[models.ts:344](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L344)
+[models.ts:347](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L347)
 
 ___
 
@@ -318,7 +318,7 @@ Updates the layout information for the graph of the Function.
 
 #### Defined in
 
-[models.ts:360](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L360)
+[models.ts:363](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L363)
 
 ___
 
@@ -341,4 +341,4 @@ Updates the layout information for a node in the Function.
 
 #### Defined in
 
-[models.ts:351](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L351)
+[models.ts:354](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L354)

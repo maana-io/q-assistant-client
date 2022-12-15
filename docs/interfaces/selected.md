@@ -18,4 +18,4 @@ The list of selected entities.
 
 #### Defined in
 
-[models.ts:67](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L67)
+[models.ts:70](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L70)

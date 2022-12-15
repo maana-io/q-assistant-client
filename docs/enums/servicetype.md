@@ -21,7 +21,7 @@ The different types of possible services
 
 #### Defined in
 
-[constants.ts:63](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L63)
+[constants.ts:65](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L65)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 #### Defined in
 
-[constants.ts:64](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L64)
+[constants.ts:66](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L66)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 #### Defined in
 
-[constants.ts:65](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L65)
+[constants.ts:67](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L67)
 
 ___
 
@@ -51,4 +51,4 @@ ___
 
 #### Defined in
 
-[constants.ts:66](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L66)
+[constants.ts:68](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L68)

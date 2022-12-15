@@ -21,6 +21,10 @@ Maana Q Assistant API Client
 - [Scalars](enums/Scalars.md)
 - [ServiceType](enums/ServiceType.md)
 
+### Classes
+
+- [AssistantAPIClient](classes/AssistantAPIClient.md)
+
 ### Interfaces
 
 - [Annotation](interfaces/Annotation.md)
@@ -91,14 +95,13 @@ Maana Q Assistant API Client
 
 ### Variables
 
-- [AssistantAPIClient](README.md#assistantapiclient)
 - [CORE\_SERVICE\_ID](README.md#core_service_id)
 
 ## References
 
 ### default
 
-Renames and re-exports [AssistantAPIClient](README.md#assistantapiclient)
+Renames and re-exports [AssistantAPIClient](classes/AssistantAPIClient.md)
 
 ## Type Aliases
 
@@ -109,9 +112,13 @@ Renames and re-exports [AssistantAPIClient](README.md#assistantapiclient)
 The different entity types used in entity identifiers, like the ones returned
 from selection or used in graph nodes.
 
+**`Note`**
+
+Documentation is missing for EntityType after change to string union
+
 #### Defined in
 
-[constants.ts:41](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L41)
+[constants.ts:43](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L43)
 
 ___
 
@@ -123,7 +130,7 @@ Info for one end of a connection between two items within the graph.
 
 #### Defined in
 
-[models.ts:118](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L118)
+[models.ts:121](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L121)
 
 ___
 
@@ -135,7 +142,7 @@ Function implementation union.
 
 #### Defined in
 
-[models.ts:282](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L282)
+[models.ts:285](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L285)
 
 ___
 
@@ -154,16 +161,6 @@ ___
 [models.ts:13](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L13)
 
 ## Variables
-
-### AssistantAPIClient
-
-• `Const` **AssistantAPIClient**: typeof `AssistantAPIClient` = `APIClient`
-
-#### Defined in
-
-[index.ts:5](https://github.com/maana-io/q-assistant-client/blob/develop/src/index.ts#L5)
-
-___
 
 ### CORE\_SERVICE\_ID
 

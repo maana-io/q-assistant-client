@@ -37,7 +37,7 @@ Human readable description of the entity.
 
 #### Defined in
 
-[models.ts:81](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L81)
+[models.ts:84](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L84)
 
 ___
 
@@ -53,7 +53,7 @@ The ID of the entity.
 
 #### Defined in
 
-[models.ts:72](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L72)
+[models.ts:75](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L75)
 
 ___
 
@@ -65,7 +65,7 @@ The location that the Assistant can be reached at.
 
 #### Defined in
 
-[models.ts:420](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L420)
+[models.ts:423](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L423)
 
 ___
 
@@ -81,7 +81,7 @@ The name of the entity.
 
 #### Defined in
 
-[models.ts:75](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L75)
+[models.ts:78](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L78)
 
 ___
 
@@ -97,7 +97,7 @@ Name of where the entity comes from (Service/Workspace).
 
 #### Defined in
 
-[models.ts:78](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L78)
+[models.ts:81](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L81)
 
 ___
 
@@ -110,7 +110,7 @@ time the Assistant is updated.
 
 #### Defined in
 
-[models.ts:426](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L426)
+[models.ts:429](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L429)
 
 ## Methods
 
@@ -132,4 +132,4 @@ Updates information about the Assistant.
 
 #### Defined in
 
-[models.ts:432](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L432)
+[models.ts:435](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L435)

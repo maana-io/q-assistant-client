@@ -24,7 +24,7 @@
 
 #### Defined in
 
-[models.ts:669](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L669)
+[models.ts:672](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L672)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-[models.ts:670](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L670)
+[models.ts:673](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L673)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[models.ts:666](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L666)
+[models.ts:669](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L669)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-[models.ts:673](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L673)
+[models.ts:676](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L676)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 #### Defined in
 
-[models.ts:672](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L672)
+[models.ts:675](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L675)
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 #### Defined in
 
-[models.ts:668](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L668)
+[models.ts:671](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L671)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-[models.ts:667](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L667)
+[models.ts:670](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L670)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[models.ts:674](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L674)
+[models.ts:677](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L677)
 
 ___
 
@@ -104,4 +104,4 @@ ___
 
 #### Defined in
 
-[models.ts:671](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L671)
+[models.ts:674](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L674)

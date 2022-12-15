@@ -12,6 +12,9 @@ import { TypeExpression } from '@io-maana/typesystem-utils';
 
 export type Maybe<T> = T | null | undefined;
 
+/**
+ * Maana Error extension
+ */
 interface ErrorLike {
   message: string;
   statusCode?: number;
@@ -366,9 +369,9 @@ export interface Function extends Entity {
    * @returns The results of running the Function.
    */
   execute(
-    variables?: Maybe<Record<string, any>>,
+    variables?: Maybe<Record<string, unknown>>,
     resolve?: string
-  ): Promise<any>;
+  ): Promise<unknown>;
 }
 
 export interface ServiceLocation {

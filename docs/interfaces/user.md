@@ -19,7 +19,7 @@ The users email address.
 
 #### Defined in
 
-[models.ts:45](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L45)
+[models.ts:48](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L48)
 
 ___
 
@@ -31,4 +31,4 @@ The users name.
 
 #### Defined in
 
-[models.ts:48](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L48)
+[models.ts:51](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L51)

@@ -16,4 +16,4 @@
 
 #### Defined in
 
-[models.ts:35](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L35)
+[models.ts:38](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L38)
