@@ -89,9 +89,15 @@ Maana Q Assistant API Client
 ### Type Aliases
 
 - [EntityType](README.md#entitytype)
+- [FunctionExecutionListenerCallback](README.md#functionexecutionlistenercallback)
 - [GraphRef](README.md#graphref)
 - [Implementation](README.md#implementation)
+- [InventoryChangedListenerCallback](README.md#inventorychangedlistenercallback)
+- [LockingChangedListenerCallback](README.md#lockingchangedlistenercallback)
 - [Maybe](README.md#maybe)
+- [RenderModeChangedListenerCallback](README.md#rendermodechangedlistenercallback)
+- [RepairListenerCallback](README.md#repairlistenercallback)
+- [SelectionChangedListenerCallback](README.md#selectionchangedlistenercallback)
 
 ### Variables
 
@@ -122,6 +128,32 @@ Documentation is missing for EntityType after change to string union
 
 ___
 
+### FunctionExecutionListenerCallback
+
+Ƭ **FunctionExecutionListenerCallback**: (`e`: { `data?`: `Record`<`string`, `unknown`\> ; `errors?`: `string`[]  }) => `void`
+
+#### Type declaration
+
+▸ (`e`): `void`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `e` | `Object` |
+| `e.data?` | `Record`<`string`, `unknown`\> |
+| `e.errors?` | `string`[] |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[AssistantAPIClient.ts:41](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L41)
+
+___
+
 ### GraphRef
 
 Ƭ **GraphRef**: [`ArgumentRef`](interfaces/ArgumentRef.md) \| [`OperationArgumentRef`](interfaces/OperationArgumentRef.md) \| [`FunctionResultRef`](interfaces/FunctionResultRef.md) \| [`OperationResultRef`](interfaces/OperationResultRef.md) \| [`OutputArgumentRef`](interfaces/OutputArgumentRef.md)
@@ -146,6 +178,54 @@ Function implementation union.
 
 ___
 
+### InventoryChangedListenerCallback
+
+Ƭ **InventoryChangedListenerCallback**: (`changes`: [`InventoryChanged`](interfaces/InventoryChanged.md)) => `void`
+
+#### Type declaration
+
+▸ (`changes`): `void`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `changes` | [`InventoryChanged`](interfaces/InventoryChanged.md) |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[AssistantAPIClient.ts:56](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L56)
+
+___
+
+### LockingChangedListenerCallback
+
+Ƭ **LockingChangedListenerCallback**: (`changes`: [`LockingChanged`](interfaces/LockingChanged.md)) => `void`
+
+#### Type declaration
+
+▸ (`changes`): `void`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `changes` | [`LockingChanged`](interfaces/LockingChanged.md) |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[AssistantAPIClient.ts:50](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L50)
+
+___
+
 ### Maybe
 
 Ƭ **Maybe**<`T`\>: `T` \| ``null`` \| `undefined`
@@ -159,6 +239,79 @@ ___
 #### Defined in
 
 [models.ts:13](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L13)
+
+___
+
+### RenderModeChangedListenerCallback
+
+Ƭ **RenderModeChangedListenerCallback**: (`renderMode`: [`RenderMode`](enums/RenderMode.md)) => `void`
+
+#### Type declaration
+
+▸ (`renderMode`): `void`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `renderMode` | [`RenderMode`](enums/RenderMode.md) |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[AssistantAPIClient.ts:46](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L46)
+
+___
+
+### RepairListenerCallback
+
+Ƭ **RepairListenerCallback**: (`workspaceId`: `string`) => `void`
+
+#### Type declaration
+
+▸ (`workspaceId`): `void`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `workspaceId` | `string` |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[AssistantAPIClient.ts:60](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L60)
+
+___
+
+### SelectionChangedListenerCallback
+
+Ƭ **SelectionChangedListenerCallback**: (`data`: { `selection`: [`EntityIdentifier`](interfaces/EntityIdentifier.md)[]  }) => `void`
+
+#### Type declaration
+
+▸ (`data`): `void`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `data` | `Object` |
+| `data.selection` | [`EntityIdentifier`](interfaces/EntityIdentifier.md)[] |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[AssistantAPIClient.ts:52](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L52)
 
 ## Variables
 

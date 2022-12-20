@@ -93,7 +93,7 @@ AssistantAPIClient.addFunctionExecutionListener(id, exampleFunctionCB)
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `id` | `string` | ID of the function. |
-| `cb` | `FunctionExecutionListenerCallback` | The callback function. |
+| `cb` | [`FunctionExecutionListenerCallback`](../README.md#functionexecutionlistenercallback) | The callback function. |
 
 #### Returns
 
@@ -132,7 +132,7 @@ AssistantAPIClient.addInventoryChangedListener(inventoryCB)
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `cb` | `InventoryChangedListenerCallback` | Callback function. |
+| `cb` | [`InventoryChangedListenerCallback`](../README.md#inventorychangedlistenercallback) | Callback function. |
 
 #### Returns
 
@@ -168,7 +168,7 @@ AssistantAPIClient.addLockingChangedListener(lockingChangedCB);
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `cb` | `LockingChangedListenerCallback` | The callback function to call |
+| `cb` | [`LockingChangedListenerCallback`](../README.md#lockingchangedlistenercallback) | The callback function to call |
 
 #### Returns
 
@@ -203,7 +203,7 @@ AssistantAPIClient.addRenderModeChangedListener(handleRenderModeChanged)
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `cb` | `RenderModeChangedListenerCallback` | Callback function. |
+| `cb` | [`RenderModeChangedListenerCallback`](../README.md#rendermodechangedlistenercallback) | Callback function. |
 
 #### Returns
 
@@ -234,7 +234,7 @@ AssistantAPIClient.addRepairListener(handleRepair)
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `cb` | `RepairListenerCallback` | Callback function. |
+| `cb` | [`RepairListenerCallback`](../README.md#repairlistenercallback) | Callback function. |
 
 #### Returns
 
@@ -273,7 +273,7 @@ AssistantAPIClient.addSelectionChangedListener(selectionCB);
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `cb` | `SelectionChangedListenerCallback` | Callback function. |
+| `cb` | [`SelectionChangedListenerCallback`](../README.md#selectionchangedlistenercallback) | Callback function. |
 
 #### Returns
 
@@ -1187,7 +1187,7 @@ AssistantAPIClient.removeFunctionExecutionListener(id, exampleFunctionCB)
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `id` | `string` | ID of the function. |
-| `cb?` | `FunctionExecutionListenerCallback` | The callback function, if not supplied all of them are removed. |
+| `cb?` | [`FunctionExecutionListenerCallback`](../README.md#functionexecutionlistenercallback) | The callback function, if not supplied all of them are removed. |
 
 #### Returns
 
@@ -1216,7 +1216,7 @@ AssistantAPIClient.removeInventoryChangedListener(inventoryCB)
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `cb?` | `InventoryChangedListenerCallback` | Callback function. |
+| `cb?` | [`InventoryChangedListenerCallback`](../README.md#inventorychangedlistenercallback) | Callback function. |
 
 #### Returns
 
@@ -1245,7 +1245,7 @@ AssistantAPIClient.removeLockingChangedListener(lockingChangedCB)
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `cb?` | `LockingChangedListenerCallback` | The callback function to remove |
+| `cb?` | [`LockingChangedListenerCallback`](../README.md#lockingchangedlistenercallback) | The callback function to remove |
 
 #### Returns
 
@@ -1274,7 +1274,7 @@ AssistantAPIClient.removeRenderModeChangedListener(handleRenderModeChanged)
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `cb` | `RenderModeChangedListenerCallback` | Callback function. |
+| `cb` | [`RenderModeChangedListenerCallback`](../README.md#rendermodechangedlistenercallback) | Callback function. |
 
 #### Returns
 
@@ -1303,7 +1303,7 @@ AssistantAPIClient.removeRepairListener(handleRepair)
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `cb?` | `RepairListenerCallback` | Callback function. |
+| `cb?` | [`RepairListenerCallback`](../README.md#repairlistenercallback) | Callback function. |
 
 #### Returns
 
@@ -1332,7 +1332,7 @@ AssistantAPIClient.removeSelectionChangedListener(selectionCB)
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `cb?` | `SelectionChangedListenerCallback` | Callback function. |
+| `cb?` | [`SelectionChangedListenerCallback`](../README.md#selectionchangedlistenercallback) | Callback function. |
 
 #### Returns
 

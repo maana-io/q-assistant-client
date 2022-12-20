@@ -1,5 +1,5 @@
 // Export both a named and default export of the same class; for backwards compatibility.
-export { AssistantAPIClient } from './AssistantAPIClient';
+export * from './AssistantAPIClient';
 import { AssistantAPIClient } from './AssistantAPIClient';
 export default AssistantAPIClient;
 
