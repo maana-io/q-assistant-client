@@ -1,33 +1,38 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / InventoryChanged
+[Maana Q Assistant API Client](../README.md) / InventoryChanged
 
 # Interface: InventoryChanged
 
 The information returned from an inventory changed event.
 
-## Hierarchy
-
-* **InventoryChanged**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [diff](inventorychanged.md#diff)
+- [diff](InventoryChanged.md#diff)
 
 ## Properties
 
 ### diff
 
-•  **diff**: { functions: { adds: [Maybe](../README.md#maybe)\<[Function](function.md)[]> ; deletes: [Maybe](../README.md#maybe)\<[Function](function.md)[]> ; updates: [Maybe](../README.md#maybe)\<[Function](function.md)[]>  } ; kinds: { adds: [Maybe](../README.md#maybe)\<[Kind](kind.md)[]> ; deletes: [Maybe](../README.md#maybe)\<[Kind](kind.md)[]> ; updates: [Maybe](../README.md#maybe)\<[Kind](kind.md)[]>  } ; services: { adds: [Maybe](../README.md#maybe)\<[Service](service.md)[]> ; deletes: [Maybe](../README.md#maybe)\<[Service](service.md)[]> ; updates: [Maybe](../README.md#maybe)\<[Service](service.md)[]>  }  }
+• **diff**: `Object`
 
-*Defined in [models.ts:914](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L914)*
+#### Type declaration
 
-#### Type declaration:
+| Name | Type |
+| :------ | :------ |
+| `functions` | { `adds`: [`Function`](Function.md)[] ; `deletes`: [`Function`](Function.md)[] ; `updates`: [`Function`](Function.md)[]  } |
+| `functions.adds` | [`Function`](Function.md)[] |
+| `functions.deletes` | [`Function`](Function.md)[] |
+| `functions.updates` | [`Function`](Function.md)[] |
+| `kinds` | { `adds`: [`Kind`](Kind.md)[] ; `deletes`: [`Kind`](Kind.md)[] ; `updates`: [`Kind`](Kind.md)[]  } |
+| `kinds.adds` | [`Kind`](Kind.md)[] |
+| `kinds.deletes` | [`Kind`](Kind.md)[] |
+| `kinds.updates` | [`Kind`](Kind.md)[] |
+| `services` | { `adds`: [`Service`](Service.md)[] ; `deletes`: [`Service`](Service.md)[] ; `updates`: [`Service`](Service.md)[]  } |
+| `services.adds` | [`Service`](Service.md)[] |
+| `services.deletes` | [`Service`](Service.md)[] |
+| `services.updates` | [`Service`](Service.md)[] |
 
-Name | Type |
------- | ------ |
-`functions` | { adds: [Maybe](../README.md#maybe)\<[Function](function.md)[]> ; deletes: [Maybe](../README.md#maybe)\<[Function](function.md)[]> ; updates: [Maybe](../README.md#maybe)\<[Function](function.md)[]>  } |
-`kinds` | { adds: [Maybe](../README.md#maybe)\<[Kind](kind.md)[]> ; deletes: [Maybe](../README.md#maybe)\<[Kind](kind.md)[]> ; updates: [Maybe](../README.md#maybe)\<[Kind](kind.md)[]>  } |
-`services` | { adds: [Maybe](../README.md#maybe)\<[Service](service.md)[]> ; deletes: [Maybe](../README.md#maybe)\<[Service](service.md)[]> ; updates: [Maybe](../README.md#maybe)\<[Service](service.md)[]>  } |
+#### Defined in
+
+[models.ts:958](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L958)

@@ -1,59 +1,63 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / UpdateNodeInput
+[Maana Q Assistant API Client](../README.md) / UpdateNodeInput
 
 # Interface: UpdateNodeInput
 
-## Hierarchy
-
-* **UpdateNodeInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [description](updatenodeinput.md#description)
-* [id](updatenodeinput.md#id)
-* [isCollapsed](updatenodeinput.md#iscollapsed)
-* [location](updatenodeinput.md#location)
-* [type](updatenodeinput.md#type)
+- [description](UpdateNodeInput.md#description)
+- [id](UpdateNodeInput.md#id)
+- [isCollapsed](UpdateNodeInput.md#iscollapsed)
+- [location](UpdateNodeInput.md#location)
+- [type](UpdateNodeInput.md#type)
 
 ## Properties
 
 ### description
 
-• `Optional` **description**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **description**: `string`
 
-*Defined in [models.ts:797](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L797)*
+#### Defined in
+
+[models.ts:841](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L841)
 
 ___
 
 ### id
 
-•  **id**: string
+• **id**: `string`
 
-*Defined in [models.ts:794](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L794)*
+#### Defined in
+
+[models.ts:838](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L838)
 
 ___
 
 ### isCollapsed
 
-• `Optional` **isCollapsed**: [Maybe](../README.md#maybe)\<string[]>
+• `Optional` **isCollapsed**: `string`[]
 
-*Defined in [models.ts:796](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L796)*
+#### Defined in
+
+[models.ts:840](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L840)
 
 ___
 
 ### location
 
-• `Optional` **location**: [Maybe](../README.md#maybe)\<[PositionInput](positioninput.md)>
+• `Optional` **location**: [`PositionInput`](PositionInput.md)
 
-*Defined in [models.ts:795](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L795)*
+#### Defined in
+
+[models.ts:839](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L839)
 
 ___
 
 ### type
 
-•  **type**: [NodeType](../enums/nodetype.md)
+• **type**: [`NodeType`](../enums/NodeType.md)
 
-*Defined in [models.ts:798](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L798)*
+#### Defined in
+
+[models.ts:842](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L842)

@@ -4,7 +4,6 @@ import {
   CreateServiceInput,
   CreateTypeInput,
   CreateWorkspaceInput,
-  Entity,
   EntityIdentifier,
   Function,
   InventoryChanged,
@@ -20,7 +19,7 @@ import {
 } from './models';
 
 import { EventEmitter } from 'events';
-import postRobot from 'post-robot';
+import postRobot, { HandlerType as PRHandlerType } from 'post-robot';
 
 /** @private */
 const eventEmitter = new EventEmitter();
@@ -38,7 +37,28 @@ enum EventTypes {
   SELECTION_CHANGED = 'selectionChanged'
 }
 
-type EventListenerCallback = (e: any) => void;
+// #region Event Listener Callbacks
+export type FunctionExecutionListenerCallback = (e: {
+  data?: Record<string, unknown>;
+  errors?: string[];
+}) => void;
+
+export type RenderModeChangedListenerCallback = (
+  renderMode: RenderMode
+) => void;
+
+export type LockingChangedListenerCallback = (changes: LockingChanged) => void;
+
+export type SelectionChangedListenerCallback = (data: {
+  selection: EntityIdentifier[];
+}) => void;
+
+export type InventoryChangedListenerCallback = (
+  changes: InventoryChanged
+) => void;
+
+export type RepairListenerCallback = (workspaceId: string) => void;
+// #endregion
 
 /**
  * Wrapper for post-robot async client -> API call.
@@ -48,9 +68,14 @@ type EventListenerCallback = (e: any) => void;
  * @param arg The argument(s) to pass on to the API call.
  *
  * @returns The response from the call
+ *
+ * Type `V` is the variable type; `O` is the output data type.
  */
-async function APICall(callName: string, arg?: any): Promise<any> {
-  const { data } = await postRobot.send(window.parent, callName, arg);
+async function APICall<V = unknown, O = unknown>(
+  callName: string,
+  arg?: V
+): Promise<O> {
+  const { data } = await postRobot.send<V, O>(window.parent, callName, arg);
   return data;
 }
 
@@ -61,7 +86,7 @@ async function APICall(callName: string, arg?: any): Promise<any> {
  * @param callName The name of the API endpoint to listen on.
  * @param cb The function to call when the endpoint is called.
  */
-function createAPIListener(callName: string, cb: EventListenerCallback) {
+function createAPIListener(callName: string, cb: PRHandlerType) {
   postRobot.on(callName, cb);
 }
 
@@ -118,7 +143,13 @@ createAPIListener(EventTypes.LOCKING_CHANGED, async function (event) {
   eventEmitter.emit(EventTypes.LOCKING_CHANGED, event.data);
 });
 
-export namespace AssistantAPIClient {
+/**
+ * Main entrypoint client to the kportal Assistant API host.
+ *
+ * Its functions ask kportal for new clients (Workspace, Function, Kind, etc.)
+ * which each have their own methods for interaction with kportal.
+ */
+export class AssistantAPIClient {
   //
   // Assistant State
   //
@@ -154,8 +185,8 @@ export namespace AssistantAPIClient {
    *
    * @param state The new state of the assistant.
    */
-  export function setAssistantState(state: AssistantState): Promise<void> {
-    return APICall('setAssistantState', state);
+  setAssistantState(state: AssistantState) {
+    return APICall<AssistantState, void>('setAssistantState', state);
   }
 
   //
@@ -165,7 +196,7 @@ export namespace AssistantAPIClient {
   /**
    * Removes all event listeners for all events.
    */
-  export function clearState() {
+  clearState() {
     eventEmitter.removeAllListeners();
   }
 
@@ -183,7 +214,7 @@ export namespace AssistantAPIClient {
    *
    * @returns The current User.
    */
-  export function getUserInfo(): Promise<User> {
+  getUserInfo(): Promise<User> {
     return APICall('getUserInfo');
   }
 
@@ -212,7 +243,7 @@ export namespace AssistantAPIClient {
    *
    * @param cb Callback function.
    */
-  export function addSelectionChangedListener(cb: EventListenerCallback) {
+  addSelectionChangedListener(cb: SelectionChangedListenerCallback) {
     eventEmitter.addListener(EventTypes.SELECTION_CHANGED, cb);
   }
 
@@ -227,7 +258,7 @@ export namespace AssistantAPIClient {
    *
    * @param cb Callback function.
    */
-  export function removeSelectionChangedListener(cb?: EventListenerCallback) {
+  removeSelectionChangedListener(cb?: SelectionChangedListenerCallback) {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener(EventTypes.SELECTION_CHANGED, cb);
@@ -246,7 +277,7 @@ export namespace AssistantAPIClient {
    *
    * @returns The list of selected entities.
    */
-  export function getCurrentSelection(): Promise<Selected> {
+  getCurrentSelection(): Promise<Selected> {
     return APICall('getCurrentSelection');
   }
 
@@ -266,7 +297,7 @@ export namespace AssistantAPIClient {
    *
    * @returns The requested service.
    */
-  export function getServiceById(id: string): Promise<Maybe<Service>> {
+  getServiceById(id: string): Promise<Maybe<Service>> {
     return APICall('getServiceById', id);
   }
 
@@ -291,7 +322,7 @@ export namespace AssistantAPIClient {
    *
    * @returns ID of the created service.
    */
-  export function createService(input: CreateServiceInput): Promise<string> {
+  createService(input: CreateServiceInput): Promise<string> {
     return APICall('createService', input);
   }
 
@@ -309,7 +340,7 @@ export namespace AssistantAPIClient {
    *
    * @returns The refreshed service.
    */
-  export function refreshServiceSchema(input: string): Promise<Maybe<Service>> {
+  refreshServiceSchema(input: string): Promise<Maybe<Service>> {
     return APICall('refreshServiceSchema', input);
   }
 
@@ -326,7 +357,7 @@ export namespace AssistantAPIClient {
    *
    * @returns The service with fresh information.
    */
-  export function reloadServiceSchema(id: string): Promise<Maybe<Service>> {
+  reloadServiceSchema(id: string): Promise<Maybe<Service>> {
     return APICall('reloadServiceSchema', id);
   }
 
@@ -340,7 +371,7 @@ export namespace AssistantAPIClient {
    *
    * @param id The ID of the Service to delete.
    */
-  export function deleteService(id: string): Promise<void> {
+  deleteService(id: string): Promise<void> {
     return APICall('deleteService', id);
   }
 
@@ -354,11 +385,11 @@ export namespace AssistantAPIClient {
    *
    * @returns The response from the request.
    */
-  export function executeGraphql(input: {
+  executeGraphql<V = Record<string, unknown>, O = unknown>(input: {
     serviceId: string;
     query: string;
-    variables?: Record<string, any>;
-  }): Promise<any> {
+    variables?: V;
+  }): Promise<{ data: O; errors: Error[] }> {
     return APICall('executeGraphql', input);
   }
 
@@ -382,7 +413,7 @@ export namespace AssistantAPIClient {
    *
    * @return The requested Workspace.
    */
-  export function getWorkspace(id?: string): Promise<Maybe<Workspace>> {
+  getWorkspace(id?: string): Promise<Maybe<Workspace>> {
     return APICall('getWorkspace', id);
   }
 
@@ -395,9 +426,7 @@ export namespace AssistantAPIClient {
    *
    * @return The list of Workspaces.
    */
-  export function getUserAccessibleWorkspaces(
-    includePublic = false
-  ): Promise<Workspace[]> {
+  getUserAccessibleWorkspaces(includePublic = false): Promise<Workspace[]> {
     return APICall('getUserAccessibleWorkspaces', includePublic);
   }
 
@@ -405,13 +434,11 @@ export namespace AssistantAPIClient {
    * Creates a new Workspace.  The id, name, and serviceId can optionally be
    * set, or they can be left undefined to use the defaults.
    *
-   * @param workspace The Workspace information, can contain {id, name, serviceId}
+   * @param workspace The Workspace information, can contain id, name, serviceId
    *
    * @return The new Workspace.
    */
-  export function createWorkspace(
-    workspace: CreateWorkspaceInput
-  ): Promise<Workspace> {
+  createWorkspace(workspace: CreateWorkspaceInput): Promise<Workspace> {
     return APICall('createWorkspace', workspace);
   }
 
@@ -443,11 +470,11 @@ export namespace AssistantAPIClient {
    *
    * @returns The result of executing the function.
    */
-  export function executeFunction(input: {
+  executeFunction<V = Record<string, unknown>, O = unknown>(input: {
     entityIdentifier: EntityIdentifier;
-    variables?: Record<string, any>;
+    variables?: V;
     resolve: string;
-  }): Promise<any> {
+  }): Promise<{ data: O; errors: Error[] }> {
     return APICall('executeFunction', input);
   }
 
@@ -462,37 +489,33 @@ export namespace AssistantAPIClient {
    *
    * @returns The new function.
    */
-  export function createFunction(
-    input: CreateFunctionInput
-  ): Promise<Function> {
+  createFunction(input: CreateFunctionInput): Promise<Function> {
     return APICall('createFunction', input);
   }
 
   /**
    * Updates a Function in the active workspace with the given information.
    *
-   * @deprecated This has been deprecated in favor of calling it direction off of
+   * @deprecated This has been deprecated in favor of calling it directly off of
    * the workspace the function lives in.
    *
    * @param input Updates for the function.
    *
    * @returns The updated Function.
    */
-  export function updateFunction(
-    input: UpdateFunctionInput
-  ): Promise<Function> {
+  updateFunction(input: UpdateFunctionInput): Promise<Function> {
     return APICall('updateFunction', input);
   }
 
   /**
    * Deletes a function in the active workspace by the given name.
    *
-   * @deprecated This has been deprecated in favor of calling it direction off of
+   * @deprecated This has been deprecated in favor of calling it directly off of
    * the workspace the function lives in.
    *
    * @param input The name of the function
    */
-  export function deleteFunction(input: string): Promise<void> {
+  deleteFunction(input: string): Promise<void> {
     return APICall('deleteFunction', input);
   }
 
@@ -507,7 +530,7 @@ export namespace AssistantAPIClient {
    *
    * @returns The requested function.
    */
-  export function getFunctionById(id: string): Promise<Maybe<Function>> {
+  getFunctionById(id: string): Promise<Maybe<Function>> {
     return APICall('getFunctionById', id);
   }
 
@@ -522,7 +545,7 @@ export namespace AssistantAPIClient {
    *
    * @returns The list of requested functions.
    */
-  export function getFunctionsById(ids: string[]): Promise<Function[]> {
+  getFunctionsById(ids: string[]): Promise<Function[]> {
     return APICall('getFunctionsById', ids);
   }
 
@@ -534,7 +557,7 @@ export namespace AssistantAPIClient {
    *
    * @returns The requested function.
    */
-  export function getFunctionOfServiceByName(
+  getFunctionOfServiceByName(
     serviceId: string,
     name: string
   ): Promise<Maybe<Function>> {
@@ -549,7 +572,7 @@ export namespace AssistantAPIClient {
    *
    * @returns The list of requested functions.
    */
-  export function getFunctionsOfServiceByName(
+  getFunctionsOfServiceByName(
     serviceId: string,
     names: string[]
   ): Promise<Function[]> {
@@ -573,9 +596,9 @@ export namespace AssistantAPIClient {
    * @param id ID of the function.
    * @param cb The callback function.
    */
-  export function addFunctionExecutionListener(
+  addFunctionExecutionListener(
     id: string,
-    cb: EventListenerCallback
+    cb: FunctionExecutionListenerCallback
   ): void {
     eventEmitter.addListener(`function:${id}`, cb);
   }
@@ -594,9 +617,9 @@ export namespace AssistantAPIClient {
    * @param cb The callback function, if not supplied all of them
    * are removed.
    */
-  export function removeFunctionExecutionListener(
+  removeFunctionExecutionListener(
     id: string,
-    cb: EventListenerCallback
+    cb?: FunctionExecutionListenerCallback
   ): void {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
@@ -621,7 +644,7 @@ export namespace AssistantAPIClient {
    *
    * @returns The new Kind
    */
-  export function createKind(input: CreateTypeInput): Promise<Kind> {
+  createKind(input: CreateTypeInput): Promise<Kind> {
     return APICall('createKind', input);
   }
 
@@ -635,7 +658,7 @@ export namespace AssistantAPIClient {
    *
    * @returns The updated Kind.
    */
-  export function updateKind(input: UpdateTypeInput): Promise<Kind> {
+  updateKind(input: UpdateTypeInput): Promise<Kind> {
     return APICall('updateKind', input);
   }
 
@@ -647,7 +670,7 @@ export namespace AssistantAPIClient {
    *
    * @param input The name of the Kind.
    */
-  export function deleteKind(input: string): Promise<void> {
+  deleteKind(input: string): Promise<void> {
     return APICall('deleteKind', input);
   }
 
@@ -662,7 +685,7 @@ export namespace AssistantAPIClient {
    *
    * @returns The requested Kind.
    */
-  export function getKindById(id: string): Promise<Maybe<Kind>> {
+  getKindById(id: string): Promise<Maybe<Kind>> {
     return APICall('getKindById', id);
   }
 
@@ -677,7 +700,7 @@ export namespace AssistantAPIClient {
    *
    * @returns The list of requested Kind.
    */
-  export function getKindsById(ids: string[]): Promise<Kind[]> {
+  getKindsById(ids: string[]): Promise<Kind[]> {
     return APICall('getKindsById', ids);
   }
 
@@ -689,7 +712,7 @@ export namespace AssistantAPIClient {
    *
    * @returns The requested Kind.
    */
-  export function getKindOfServiceByName(
+  getKindOfServiceByName(
     serviceId: string,
     name: string
   ): Promise<Maybe<Kind>> {
@@ -704,10 +727,7 @@ export namespace AssistantAPIClient {
    *
    * @returns The list of requested Kinds.
    */
-  export function getKindsOfServiceByName(
-    serviceId: string,
-    names: string[]
-  ): Promise<Kind[]> {
+  getKindsOfServiceByName(serviceId: string, names: string[]): Promise<Kind[]> {
     return APICall('getKindsOfServiceByName', { serviceId, names });
   }
 
@@ -735,7 +755,7 @@ export namespace AssistantAPIClient {
    *
    * @returns The list of references Kinds.
    */
-  export function getAllReferencedKinds(data: {
+  getAllReferencedKinds(data: {
     entities: EntityIdentifier[];
     entitiesToSkip: EntityIdentifier;
     maxDepth?: number;
@@ -766,9 +786,7 @@ export namespace AssistantAPIClient {
    *
    * @param cb Callback function.
    */
-  export function addInventoryChangedListener(
-    cb: (changes: InventoryChanged) => void
-  ): void {
+  addInventoryChangedListener(cb: InventoryChangedListenerCallback): void {
     eventEmitter.addListener(EventTypes.INVENTORY_CHANGED, cb);
   }
 
@@ -783,9 +801,7 @@ export namespace AssistantAPIClient {
    *
    * @param cb Callback function.
    */
-  export function removeInventoryChangedListener(
-    cb?: (changes: InventoryChanged) => void
-  ): void {
+  removeInventoryChangedListener(cb?: InventoryChangedListenerCallback): void {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener(EventTypes.INVENTORY_CHANGED, cb);
@@ -811,7 +827,7 @@ export namespace AssistantAPIClient {
    * @param kindIds An array of the IDs of the kinds to move.
    * @param functionIds An array of the IDs of the functions to move.
    */
-  export function moveKindsAndFunctions(
+  moveKindsAndFunctions(
     originId: string,
     targetId: string,
     kindIds: string[],
@@ -840,7 +856,7 @@ export namespace AssistantAPIClient {
    *
    * @returns The function with the information about its graph.
    */
-  export function getFunctionGraph(id: string): Promise<Maybe<Function>> {
+  getFunctionGraph(id: string): Promise<Maybe<Function>> {
     return APICall('getFunctionGraph', id);
   }
 
@@ -865,9 +881,7 @@ export namespace AssistantAPIClient {
    *
    * @param cb Callback function.
    */
-  export function addRenderModeChangedListener(
-    cb: (renderMode: RenderMode) => void
-  ): void {
+  addRenderModeChangedListener(cb: RenderModeChangedListenerCallback): void {
     eventEmitter.addListener(EventTypes.RENDER_MODE_CHANGED, cb);
   }
 
@@ -882,9 +896,7 @@ export namespace AssistantAPIClient {
    *
    * @param cb Callback function.
    */
-  export function removeRenderModeChangedListener(
-    cb: (renderMode: RenderMode) => void
-  ): void {
+  removeRenderModeChangedListener(cb: RenderModeChangedListenerCallback): void {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener(EventTypes.RENDER_MODE_CHANGED, cb);
@@ -909,7 +921,7 @@ export namespace AssistantAPIClient {
    *
    * @returns The current render mode.
    */
-  export function getRenderMode(): Promise<RenderMode> {
+  getRenderMode(): Promise<RenderMode> {
     return APICall('getRenderMode');
   }
 
@@ -930,7 +942,7 @@ export namespace AssistantAPIClient {
    *
    * @param cb Callback function.
    */
-  export function addRepairListener(cb: (workspaceId: string) => void): void {
+  addRepairListener(cb: RepairListenerCallback): void {
     eventEmitter.addListener(EventTypes.REPAIR, cb);
   }
 
@@ -945,9 +957,7 @@ export namespace AssistantAPIClient {
    *
    * @param cb Callback function.
    */
-  export function removeRepairListener(
-    cb?: (workspaceId: string) => void
-  ): void {
+  removeRepairListener(cb?: RepairListenerCallback): void {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener(EventTypes.REPAIR, cb);
@@ -982,7 +992,7 @@ export namespace AssistantAPIClient {
    *
    * @param error The error object or an error message.
    */
-  export function reportError(error: Error | string): Promise<void> {
+  reportError(error: Error | string): Promise<void> {
     return APICall('reportError', error);
   }
 
@@ -1008,9 +1018,7 @@ export namespace AssistantAPIClient {
    *
    * @param cb The callback function to call
    */
-  export function addLockingChangedListener(
-    cb: (changes: LockingChanged) => void
-  ): void {
+  addLockingChangedListener(cb: LockingChangedListenerCallback): void {
     eventEmitter.addListener(EventTypes.LOCKING_CHANGED, cb);
   }
 
@@ -1025,9 +1033,7 @@ export namespace AssistantAPIClient {
    *
    * @param cb The callback function to remove
    */
-  export function removeLockingChangedListener(
-    cb?: (changes: LockingChanged) => void
-  ): void {
+  removeLockingChangedListener(cb?: LockingChangedListenerCallback): void {
     // If the callback is not provided, then remove all of the listeners.
     if (cb) {
       eventEmitter.removeListener(EventTypes.LOCKING_CHANGED, cb);
@@ -1041,7 +1047,7 @@ export namespace AssistantAPIClient {
   //
 
   /** @private */
-  export function getEventEmitter(): EventEmitter {
+  getEventEmitter(): EventEmitter {
     return eventEmitter;
   }
 }

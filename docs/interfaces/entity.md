@@ -1,70 +1,76 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / Entity
+[Maana Q Assistant API Client](../README.md) / Entity
 
 # Interface: Entity
 
 ## Hierarchy
 
-* **Entity**
+- **`Entity`**
 
-  ↳ [Kind](kind.md)
+  ↳ [`Kind`](Kind.md)
 
-  ↳ [KnowledgeGraph](knowledgegraph.md)
+  ↳ [`KnowledgeGraph`](KnowledgeGraph.md)
 
-  ↳ [Function](function.md)
+  ↳ [`Function`](Function.md)
 
-  ↳ [Service](service.md)
+  ↳ [`Service`](Service.md)
 
-  ↳ [Assistant](assistant.md)
+  ↳ [`Assistant`](Assistant.md)
 
-  ↳ [Workspace](workspace.md)
+  ↳ [`Workspace`](Workspace.md)
 
-## Index
+## Table of contents
 
 ### Properties
 
-* [description](entity.md#description)
-* [id](entity.md#id)
-* [name](entity.md#name)
-* [nameDescriptor](entity.md#namedescriptor)
+- [description](Entity.md#description)
+- [id](Entity.md#id)
+- [name](Entity.md#name)
+- [nameDescriptor](Entity.md#namedescriptor)
 
 ## Properties
 
 ### description
 
-• `Optional` **description**: string
-
-*Defined in [models.ts:82](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L82)*
+• `Optional` **description**: `string`
 
 Human readable description of the entity.
+
+#### Defined in
+
+[models.ts:123](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L123)
 
 ___
 
 ### id
 
-•  **id**: string
-
-*Defined in [models.ts:73](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L73)*
+• **id**: `string`
 
 The ID of the entity.
+
+#### Defined in
+
+[models.ts:114](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L114)
 
 ___
 
 ### name
 
-•  **name**: string
-
-*Defined in [models.ts:76](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L76)*
+• **name**: `string`
 
 The name of the entity.
+
+#### Defined in
+
+[models.ts:117](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L117)
 
 ___
 
 ### nameDescriptor
 
-• `Optional` **nameDescriptor**: string
-
-*Defined in [models.ts:79](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L79)*
+• `Optional` **nameDescriptor**: `string`
 
 Name of where the entity comes from (Service/Workspace).
+
+#### Defined in
+
+[models.ts:120](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L120)

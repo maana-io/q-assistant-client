@@ -1,59 +1,63 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / GraphRefInput
+[Maana Q Assistant API Client](../README.md) / GraphRefInput
 
 # Interface: GraphRefInput
 
-## Hierarchy
-
-* **GraphRefInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [argument](graphrefinput.md#argument)
-* [graphRefInputType](graphrefinput.md#graphrefinputtype)
-* [operationArgument](graphrefinput.md#operationargument)
-* [operationResult](graphrefinput.md#operationresult)
-* [outputArgument](graphrefinput.md#outputargument)
+- [argument](GraphRefInput.md#argument)
+- [graphRefInputType](GraphRefInput.md#graphrefinputtype)
+- [operationArgument](GraphRefInput.md#operationargument)
+- [operationResult](GraphRefInput.md#operationresult)
+- [outputArgument](GraphRefInput.md#outputargument)
 
 ## Properties
 
 ### argument
 
-• `Optional` **argument**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **argument**: `string`
 
-*Defined in [models.ts:707](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L707)*
+#### Defined in
+
+[models.ts:751](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L751)
 
 ___
 
 ### graphRefInputType
 
-•  **graphRefInputType**: [GraphRefInputType](../enums/graphrefinputtype.md)
+• **graphRefInputType**: [`GraphRefInputType`](../enums/GraphRefInputType.md)
 
-*Defined in [models.ts:706](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L706)*
+#### Defined in
+
+[models.ts:750](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L750)
 
 ___
 
 ### operationArgument
 
-• `Optional` **operationArgument**: [Maybe](../README.md#maybe)\<[OperationArgumentRefInput](operationargumentrefinput.md)>
+• `Optional` **operationArgument**: [`OperationArgumentRefInput`](OperationArgumentRefInput.md)
 
-*Defined in [models.ts:708](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L708)*
+#### Defined in
+
+[models.ts:752](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L752)
 
 ___
 
 ### operationResult
 
-• `Optional` **operationResult**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **operationResult**: `string`
 
-*Defined in [models.ts:709](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L709)*
+#### Defined in
+
+[models.ts:753](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L753)
 
 ___
 
 ### outputArgument
 
-• `Optional` **outputArgument**: [Maybe](../README.md#maybe)\<[OutputArgumentRefInput](outputargumentrefinput.md)>
+• `Optional` **outputArgument**: [`OutputArgumentRefInput`](OutputArgumentRefInput.md)
 
-*Defined in [models.ts:710](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L710)*
+#### Defined in
+
+[models.ts:754](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L754)

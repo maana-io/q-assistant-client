@@ -1,30 +1,32 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / AssistantState
+[Maana Q Assistant API Client](../README.md) / AssistantState
 
 # Enumeration: AssistantState
 
 The different states that the assistant can be in.
 
-## Index
+## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
-* [IDLE](assistantstate.md#idle)
-* [WORKING](assistantstate.md#working)
+- [IDLE](AssistantState.md#idle)
+- [WORKING](AssistantState.md#working)
 
-## Enumeration members
+## Enumeration Members
 
 ### IDLE
 
-•  **IDLE**:  = "IDLE"
+• **IDLE** = ``"IDLE"``
 
-*Defined in [constants.ts:6](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L6)*
+#### Defined in
+
+[constants.ts:6](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L6)
 
 ___
 
 ### WORKING
 
-•  **WORKING**:  = "WORKING"
+• **WORKING** = ``"WORKING"``
 
-*Defined in [constants.ts:5](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L5)*
+#### Defined in
+
+[constants.ts:5](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L5)

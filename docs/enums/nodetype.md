@@ -1,6 +1,4 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / NodeType
+[Maana Q Assistant API Client](../README.md) / NodeType
 
 # Enumeration: NodeType
 
@@ -11,34 +9,40 @@ Knowledge Graphs only use ENTITY nodes.
 Function graphs comes with two ARGUMENT nodes and no more should be created.
 OPERATION nodes are used to add functions onto the function graph.
 
-## Index
+## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
-* [ARGUMENT](nodetype.md#argument)
-* [ENTITY](nodetype.md#entity)
-* [OPERATION](nodetype.md#operation)
+- [ARGUMENT](NodeType.md#argument)
+- [ENTITY](NodeType.md#entity)
+- [OPERATION](NodeType.md#operation)
 
-## Enumeration members
+## Enumeration Members
 
 ### ARGUMENT
 
-•  **ARGUMENT**:  = "ARGUMENT"
+• **ARGUMENT** = ``"ARGUMENT"``
 
-*Defined in [constants.ts:103](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L103)*
+#### Defined in
+
+[constants.ts:105](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L105)
 
 ___
 
 ### ENTITY
 
-•  **ENTITY**:  = "ENTITY"
+• **ENTITY** = ``"ENTITY"``
 
-*Defined in [constants.ts:104](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L104)*
+#### Defined in
+
+[constants.ts:106](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L106)
 
 ___
 
 ### OPERATION
 
-•  **OPERATION**:  = "OPERATION"
+• **OPERATION** = ``"OPERATION"``
 
-*Defined in [constants.ts:105](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L105)*
+#### Defined in
+
+[constants.ts:107](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L107)

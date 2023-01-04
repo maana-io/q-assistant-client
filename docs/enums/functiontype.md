@@ -1,30 +1,32 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / FunctionType
+[Maana Q Assistant API Client](../README.md) / FunctionType
 
 # Enumeration: FunctionType
 
 The types of a functions.
 
-## Index
+## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
-* [CKG](functiontype.md#ckg)
-* [EXTERNAL](functiontype.md#external)
+- [CKG](FunctionType.md#ckg)
+- [EXTERNAL](FunctionType.md#external)
 
-## Enumeration members
+## Enumeration Members
 
 ### CKG
 
-•  **CKG**:  = "CKG"
+• **CKG** = ``"CKG"``
 
-*Defined in [constants.ts:74](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L74)*
+#### Defined in
+
+[constants.ts:76](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L76)
 
 ___
 
 ### EXTERNAL
 
-•  **EXTERNAL**:  = "EXTERNAL"
+• **EXTERNAL** = ``"EXTERNAL"``
 
-*Defined in [constants.ts:73](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L73)*
+#### Defined in
+
+[constants.ts:75](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L75)

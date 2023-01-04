@@ -1,8 +1,6 @@
-// Import all of the exported functions as AssistantAPIClient so that it can be
-// exported as the default.  This is done to keep backwards compatibility with
-// previous versions of the library.
-import { AssistantAPIClient as APIClient } from './AssistantAPIClient';
-export const AssistantAPIClient = APIClient;
+// Export both a named and default export of the same class; for backwards compatibility.
+export * from './AssistantAPIClient';
+import { AssistantAPIClient } from './AssistantAPIClient';
 export default AssistantAPIClient;
 
 export * from './constants';

@@ -1,21 +1,21 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / ImplementationType
+[Maana Q Assistant API Client](../README.md) / ImplementationType
 
 # Enumeration: ImplementationType
 
 The different types implementations that can be used on a CKG function.
 
-## Index
+## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
-* [FUNCTION\_GRAPH](implementationtype.md#function_graph)
+- [FUNCTION\_GRAPH](ImplementationType.md#function_graph)
 
-## Enumeration members
+## Enumeration Members
 
 ### FUNCTION\_GRAPH
 
-•  **FUNCTION\_GRAPH**:  = "FUNCTION\_GRAPH"
+• **FUNCTION\_GRAPH** = ``"FUNCTION_GRAPH"``
 
-*Defined in [constants.ts:91](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L91)*
+#### Defined in
+
+[constants.ts:93](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L93)

@@ -1,50 +1,52 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / CreateKnowledgeGraphInput
+[Maana Q Assistant API Client](../README.md) / CreateKnowledgeGraphInput
 
 # Interface: CreateKnowledgeGraphInput
 
-## Hierarchy
-
-* **CreateKnowledgeGraphInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [description](createknowledgegraphinput.md#description)
-* [graph](createknowledgegraphinput.md#graph)
-* [id](createknowledgegraphinput.md#id)
-* [name](createknowledgegraphinput.md#name)
+- [description](CreateKnowledgeGraphInput.md#description)
+- [graph](CreateKnowledgeGraphInput.md#graph)
+- [id](CreateKnowledgeGraphInput.md#id)
+- [name](CreateKnowledgeGraphInput.md#name)
 
 ## Properties
 
 ### description
 
-• `Optional` **description**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **description**: `string`
 
-*Defined in [models.ts:728](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L728)*
+#### Defined in
+
+[models.ts:772](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L772)
 
 ___
 
 ### graph
 
-• `Optional` **graph**: [Maybe](../README.md#maybe)\<[CreateGraphInput](creategraphinput.md)>
+• `Optional` **graph**: [`CreateGraphInput`](CreateGraphInput.md)
 
-*Defined in [models.ts:729](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L729)*
+#### Defined in
+
+[models.ts:773](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L773)
 
 ___
 
 ### id
 
-• `Optional` **id**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **id**: `string`
 
-*Defined in [models.ts:726](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L726)*
+#### Defined in
+
+[models.ts:770](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L770)
 
 ___
 
 ### name
 
-•  **name**: string
+• **name**: `string`
 
-*Defined in [models.ts:727](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L727)*
+#### Defined in
+
+[models.ts:771](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L771)

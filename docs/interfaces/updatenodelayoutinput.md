@@ -1,41 +1,41 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / UpdateNodeLayoutInput
+[Maana Q Assistant API Client](../README.md) / UpdateNodeLayoutInput
 
 # Interface: UpdateNodeLayoutInput
 
-## Hierarchy
-
-* **UpdateNodeLayoutInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [isCollapsed](updatenodelayoutinput.md#iscollapsed)
-* [x](updatenodelayoutinput.md#x)
-* [y](updatenodelayoutinput.md#y)
+- [isCollapsed](UpdateNodeLayoutInput.md#iscollapsed)
+- [x](UpdateNodeLayoutInput.md#x)
+- [y](UpdateNodeLayoutInput.md#y)
 
 ## Properties
 
 ### isCollapsed
 
-• `Optional` **isCollapsed**: string[]
+• `Optional` **isCollapsed**: `string`[]
 
-*Defined in [models.ts:633](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L633)*
+#### Defined in
+
+[models.ts:677](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L677)
 
 ___
 
 ### x
 
-• `Optional` **x**: number
+• `Optional` **x**: `number`
 
-*Defined in [models.ts:631](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L631)*
+#### Defined in
+
+[models.ts:675](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L675)
 
 ___
 
 ### y
 
-• `Optional` **y**: number
+• `Optional` **y**: `number`
 
-*Defined in [models.ts:632](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L632)*
+#### Defined in
+
+[models.ts:676](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L676)

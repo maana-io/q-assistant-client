@@ -1,81 +1,87 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / Node
+[Maana Q Assistant API Client](../README.md) / Node
 
 # Interface: Node
 
 The core shape of a node
 
-## Hierarchy
-
-* **Node**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [description](node.md#description)
-* [entityIdentifier](node.md#entityidentifier)
-* [id](node.md#id)
-* [isCollapsed](node.md#iscollapsed)
-* [location](node.md#location)
-* [type](node.md#type)
+- [description](Node.md#description)
+- [entityIdentifier](Node.md#entityidentifier)
+- [id](Node.md#id)
+- [isCollapsed](Node.md#iscollapsed)
+- [location](Node.md#location)
+- [type](Node.md#type)
 
 ## Properties
 
 ### description
 
-• `Optional` **description**: [Maybe](../README.md#maybe)\<string>
-
-*Defined in [models.ts:144](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L144)*
+• `Optional` **description**: `string`
 
 Human readable description of the Node.
+
+#### Defined in
+
+[models.ts:185](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L185)
 
 ___
 
 ### entityIdentifier
 
-• `Optional` **entityIdentifier**: [Maybe](../README.md#maybe)\<[EntityIdentifier](entityidentifier.md)>
-
-*Defined in [models.ts:159](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L159)*
+• `Optional` **entityIdentifier**: [`EntityIdentifier`](EntityIdentifier.md)
 
 The entity referenced by the node.
+
+#### Defined in
+
+[models.ts:200](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L200)
 
 ___
 
 ### id
 
-•  **id**: string
+• **id**: `string`
 
-*Defined in [models.ts:141](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L141)*
+#### Defined in
+
+[models.ts:182](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L182)
 
 ___
 
 ### isCollapsed
 
-•  **isCollapsed**: string[]
-
-*Defined in [models.ts:153](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L153)*
+• **isCollapsed**: `string`[]
 
 List of identifiers to signify different collapsed areas in the node.
+
+#### Defined in
+
+[models.ts:194](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L194)
 
 ___
 
 ### location
 
-• `Optional` **location**: [Maybe](../README.md#maybe)\<[Position](position.md)>
-
-*Defined in [models.ts:150](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L150)*
+• `Optional` **location**: [`Position`](Position.md)
 
 Position of the node on the graph. Null indicates the need to layout the
 position.
+
+#### Defined in
+
+[models.ts:191](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L191)
 
 ___
 
 ### type
 
-•  **type**: [NodeType](../enums/nodetype.md)
-
-*Defined in [models.ts:156](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L156)*
+• **type**: [`NodeType`](../enums/NodeType.md)
 
 The type of node
+
+#### Defined in
+
+[models.ts:197](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L197)

@@ -1,41 +1,41 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / OutputArgumentRef
+[Maana Q Assistant API Client](../README.md) / OutputArgumentRef
 
 # Interface: OutputArgumentRef
 
-## Hierarchy
-
-* **OutputArgumentRef**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [argument](outputargumentref.md#argument)
-* [fieldPath](outputargumentref.md#fieldpath)
-* [operation](outputargumentref.md#operation)
+- [argument](OutputArgumentRef.md#argument)
+- [fieldPath](OutputArgumentRef.md#fieldpath)
+- [operation](OutputArgumentRef.md#operation)
 
 ## Properties
 
 ### argument
 
-•  **argument**: string
+• **argument**: `string`
 
-*Defined in [models.ts:115](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L115)*
+#### Defined in
+
+[models.ts:156](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L156)
 
 ___
 
 ### fieldPath
 
-•  **fieldPath**: string[]
+• **fieldPath**: `string`[]
 
-*Defined in [models.ts:114](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L114)*
+#### Defined in
+
+[models.ts:155](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L155)
 
 ___
 
 ### operation
 
-•  **operation**: string
+• **operation**: `string`
 
-*Defined in [models.ts:113](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L113)*
+#### Defined in
+
+[models.ts:154](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L154)

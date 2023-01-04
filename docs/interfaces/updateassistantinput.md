@@ -1,77 +1,85 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / UpdateAssistantInput
+[Maana Q Assistant API Client](../README.md) / UpdateAssistantInput
 
 # Interface: UpdateAssistantInput
 
-## Hierarchy
-
-* **UpdateAssistantInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [endpointUrl](updateassistantinput.md#endpointurl)
-* [id](updateassistantinput.md#id)
-* [isReadOnly](updateassistantinput.md#isreadonly)
-* [isSystem](updateassistantinput.md#issystem)
-* [name](updateassistantinput.md#name)
-* [tags](updateassistantinput.md#tags)
-* [version](updateassistantinput.md#version)
+- [endpointUrl](UpdateAssistantInput.md#endpointurl)
+- [id](UpdateAssistantInput.md#id)
+- [isReadOnly](UpdateAssistantInput.md#isreadonly)
+- [isSystem](UpdateAssistantInput.md#issystem)
+- [name](UpdateAssistantInput.md#name)
+- [tags](UpdateAssistantInput.md#tags)
+- [version](UpdateAssistantInput.md#version)
 
 ## Properties
 
 ### endpointUrl
 
-• `Optional` **endpointUrl**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **endpointUrl**: `string`
 
-*Defined in [models.ts:656](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L656)*
+#### Defined in
+
+[models.ts:700](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L700)
 
 ___
 
 ### id
 
-•  **id**: string
+• **id**: `string`
 
-*Defined in [models.ts:654](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L654)*
+#### Defined in
+
+[models.ts:698](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L698)
 
 ___
 
 ### isReadOnly
 
-• `Optional` **isReadOnly**: [Maybe](../README.md#maybe)\<boolean>
+• `Optional` **isReadOnly**: `boolean`
 
-*Defined in [models.ts:658](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L658)*
+#### Defined in
+
+[models.ts:702](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L702)
 
 ___
 
 ### isSystem
 
-• `Optional` **isSystem**: [Maybe](../README.md#maybe)\<boolean>
+• `Optional` **isSystem**: `boolean`
 
-*Defined in [models.ts:657](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L657)*
+#### Defined in
+
+[models.ts:701](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L701)
 
 ___
 
 ### name
 
-• `Optional` **name**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **name**: `string`
 
-*Defined in [models.ts:655](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L655)*
+#### Defined in
+
+[models.ts:699](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L699)
 
 ___
 
 ### tags
 
-• `Optional` **tags**: [Maybe](../README.md#maybe)\<Array\<string>>
+• `Optional` **tags**: `string`[]
 
-*Defined in [models.ts:659](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L659)*
+#### Defined in
+
+[models.ts:703](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L703)
 
 ___
 
 ### version
 
-•  **version**: number
+• **version**: `number`
 
-*Defined in [models.ts:660](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L660)*
+#### Defined in
+
+[models.ts:704](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L704)

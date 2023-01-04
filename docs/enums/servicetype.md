@@ -1,48 +1,54 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / ServiceType
+[Maana Q Assistant API Client](../README.md) / ServiceType
 
 # Enumeration: ServiceType
 
 The different types of possible services
 
-## Index
+## Table of contents
 
-### Enumeration members
+### Enumeration Members
 
-* [ASSISTANT](servicetype.md#assistant)
-* [EXTERNAL\_GRAPHQL](servicetype.md#external_graphql)
-* [LOGIC](servicetype.md#logic)
-* [MODEL](servicetype.md#model)
+- [ASSISTANT](ServiceType.md#assistant)
+- [EXTERNAL\_GRAPHQL](ServiceType.md#external_graphql)
+- [LOGIC](ServiceType.md#logic)
+- [MODEL](ServiceType.md#model)
 
-## Enumeration members
+## Enumeration Members
 
 ### ASSISTANT
 
-•  **ASSISTANT**:  = "AssistantService"
+• **ASSISTANT** = ``"AssistantService"``
 
-*Defined in [constants.ts:63](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L63)*
+#### Defined in
+
+[constants.ts:65](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L65)
 
 ___
 
 ### EXTERNAL\_GRAPHQL
 
-•  **EXTERNAL\_GRAPHQL**:  = "ExternalGraphQLService"
+• **EXTERNAL\_GRAPHQL** = ``"ExternalGraphQLService"``
 
-*Defined in [constants.ts:64](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L64)*
+#### Defined in
+
+[constants.ts:66](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L66)
 
 ___
 
 ### LOGIC
 
-•  **LOGIC**:  = "LogicService"
+• **LOGIC** = ``"LogicService"``
 
-*Defined in [constants.ts:65](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L65)*
+#### Defined in
+
+[constants.ts:67](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L67)
 
 ___
 
 ### MODEL
 
-•  **MODEL**:  = "ModelService"
+• **MODEL** = ``"ModelService"``
 
-*Defined in [constants.ts:66](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L66)*
+#### Defined in
+
+[constants.ts:68](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L68)

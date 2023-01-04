@@ -1,45 +1,45 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / Connection
+[Maana Q Assistant API Client](../README.md) / Connection
 
 # Interface: Connection
 
-## Hierarchy
-
-* **Connection**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [from](connection.md#from)
-* [id](connection.md#id)
-* [to](connection.md#to)
+- [from](Connection.md#from)
+- [id](Connection.md#id)
+- [to](Connection.md#to)
 
 ## Properties
 
 ### from
 
-•  **from**: [GraphRef](../README.md#graphref)
-
-*Defined in [models.ts:131](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L131)*
+• **from**: [`GraphRef`](../README.md#graphref)
 
 End point for the outgoing connection point
+
+#### Defined in
+
+[models.ts:172](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L172)
 
 ___
 
 ### id
 
-•  **id**: string
+• **id**: `string`
 
-*Defined in [models.ts:128](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L128)*
+#### Defined in
+
+[models.ts:169](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L169)
 
 ___
 
 ### to
 
-•  **to**: [GraphRef](../README.md#graphref)
-
-*Defined in [models.ts:134](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L134)*
+• **to**: [`GraphRef`](../README.md#graphref)
 
 End point for the incoming connection point
+
+#### Defined in
+
+[models.ts:175](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L175)

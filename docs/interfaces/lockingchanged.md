@@ -1,43 +1,43 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / LockingChanged
+[Maana Q Assistant API Client](../README.md) / LockingChanged
 
 # Interface: LockingChanged
 
 The information returned from an locking changed event.
 
-## Hierarchy
-
-* **LockingChanged**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [functions](lockingchanged.md#functions)
-* [knowledgeGraphs](lockingchanged.md#knowledgegraphs)
-* [workspaces](lockingchanged.md#workspaces)
+- [functions](LockingChanged.md#functions)
+- [knowledgeGraphs](LockingChanged.md#knowledgegraphs)
+- [workspaces](LockingChanged.md#workspaces)
 
 ## Properties
 
 ### functions
 
-•  **functions**: [Maybe](../README.md#maybe)\<[LockChangedItem](lockchangeditem.md)[]>
+• **functions**: [`LockChangedItem`](LockChangedItem.md)[]
 
-*Defined in [models.ts:946](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L946)*
+#### Defined in
+
+[models.ts:990](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L990)
 
 ___
 
 ### knowledgeGraphs
 
-•  **knowledgeGraphs**: [Maybe](../README.md#maybe)\<[LockChangedItem](lockchangeditem.md)[]>
+• **knowledgeGraphs**: [`LockChangedItem`](LockChangedItem.md)[]
 
-*Defined in [models.ts:945](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L945)*
+#### Defined in
+
+[models.ts:989](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L989)
 
 ___
 
 ### workspaces
 
-•  **workspaces**: [Maybe](../README.md#maybe)\<[LockChangedItem](lockchangeditem.md)[]>
+• **workspaces**: [`LockChangedItem`](LockChangedItem.md)[]
 
-*Defined in [models.ts:944](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L944)*
+#### Defined in
+
+[models.ts:988](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L988)

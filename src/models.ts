@@ -7,16 +7,57 @@ import {
   NodeType,
   ServiceType
 } from './constants';
+/** Represents a JSON object used to express a type expression. */
+import { TypeExpression } from '@io-maana/typesystem-utils';
 
 export type Maybe<T> = T | null | undefined;
 
-/** Represents a JSON object used to express a type expression. */
-export type TypeExpressionObject = any;
-
+/**
+ * Maana Error extension
+ */
 interface ErrorLike {
   message: string;
   statusCode?: number;
   maanaErrorCode?: MaanaErrorCode;
+}
+
+interface SourceLocation {
+  readonly line: number;
+  readonly column: number;
+}
+
+export interface GraphQLFormattedError<
+  TExtensions extends Record<string, any> = Record<string, any>
+> {
+  /**
+   * A short, human-readable summary of the problem that **SHOULD NOT** change
+   * from occurrence to occurrence of the problem, except for purposes of
+   * localization.
+   */
+  readonly message: string;
+  /**
+   * If an error can be associated to a particular point in the requested
+   * GraphQL document, it should contain a list of locations.
+   */
+  readonly locations?: ReadonlyArray<SourceLocation>;
+  /**
+   * If an error can be associated to a particular field in the GraphQL result,
+   * it _must_ contain an entry with the key `path` that details the path of
+   * the response field which experienced the error. This allows clients to
+   * identify whether a null result is intentional or caused by a runtime error.
+   */
+  readonly path?: ReadonlyArray<string | number>;
+  /**
+   * Reserved for implementors to extend the protocol however they see fit,
+   * and hence there are no additional restrictions on its contents.
+   */
+  readonly extensions?: TExtensions;
+}
+
+export interface GraphQLResponse<T = unknown> {
+  data?: Record<string, T> | null;
+  errors?: GraphQLFormattedError[];
+  extensions?: Record<string, unknown>;
 }
 
 /**
@@ -51,7 +92,7 @@ export interface User {
 
 export interface EntityIdentifier {
   /** The type of entity being referenced. */
-  entityType: string;
+  entityType: EntityType;
 
   /** The ID of the entity. Used for all but Types and Functions. */
   id?: string;
@@ -175,7 +216,7 @@ export interface Graph {
 
 export interface Kind extends Entity {
   /** The signature of the Kind. */
-  signature: TypeExpressionObject;
+  signature: TypeExpression;
 
   /** The service that the Kind comes from. */
   service: IDObject;
@@ -297,7 +338,7 @@ export interface ArgumentFieldSelection {
  */
 export interface Function extends Entity {
   /** The signature of the Function. */
-  signature: TypeExpressionObject;
+  signature: TypeExpression;
 
   /** The service that the Kind comes from. */
   service: IDObject;
@@ -367,9 +408,9 @@ export interface Function extends Entity {
    * @returns The results of running the Function.
    */
   execute(
-    variables?: Maybe<Record<string, any>>,
+    variables?: Maybe<Record<string, unknown>>,
     resolve?: string
-  ): Promise<any>;
+  ): Promise<unknown>;
 }
 
 export interface ServiceLocation {
@@ -434,6 +475,9 @@ export interface Assistant extends Entity {
 }
 
 export interface Workspace extends Entity {
+  /** @deprecated Replaced by `location.platformUrl` */
+  endpointServiceId: string;
+
   /** The location information about the Workspace. */
   location: ServiceLocation;
 
@@ -733,7 +777,7 @@ export interface CreateTypeInput {
   id?: Maybe<string>;
   name: string;
   description?: Maybe<string>;
-  signature: TypeExpressionObject;
+  signature: TypeExpression;
   isManaged?: boolean;
 }
 
@@ -752,7 +796,7 @@ export interface CreateFunctionInput {
   id?: Maybe<string>;
   name: string;
   description?: Maybe<string>;
-  signature: TypeExpressionObject;
+  signature: TypeExpression;
   isPure?: Maybe<boolean>;
   graphqlFunctionType: GraphQLFunctionType;
   implementation: ImplementationType;
@@ -820,7 +864,7 @@ export interface UpdateTypeInput {
   id: string;
   name?: Maybe<string>;
   description?: Maybe<string>;
-  signature?: Maybe<TypeExpressionObject>;
+  signature?: Maybe<TypeExpression>;
   isManaged?: Maybe<boolean>;
 }
 
@@ -834,7 +878,7 @@ export interface UpdateFunctionInput {
   id: string;
   name?: Maybe<string>;
   description?: Maybe<string>;
-  signature?: Maybe<TypeExpressionObject>;
+  signature?: Maybe<TypeExpression>;
   isPure?: Maybe<boolean>;
   graphqlFunctionType?: Maybe<GraphQLFunctionType>;
   lock?: Maybe<EntityLockInput>;

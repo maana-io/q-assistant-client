@@ -1,41 +1,41 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / CreateAnnotationInput
+[Maana Q Assistant API Client](../README.md) / CreateAnnotationInput
 
 # Interface: CreateAnnotationInput
 
-## Hierarchy
-
-* **CreateAnnotationInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [description](createannotationinput.md#description)
-* [id](createannotationinput.md#id)
-* [name](createannotationinput.md#name)
+- [description](CreateAnnotationInput.md#description)
+- [id](CreateAnnotationInput.md#id)
+- [name](CreateAnnotationInput.md#name)
 
 ## Properties
 
 ### description
 
-• `Optional` **description**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **description**: `string`
 
-*Defined in [models.ts:743](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L743)*
+#### Defined in
+
+[models.ts:787](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L787)
 
 ___
 
 ### id
 
-• `Optional` **id**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **id**: `string`
 
-*Defined in [models.ts:741](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L741)*
+#### Defined in
+
+[models.ts:785](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L785)
 
 ___
 
 ### name
 
-•  **name**: string
+• **name**: `string`
 
-*Defined in [models.ts:742](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L742)*
+#### Defined in
+
+[models.ts:786](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L786)

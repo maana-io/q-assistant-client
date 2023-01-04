@@ -1,59 +1,63 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / Annotation
+[Maana Q Assistant API Client](../README.md) / Annotation
 
 # Interface: Annotation
 
-## Hierarchy
-
-* **Annotation**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [description](annotation.md#description)
-* [id](annotation.md#id)
-* [name](annotation.md#name)
-* [nameDescriptor](annotation.md#namedescriptor)
-* [workspaceId](annotation.md#workspaceid)
+- [description](Annotation.md#description)
+- [id](Annotation.md#id)
+- [name](Annotation.md#name)
+- [nameDescriptor](Annotation.md#namedescriptor)
+- [workspaceId](Annotation.md#workspaceid)
 
 ## Properties
 
 ### description
 
-• `Optional` **description**: string
+• `Optional` **description**: `string`
 
-*Defined in [models.ts:89](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L89)*
+#### Defined in
+
+[models.ts:130](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L130)
 
 ___
 
 ### id
 
-•  **id**: string
+• **id**: `string`
 
-*Defined in [models.ts:86](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L86)*
+#### Defined in
+
+[models.ts:127](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L127)
 
 ___
 
 ### name
 
-•  **name**: string
+• **name**: `string`
 
-*Defined in [models.ts:87](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L87)*
+#### Defined in
+
+[models.ts:128](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L128)
 
 ___
 
 ### nameDescriptor
 
-• `Optional` **nameDescriptor**: string
+• `Optional` **nameDescriptor**: `string`
 
-*Defined in [models.ts:88](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L88)*
+#### Defined in
+
+[models.ts:129](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L129)
 
 ___
 
 ### workspaceId
 
-• `Optional` **workspaceId**: string
+• `Optional` **workspaceId**: `string`
 
-*Defined in [models.ts:90](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L90)*
+#### Defined in
+
+[models.ts:131](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L131)

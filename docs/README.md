@@ -1,161 +1,328 @@
-**[Maana Q Assistant API Client](README.md)**
-
-> Globals
+Maana Q Assistant API Client
 
 # Maana Q Assistant API Client
 
-## Index
+## Table of contents
 
-### Namespaces
+### References
 
-* [AssistantAPIClient](modules/assistantapiclient.md)
+- [default](README.md#default)
 
 ### Enumerations
 
-* [AssistantState](enums/assistantstate.md)
-* [EntityType](enums/entitytype.md)
-* [FunctionType](enums/functiontype.md)
-* [GraphQLFunctionType](enums/graphqlfunctiontype.md)
-* [GraphRefInputType](enums/graphrefinputtype.md)
-* [ImplementationType](enums/implementationtype.md)
-* [MaanaErrorCode](enums/maanaerrorcode.md)
-* [NodeType](enums/nodetype.md)
-* [RenderMode](enums/rendermode.md)
-* [Scalars](enums/scalars.md)
-* [ServiceType](enums/servicetype.md)
+- [AssistantState](enums/AssistantState.md)
+- [FunctionType](enums/FunctionType.md)
+- [GraphQLFunctionType](enums/GraphQLFunctionType.md)
+- [GraphRefInputType](enums/GraphRefInputType.md)
+- [ImplementationType](enums/ImplementationType.md)
+- [MaanaErrorCode](enums/MaanaErrorCode.md)
+- [NodeType](enums/NodeType.md)
+- [RenderMode](enums/RenderMode.md)
+- [Scalars](enums/Scalars.md)
+- [ServiceType](enums/ServiceType.md)
+
+### Classes
+
+- [AssistantAPIClient](classes/AssistantAPIClient.md)
 
 ### Interfaces
 
-* [Annotation](interfaces/annotation.md)
-* [ArgumentFieldSelection](interfaces/argumentfieldselection.md)
-* [ArgumentFieldSelectionInput](interfaces/argumentfieldselectioninput.md)
-* [ArgumentRef](interfaces/argumentref.md)
-* [Assistant](interfaces/assistant.md)
-* [AssistantAPIError](interfaces/assistantapierror.md)
-* [CloneEntityInput](interfaces/cloneentityinput.md)
-* [Connection](interfaces/connection.md)
-* [CreateAnnotationInput](interfaces/createannotationinput.md)
-* [CreateConnectionInput](interfaces/createconnectioninput.md)
-* [CreateEntityInput](interfaces/createentityinput.md)
-* [CreateFileInput](interfaces/createfileinput.md)
-* [CreateFunctionInput](interfaces/createfunctioninput.md)
-* [CreateGraphInput](interfaces/creategraphinput.md)
-* [CreateKnowledgeGraphInput](interfaces/createknowledgegraphinput.md)
-* [CreateNodeInput](interfaces/createnodeinput.md)
-* [CreateServiceInput](interfaces/createserviceinput.md)
-* [CreateTypeInput](interfaces/createtypeinput.md)
-* [CreateWorkspaceInput](interfaces/createworkspaceinput.md)
-* [Entity](interfaces/entity.md)
-* [EntityIdentifier](interfaces/entityidentifier.md)
-* [EntityLockInput](interfaces/entitylockinput.md)
-* [ErrorLike](interfaces/errorlike.md)
-* [Function](interfaces/function.md)
-* [FunctionResultRef](interfaces/functionresultref.md)
-* [Graph](interfaces/graph.md)
-* [GraphRefInput](interfaces/graphrefinput.md)
-* [IDObject](interfaces/idobject.md)
-* [InventoryChanged](interfaces/inventorychanged.md)
-* [Kind](interfaces/kind.md)
-* [KnowledgeGraph](interfaces/knowledgegraph.md)
-* [LockChangedItem](interfaces/lockchangeditem.md)
-* [LockingChanged](interfaces/lockingchanged.md)
-* [Node](interfaces/node.md)
-* [OperationArgumentRef](interfaces/operationargumentref.md)
-* [OperationArgumentRefInput](interfaces/operationargumentrefinput.md)
-* [OperationResultRef](interfaces/operationresultref.md)
-* [OutputArgumentRef](interfaces/outputargumentref.md)
-* [OutputArgumentRefInput](interfaces/outputargumentrefinput.md)
-* [Position](interfaces/position.md)
-* [PositionInput](interfaces/positioninput.md)
-* [Selected](interfaces/selected.md)
-* [Service](interfaces/service.md)
-* [ServiceLocation](interfaces/servicelocation.md)
-* [UpdateAnnotationInput](interfaces/updateannotationinput.md)
-* [UpdateAssistantInput](interfaces/updateassistantinput.md)
-* [UpdateEntityInput](interfaces/updateentityinput.md)
-* [UpdateExternalGraphQLServiceInput](interfaces/updateexternalgraphqlserviceinput.md)
-* [UpdateFileInput](interfaces/updatefileinput.md)
-* [UpdateFunctionInput](interfaces/updatefunctioninput.md)
-* [UpdateGraphInput](interfaces/updategraphinput.md)
-* [UpdateGraphLayoutInput](interfaces/updategraphlayoutinput.md)
-* [UpdateKnowledgeGraphInput](interfaces/updateknowledgegraphinput.md)
-* [UpdateNodeInput](interfaces/updatenodeinput.md)
-* [UpdateNodeLayoutInput](interfaces/updatenodelayoutinput.md)
-* [UpdateTypeInput](interfaces/updatetypeinput.md)
-* [UpdateWorkspaceInput](interfaces/updateworkspaceinput.md)
-* [User](interfaces/user.md)
-* [Workspace](interfaces/workspace.md)
+- [Annotation](interfaces/Annotation.md)
+- [ArgumentFieldSelection](interfaces/ArgumentFieldSelection.md)
+- [ArgumentFieldSelectionInput](interfaces/ArgumentFieldSelectionInput.md)
+- [ArgumentRef](interfaces/ArgumentRef.md)
+- [Assistant](interfaces/Assistant.md)
+- [AssistantAPIError](interfaces/AssistantAPIError.md)
+- [CloneEntityInput](interfaces/CloneEntityInput.md)
+- [Connection](interfaces/Connection.md)
+- [CreateAnnotationInput](interfaces/CreateAnnotationInput.md)
+- [CreateConnectionInput](interfaces/CreateConnectionInput.md)
+- [CreateEntityInput](interfaces/CreateEntityInput.md)
+- [CreateFileInput](interfaces/CreateFileInput.md)
+- [CreateFunctionInput](interfaces/CreateFunctionInput.md)
+- [CreateGraphInput](interfaces/CreateGraphInput.md)
+- [CreateKnowledgeGraphInput](interfaces/CreateKnowledgeGraphInput.md)
+- [CreateNodeInput](interfaces/CreateNodeInput.md)
+- [CreateServiceInput](interfaces/CreateServiceInput.md)
+- [CreateTypeInput](interfaces/CreateTypeInput.md)
+- [CreateWorkspaceInput](interfaces/CreateWorkspaceInput.md)
+- [Entity](interfaces/Entity.md)
+- [EntityIdentifier](interfaces/EntityIdentifier.md)
+- [EntityLockInput](interfaces/EntityLockInput.md)
+- [Function](interfaces/Function.md)
+- [FunctionResultRef](interfaces/FunctionResultRef.md)
+- [Graph](interfaces/Graph.md)
+- [GraphQLFormattedError](interfaces/GraphQLFormattedError.md)
+- [GraphQLResponse](interfaces/GraphQLResponse.md)
+- [GraphRefInput](interfaces/GraphRefInput.md)
+- [IDObject](interfaces/IDObject.md)
+- [InventoryChanged](interfaces/InventoryChanged.md)
+- [Kind](interfaces/Kind.md)
+- [KnowledgeGraph](interfaces/KnowledgeGraph.md)
+- [LockChangedItem](interfaces/LockChangedItem.md)
+- [LockingChanged](interfaces/LockingChanged.md)
+- [Node](interfaces/Node.md)
+- [OperationArgumentRef](interfaces/OperationArgumentRef.md)
+- [OperationArgumentRefInput](interfaces/OperationArgumentRefInput.md)
+- [OperationResultRef](interfaces/OperationResultRef.md)
+- [OutputArgumentRef](interfaces/OutputArgumentRef.md)
+- [OutputArgumentRefInput](interfaces/OutputArgumentRefInput.md)
+- [Position](interfaces/Position.md)
+- [PositionInput](interfaces/PositionInput.md)
+- [Selected](interfaces/Selected.md)
+- [Service](interfaces/Service.md)
+- [ServiceLocation](interfaces/ServiceLocation.md)
+- [UpdateAnnotationInput](interfaces/UpdateAnnotationInput.md)
+- [UpdateAssistantInput](interfaces/UpdateAssistantInput.md)
+- [UpdateEntityInput](interfaces/UpdateEntityInput.md)
+- [UpdateExternalGraphQLServiceInput](interfaces/UpdateExternalGraphQLServiceInput.md)
+- [UpdateFileInput](interfaces/UpdateFileInput.md)
+- [UpdateFunctionInput](interfaces/UpdateFunctionInput.md)
+- [UpdateGraphInput](interfaces/UpdateGraphInput.md)
+- [UpdateGraphLayoutInput](interfaces/UpdateGraphLayoutInput.md)
+- [UpdateKnowledgeGraphInput](interfaces/UpdateKnowledgeGraphInput.md)
+- [UpdateNodeInput](interfaces/UpdateNodeInput.md)
+- [UpdateNodeLayoutInput](interfaces/UpdateNodeLayoutInput.md)
+- [UpdateTypeInput](interfaces/UpdateTypeInput.md)
+- [UpdateWorkspaceInput](interfaces/UpdateWorkspaceInput.md)
+- [User](interfaces/User.md)
+- [Workspace](interfaces/Workspace.md)
 
-### Type aliases
+### Type Aliases
 
-* [EventListenerCallback](README.md#eventlistenercallback)
-* [GraphRef](README.md#graphref)
-* [Implementation](README.md#implementation)
-* [Maybe](README.md#maybe)
-* [TypeExpressionObject](README.md#typeexpressionobject)
+- [EntityType](README.md#entitytype)
+- [FunctionExecutionListenerCallback](README.md#functionexecutionlistenercallback)
+- [GraphRef](README.md#graphref)
+- [Implementation](README.md#implementation)
+- [InventoryChangedListenerCallback](README.md#inventorychangedlistenercallback)
+- [LockingChangedListenerCallback](README.md#lockingchangedlistenercallback)
+- [Maybe](README.md#maybe)
+- [RenderModeChangedListenerCallback](README.md#rendermodechangedlistenercallback)
+- [RepairListenerCallback](README.md#repairlistenercallback)
+- [SelectionChangedListenerCallback](README.md#selectionchangedlistenercallback)
 
 ### Variables
 
-* [CORE\_SERVICE\_ID](README.md#core_service_id)
+- [CORE\_SERVICE\_ID](README.md#core_service_id)
 
-## Type aliases
+## References
 
-### EventListenerCallback
+### default
 
-Ƭ  **EventListenerCallback**: (e: any) => void
+Renames and re-exports [AssistantAPIClient](classes/AssistantAPIClient.md)
 
-*Defined in [AssistantAPIClient.ts:41](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L41)*
+## Type Aliases
+
+### EntityType
+
+Ƭ **EntityType**: ``"ANNOTATION"`` \| ``"FILE"`` \| ``"FUNCTION"`` \| ``"KNOWLEDGE_GRAPH"`` \| ``"SERVICE"`` \| ``"TYPE"`` \| ``"VALUE"`` \| ``"WORKSPACE"`` \| ``"CONNECTION"`` \| ``"FUNCTION_ARGUMENTS"`` \| ``"FUNCTION_OUTPUT"`` \| ``"GRAPH_NODE"`` \| ``"ACTIVITY"``
+
+The different entity types used in entity identifiers, like the ones returned
+from selection or used in graph nodes.
+
+**`Note`**
+
+Documentation is missing for EntityType after change to string union
+
+#### Defined in
+
+[constants.ts:43](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L43)
+
+___
+
+### FunctionExecutionListenerCallback
+
+Ƭ **FunctionExecutionListenerCallback**: (`e`: { `data?`: `Record`<`string`, `unknown`\> ; `errors?`: `string`[]  }) => `void`
+
+#### Type declaration
+
+▸ (`e`): `void`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `e` | `Object` |
+| `e.data?` | `Record`<`string`, `unknown`\> |
+| `e.errors?` | `string`[] |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[AssistantAPIClient.ts:41](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L41)
 
 ___
 
 ### GraphRef
 
-Ƭ  **GraphRef**: [ArgumentRef](interfaces/argumentref.md) \| [OperationArgumentRef](interfaces/operationargumentref.md) \| [FunctionResultRef](interfaces/functionresultref.md) \| [OperationResultRef](interfaces/operationresultref.md) \| [OutputArgumentRef](interfaces/outputargumentref.md)
-
-*Defined in [models.ts:119](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L119)*
+Ƭ **GraphRef**: [`ArgumentRef`](interfaces/ArgumentRef.md) \| [`OperationArgumentRef`](interfaces/OperationArgumentRef.md) \| [`FunctionResultRef`](interfaces/FunctionResultRef.md) \| [`OperationResultRef`](interfaces/OperationResultRef.md) \| [`OutputArgumentRef`](interfaces/OutputArgumentRef.md)
 
 Info for one end of a connection between two items within the graph.
+
+#### Defined in
+
+[models.ts:160](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L160)
 
 ___
 
 ### Implementation
 
-Ƭ  **Implementation**: [Graph](interfaces/graph.md)
-
-*Defined in [models.ts:283](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L283)*
+Ƭ **Implementation**: [`Graph`](interfaces/Graph.md)
 
 Function implementation union.
+
+#### Defined in
+
+[models.ts:324](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L324)
+
+___
+
+### InventoryChangedListenerCallback
+
+Ƭ **InventoryChangedListenerCallback**: (`changes`: [`InventoryChanged`](interfaces/InventoryChanged.md)) => `void`
+
+#### Type declaration
+
+▸ (`changes`): `void`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `changes` | [`InventoryChanged`](interfaces/InventoryChanged.md) |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[AssistantAPIClient.ts:56](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L56)
+
+___
+
+### LockingChangedListenerCallback
+
+Ƭ **LockingChangedListenerCallback**: (`changes`: [`LockingChanged`](interfaces/LockingChanged.md)) => `void`
+
+#### Type declaration
+
+▸ (`changes`): `void`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `changes` | [`LockingChanged`](interfaces/LockingChanged.md) |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[AssistantAPIClient.ts:50](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L50)
 
 ___
 
 ### Maybe
 
-Ƭ  **Maybe**\<T>: T \| null \| undefined
+Ƭ **Maybe**<`T`\>: `T` \| ``null`` \| `undefined`
 
-*Defined in [models.ts:11](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L11)*
+#### Type parameters
 
-#### Type parameters:
+| Name |
+| :------ |
+| `T` |
 
-Name |
------- |
-`T` |
+#### Defined in
+
+[models.ts:13](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L13)
 
 ___
 
-### TypeExpressionObject
+### RenderModeChangedListenerCallback
 
-Ƭ  **TypeExpressionObject**: any
+Ƭ **RenderModeChangedListenerCallback**: (`renderMode`: [`RenderMode`](enums/RenderMode.md)) => `void`
 
-*Defined in [models.ts:14](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L14)*
+#### Type declaration
 
-Represents a JSON object used to express a type expression.
+▸ (`renderMode`): `void`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `renderMode` | [`RenderMode`](enums/RenderMode.md) |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[AssistantAPIClient.ts:46](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L46)
+
+___
+
+### RepairListenerCallback
+
+Ƭ **RepairListenerCallback**: (`workspaceId`: `string`) => `void`
+
+#### Type declaration
+
+▸ (`workspaceId`): `void`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `workspaceId` | `string` |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[AssistantAPIClient.ts:60](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L60)
+
+___
+
+### SelectionChangedListenerCallback
+
+Ƭ **SelectionChangedListenerCallback**: (`data`: { `selection`: [`EntityIdentifier`](interfaces/EntityIdentifier.md)[]  }) => `void`
+
+#### Type declaration
+
+▸ (`data`): `void`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `data` | `Object` |
+| `data.selection` | [`EntityIdentifier`](interfaces/EntityIdentifier.md)[] |
+
+##### Returns
+
+`void`
+
+#### Defined in
+
+[AssistantAPIClient.ts:52](https://github.com/maana-io/q-assistant-client/blob/develop/src/AssistantAPIClient.ts#L52)
 
 ## Variables
 
 ### CORE\_SERVICE\_ID
 
-• `Const` **CORE\_SERVICE\_ID**: \"io.maana.core\" = "io.maana.core"
-
-*Defined in [constants.ts:20](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L20)*
+• `Const` **CORE\_SERVICE\_ID**: ``"io.maana.core"``
 
 ID of the io.maana.core service
+
+#### Defined in
+
+[constants.ts:20](https://github.com/maana-io/q-assistant-client/blob/develop/src/constants.ts#L20)

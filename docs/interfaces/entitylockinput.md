@@ -1,23 +1,19 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / EntityLockInput
+[Maana Q Assistant API Client](../README.md) / EntityLockInput
 
 # Interface: EntityLockInput
 
-## Hierarchy
-
-* **EntityLockInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [lockedBy](entitylockinput.md#lockedby)
+- [lockedBy](EntityLockInput.md#lockedby)
 
 ## Properties
 
 ### lockedBy
 
-•  **lockedBy**: string
+• **lockedBy**: `string`
 
-*Defined in [models.ts:676](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L676)*
+#### Defined in
+
+[models.ts:720](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L720)

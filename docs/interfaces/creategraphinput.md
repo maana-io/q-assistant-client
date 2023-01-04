@@ -1,50 +1,52 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / CreateGraphInput
+[Maana Q Assistant API Client](../README.md) / CreateGraphInput
 
 # Interface: CreateGraphInput
 
-## Hierarchy
-
-* **CreateGraphInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [connections](creategraphinput.md#connections)
-* [nodes](creategraphinput.md#nodes)
-* [offset](creategraphinput.md#offset)
-* [zoom](creategraphinput.md#zoom)
+- [connections](CreateGraphInput.md#connections)
+- [nodes](CreateGraphInput.md#nodes)
+- [offset](CreateGraphInput.md#offset)
+- [zoom](CreateGraphInput.md#zoom)
 
 ## Properties
 
 ### connections
 
-• `Optional` **connections**: [Maybe](../README.md#maybe)\<Array\<[CreateConnectionInput](createconnectioninput.md)>>
+• `Optional` **connections**: [`CreateConnectionInput`](CreateConnectionInput.md)[]
 
-*Defined in [models.ts:722](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L722)*
+#### Defined in
+
+[models.ts:766](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L766)
 
 ___
 
 ### nodes
 
-• `Optional` **nodes**: [Maybe](../README.md#maybe)\<Array\<[CreateNodeInput](createnodeinput.md)>>
+• `Optional` **nodes**: [`CreateNodeInput`](CreateNodeInput.md)[]
 
-*Defined in [models.ts:721](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L721)*
+#### Defined in
+
+[models.ts:765](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L765)
 
 ___
 
 ### offset
 
-• `Optional` **offset**: [Maybe](../README.md#maybe)\<[PositionInput](positioninput.md)>
+• `Optional` **offset**: [`PositionInput`](PositionInput.md)
 
-*Defined in [models.ts:719](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L719)*
+#### Defined in
+
+[models.ts:763](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L763)
 
 ___
 
 ### zoom
 
-• `Optional` **zoom**: [Maybe](../README.md#maybe)\<number>
+• `Optional` **zoom**: `number`
 
-*Defined in [models.ts:720](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L720)*
+#### Defined in
+
+[models.ts:764](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L764)

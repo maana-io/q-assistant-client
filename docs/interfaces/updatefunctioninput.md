@@ -1,104 +1,118 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / UpdateFunctionInput
+[Maana Q Assistant API Client](../README.md) / UpdateFunctionInput
 
 # Interface: UpdateFunctionInput
 
-## Hierarchy
-
-* **UpdateFunctionInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [description](updatefunctioninput.md#description)
-* [graphImplementation](updatefunctioninput.md#graphimplementation)
-* [graphqlFunctionType](updatefunctioninput.md#graphqlfunctiontype)
-* [id](updatefunctioninput.md#id)
-* [implementation](updatefunctioninput.md#implementation)
-* [inputMask](updatefunctioninput.md#inputmask)
-* [isPure](updatefunctioninput.md#ispure)
-* [lock](updatefunctioninput.md#lock)
-* [name](updatefunctioninput.md#name)
-* [signature](updatefunctioninput.md#signature)
+- [description](UpdateFunctionInput.md#description)
+- [graphImplementation](UpdateFunctionInput.md#graphimplementation)
+- [graphqlFunctionType](UpdateFunctionInput.md#graphqlfunctiontype)
+- [id](UpdateFunctionInput.md#id)
+- [implementation](UpdateFunctionInput.md#implementation)
+- [inputMask](UpdateFunctionInput.md#inputmask)
+- [isPure](UpdateFunctionInput.md#ispure)
+- [lock](UpdateFunctionInput.md#lock)
+- [name](UpdateFunctionInput.md#name)
+- [signature](UpdateFunctionInput.md#signature)
 
 ## Properties
 
 ### description
 
-• `Optional` **description**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **description**: `string`
 
-*Defined in [models.ts:836](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L836)*
+#### Defined in
+
+[models.ts:880](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L880)
 
 ___
 
 ### graphImplementation
 
-• `Optional` **graphImplementation**: [Maybe](../README.md#maybe)\<[UpdateGraphInput](updategraphinput.md)>
+• `Optional` **graphImplementation**: [`UpdateGraphInput`](UpdateGraphInput.md)
 
-*Defined in [models.ts:842](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L842)*
+#### Defined in
+
+[models.ts:886](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L886)
 
 ___
 
 ### graphqlFunctionType
 
-• `Optional` **graphqlFunctionType**: [Maybe](../README.md#maybe)\<[GraphQLFunctionType](../enums/graphqlfunctiontype.md)>
+• `Optional` **graphqlFunctionType**: [`GraphQLFunctionType`](../enums/GraphQLFunctionType.md)
 
-*Defined in [models.ts:839](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L839)*
+#### Defined in
+
+[models.ts:883](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L883)
 
 ___
 
 ### id
 
-•  **id**: string
+• **id**: `string`
 
-*Defined in [models.ts:834](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L834)*
+#### Defined in
+
+[models.ts:878](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L878)
 
 ___
 
 ### implementation
 
-• `Optional` **implementation**: [Maybe](../README.md#maybe)\<[ImplementationType](../enums/implementationtype.md)>
+• `Optional` **implementation**: [`FUNCTION_GRAPH`](../enums/ImplementationType.md#function_graph)
 
-*Defined in [models.ts:841](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L841)*
+#### Defined in
+
+[models.ts:885](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L885)
 
 ___
 
 ### inputMask
 
-• `Optional` **inputMask**: [Maybe](../README.md#maybe)\<Array\<[ArgumentFieldSelectionInput](argumentfieldselectioninput.md)>>
+• `Optional` **inputMask**: [`ArgumentFieldSelectionInput`](ArgumentFieldSelectionInput.md)[]
 
-*Defined in [models.ts:843](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L843)*
+#### Defined in
+
+[models.ts:887](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L887)
 
 ___
 
 ### isPure
 
-• `Optional` **isPure**: [Maybe](../README.md#maybe)\<boolean>
+• `Optional` **isPure**: `boolean`
 
-*Defined in [models.ts:838](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L838)*
+#### Defined in
+
+[models.ts:882](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L882)
 
 ___
 
 ### lock
 
-• `Optional` **lock**: [Maybe](../README.md#maybe)\<[EntityLockInput](entitylockinput.md)>
+• `Optional` **lock**: [`EntityLockInput`](EntityLockInput.md)
 
-*Defined in [models.ts:840](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L840)*
+#### Defined in
+
+[models.ts:884](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L884)
 
 ___
 
 ### name
 
-• `Optional` **name**: [Maybe](../README.md#maybe)\<string>
+• `Optional` **name**: `string`
 
-*Defined in [models.ts:835](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L835)*
+#### Defined in
+
+[models.ts:879](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L879)
 
 ___
 
 ### signature
 
-• `Optional` **signature**: [Maybe](../README.md#maybe)\<[TypeExpressionObject](../README.md#typeexpressionobject)>
+• `Optional` **signature**: `TypeExpression`
 
-*Defined in [models.ts:837](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L837)*
+#### Defined in
+
+[models.ts:881](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L881)

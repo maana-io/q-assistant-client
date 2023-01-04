@@ -1,50 +1,52 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / CloneEntityInput
+[Maana Q Assistant API Client](../README.md) / CloneEntityInput
 
 # Interface: CloneEntityInput
 
-## Hierarchy
-
-* **CloneEntityInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [entityType](cloneentityinput.md#entitytype)
-* [newName](cloneentityinput.md#newname)
-* [oldName](cloneentityinput.md#oldname)
-* [oldServiceId](cloneentityinput.md#oldserviceid)
+- [entityType](CloneEntityInput.md#entitytype)
+- [newName](CloneEntityInput.md#newname)
+- [oldName](CloneEntityInput.md#oldname)
+- [oldServiceId](CloneEntityInput.md#oldserviceid)
 
 ## Properties
 
 ### entityType
 
-•  **entityType**: [EntityType](../enums/entitytype.md)
+• **entityType**: [`EntityType`](../README.md#entitytype)
 
-*Defined in [models.ts:787](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L787)*
+#### Defined in
+
+[models.ts:831](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L831)
 
 ___
 
 ### newName
 
-•  **newName**: string
+• **newName**: `string`
 
-*Defined in [models.ts:790](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L790)*
+#### Defined in
+
+[models.ts:834](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L834)
 
 ___
 
 ### oldName
 
-•  **oldName**: string
+• **oldName**: `string`
 
-*Defined in [models.ts:788](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L788)*
+#### Defined in
+
+[models.ts:832](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L832)
 
 ___
 
 ### oldServiceId
 
-•  **oldServiceId**: string
+• **oldServiceId**: `string`
 
-*Defined in [models.ts:789](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L789)*
+#### Defined in
+
+[models.ts:833](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L833)

@@ -1,32 +1,30 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / Position
+[Maana Q Assistant API Client](../README.md) / Position
 
 # Interface: Position
 
-## Hierarchy
-
-* **Position**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [x](position.md#x)
-* [y](position.md#y)
+- [x](Position.md#x)
+- [y](Position.md#y)
 
 ## Properties
 
 ### x
 
-•  **x**: number
+• **x**: `number`
 
-*Defined in [models.ts:40](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L40)*
+#### Defined in
+
+[models.ts:81](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L81)
 
 ___
 
 ### y
 
-•  **y**: number
+• **y**: `number`
 
-*Defined in [models.ts:41](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L41)*
+#### Defined in
+
+[models.ts:82](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L82)

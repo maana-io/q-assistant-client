@@ -1,32 +1,30 @@
-**[Maana Q Assistant API Client](../README.md)**
-
-> [Globals](../README.md) / OperationArgumentRefInput
+[Maana Q Assistant API Client](../README.md) / OperationArgumentRefInput
 
 # Interface: OperationArgumentRefInput
 
-## Hierarchy
-
-* **OperationArgumentRefInput**
-
-## Index
+## Table of contents
 
 ### Properties
 
-* [argument](operationargumentrefinput.md#argument)
-* [operation](operationargumentrefinput.md#operation)
+- [argument](OperationArgumentRefInput.md#argument)
+- [operation](OperationArgumentRefInput.md#operation)
 
 ## Properties
 
 ### argument
 
-•  **argument**: string
+• **argument**: `string`
 
-*Defined in [models.ts:696](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L696)*
+#### Defined in
+
+[models.ts:740](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L740)
 
 ___
 
 ### operation
 
-•  **operation**: string
+• **operation**: `string`
 
-*Defined in [models.ts:695](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L695)*
+#### Defined in
+
+[models.ts:739](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L739)
