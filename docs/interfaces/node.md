@@ -25,7 +25,7 @@ Human readable description of the Node.
 
 #### Defined in
 
-[models.ts:146](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L146)
+[models.ts:185](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L185)
 
 ___
 
@@ -37,7 +37,7 @@ The entity referenced by the node.
 
 #### Defined in
 
-[models.ts:161](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L161)
+[models.ts:200](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L200)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 #### Defined in
 
-[models.ts:143](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L143)
+[models.ts:182](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L182)
 
 ___
 
@@ -59,7 +59,7 @@ List of identifiers to signify different collapsed areas in the node.
 
 #### Defined in
 
-[models.ts:155](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L155)
+[models.ts:194](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L194)
 
 ___
 
@@ -72,7 +72,7 @@ position.
 
 #### Defined in
 
-[models.ts:152](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L152)
+[models.ts:191](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L191)
 
 ___
 
@@ -84,4 +84,4 @@ The type of node
 
 #### Defined in
 
-[models.ts:158](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L158)
+[models.ts:197](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L197)

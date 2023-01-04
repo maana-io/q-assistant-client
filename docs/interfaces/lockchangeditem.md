@@ -19,7 +19,7 @@ Information about an entity that had its locked state changed.
 
 #### Defined in
 
-[models.ts:940](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L940)
+[models.ts:979](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L979)
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 #### Defined in
 
-[models.ts:941](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L941)
+[models.ts:980](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L980)

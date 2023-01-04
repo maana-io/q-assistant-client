@@ -35,4 +35,4 @@ The information returned from an inventory changed event.
 
 #### Defined in
 
-[models.ts:919](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L919)
+[models.ts:958](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L958)

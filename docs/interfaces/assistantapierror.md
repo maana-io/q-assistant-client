@@ -23,7 +23,7 @@ A list of errors like objects that were the cause of this error.
 
 #### Defined in
 
-[models.ts:34](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L34)
+[models.ts:73](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L73)
 
 ___
 
@@ -35,4 +35,4 @@ The top level message for the error.
 
 #### Defined in
 
-[models.ts:31](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L31)
+[models.ts:70](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L70)

@@ -41,7 +41,7 @@ Human readable description of the entity.
 
 #### Defined in
 
-[models.ts:84](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L84)
+[models.ts:123](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L123)
 
 ___
 
@@ -57,7 +57,7 @@ The ID of the entity.
 
 #### Defined in
 
-[models.ts:75](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L75)
+[models.ts:114](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L114)
 
 ___
 
@@ -69,7 +69,7 @@ The location that the service can be reached at.
 
 #### Defined in
 
-[models.ts:390](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L390)
+[models.ts:429](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L429)
 
 ___
 
@@ -85,7 +85,7 @@ The name of the entity.
 
 #### Defined in
 
-[models.ts:78](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L78)
+[models.ts:117](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L117)
 
 ___
 
@@ -101,7 +101,7 @@ Name of where the entity comes from (Service/Workspace).
 
 #### Defined in
 
-[models.ts:81](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L81)
+[models.ts:120](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L120)
 
 ___
 
@@ -113,7 +113,7 @@ The type of the service.
 
 #### Defined in
 
-[models.ts:399](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L399)
+[models.ts:438](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L438)
 
 ___
 
@@ -126,7 +126,7 @@ time the service is updated.
 
 #### Defined in
 
-[models.ts:396](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L396)
+[models.ts:435](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L435)
 
 ## Methods
 
@@ -142,7 +142,7 @@ Retrieves the list of Function that are part of the Service.
 
 #### Defined in
 
-[models.ts:405](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L405)
+[models.ts:444](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L444)
 
 ___
 
@@ -158,7 +158,7 @@ Retrieves the list of Kinds that are part of the Service.
 
 #### Defined in
 
-[models.ts:402](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L402)
+[models.ts:441](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L441)
 
 ___
 
@@ -176,7 +176,7 @@ null is returned.
 
 #### Defined in
 
-[models.ts:412](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L412)
+[models.ts:451](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L451)
 
 ___
 
@@ -198,4 +198,4 @@ Updates information about the Service.
 
 #### Defined in
 
-[models.ts:418](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L418)
+[models.ts:457](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L457)

@@ -20,7 +20,7 @@ service. This is useful if the client cannot directly access the service.
 
 #### Defined in
 
-[models.ts:385](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L385)
+[models.ts:424](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L424)
 
 ___
 
@@ -32,4 +32,4 @@ The URL that the locator references.
 
 #### Defined in
 
-[models.ts:379](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L379)
+[models.ts:418](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L418)

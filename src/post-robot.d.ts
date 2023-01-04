@@ -22,13 +22,12 @@ declare module 'post-robot' {
     timeout?: number | undefined;
   }
 
-  export type HandlerType = (params: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  export type HandlerType<T = any> = (params: {
     source: CrossDomainWindowType;
     origin: string;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    data: any;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  }) => void | any | ZalgoPromise<any>;
+    data: T;
+  }) => void | T | ZalgoPromise<T>;
 
   type ErrorHandlerType = (err: unknown) => void;
 

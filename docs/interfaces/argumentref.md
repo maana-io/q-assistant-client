@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[models.ts:97](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L97)
+[models.ts:136](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L136)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[models.ts:96](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L96)
+[models.ts:135](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L135)

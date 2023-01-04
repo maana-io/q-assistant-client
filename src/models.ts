@@ -21,6 +21,45 @@ interface ErrorLike {
   maanaErrorCode?: MaanaErrorCode;
 }
 
+interface SourceLocation {
+  readonly line: number;
+  readonly column: number;
+}
+
+export interface GraphQLFormattedError<
+  TExtensions extends Record<string, any> = Record<string, any>
+> {
+  /**
+   * A short, human-readable summary of the problem that **SHOULD NOT** change
+   * from occurrence to occurrence of the problem, except for purposes of
+   * localization.
+   */
+  readonly message: string;
+  /**
+   * If an error can be associated to a particular point in the requested
+   * GraphQL document, it should contain a list of locations.
+   */
+  readonly locations?: ReadonlyArray<SourceLocation>;
+  /**
+   * If an error can be associated to a particular field in the GraphQL result,
+   * it _must_ contain an entry with the key `path` that details the path of
+   * the response field which experienced the error. This allows clients to
+   * identify whether a null result is intentional or caused by a runtime error.
+   */
+  readonly path?: ReadonlyArray<string | number>;
+  /**
+   * Reserved for implementors to extend the protocol however they see fit,
+   * and hence there are no additional restrictions on its contents.
+   */
+  readonly extensions?: TExtensions;
+}
+
+export interface GraphQLResponse<T = unknown> {
+  data?: Record<string, T> | null;
+  errors?: GraphQLFormattedError[];
+  extensions?: Record<string, unknown>;
+}
+
 /**
  * The top level error object returned by the Assistant API that wraps and
  * returns any errors that occurred during a API call. Contains an array of

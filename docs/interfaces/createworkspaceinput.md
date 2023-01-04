@@ -27,7 +27,7 @@
 
 #### Defined in
 
-[models.ts:884](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L884)
+[models.ts:923](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L923)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 #### Defined in
 
-[models.ts:883](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L883)
+[models.ts:922](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L922)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 #### Defined in
 
-[models.ts:877](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L877)
+[models.ts:916](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L916)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 #### Defined in
 
-[models.ts:874](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L874)
+[models.ts:913](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L913)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 #### Defined in
 
-[models.ts:881](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L881)
+[models.ts:920](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L920)
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 #### Defined in
 
-[models.ts:882](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L882)
+[models.ts:921](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L921)
 
 ___
 
@@ -90,7 +90,7 @@ Currently only Types and Functions support being moved between Workspaces.
 
 #### Defined in
 
-[models.ts:890](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L890)
+[models.ts:929](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L929)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[models.ts:876](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L876)
+[models.ts:915](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L915)
 
 ___
 
@@ -110,7 +110,7 @@ ___
 
 #### Defined in
 
-[models.ts:880](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L880)
+[models.ts:919](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L919)
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 #### Defined in
 
-[models.ts:875](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L875)
+[models.ts:914](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L914)
 
 ___
 
@@ -130,7 +130,7 @@ ___
 
 #### Defined in
 
-[models.ts:879](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L879)
+[models.ts:918](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L918)
 
 ___
 
@@ -140,4 +140,4 @@ ___
 
 #### Defined in
 
-[models.ts:878](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L878)
+[models.ts:917](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L917)

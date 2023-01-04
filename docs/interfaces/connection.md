@@ -20,7 +20,7 @@ End point for the outgoing connection point
 
 #### Defined in
 
-[models.ts:133](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L133)
+[models.ts:172](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L172)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[models.ts:130](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L130)
+[models.ts:169](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L169)
 
 ___
 
@@ -42,4 +42,4 @@ End point for the incoming connection point
 
 #### Defined in
 
-[models.ts:136](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L136)
+[models.ts:175](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L175)

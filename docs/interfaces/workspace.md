@@ -76,7 +76,7 @@ Human readable description of the entity.
 
 #### Defined in
 
-[models.ts:84](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L84)
+[models.ts:123](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L123)
 
 ___
 
@@ -90,7 +90,7 @@ Replaced by `location.platformUrl`
 
 #### Defined in
 
-[models.ts:440](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L440)
+[models.ts:479](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L479)
 
 ___
 
@@ -106,7 +106,7 @@ The ID of the entity.
 
 #### Defined in
 
-[models.ts:75](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L75)
+[models.ts:114](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L114)
 
 ___
 
@@ -118,7 +118,7 @@ When true others can see this Workspace.
 
 #### Defined in
 
-[models.ts:455](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L455)
+[models.ts:494](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L494)
 
 ___
 
@@ -130,7 +130,7 @@ When true it shows up as a template Workspace.
 
 #### Defined in
 
-[models.ts:458](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L458)
+[models.ts:497](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L497)
 
 ___
 
@@ -142,7 +142,7 @@ The location information about the Workspace.
 
 #### Defined in
 
-[models.ts:443](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L443)
+[models.ts:482](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L482)
 
 ___
 
@@ -158,7 +158,7 @@ The name of the entity.
 
 #### Defined in
 
-[models.ts:78](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L78)
+[models.ts:117](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L117)
 
 ___
 
@@ -174,7 +174,7 @@ Name of where the entity comes from (Service/Workspace).
 
 #### Defined in
 
-[models.ts:81](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L81)
+[models.ts:120](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L120)
 
 ___
 
@@ -193,7 +193,7 @@ The user that owns the Workspace.
 
 #### Defined in
 
-[models.ts:464](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L464)
+[models.ts:503](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L503)
 
 ___
 
@@ -205,7 +205,7 @@ The ID of the model service handling persistence for the Workspace
 
 #### Defined in
 
-[models.ts:452](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L452)
+[models.ts:491](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L491)
 
 ___
 
@@ -217,7 +217,7 @@ The ID of the logic service backing the Workspace.
 
 #### Defined in
 
-[models.ts:449](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L449)
+[models.ts:488](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L488)
 
 ___
 
@@ -229,7 +229,7 @@ The list of tags for the Workspace.
 
 #### Defined in
 
-[models.ts:461](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L461)
+[models.ts:500](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L500)
 
 ___
 
@@ -241,7 +241,7 @@ The URL to the URL of the thumbnail pic.
 
 #### Defined in
 
-[models.ts:446](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L446)
+[models.ts:485](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L485)
 
 ## Methods
 
@@ -257,7 +257,7 @@ Returns boolean stating if the Workspace is editable.
 
 #### Defined in
 
-[models.ts:467](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L467)
+[models.ts:506](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L506)
 
 ___
 
@@ -279,7 +279,7 @@ Creates a new Function in the Workspace.
 
 #### Defined in
 
-[models.ts:554](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L554)
+[models.ts:593](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L593)
 
 ___
 
@@ -301,7 +301,7 @@ Creates a list of new Functions in the Workspace.
 
 #### Defined in
 
-[models.ts:560](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L560)
+[models.ts:599](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L599)
 
 ___
 
@@ -323,7 +323,7 @@ Creates a new Kind in the Workspace.
 
 #### Defined in
 
-[models.ts:602](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L602)
+[models.ts:641](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L641)
 
 ___
 
@@ -345,7 +345,7 @@ Creates a list of Kinds in the Workspace.
 
 #### Defined in
 
-[models.ts:608](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L608)
+[models.ts:647](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L647)
 
 ___
 
@@ -367,7 +367,7 @@ Creates a new Knowledge Graph in the Workspace.
 
 #### Defined in
 
-[models.ts:501](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L501)
+[models.ts:540](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L540)
 
 ___
 
@@ -389,7 +389,7 @@ Creates a list of new Knowledge Graphs in the Workspace.
 
 #### Defined in
 
-[models.ts:507](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L507)
+[models.ts:546](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L546)
 
 ___
 
@@ -411,7 +411,7 @@ Deletes a function in the Workspace.
 
 #### Defined in
 
-[models.ts:578](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L578)
+[models.ts:617](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L617)
 
 ___
 
@@ -433,7 +433,7 @@ Deletes a Kind in the Workspace.
 
 #### Defined in
 
-[models.ts:632](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L632)
+[models.ts:671](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L671)
 
 ___
 
@@ -449,7 +449,7 @@ Gets the currently active graph.
 
 #### Defined in
 
-[models.ts:492](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L492)
+[models.ts:531](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L531)
 
 ___
 
@@ -471,7 +471,7 @@ Gets an Annotation in the Workspace by ID
 
 #### Defined in
 
-[models.ts:626](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L626)
+[models.ts:665](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L665)
 
 ___
 
@@ -487,7 +487,7 @@ Gets the list of Annotations that live in the Workspace
 
 #### Defined in
 
-[models.ts:623](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L623)
+[models.ts:662](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L662)
 
 ___
 
@@ -515,7 +515,7 @@ load it via the workspace it belongs to.
 
 #### Defined in
 
-[models.ts:587](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L587)
+[models.ts:626](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L626)
 
 ___
 
@@ -531,7 +531,7 @@ Gets the list of Functions that live in the Workspace.
 
 #### Defined in
 
-[models.ts:542](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L542)
+[models.ts:581](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L581)
 
 ___
 
@@ -553,7 +553,7 @@ Gets a list of Functions that live in the Workspace based on their names.
 
 #### Defined in
 
-[models.ts:548](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L548)
+[models.ts:587](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L587)
 
 ___
 
@@ -569,7 +569,7 @@ Gets all of the Assistants imported into the Workspaces inventory.
 
 #### Defined in
 
-[models.ts:513](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L513)
+[models.ts:552](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L552)
 
 ___
 
@@ -585,7 +585,7 @@ Gets all of the Services imported into the Workspaces inventory.
 
 #### Defined in
 
-[models.ts:510](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L510)
+[models.ts:549](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L549)
 
 ___
 
@@ -601,7 +601,7 @@ Gets the list of Kinds that live in the Workspace.
 
 #### Defined in
 
-[models.ts:590](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L590)
+[models.ts:629](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L629)
 
 ___
 
@@ -623,7 +623,7 @@ Gets a list of Kinds that live in the Workspace based on their names.
 
 #### Defined in
 
-[models.ts:596](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L596)
+[models.ts:635](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L635)
 
 ___
 
@@ -639,7 +639,7 @@ Gets all of the Knowledge Graphs in the Workspace.
 
 #### Defined in
 
-[models.ts:495](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L495)
+[models.ts:534](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L534)
 
 ___
 
@@ -663,7 +663,7 @@ ID of imported Service or Assistant.
 
 #### Defined in
 
-[models.ts:520](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L520)
+[models.ts:559](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L559)
 
 ___
 
@@ -687,7 +687,7 @@ IDs of imported Services and/or Assistants.
 
 #### Defined in
 
-[models.ts:527](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L527)
+[models.ts:566](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L566)
 
 ___
 
@@ -703,7 +703,7 @@ Returns the e-mail of the user who locked the Workspace.
 
 #### Defined in
 
-[models.ts:470](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L470)
+[models.ts:509](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L509)
 
 ___
 
@@ -719,7 +719,7 @@ Returns a new copy of the workspace with reloaded information.
 
 #### Defined in
 
-[models.ts:486](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L486)
+[models.ts:525](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L525)
 
 ___
 
@@ -741,7 +741,7 @@ Removes a Service or Assistant from the Workspaces inventory.
 
 #### Defined in
 
-[models.ts:533](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L533)
+[models.ts:572](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L572)
 
 ___
 
@@ -763,7 +763,7 @@ Removes a list Services and/or Assistants from the Workspaces inventory.
 
 #### Defined in
 
-[models.ts:539](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L539)
+[models.ts:578](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L578)
 
 ___
 
@@ -785,7 +785,7 @@ Updates the locked state of the Workspace.
 
 #### Defined in
 
-[models.ts:477](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L477)
+[models.ts:516](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L516)
 
 ___
 
@@ -801,7 +801,7 @@ Sends a repair event to all assistants.
 
 #### Defined in
 
-[models.ts:489](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L489)
+[models.ts:528](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L528)
 
 ___
 
@@ -823,7 +823,7 @@ Updates information about the Workspace.
 
 #### Defined in
 
-[models.ts:483](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L483)
+[models.ts:522](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L522)
 
 ___
 
@@ -845,7 +845,7 @@ Updates a Function in the Workspace.
 
 #### Defined in
 
-[models.ts:566](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L566)
+[models.ts:605](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L605)
 
 ___
 
@@ -867,7 +867,7 @@ Updates a list of Function in the Workspace.
 
 #### Defined in
 
-[models.ts:572](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L572)
+[models.ts:611](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L611)
 
 ___
 
@@ -889,7 +889,7 @@ Updates a Kind in the Workspace.
 
 #### Defined in
 
-[models.ts:614](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L614)
+[models.ts:653](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L653)
 
 ___
 
@@ -911,4 +911,4 @@ Updates a list of Kinds in the Workspace.
 
 #### Defined in
 
-[models.ts:620](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L620)
+[models.ts:659](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L659)

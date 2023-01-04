@@ -52,6 +52,8 @@ Maana Q Assistant API Client
 - [Function](interfaces/Function.md)
 - [FunctionResultRef](interfaces/FunctionResultRef.md)
 - [Graph](interfaces/Graph.md)
+- [GraphQLFormattedError](interfaces/GraphQLFormattedError.md)
+- [GraphQLResponse](interfaces/GraphQLResponse.md)
 - [GraphRefInput](interfaces/GraphRefInput.md)
 - [IDObject](interfaces/IDObject.md)
 - [InventoryChanged](interfaces/InventoryChanged.md)
@@ -162,7 +164,7 @@ Info for one end of a connection between two items within the graph.
 
 #### Defined in
 
-[models.ts:121](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L121)
+[models.ts:160](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L160)
 
 ___
 
@@ -174,7 +176,7 @@ Function implementation union.
 
 #### Defined in
 
-[models.ts:285](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L285)
+[models.ts:324](https://github.com/maana-io/q-assistant-client/blob/develop/src/models.ts#L324)
 
 ___
 
