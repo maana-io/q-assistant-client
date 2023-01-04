@@ -11,6 +11,11 @@
   "exports": {
     ".": "./build/"
   },
+  "files": [
+    "/build",
+    "/docs",
+    "README.md"
+  ],
   "scripts": {
     "build": "npm run build:ts && npm run build:doc",
     "build:ts": "tsc --build tsconfig.json",
